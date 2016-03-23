@@ -1,7 +1,9 @@
-package app.android.chickeninvasion;
+package app.android.chickeninvasion.view;
 
 import android.opengl.*;
 import android.content.*;
+
+import app.android.chickeninvasion.MainViewRenderer;
 
 
 /**
