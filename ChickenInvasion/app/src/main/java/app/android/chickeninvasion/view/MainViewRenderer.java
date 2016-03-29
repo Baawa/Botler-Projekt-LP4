@@ -12,7 +12,7 @@ public class MainViewRenderer implements GLSurfaceView.Renderer {
 
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
-
+        //Used on "start up"
     }
 
     @Override
@@ -22,6 +22,5 @@ public class MainViewRenderer implements GLSurfaceView.Renderer {
 
     @Override
     public void onDrawFrame(GL10 gl) {
-
     }
 }
