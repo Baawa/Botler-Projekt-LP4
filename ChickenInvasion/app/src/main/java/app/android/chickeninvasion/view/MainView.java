@@ -3,8 +3,6 @@ package app.android.chickeninvasion.view;
 import android.opengl.*;
 import android.content.*;
 
-import app.android.chickeninvasion.MainViewRenderer;
-
 
 /**
  * Created by Albin on 2016-03-23.

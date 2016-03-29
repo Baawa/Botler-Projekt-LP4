@@ -1,4 +1,4 @@
-package app.android.chickeninvasion;
+package app.android.chickeninvasion.view;
 
 import android.opengl.GLSurfaceView;
 
