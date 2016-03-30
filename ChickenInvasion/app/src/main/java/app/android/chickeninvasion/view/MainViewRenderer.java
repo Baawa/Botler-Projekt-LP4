@@ -28,7 +28,6 @@ public class MainViewRenderer implements GLSurfaceView.Renderer {
     public void onSurfaceCreated(GL10 neverUsed, EGLConfig config) {
         // initialize a triangle
         mTriangle = new TriangleTest();
-
     }
 
     @Override
@@ -67,7 +66,7 @@ public class MainViewRenderer implements GLSurfaceView.Renderer {
     }
 
     //Utility method
-    public static int loadShader(int type, String shaderCode){
+    public static int loadShader(int type, String shaderCode) {
 
         // create a vertex shader type (GLES20.GL_VERTEX_SHADER)
         // or a fragment shader type (GLES20.GL_FRAGMENT_SHADER)

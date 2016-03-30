@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
+import app.android.chickeninvasion.ThrowableObject;
 import app.android.chickeninvasion.view.MainView;
 
 /**
@@ -29,6 +30,10 @@ public class OpenGLActivity extends Activity {
         // as the ContentView for this Activity.
         mGLView = new MainView(this);
         setContentView(mGLView);
+
+
+        ThrowableObject TO = new ThrowableObject(0,0,300,400);
+        TO.throwToPoint(100,300);
     }
 
     @Override
