@@ -32,7 +32,9 @@ public class Square {
             1.0f, 0.0f
     };
 
-    public Square(){
+    private int drawableID;
+
+    public Square(int drawableID){
         ByteBuffer vertexByteBuffer = ByteBuffer.allocateDirect(vertices.length *4);
         vertexByteBuffer.order(ByteOrder.nativeOrder());
 
@@ -48,6 +50,9 @@ public class Square {
         textureBuffer = vertexByteBuffer.asFloatBuffer();
         textureBuffer.put(texture);
         textureBuffer.position(0);
+
+
+        this.drawableID = drawableID;
     }
 
     public void draw(GL10 gl){
@@ -70,7 +75,7 @@ public class Square {
     private int[] textures = new int[1];
 
     public void loadGLTexture(GL10 gl, Context context){
-        Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.Android);
+        Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), drawableID); // CHange image here plis e.g. android.R.drawable.alert_dark_frame
 
         gl.glGenTextures(1, textures, 0);
 
