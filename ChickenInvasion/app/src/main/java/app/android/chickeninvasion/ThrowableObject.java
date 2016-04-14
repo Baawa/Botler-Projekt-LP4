@@ -4,6 +4,9 @@ import android.media.Image;
 import android.util.Log;
 import android.view.MotionEvent;
 
+/**
+ * Created by Albin on 2016-03-30.
+ */
 public class ThrowableObject {
     private String name;
     private double speed = 1; //Speed 1 -> Normal speed, 2 -> Double Normal speed
@@ -56,7 +59,6 @@ public class ThrowableObject {
                     try{
                         sleep(sleepTime,0);
                     } catch (InterruptedException e){
-
                         Log.e("","interrupted");
                     }
                     if (getHasCollided()|| getX() > getScreenWidth()|| getY() > getScreenHeight()) break;
@@ -71,8 +73,8 @@ public class ThrowableObject {
     }
 
     public void onTouchEvent(MotionEvent event){
-        double x = event.getX();
-        double y = event.getY();
+        double x = this.x - event.getX();
+        double y = this.y - event.getY();
         double total = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
         x = x + 100*x/total;
         y = y + 100*y/total;
