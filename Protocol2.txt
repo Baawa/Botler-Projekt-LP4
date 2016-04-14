@@ -1,0 +1,27 @@
+﻿Meeting Agenda
+
+  Date: 2016-04-14
+
+  Facilitator: Christer Carlsson
+
+  Participants: Albin Bååw, Kristoffer Ek
+
+
+1.	Objectives (5 min). Resolve any issues preventing the team to continue.
+
+
+
+2.	Reports (15 min) from previous meeting
+Primary RAD and use cases is done.
+
+3.	Discussion items (35 min)
+RAD and use cases
+
+4.	Outcomes and assignments (5 min)
+Define use cases better. 
+
+
+5.	Wrap up
+
+- Genomgång av RAD och Use cases
+- Edit-huset 5209
