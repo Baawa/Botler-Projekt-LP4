@@ -2,6 +2,7 @@ package app.android.chickeninvasion;
 
 import android.media.Image;
 import android.util.Log;
+import android.view.MotionEvent;
 
 public class ThrowableObject {
     private String name;
@@ -25,7 +26,7 @@ public class ThrowableObject {
         this.screenHeight = screenHeight;
     }
 
-    public void throwToPoint(final int x, final int y){
+    public void throwToPoint(final double x, final double y){
         Thread throwThread = new Thread(){
             private int time = 0;
             private double scale = 1.0;
@@ -67,6 +68,18 @@ public class ThrowableObject {
         try{
             throwThread.join();
         } catch (InterruptedException e){}
+    }
+
+    public void onTouchEvent(MotionEvent event){
+        double x = event.getX();
+        double y = event.getY();
+        double total = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
+        x = x + 100*x/total;
+        y = y + 100*y/total;
+
+        x = x * this.speed * x / total;
+        y = y * this.speed * y / total;
+        this.throwToPoint(x,y);
     }
 
     public String getName(){
