@@ -1,5 +1,6 @@
 package com.chicken.invasion;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.badlogic.gdx.backends.android.AndroidApplication;
@@ -11,6 +12,8 @@ public class AndroidLauncher extends AndroidApplication {
 	protected void onCreate (Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
-		initialize(new ChickenInvasion(), config);
+		Intent intent = new Intent(getApplicationContext(),Store.class);
+		startActivity(intent);
+		//initialize(new ChickenInvasion(), config);
 	}
 }

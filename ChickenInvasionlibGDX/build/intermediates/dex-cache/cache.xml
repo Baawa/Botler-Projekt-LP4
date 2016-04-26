@@ -2,32 +2,11 @@
 <items version="2" >
 
     <item
-        jar="/Users/Albin/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-backend-android/1.9.2/342b830bc718dc1965c8f13fc58dc500e8bd262f/gdx-backend-android-1.9.2.jar"
+        jar="/Users/pedramshirmohammad/Documents/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/cardview-v7/22.0.0/jars/classes.jar"
         jumboMode="false"
-        revision="23.0.3"
-        sha1="342b830bc718dc1965c8f13fc58dc500e8bd262f">
-        <dex dex="/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/pre-dexed/debug/gdx-backend-android-1.9.2_9334dc815c34d655a351b251d0ea7f4ff5ca20ec.jar" />
-    </item>
-    <item
-        jar="/Users/Albin/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.2/b78eaa90aaaf7830e6dffff587ea6e859c2787b2/gdx-box2d-1.9.2.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="b78eaa90aaaf7830e6dffff587ea6e859c2787b2">
-        <dex dex="/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/pre-dexed/debug/gdx-box2d-1.9.2_613d7a0cf617e2d47ff2a204e549c9db86372afe.jar" />
-    </item>
-    <item
-        jar="/Users/Albin/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.2/e641cb91bec06bc64d9ddf7a7d7062caceec73cd/gdx-1.9.2.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="e641cb91bec06bc64d9ddf7a7d7062caceec73cd">
-        <dex dex="/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/pre-dexed/debug/gdx-1.9.2_7fd5952d4d3cbe3fe00a593087ab1e3a98e5dc5a.jar" />
-    </item>
-    <item
-        jar="/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/core/build/libs/core-1.0.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="3bfc58aac78960eb58244f63ef28bd787c290b97">
-        <dex dex="/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/pre-dexed/debug/core-1.0_3b31a1ad8472149b9f537b656b2b41b02940a96a.jar" />
+        revision="23.0.1"
+        sha1="11842de6a309c447b3a3d60d73ad637a87c58994">
+        <dex dex="/Users/pedramshirmohammad/Documents/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/pre-dexed/debug/com.android.support-cardview-v7-22.0.0_cf50edd4befcb00fb8ce7e694d933f5f57ae6dfa.jar" />
     </item>
 
 </items>

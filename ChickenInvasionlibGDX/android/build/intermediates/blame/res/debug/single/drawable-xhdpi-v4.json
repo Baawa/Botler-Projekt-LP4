@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/pedramshirmohammad/Documents/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_launcher.png",
+        "source": "/Users/pedramshirmohammad/Documents/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/res/drawable-xhdpi/ic_launcher.png"
+    },
+    {
         "merged": "/Users/Albin/Downloads/libgdxtest/android/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_launcher.png",
         "source": "/Users/Albin/Downloads/libgdxtest/android/res/drawable-xhdpi/ic_launcher.png"
     },

@@ -4,6 +4,10 @@
         "source": "/Users/Albin/Downloads/libgdxtest/android/res/drawable-xxhdpi/ic_launcher.png"
     },
     {
+        "merged": "/Users/pedramshirmohammad/Documents/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/ic_launcher.png",
+        "source": "/Users/pedramshirmohammad/Documents/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/res/drawable-xxhdpi/ic_launcher.png"
+    },
+    {
         "merged": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/ic_launcher.png",
         "source": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/res/drawable-xxhdpi/ic_launcher.png"
     }
