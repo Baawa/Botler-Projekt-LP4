@@ -1,14 +1,22 @@
 [
     {
-        "merged": "/Users/Albin/Downloads/libgdxtest/android/build/intermediates/res/merged/debug/drawable-mdpi-v4/ic_launcher.png",
-        "source": "/Users/Albin/Downloads/libgdxtest/android/res/drawable-mdpi/ic_launcher.png"
+        "merged": "C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\res\\drawable-mdpi\\ic_launcher.png"
     },
     {
-        "merged": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/res/merged/debug/drawable-mdpi-v4/pan100x100.png",
-        "source": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/res/drawable-mdpi/pan100x100.png"
+        "merged": "C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\pan100x100.png",
+        "source": "C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\res\\drawable-mdpi\\pan100x100.png"
     },
     {
-        "merged": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/res/merged/debug/drawable-mdpi-v4/ic_launcher.png",
-        "source": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/res/drawable-mdpi/ic_launcher.png"
+        "merged": "C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\res\\drawable-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Albin\\Downloads\\libgdxtest\\android\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\Albin\\Downloads\\libgdxtest\\android\\res\\drawable-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\pan100x100.png",
+        "source": "C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\res\\drawable-mdpi\\pan100x100.png"
     }
 ]
