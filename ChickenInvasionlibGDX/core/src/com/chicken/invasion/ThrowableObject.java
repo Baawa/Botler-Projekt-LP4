@@ -67,12 +67,17 @@ public class ThrowableObject{
 
         body.setUserData(this.sprite);
 
-        body.setLinearVelocity(10,10);
-
     }
 
     public void currPoss(){
         System.out.println(body.getPosition());
+    }
+
+    public void throwToPoint(int x, int y){
+        int velocityX = (int)(speed * x * 10000);
+        int velocityY = (int)(speed * y * 10000);
+
+        body.setLinearVelocity(velocityX,velocityY);
     }
 
     public void throwToPoint(final double x, final double y) {
@@ -120,6 +125,16 @@ public class ThrowableObject{
         }*/
     }
 
+    public void onCollison(){
+        if (hasCollided() == false){
+            if (damage == 1){
+                setCollided(true);
+            } else{
+                damage -= 1;
+            }
+        }
+    }
+
     public String getName(){
         return name;
     }
@@ -150,13 +165,13 @@ public class ThrowableObject{
     public void setY(double y){
         this.y = (int)y;
     }
-
-    public int getX(){
-        return x;
+    */
+    public float getX(){
+        return this.body.getPosition().x;
     }
-    public int getY(){
-        return y;
-    }*/
+    public float getY(){
+        return this.body.getPosition().y;
+    }
     /*
     public void setWidth(double width){
         this.width = width;
