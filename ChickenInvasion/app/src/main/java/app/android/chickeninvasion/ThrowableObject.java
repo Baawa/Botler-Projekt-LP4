@@ -4,6 +4,8 @@ import android.media.Image;
 import android.util.Log;
 import android.view.MotionEvent;
 
+import app.android.chickeninvasion.helpers.Square;
+
 /**
  * Created by Albin on 2016-03-30.
  */
@@ -11,7 +13,9 @@ public class ThrowableObject {
     private String name;
     private double speed = 1; //Speed 1 -> Normal speed, 2 -> Double Normal speed
     private int damage;
-    private Image image;
+    //private Image image;
+    private int drawableID;
+    public Square canvas;
     private Boolean hasCollided = false;
 
     private double x;
@@ -24,6 +28,8 @@ public class ThrowableObject {
     public ThrowableObject(int x, int y, int screenWidth, int screenHeight){
         this.x = x;
         this.y = y;
+
+        canvas = new Square(0);
 
         this.screenWidth = screenWidth;
         this.screenHeight = screenHeight;
@@ -50,12 +56,12 @@ public class ThrowableObject {
                     setWidth(getWidth() * scale);
                     setHeight(getHeight() * scale);
 
-                    /*
+
                     System.out.println("TIME:" + time);
                     System.out.println("X:" + getX());
                     System.out.println("Y:" + getY());
                     System.out.println("_________________");
-                    */
+
                     try{
                         sleep(sleepTime,0);
                     } catch (InterruptedException e){
@@ -95,8 +101,12 @@ public class ThrowableObject {
         return damage;
     }
 
-    public Image getImage(){
+    /*public Image getImage(){
         return image;
+    }*/
+
+    public int getDrawableID(){
+        return this.drawableID;
     }
 
     public void setCollided(Boolean collided){
