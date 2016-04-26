@@ -67,7 +67,7 @@ public class ThrowableObject{
 
         body.setUserData(this.sprite);
 
-        body.setLinearVelocity(0,10);
+        body.setLinearVelocity(10,10);
 
     }
 
