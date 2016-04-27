@@ -125,51 +125,6 @@ public class ThrowableObject{
         }
     }
 
-    public void throwToPoint(final double x, final double y) {
-        /*Thread throwThread = new Thread() {
-            private int time = 0;
-            private double scale = 1.0;
-            /*private double angle = Math.atan(y / x);
-            private double gravity = 10.0;
-            private double totalLength = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
-            private double initialVelocity = 200.0 * getSpeed();
-            private double VelocityX = initialVelocity * (x / totalLength);
-            private double VelocityY = initialVelocity * (y / totalLength);
-            private int sleepTime = 10; //millis
-
-            public void run() {
-                while (true) {
-                    time += sleepTime;
-
-                    setPosition((int) VelocityX * time / 1000, (int) VelocityY * time / 1000);
-
-                    scale = (getScreenHeight() - getY()) / getScreenHeight();
-                    setWidth((float) ((float)getWidth() * scale));
-                    setHeight((float) ((float)getHeight() * scale));
-
-                    System.out.println("TIME:" + time);
-                    System.out.println("X:" + getX());
-                    System.out.println("Y:" + getY());
-                    System.out.println("_________________");
-
-                    try {
-                        sleep(sleepTime, 0);
-                    } catch (InterruptedException e) {
-                        //Log.e("","interrupted");
-                    }
-                    if (hasCollided() || getX() > getScreenWidth() || getY() > getScreenHeight())
-                        break;
-                }
-
-            }
-        };
-        throwThread.run();
-        /*try {
-            throwThread.join();
-        } catch (InterruptedException e) {
-        }*/
-    }
-
     public void onCollison(){
         if (hasCollided() == false){
             if (damage == 1){
