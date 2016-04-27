@@ -3,6 +3,7 @@ package com.chicken.invasion;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
@@ -11,6 +12,9 @@ import com.badlogic.gdx.physics.box2d.CircleShape;
 import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.World;
+import com.badlogic.gdx.utils.Array;
+
+import java.util.ArrayList;
 
 /**
  * Created by Albin on 2016-04-26.
@@ -22,8 +26,12 @@ public class ThrowableObject{
     private double speed = 1;
     private int damage;
     private Boolean collided = false;
+    private Boolean thrown = false;
+    private int rotation = 0;
 
     private Body body;
+    private World world;
+    private java.util.ArrayList<ThrowableObject> parentArray;
 
     /*
     private double x;
@@ -33,7 +41,7 @@ public class ThrowableObject{
     private int screenWidth;
     private int screenHeight;
 
-    public ThrowableObject(int x, int y, int screenWidth, int screenHeight, String name, Texture image, double speed, int damage, World world) {
+    public ThrowableObject(int x, int y, int screenWidth, int screenHeight, String name, Texture image, double speed, int damage, World world, ArrayList<ThrowableObject> parentArray) {
         //this.x = x;
         //this.y = y;
         this.screenWidth = screenWidth;
@@ -49,6 +57,8 @@ public class ThrowableObject{
         BodyDef bodyDef = new BodyDef();
         bodyDef.type = BodyDef.BodyType.DynamicBody;
         bodyDef.position.set(x,y);
+
+        this.world = world;
 
         body = world.createBody(bodyDef);
 
@@ -67,6 +77,11 @@ public class ThrowableObject{
 
         body.setUserData(this.sprite);
 
+        this.parentArray = parentArray;
+        this.parentArray.add(this);
+
+        this.rotation = 2;
+
     }
 
     public void currPoss(){
@@ -74,10 +89,40 @@ public class ThrowableObject{
     }
 
     public void throwToPoint(int x, int y){
-        int velocityX = (int)(speed * x * 10000);
-        int velocityY = (int)(speed * y * 10000);
+        if (!thrown){
+            int velocityX = (int)(speed * x * 300000);
+            int velocityY = (int)(speed * y * 300000);
 
-        body.setLinearVelocity(velocityX,velocityY);
+            body.applyForceToCenter(velocityX,velocityY,true);
+            //body.setLinearVelocity(velocityX,velocityY);
+
+            thrown = true;
+        }
+    }
+
+    public void updateGraphics(SpriteBatch batch){
+        this.sprite.setPosition(this.body.getPosition().x, this.body.getPosition().y);
+
+        if (thrown) {
+            //this.sprite.setRotation(this.sprite.getRotation() + 1);
+            this.sprite.rotate(this.rotation);
+            this.sprite.setOrigin(this.sprite.getWidth()/2, this.sprite.getHeight()/2);
+
+            int height = Gdx.graphics.getHeight();
+
+            float scale = (float) (1 / (0.1 * (this.sprite.getY() / (height * 10)) + 1));
+            this.sprite.setSize(this.sprite.getWidth() * scale, this.sprite.getHeight() * scale);
+        }
+
+        this.sprite.draw(batch);
+
+        if(this.body.getPosition().y > Gdx.graphics.getHeight()){
+            this.parentArray.remove(this);
+            thrown = false;
+            this.world.destroyBody(this.body);
+            sprite = null;
+
+        }
     }
 
     public void throwToPoint(final double x, final double y) {

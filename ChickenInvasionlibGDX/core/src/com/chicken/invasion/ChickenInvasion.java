@@ -9,11 +9,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-<<<<<<< HEAD
 import com.badlogic.gdx.input.GestureDetector;
-=======
-import com.badlogic.gdx.math.MathUtils;
->>>>>>> origin/master
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.Body;
@@ -22,11 +18,14 @@ import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.utils.Array;
 
+import java.util.ArrayList;
+
 public class ChickenInvasion extends ApplicationAdapter implements GestureDetector.GestureListener{
 	SpriteBatch batch;
 	Texture img;
 	ThrowableObject pan;
 	World world;
+	ArrayList<ThrowableObject> throwables = new ArrayList<ThrowableObject>();
 	
 	@Override
 	public void create () {
@@ -35,7 +34,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
 		this.world = new World(new Vector2(0, 0), true);
 
-		pan = new ThrowableObject(0,0,300,300,"Pan",new Texture("pan100x100.png"),20000000.0,1, this.world);
+		pan = new ThrowableObject(0,0,300,300,"Pan",new Texture("pan300x300.png"),20000000.0,1, this.world, this.throwables);
 
 		Gdx.input.setInputProcessor(new GestureDetector(this));
 	}
@@ -46,20 +45,11 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
 		batch.begin();
-		//pan.sprite.draw(batch);
-		//batch.draw(pan.getImage(),pan.x,pan.y);
-		Array<Body> bodies = new Array<Body>();
-		// Now fill the array with all bodies
-		world.getBodies(bodies);
 
-		for (Body b : bodies) {
-			Sprite s = (Sprite) b.getUserData();
-
-			if (s != null){
-				s.setPosition(b.getPosition().x,b.getPosition().y);
-				s.draw(batch);
-			}
+		for (ThrowableObject t : throwables){
+			t.updateGraphics(batch);
 		}
+
 		batch.end();
 
 		world.step(1 / 400f, 6, 2);
@@ -88,10 +78,12 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 	@Override
 	public boolean pan(float x, float y, float deltaX, float deltaY) {
 
-		if ((x >= pan.getX() || x <= pan.getX()+100) && (y >= pan.getY() || y <= pan.getY()+100)){
+		if ((x >= pan.getX() || x <= pan.getX()+100) && (y >= pan.getY() || y <= pan.getY()+100) && -deltaY > 0){
 			int throwX = (int)deltaX * 1000000000;
 			int throwY = (int)-deltaY * 1000000000;
-			pan.throwToPoint(throwX,throwY);
+			if (throwY > 0){
+				pan.throwToPoint(throwX,throwY);
+			}
 
 		}
 		return true;
