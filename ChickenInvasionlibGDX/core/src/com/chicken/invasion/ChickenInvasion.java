@@ -37,7 +37,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
 		this.world = new World(new Vector2(0, 0), true);
 
-		pan = new ThrowableObject(0,0,300,300,"Pan",new Texture("pan300x300.png"),20000000.0,1, this.world, this.throwables);
+		pan = new ThrowableObject(Gdx.graphics.getWidth()/2-150,0,300,300,"Pan",new Texture("bat300x300.png"),20000000.0,1, this.world, this.throwables);
 
 		Gdx.input.setInputProcessor(new GestureDetector(this));
 	}
