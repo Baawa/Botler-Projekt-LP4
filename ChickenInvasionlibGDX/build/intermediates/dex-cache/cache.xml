@@ -2,11 +2,19 @@
 <items version="2" >
 
     <item
+<<<<<<< HEAD
+        jar="/Users/pedramshirmohammad/Documents/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/cardview-v7/22.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="11842de6a309c447b3a3d60d73ad637a87c58994">
+        <dex dex="/Users/pedramshirmohammad/Documents/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/pre-dexed/debug/com.android.support-cardview-v7-22.0.0_cf50edd4befcb00fb8ce7e694d933f5f57ae6dfa.jar" />
+=======
         jar="/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/core/build/libs/core-1.0.jar"
         jumboMode="false"
         revision="23.0.3"
         sha1="b20065f937d97c384558d8ecdd700f438c184430">
         <dex dex="/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/pre-dexed/debug/core-1.0_3b31a1ad8472149b9f537b656b2b41b02940a96a.jar" />
+>>>>>>> origin/master
     </item>
 
 </items>
