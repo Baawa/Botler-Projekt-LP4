@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 public class ChickenInvasion extends ApplicationAdapter implements GestureDetector.GestureListener{
 	SpriteBatch batch;
-	Texture img;
+	Sprite backgroundimg;
 	ThrowableObject pan;
 	World world;
 	ArrayList<ThrowableObject> throwables = new ArrayList<ThrowableObject>();
@@ -30,7 +30,10 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		img = new Texture("badlogic.jpg");
+		Texture backgroundtexture = new Texture("desertbackground500x900.png");
+		backgroundimg = new Sprite(backgroundtexture);
+		backgroundimg.setPosition(0,0);
+		backgroundimg.setSize(Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
 
 		this.world = new World(new Vector2(0, 0), true);
 
@@ -45,6 +48,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
 		batch.begin();
+		backgroundimg.draw(batch);
 
 		for (ThrowableObject t : throwables){
 			t.updateGraphics(batch);
