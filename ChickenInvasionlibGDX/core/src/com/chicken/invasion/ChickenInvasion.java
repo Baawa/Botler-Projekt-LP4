@@ -85,7 +85,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 		if ((x >= pan.getX() || x <= pan.getX()+100) && (y >= pan.getY() || y <= pan.getY()+100) && -deltaY > 0){
 			int throwX = (int)deltaX * 1000000000;
 			int throwY = (int)-deltaY * 1000000000;
-			if (throwY > 0){
+				if (throwY > 0){
 				pan.throwToPoint(throwX,throwY);
 			}
 
