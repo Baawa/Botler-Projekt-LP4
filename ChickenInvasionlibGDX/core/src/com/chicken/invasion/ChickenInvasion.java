@@ -26,18 +26,25 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 	ThrowableObject pan;
 	World world;
 	ArrayList<ThrowableObject> throwables = new ArrayList<ThrowableObject>();
+
+	Camera camera;
 	
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
+		camera = new OrthographicCamera(Gdx.graphics.getWidth()/100,Gdx.graphics.getHeight()/100);
+		camera.position.set(camera.viewportWidth / 2f, camera.viewportHeight / 2f, 0);
+		camera.update();
+		batch.setProjectionMatrix(camera.combined);
 		Texture backgroundtexture = new Texture("desertbackground500x900.png");
 		backgroundimg = new Sprite(backgroundtexture);
-		backgroundimg.setPosition(0,0);
-		backgroundimg.setSize(Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+		backgroundimg.setPosition(0, 0);
+		backgroundimg.setSize(Gdx.graphics.getWidth() / 100, Gdx.graphics.getHeight() / 100);
 
 		this.world = new World(new Vector2(0, 0), true);
 
-		pan = new ThrowableObject(Gdx.graphics.getWidth()/2-150,0,300,300,"Pan",new Texture("bat300x300.png"),20000000.0,1, this.world, this.throwables);
+		pan = new ThrowableObject((int)Gdx.graphics.getWidth()/200,0,100,"Pan",new Texture("bat300x300.png"),3.0,1, this.world, this.throwables);
+
 
 		Gdx.input.setInputProcessor(new GestureDetector(this));
 	}
@@ -56,7 +63,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
 		batch.end();
 
-		world.step(1 / 400f, 6, 2);
+		world.step(1 / 60f, 6, 2);
 	}
 
 	@Override
@@ -83,10 +90,11 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 	public boolean pan(float x, float y, float deltaX, float deltaY) {
 
 		if ((x >= pan.getX() || x <= pan.getX()+100) && (y >= pan.getY() || y <= pan.getY()+100) && -deltaY > 0){
-			int throwX = (int)deltaX * 1000000000;
-			int throwY = (int)-deltaY * 1000000000;
+			int throwX = (int)deltaX;
+			int throwY = (int)-deltaY;
+			float totalLength = (float)(Math.sqrt(Math.pow(throwX,2)+Math.pow(throwY,2)));
 				if (throwY > 0){
-				pan.throwToPoint(throwX,throwY);
+				pan.throwToPoint(throwX/totalLength,throwY/totalLength);
 			}
 
 		}
