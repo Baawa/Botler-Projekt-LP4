@@ -28,6 +28,9 @@ public class ThrowableObject{
     private Boolean collided = false;
     private Boolean thrown = false;
     private int rotation = 0;
+    private float scale = 1.0f;
+    private float orgWidth;
+    private float orgHeight;
 
     private Body body;
     private World world;
@@ -41,18 +44,23 @@ public class ThrowableObject{
     private int screenWidth;
     private int screenHeight;
 
-    public ThrowableObject(int x, int y, int screenWidth, int screenHeight, String name, Texture image, double speed, int damage, World world, ArrayList<ThrowableObject> parentArray) {
+    public ThrowableObject(int x, int y, float scale, String name, Texture image, double speed, int damage, World world, ArrayList<ThrowableObject> parentArray) {
         //this.x = x;
         //this.y = y;
-        this.screenWidth = screenWidth;
-        this.screenHeight = screenHeight;
+        //this.screenWidth = screenWidth;
+        //this.screenHeight = screenHeight;
 
         this.name = name;
         this.image = image;
         this.speed = speed;
         this.damage = damage;
+        this.scale = scale;
 
         this.sprite = new Sprite(image);
+        this.sprite.setSize(this.sprite.getWidth()/this.scale,this.sprite.getHeight()/this.scale);
+
+        this.orgWidth = this.sprite.getWidth();
+        this.orgHeight = this.sprite.getHeight();
 
         BodyDef bodyDef = new BodyDef();
         bodyDef.type = BodyDef.BodyType.DynamicBody;
@@ -63,7 +71,7 @@ public class ThrowableObject{
         body = world.createBody(bodyDef);
 
         CircleShape circle = new CircleShape();
-        circle.setRadius(6f);
+        circle.setRadius(this.sprite.getWidth());
 
         FixtureDef fixtureDef = new FixtureDef();
         fixtureDef.shape = circle;
@@ -88,12 +96,13 @@ public class ThrowableObject{
         System.out.println(body.getPosition());
     }
 
-    public void throwToPoint(int x, int y){
+    public void throwToPoint(float x, float y){
         if (!thrown){
-            int velocityX = (int)(speed * x * 300000);
-            int velocityY = (int)(speed * y * 300000);
+            int velocityX = (int)(speed * x * 1000);
+            int velocityY = (int)(speed * y * 1000);
 
-            body.applyForceToCenter(velocityX,velocityY,true);
+            body.applyForceToCenter(velocityX, velocityY, true);
+
             //body.setLinearVelocity(velocityX,velocityY);
 
             thrown = true;
@@ -110,18 +119,17 @@ public class ThrowableObject{
 
             int height = Gdx.graphics.getHeight();
 
-            float scale = (float) (1 / (0.1 * (this.sprite.getY() / (height * 10)) + 1));
-            this.sprite.setSize(this.sprite.getWidth() * scale, this.sprite.getHeight() * scale);
+            float scale = (float) (1 / (5 * this.scale * (this.sprite.getY() / height) + 1));
+            this.sprite.setSize(this.orgWidth * scale, this.orgHeight * scale);
         }
 
         this.sprite.draw(batch);
 
-        if(this.body.getPosition().y > Gdx.graphics.getHeight()){
+        if(this.body.getPosition().y > Gdx.graphics.getHeight() || collided){
             this.parentArray.remove(this);
             thrown = false;
             this.world.destroyBody(this.body);
             sprite = null;
-
         }
     }
 
