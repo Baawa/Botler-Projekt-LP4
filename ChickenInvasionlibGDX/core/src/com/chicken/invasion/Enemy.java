@@ -5,7 +5,6 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
-import com.badlogic.gdx.math.Vector2;
 
 import java.util.Random;
 
@@ -19,14 +18,20 @@ public class Enemy {
     private int health;
     private float speed;
     private Rectangle collideRect;
+    private boolean isCollided;
+    private Wave wave;
 
-    public Enemy(){
+    public Enemy(Wave wave){
+        this.wave = wave;
+
         sprite = new Sprite(IMAGE);
         sprite.setSize(1,1.4f);
 
         Random rand = new Random();
         float x = rand.nextFloat()*(Gdx.graphics.getWidth()/120) + 0.5f;
         sprite.setPosition(x, Gdx.graphics.getHeight() / 190);
+
+        collideRect = sprite.getBoundingRectangle();
 
         health = 10;
     }
@@ -42,7 +47,5 @@ public class Enemy {
         collideRect = sprite.getBoundingRectangle();
     }
 
-    public Rectangle getCollideRect() {
-        return collideRect;
-    }
+    public Rectangle getCollideRect() { return collideRect; }
 }

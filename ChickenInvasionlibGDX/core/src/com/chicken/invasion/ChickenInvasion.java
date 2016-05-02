@@ -13,6 +13,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.World;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class ChickenInvasion extends ApplicationAdapter implements GestureDetector.GestureListener{
 	SpriteBatch batch;
@@ -63,10 +64,19 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
 		for (ThrowableObject t : throwables){
 			t.updateGraphics(batch);
+
+            //Check collision
+            for (Iterator<Enemy> iterator = wave.getEnemies().iterator(); iterator.hasNext();) {
+                Enemy e = iterator.next();
+                if (t.getCollideRect().overlaps(e.getCollideRect())) {
+                    t.setCollided(true);
+                    iterator.remove();
+                }
+            }
 		}
 
-        for (Enemy c : wave.getEnemies()){
-            c.draw(batch);
+        for (Enemy e : wave.getEnemies()){
+            e.draw(batch);
         }
 
 		batch.end();

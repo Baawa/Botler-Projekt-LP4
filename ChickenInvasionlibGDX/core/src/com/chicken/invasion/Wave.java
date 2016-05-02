@@ -17,7 +17,7 @@ public class Wave implements Runnable{
         this.totalEnemies = totalEnemies;
 
         enemies = new ArrayList<Enemy>();
-        enemies.add(new Enemy());
+        enemies.add(new Enemy(this));
 
         thread = new Thread(this);
         thread.start();
@@ -33,10 +33,9 @@ public class Wave implements Runnable{
                 e.printStackTrace();
             }
 
-            enemies.add(new Enemy());
+            enemies.add(new Enemy(this));
             nbrOfSent++;
         }
-
     }
 
     public ArrayList<Enemy> getEnemies() {
