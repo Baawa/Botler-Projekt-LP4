@@ -26,6 +26,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 	ThrowableObject pan;
 	World world;
 	ArrayList<ThrowableObject> throwables = new ArrayList<ThrowableObject>();
+    ArrayList<Chicken> chickens;
 
 	Camera camera;
 	
@@ -43,7 +44,11 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
 		this.world = new World(new Vector2(0, 0), true);
 
-		pan = new ThrowableObject((int)Gdx.graphics.getWidth()/200,0,100,"Pan",new Texture("bat300x300.png"),3.0,1, this.world, this.throwables);
+		pan = new ThrowableObject(Gdx.graphics.getWidth()/200,0,100,"Pan",
+                new Texture("bat300x300.png"),3.0,1, this.world, this.throwables);
+
+        chickens = new ArrayList<Chicken>();
+        chickens.add(new Chicken());
 
 
 		Gdx.input.setInputProcessor(new GestureDetector(this));
@@ -60,6 +65,10 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 		for (ThrowableObject t : throwables){
 			t.updateGraphics(batch);
 		}
+
+        for (Chicken c : chickens){
+            c.draw(batch);
+        }
 
 		batch.end();
 
@@ -90,8 +99,8 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 	public boolean pan(float x, float y, float deltaX, float deltaY) {
 
 		if ((x >= pan.getX() || x <= pan.getX()+100) && (y >= pan.getY() || y <= pan.getY()+100) && -deltaY > 0){
-			int throwX = (int)deltaX;
-			int throwY = (int)-deltaY;
+			float throwX = deltaX;
+			float throwY = -deltaY;
 			float totalLength = (float)(Math.sqrt(Math.pow(throwX,2)+Math.pow(throwY,2)));
 				if (throwY > 0){
 				pan.throwToPoint(throwX/totalLength,throwY/totalLength);

@@ -134,7 +134,7 @@ public class ThrowableObject{
     }
 
     public void onCollison(){
-        if (hasCollided() == false){
+        if (!hasCollided()){
             if (damage == 1){
                 setCollided(true);
             } else{
