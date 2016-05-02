@@ -62,17 +62,21 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 		batch.begin();
 		backgroundimg.draw(batch);
 
-		for (ThrowableObject t : throwables){
-			t.updateGraphics(batch);
-
-            //Check collision
-            for (Iterator<Enemy> iterator = wave.getEnemies().iterator(); iterator.hasNext();) {
-                Enemy e = iterator.next();
+        //Check collision
+        for (Iterator<ThrowableObject> iterThrow = throwables.iterator(); iterThrow.hasNext();) {
+            ThrowableObject t = iterThrow.next();
+            for (Iterator<Enemy> iterEnemies = wave.getEnemies().iterator(); iterEnemies.hasNext(); ) {
+                Enemy e = iterEnemies.next();
                 if (t.getCollideRect().overlaps(e.getCollideRect())) {
-                    t.setCollided(true);
-                    iterator.remove();
+                    iterThrow.remove();
+                    iterEnemies.remove();
+                    break;
                 }
             }
+        }
+
+        for (ThrowableObject t : throwables){
+			t.updateGraphics(batch);
 		}
 
         for (Enemy e : wave.getEnemies()){
