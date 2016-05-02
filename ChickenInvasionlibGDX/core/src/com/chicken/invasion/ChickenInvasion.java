@@ -2,7 +2,6 @@ package com.chicken.invasion;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -11,12 +10,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.input.GestureDetector;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.math.Vector3;
-import com.badlogic.gdx.physics.box2d.Body;
-import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
-import com.badlogic.gdx.scenes.scene2d.InputListener;
-import com.badlogic.gdx.utils.Array;
 
 import java.util.ArrayList;
 
@@ -26,18 +20,22 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 	ThrowableObject pan;
 	World world;
 	ArrayList<ThrowableObject> throwables = new ArrayList<ThrowableObject>();
-    ArrayList<Chicken> chickens;
+    Wave wave;
 
 	Camera camera;
 	
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		camera = new OrthographicCamera(Gdx.graphics.getWidth()/100,Gdx.graphics.getHeight()/100);
+
+        //Camera
+        camera = new OrthographicCamera(Gdx.graphics.getWidth()/100,Gdx.graphics.getHeight()/100);
 		camera.position.set(camera.viewportWidth / 2f, camera.viewportHeight / 2f, 0);
 		camera.update();
 		batch.setProjectionMatrix(camera.combined);
-		Texture backgroundtexture = new Texture("desertbackground500x900.png");
+
+        //Background
+        Texture backgroundtexture = new Texture("desertbackground500x900.png");
 		backgroundimg = new Sprite(backgroundtexture);
 		backgroundimg.setPosition(0, 0);
 		backgroundimg.setSize(Gdx.graphics.getWidth() / 100, Gdx.graphics.getHeight() / 100);
@@ -47,17 +45,18 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 		pan = new ThrowableObject(Gdx.graphics.getWidth()/200,0,100,"Pan",
                 new Texture("bat300x300.png"),3.0,1, this.world, this.throwables);
 
-        chickens = new ArrayList<Chicken>();
-        chickens.add(new Chicken());
+        wave = new Wave("1",5);
 
 
 		Gdx.input.setInputProcessor(new GestureDetector(this));
+        Gdx.gl.glClearColor(1, 1, 1, 1);
+
 	}
 
 	@Override
 	public void render() {
-		Gdx.gl.glClearColor(1, 1, 1, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
 
 		batch.begin();
 		backgroundimg.draw(batch);
@@ -66,7 +65,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 			t.updateGraphics(batch);
 		}
 
-        for (Chicken c : chickens){
+        for (Enemy c : wave.getEnemies()){
             c.draw(batch);
         }
 

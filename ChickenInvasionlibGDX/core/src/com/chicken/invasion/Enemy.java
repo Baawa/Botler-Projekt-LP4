@@ -12,24 +12,22 @@ import java.util.Random;
 /**
  * Created by Kristoffer on 2016-05-02.
  */
-public class Chicken {
+public class Enemy {
 
+    private final static Texture IMAGE = new Texture("chicken.png");
     private Sprite sprite;
     private int health;
     private float speed;
-    private Vector2 position;
     private Rectangle collideRect;
 
-    public Chicken(){
-        sprite = new Sprite(new Texture("chicken.png"));
+    public Enemy(){
+        sprite = new Sprite(IMAGE);
         sprite.setSize(1,1.4f);
 
         Random rand = new Random();
         float x = rand.nextFloat()*(Gdx.graphics.getWidth()/120) + 0.5f;
-        sprite.setPosition(x,Gdx.graphics.getHeight()/190);
+        sprite.setPosition(x, Gdx.graphics.getHeight() / 190);
 
-        System.out.println(sprite.getScaleX());
-        System.out.println(sprite.getX() + " , " + sprite.getY());
         health = 10;
     }
 
