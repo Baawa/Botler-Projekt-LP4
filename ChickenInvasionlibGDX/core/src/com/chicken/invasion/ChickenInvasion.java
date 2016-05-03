@@ -31,6 +31,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class ChickenInvasion extends ApplicationAdapter implements GestureDetector.GestureListener{
+	Model model;
 	SpriteBatch batch;
 	Sprite backgroundimg;
 	ThrowableObject pan;
@@ -44,6 +45,8 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 	
 	@Override
 	public void create () {
+		model = new Model();
+
 		batch = new SpriteBatch();
 
         //Camera
@@ -70,8 +73,8 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 		startBtn.setX(Gdx.graphics.getWidth() / 200 - 2);
 		startBtn.setY(Gdx.graphics.getHeight() / 100 - 2);
 
-		pan = new ThrowableObject(Gdx.graphics.getWidth()/200,0,100,"Pan",
-                new Texture("bat300x300.png"),3.0,1, this.world, this.throwables);
+		/*pan = new ThrowableObject(Gdx.graphics.getWidth()/200,0,100,"Pan",
+                new Texture("bat300x300.png"),3.0,1, this.world, this.throwables);*/
 
         wave = new Wave("1",5);
 
@@ -82,40 +85,59 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
 	@Override
 	public void render() {
-		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+		if (model.getState() == Model.State.RUNNING){
+			Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
 
-		batch.begin();
-		backgroundimg.draw(batch);
+			batch.begin();
+			backgroundimg.draw(batch);
 
-        //Check collision
-        for (Iterator<ThrowableObject> iterThrow = throwables.iterator(); iterThrow.hasNext();) {
-            ThrowableObject t = iterThrow.next();
-            for (Iterator<Enemy> iterEnemies = wave.getEnemies().iterator(); iterEnemies.hasNext(); ) {
-                Enemy e = iterEnemies.next();
-                if (t.getCollideRect().overlaps(e.getCollideRect())) {
-                    iterThrow.remove();
-                    iterEnemies.remove();
-                    break;
-                }
-            }
-        }
+			//Check collision
+			for (Iterator<ThrowableObject> iterThrow = throwables.iterator(); iterThrow.hasNext();) {
+				ThrowableObject t = iterThrow.next();
+				for (Iterator<Enemy> iterEnemies = wave.getEnemies().iterator(); iterEnemies.hasNext(); ) {
+					Enemy e = iterEnemies.next();
+					if (t.getCollideRect().overlaps(e.getCollideRect())) {
+						iterThrow.remove();
+						iterEnemies.remove();
+						break;
+					}
+				}
+			}
 
-        for (ThrowableObject t : throwables){
-			t.updateGraphics(batch);
+			for (ThrowableObject t : throwables){
+				t.updateGraphics(batch);
+			}
+
+			for (Enemy e : wave.getEnemies()){
+				e.draw(batch);
+			}
+
+			batch.end();
+
+			world.step(1 / 60f, 6, 2);
+		}
+		else {
+			batch.begin();
+
+			backgroundimg.draw(batch);
+			startBtn.draw(batch);
+
+			for (Enemy e : wave.getEnemies()){
+				e.drawOnly(batch);
+			}
+
+			for (ThrowableObject t : throwables){
+				t.drawOnly(batch);
+			}
+
+			batch.end();
 		}
 
-		startBtn.draw(batch);
-        for (Enemy e : wave.getEnemies()){
-            e.draw(batch);
-        }
-
-		batch.end();
-
-		world.step(1 / 60f, 6, 2);
 	}
 
 	public void startGame(){
+		model.startGame();
 		spawnThrowable();
 	}
 

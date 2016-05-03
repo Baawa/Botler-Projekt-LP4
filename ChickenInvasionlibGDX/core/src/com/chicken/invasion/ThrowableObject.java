@@ -112,6 +112,10 @@ public class ThrowableObject{
         }
     }
 
+    public void drawOnly(SpriteBatch batch){
+        sprite.draw(batch);
+    }
+
     public void updateGraphics(SpriteBatch batch){
         this.sprite.setPosition(this.body.getPosition().x, this.body.getPosition().y);
 

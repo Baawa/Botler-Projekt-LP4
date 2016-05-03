@@ -3,7 +3,7 @@ package com.chicken.invasion;
 /**
  * Created by Albin on 2016-05-03.
  */
-public class model {
+public class Model {
     public enum State{
         PAUSED, RUNNING, STOPPED
     }
