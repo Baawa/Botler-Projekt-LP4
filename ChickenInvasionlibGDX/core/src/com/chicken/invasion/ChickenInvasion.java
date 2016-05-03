@@ -12,7 +12,6 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.input.GestureDetector;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.World;
-<<<<<<< HEAD
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Event;
 import com.badlogic.gdx.scenes.scene2d.EventListener;
@@ -27,11 +26,9 @@ import com.badlogic.gdx.utils.Array;
 
 import java.util.ArrayList;
 import java.util.concurrent.Callable;
-=======
 
 import java.util.ArrayList;
 import java.util.Iterator;
->>>>>>> origin/master
 
 public class ChickenInvasion extends ApplicationAdapter implements GestureDetector.GestureListener{
 	SpriteBatch batch;
@@ -63,9 +60,6 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
 		this.world = new World(new Vector2(0, 0), true);
 
-<<<<<<< HEAD
-		Gdx.input.setInputProcessor(new GestureDetector(this));
-
 		/*
 		ImageButton.ImageButtonStyle style = new ImageButton.ImageButtonStyle();
 		style.up = new SpriteDrawable(new Sprite(new Texture("play200x200.png")));
@@ -83,7 +77,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 		startBtn.setSize(200/100,200/100);
 		startBtn.setX(Gdx.graphics.getWidth() / 200 - 2);
 		startBtn.setY(Gdx.graphics.getHeight() / 100 - 2);
-=======
+
 		pan = new ThrowableObject(Gdx.graphics.getWidth()/200,0,100,"Pan",
                 new Texture("bat300x300.png"),3.0,1, this.world, this.throwables);
 
@@ -92,8 +86,6 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
 		Gdx.input.setInputProcessor(new GestureDetector(this));
         Gdx.gl.glClearColor(1, 1, 1, 1);
-
->>>>>>> origin/master
 	}
 
 	@Override
@@ -121,13 +113,10 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 			t.updateGraphics(batch);
 		}
 
-<<<<<<< HEAD
 		startBtn.draw(batch);
-=======
         for (Enemy e : wave.getEnemies()){
             e.draw(batch);
         }
->>>>>>> origin/master
 
 		batch.end();
 
