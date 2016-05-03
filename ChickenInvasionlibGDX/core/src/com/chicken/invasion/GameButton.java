@@ -12,7 +12,7 @@ import java.util.concurrent.Callable;
 /**
  * Created by Albin on 2016-05-02.
  */
-public class GameButton extends InputListener{
+public class GameButton{
     private Sprite sprite;
     private Callable<Void> func;
 
@@ -49,16 +49,6 @@ public class GameButton extends InputListener{
         if ((x >= this.getX() || x <= this.getX()+100) && (y >= this.getY() || y <= this.getY()+100)){
             touchFunc();
         }
-    }
-
-    @Override
-    public boolean touchDown (InputEvent event, float x, float y, int pointer, int button) {
-        return false;
-    }
-
-    @Override
-    public void touchUp (InputEvent event, float x, float y, int pointer, int button) {
-
     }
 
     public void touchFunc(){

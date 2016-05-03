@@ -60,14 +60,6 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
 		this.world = new World(new Vector2(0, 0), true);
 
-		/*
-		ImageButton.ImageButtonStyle style = new ImageButton.ImageButtonStyle();
-		style.up = new SpriteDrawable(new Sprite(new Texture("play200x200.png")));
-		style.imageUp = new SpriteDrawable(new Sprite(new Texture("play200x200.png")));
-		style.unpressedOffsetY = -20; // to "not" center the icon
-		style.unpressedOffsetX = -30; // to "not" center the icon
-		*/
-
 		startBtn = new GameButton(new Callable<Void>() {
 			public Void call() throws Exception {
 				startGame();
