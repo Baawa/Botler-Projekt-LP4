@@ -9,16 +9,27 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.input.GestureDetector;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
+import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.scenes.scene2d.Event;
+import com.badlogic.gdx.scenes.scene2d.EventListener;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
+import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
+import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
+import com.badlogic.gdx.scenes.scene2d.utils.SpriteDrawable;
 import com.badlogic.gdx.utils.Array;
 
 import java.util.ArrayList;
+import java.util.concurrent.Callable;
 
 public class ChickenInvasion extends ApplicationAdapter implements GestureDetector.GestureListener{
 	SpriteBatch batch;
@@ -26,6 +37,8 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 	ThrowableObject pan;
 	World world;
 	ArrayList<ThrowableObject> throwables = new ArrayList<ThrowableObject>();
+
+	GameButton startBtn;
 
 	Camera camera;
 	
@@ -43,10 +56,25 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
 		this.world = new World(new Vector2(0, 0), true);
 
-		pan = new ThrowableObject((int)Gdx.graphics.getWidth()/200,0,100,"Pan",new Texture("bat300x300.png"),3.0,1, this.world, this.throwables);
-
-
 		Gdx.input.setInputProcessor(new GestureDetector(this));
+
+		/*
+		ImageButton.ImageButtonStyle style = new ImageButton.ImageButtonStyle();
+		style.up = new SpriteDrawable(new Sprite(new Texture("play200x200.png")));
+		style.imageUp = new SpriteDrawable(new Sprite(new Texture("play200x200.png")));
+		style.unpressedOffsetY = -20; // to "not" center the icon
+		style.unpressedOffsetX = -30; // to "not" center the icon
+		*/
+
+		startBtn = new GameButton(new Callable<Void>() {
+			public Void call() throws Exception {
+				startGame();
+				return null;
+			}
+		}, new Texture("play200x200.png"));
+		startBtn.setSize(200/100,200/100);
+		startBtn.setX(Gdx.graphics.getWidth() / 200 - 2);
+		startBtn.setY(Gdx.graphics.getHeight() / 100 - 2);
 	}
 
 	@Override
@@ -61,9 +89,19 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 			t.updateGraphics(batch);
 		}
 
+		startBtn.draw(batch);
+
 		batch.end();
 
 		world.step(1 / 60f, 6, 2);
+	}
+
+	public void startGame(){
+		spawnThrowable();
+	}
+
+	private void spawnThrowable(){
+		pan = new ThrowableObject((int)Gdx.graphics.getWidth()/200,0,100,"Pan",new Texture("bat300x300.png"),3.0,1, this.world, this.throwables);
 	}
 
 	@Override

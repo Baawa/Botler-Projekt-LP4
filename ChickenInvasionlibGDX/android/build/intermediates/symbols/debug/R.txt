@@ -18,6 +18,7 @@ int dimen cardview_default_elevation 0x7f050001
 int dimen cardview_default_radius 0x7f050002
 int drawable ic_launcher 0x7f020000
 int drawable pan100x100 0x7f020001
+int drawable play200x200 0x7f020002
 int id textView 0x7f080002
 int id view_pager 0x7f080001
 int id weapon_view 0x7f080000
