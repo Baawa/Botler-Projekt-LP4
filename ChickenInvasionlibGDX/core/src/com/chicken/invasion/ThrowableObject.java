@@ -31,6 +31,7 @@ public class ThrowableObject{
     private float scale = 1.0f;
     private float orgWidth;
     private float orgHeight;
+    private Rectangle collideRect;
 
     private Body body;
     private World world;
@@ -90,6 +91,8 @@ public class ThrowableObject{
 
         this.rotation = 2;
 
+        collideRect = sprite.getBoundingRectangle();
+
     }
 
     public void currPoss(){
@@ -121,6 +124,8 @@ public class ThrowableObject{
 
             float scale = (float) (1 / (5 * this.scale * (this.sprite.getY() / height) + 1));
             this.sprite.setSize(this.orgWidth * scale, this.orgHeight * scale);
+
+            collideRect = sprite.getBoundingRectangle();
         }
 
         this.sprite.draw(batch);
@@ -130,11 +135,16 @@ public class ThrowableObject{
             thrown = false;
             this.world.destroyBody(this.body);
             sprite = null;
+            image.dispose();
         }
     }
 
+    public Rectangle getCollideRect() {
+        return collideRect;
+    }
+
     public void onCollison(){
-        if (hasCollided() == false){
+        if (collided){
             if (damage == 1){
                 setCollided(true);
             } else{
@@ -160,10 +170,6 @@ public class ThrowableObject{
 
     public void setCollided(Boolean collided){
         this.collided = collided;
-    }
-
-    public Boolean hasCollided(){
-        return this.collided;
     }
     /*
     public void setX(double x){
