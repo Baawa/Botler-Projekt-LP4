@@ -40,6 +40,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
     Wave wave;
 
 	GameButton startBtn;
+	GameButton pauseBtn;
 
 	Camera camera;
 	
@@ -69,9 +70,19 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 				return null;
 			}
 		}, new Texture("play200x200.png"));
-		startBtn.setSize(200/100,200/100);
-		startBtn.setX(Gdx.graphics.getWidth() / 200 - 2);
-		startBtn.setY(Gdx.graphics.getHeight() / 100 - 2);
+		startBtn.setSize(200 / 100, 200 / 100);
+		startBtn.setX(Gdx.graphics.getWidth() / 200 - 1);
+		startBtn.setY(Gdx.graphics.getHeight() / 200 - 1);
+
+		pauseBtn = new GameButton(new Callable<Void>() {
+			public Void call() throws Exception {
+				pauseGame();
+				return null;
+			}
+		}, new Texture("pause200x200.png"));
+		pauseBtn.setSize(200 / 200, 200 / 200);
+		pauseBtn.setX(Gdx.graphics.getWidth() / 100 - 1/2);
+		pauseBtn.setY(Gdx.graphics.getHeight() / 100 - 1/2);
 
 		/*pan = new ThrowableObject(Gdx.graphics.getWidth()/200,0,100,"Pan",
                 new Texture("bat300x300.png"),3.0,1, this.world, this.throwables);*/
@@ -113,6 +124,8 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 				e.draw(batch);
 			}
 
+			pauseBtn.draw(batch);
+
 			batch.end();
 
 			world.step(1 / 60f, 6, 2);
@@ -139,6 +152,10 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 	public void startGame(){
 		model.startGame();
 		spawnThrowable();
+	}
+
+	public void pauseGame(){
+		model.pauseGame();
 	}
 
 	private void spawnThrowable(){
