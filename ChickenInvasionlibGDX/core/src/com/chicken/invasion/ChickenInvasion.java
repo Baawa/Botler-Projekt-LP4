@@ -138,7 +138,8 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
 	@Override
 	public boolean tap(float x, float y, int count, int button) {
-		return false;
+		this.startBtn.clicked(x,y);
+		return true;
 	}
 
 	@Override

@@ -1,5 +1,6 @@
 package com.chicken.invasion;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -44,6 +45,12 @@ public class GameButton extends InputListener{
         return this.sprite.getY();
     }
 
+    public void clicked(float x, float y){
+        if ((x >= this.getX() || x <= this.getX()+100) && (y >= this.getY() || y <= this.getY()+100)){
+            touchFunc();
+        }
+    }
+
     @Override
     public boolean touchDown (InputEvent event, float x, float y, int pointer, int button) {
         return false;
@@ -51,9 +58,7 @@ public class GameButton extends InputListener{
 
     @Override
     public void touchUp (InputEvent event, float x, float y, int pointer, int button) {
-        if ((x >= this.getX() || x <= this.getX()+100) && (y >= this.getY() || y <= this.getY()+100)){
-            touchFunc();
-        }
+
     }
 
     public void touchFunc(){
