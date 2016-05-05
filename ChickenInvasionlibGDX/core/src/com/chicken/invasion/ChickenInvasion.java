@@ -11,6 +11,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.input.GestureDetector;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Event;
@@ -81,8 +82,8 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 			}
 		}, new Texture("pause200x200.png"));
 		pauseBtn.setSize(200 / 200, 200 / 200);
-		pauseBtn.setX(Gdx.graphics.getWidth() / 100 - 1/2);
-		pauseBtn.setY(Gdx.graphics.getHeight() / 100 - 1/2);
+		pauseBtn.setX(Gdx.graphics.getWidth() / 100 - 2);
+		pauseBtn.setY(Gdx.graphics.getHeight() / 100 - 2);
 
 		/*pan = new ThrowableObject(Gdx.graphics.getWidth()/200,0,100,"Pan",
                 new Texture("bat300x300.png"),3.0,1, this.world, this.throwables);*/
@@ -150,8 +151,10 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 	}
 
 	public void startGame(){
-		model.startGame();
-		spawnThrowable();
+		if (model.getState() == Model.State.PAUSED ||model.getState() == Model.State.STOPPED){
+			spawnThrowable();
+			model.startGame();
+		}
 	}
 
 	public void pauseGame(){
@@ -169,7 +172,11 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
 	@Override
 	public boolean tap(float x, float y, int count, int button) {
-		this.startBtn.clicked(x,y);
+		Vector3 coords=new Vector3(x,y,0);
+		Vector3 coords2= camera.unproject(coords);
+		
+		this.startBtn.clicked(coords2.x,coords2.y);
+		this.pauseBtn.clicked(coords2.x,coords2.y);
 		return true;
 	}
 
