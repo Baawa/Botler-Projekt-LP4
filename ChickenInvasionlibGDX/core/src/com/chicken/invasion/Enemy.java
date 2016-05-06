@@ -36,6 +36,10 @@ public class Enemy {
         health = 10;
     }
 
+    public void drawOnly(SpriteBatch batch){
+        sprite.draw(batch);
+    }
+
     public void draw(SpriteBatch sb){
         update(Gdx.graphics.getDeltaTime());
         sprite.draw(sb);

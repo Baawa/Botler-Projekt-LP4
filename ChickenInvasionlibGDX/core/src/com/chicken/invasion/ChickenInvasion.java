@@ -8,14 +8,31 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.input.GestureDetector;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.World;
+import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.scenes.scene2d.Event;
+import com.badlogic.gdx.scenes.scene2d.EventListener;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.InputListener;
+import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
+import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
+import com.badlogic.gdx.scenes.scene2d.utils.SpriteDrawable;
+import com.badlogic.gdx.utils.Array;
+
+import java.util.ArrayList;
+import java.util.concurrent.Callable;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 
 public class ChickenInvasion extends ApplicationAdapter implements GestureDetector.GestureListener{
+	Model model;
 	SpriteBatch batch;
 	Sprite backgroundimg;
 	ThrowableObject pan;
@@ -23,10 +40,15 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 	ArrayList<ThrowableObject> throwables = new ArrayList<ThrowableObject>();
     Wave wave;
 
+	GameButton startBtn;
+	GameButton pauseBtn;
+
 	Camera camera;
 	
 	@Override
 	public void create () {
+		model = new Model();
+
 		batch = new SpriteBatch();
 
         //Camera
@@ -43,49 +65,104 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
 		this.world = new World(new Vector2(0, 0), true);
 
-		pan = new ThrowableObject(Gdx.graphics.getWidth()/200,0,100,"Pan",
-                new Texture("bat300x300.png"),3.0,1, this.world, this.throwables);
+		startBtn = new GameButton(new Callable<Void>() {
+			public Void call() throws Exception {
+				startGame();
+				return null;
+			}
+		}, new Texture("play200x200.png"));
+		startBtn.setSize(200 / 100, 200 / 100);
+		startBtn.setX(Gdx.graphics.getWidth() / 200 - 1);
+		startBtn.setY(Gdx.graphics.getHeight() / 200 - 1);
+
+		pauseBtn = new GameButton(new Callable<Void>() {
+			public Void call() throws Exception {
+				pauseGame();
+				return null;
+			}
+		}, new Texture("pause200x200.png"));
+		pauseBtn.setSize(200 / 200, 200 / 200);
+		pauseBtn.setX(Gdx.graphics.getWidth() / 100 - 2);
+		pauseBtn.setY(Gdx.graphics.getHeight() / 100 - 2);
+
+		/*pan = new ThrowableObject(Gdx.graphics.getWidth()/200,0,100,"Pan",
+                new Texture("bat300x300.png"),3.0,1, this.world, this.throwables);*/
 
         wave = new Wave("1",5);
 
 
 		Gdx.input.setInputProcessor(new GestureDetector(this));
         Gdx.gl.glClearColor(1, 1, 1, 1);
-
 	}
 
 	@Override
 	public void render() {
-		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+		if (model.getState() == Model.State.RUNNING){
+			Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
 
-		batch.begin();
-		backgroundimg.draw(batch);
+			batch.begin();
+			backgroundimg.draw(batch);
 
-        //Check collision
-        for (Iterator<ThrowableObject> iterThrow = throwables.iterator(); iterThrow.hasNext();) {
-            ThrowableObject t = iterThrow.next();
-            for (Iterator<Enemy> iterEnemies = wave.getEnemies().iterator(); iterEnemies.hasNext(); ) {
-                Enemy e = iterEnemies.next();
-                if (t.getCollideRect().overlaps(e.getCollideRect())) {
-                    iterThrow.remove();
-                    iterEnemies.remove();
-                    break;
-                }
-            }
-        }
+			//Check collision
+			for (Iterator<ThrowableObject> iterThrow = throwables.iterator(); iterThrow.hasNext();) {
+				ThrowableObject t = iterThrow.next();
+				for (Iterator<Enemy> iterEnemies = wave.getEnemies().iterator(); iterEnemies.hasNext(); ) {
+					Enemy e = iterEnemies.next();
+					if (t.getCollideRect().overlaps(e.getCollideRect())) {
+						iterThrow.remove();
+						iterEnemies.remove();
+						break;
+					}
+				}
+			}
 
-        for (ThrowableObject t : throwables){
-			t.updateGraphics(batch);
+			for (ThrowableObject t : throwables){
+				t.updateGraphics(batch);
+			}
+
+			for (Enemy e : wave.getEnemies()){
+				e.draw(batch);
+			}
+
+			pauseBtn.draw(batch);
+
+			batch.end();
+
+			world.step(1 / 60f, 6, 2);
+		}
+		else {
+			batch.begin();
+
+			backgroundimg.draw(batch);
+			startBtn.draw(batch);
+
+			for (Enemy e : wave.getEnemies()){
+				e.drawOnly(batch);
+			}
+
+			for (ThrowableObject t : throwables){
+				t.drawOnly(batch);
+			}
+
+			batch.end();
 		}
 
-        for (Enemy e : wave.getEnemies()){
-            e.draw(batch);
-        }
+	}
 
-		batch.end();
+	public void startGame(){
+		if (model.getState() == Model.State.PAUSED ||model.getState() == Model.State.STOPPED){
+			spawnThrowable();
+			model.startGame();
+		}
+	}
 
-		world.step(1 / 60f, 6, 2);
+	public void pauseGame(){
+		model.pauseGame();
+	}
+
+	private void spawnThrowable(){
+		pan = new ThrowableObject((int)Gdx.graphics.getWidth()/200,0,100,"Pan",new Texture("bat300x300.png"),3.0,1, this.world, this.throwables);
 	}
 
 	@Override
@@ -95,7 +172,12 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
 	@Override
 	public boolean tap(float x, float y, int count, int button) {
-		return false;
+		Vector3 coords=new Vector3(x,y,0);
+		Vector3 coords2= camera.unproject(coords);
+		
+		this.startBtn.clicked(coords2.x,coords2.y);
+		this.pauseBtn.clicked(coords2.x,coords2.y);
+		return true;
 	}
 
 	@Override
