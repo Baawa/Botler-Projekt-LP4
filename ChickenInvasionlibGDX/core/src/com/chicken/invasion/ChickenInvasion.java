@@ -10,6 +10,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.input.GestureDetector;
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.World;
@@ -26,6 +27,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.SpriteDrawable;
 import com.badlogic.gdx.utils.Array;
 
 import java.util.ArrayList;
+import java.util.ListIterator;
 import java.util.concurrent.Callable;
 
 import java.util.ArrayList;
@@ -39,6 +41,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 	World world;
 	ArrayList<ThrowableObject> throwables = new ArrayList<ThrowableObject>();
     Wave wave;
+    private Rectangle bottom;
 
 	GameButton startBtn;
 	GameButton pauseBtn;
@@ -47,7 +50,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 	
 	@Override
 	public void create () {
-		model = new Model();
+		model = Model.getInstance();
 
 		batch = new SpriteBatch();
 
@@ -90,6 +93,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
         wave = new Wave("1",5);
 
+        bottom = new Rectangle(0f,0f,25f,0.1f);
 
 		Gdx.input.setInputProcessor(new GestureDetector(this));
         Gdx.gl.glClearColor(1, 1, 1, 1);
@@ -105,25 +109,32 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 			backgroundimg.draw(batch);
 
 			//Check collision
-			for (Iterator<ThrowableObject> iterThrow = throwables.iterator(); iterThrow.hasNext();) {
-				ThrowableObject t = iterThrow.next();
-				for (Iterator<Enemy> iterEnemies = wave.getEnemies().iterator(); iterEnemies.hasNext(); ) {
-					Enemy e = iterEnemies.next();
-					if (t.getCollideRect().overlaps(e.getCollideRect())) {
-						iterThrow.remove();
-						iterEnemies.remove();
-						break;
-					}
+            for (Iterator<Enemy> iterEnemies = wave.getEnemies().iterator(); iterEnemies.hasNext(); ) {
+                Enemy e = iterEnemies.next();
+			    for (Iterator<ThrowableObject> iterThrow = throwables.iterator(); iterThrow.hasNext();) {
+				    ThrowableObject t = iterThrow.next();
+                    if (t.isThrown()) {
+                        if (t.getCollideRect().overlaps(e.getCollideRect())) {
+                            iterThrow.remove();
+                            iterEnemies.remove();
+                            break;
+                        }
+                    }
 				}
+                if (e.getCollideRect().overlaps(bottom)){
+                    model.stopGame();
+                }
 			}
 
+            //Draw throwables
 			for (ThrowableObject t : throwables){
 				t.updateGraphics(batch);
 			}
 
-			for (Enemy e : wave.getEnemies()){
-				e.draw(batch);
-			}
+            ListIterator<Enemy> iter = wave.getEnemies().listIterator(wave.getEnemies().size());
+            while (iter.hasPrevious()){
+                iter.previous().draw(batch);
+            }
 
 			pauseBtn.draw(batch);
 
@@ -135,15 +146,17 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 			batch.begin();
 
 			backgroundimg.draw(batch);
-			startBtn.draw(batch);
 
-			for (Enemy e : wave.getEnemies()){
-				e.drawOnly(batch);
-			}
+            ListIterator<Enemy> iter = wave.getEnemies().listIterator(wave.getEnemies().size());
+            while (iter.hasPrevious()){
+                iter.previous().drawOnly(batch);
+            }
 
 			for (ThrowableObject t : throwables){
 				t.drawOnly(batch);
 			}
+
+            startBtn.draw(batch);
 
 			batch.end();
 		}

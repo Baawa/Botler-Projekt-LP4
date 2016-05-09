@@ -18,14 +18,11 @@ public class Enemy {
     private int health;
     private float speed;
     private Rectangle collideRect;
-    private boolean isCollided;
-    private Wave wave;
 
-    public Enemy(Wave wave){
-        this.wave = wave;
+    public Enemy(){
 
         sprite = new Sprite(IMAGE);
-        sprite.setSize(1,1.4f);
+        sprite.setSize(0.8f,1.2f);
 
         Random rand = new Random();
         float x = rand.nextFloat()*(Gdx.graphics.getWidth()/120) + 0.5f;
@@ -46,8 +43,9 @@ public class Enemy {
     }
 
     public void update(float dt){
-        sprite.setSize(sprite.getWidth()+(dt/4), sprite.getHeight()+(dt/4));
-        sprite.setY(sprite.getY() - dt);
+        sprite.setSize(sprite.getWidth()+(dt/3.5f), sprite.getHeight()+(dt/3.5f));
+        sprite.setX(sprite.getX()-dt/7);
+        sprite.setY(sprite.getY() - dt/1.2f);
         collideRect = sprite.getBoundingRectangle();
     }
 

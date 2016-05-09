@@ -215,4 +215,6 @@ public class ThrowableObject{
         return this.screenHeight;
     }
 
+    public boolean isThrown(){ return thrown; }
+
 }
