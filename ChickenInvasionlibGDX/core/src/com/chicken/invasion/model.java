@@ -6,7 +6,22 @@ import javax.swing.event.ChangeListener;
 /**
  * Created by Albin on 2016-05-03.
  */
+<<<<<<< HEAD
 public class Model{
+=======
+public class Model {
+
+    private static Model instance = null;
+
+    private Model(){}
+
+    public static Model getInstance(){
+        if (instance == null){
+            instance = new Model();
+        }
+        return instance;
+    }
+>>>>>>> origin/master
 
     public enum State{
         PAUSED, RUNNING, STOPPED

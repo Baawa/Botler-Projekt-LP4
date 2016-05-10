@@ -269,6 +269,7 @@ public class ThrowableObject{
         return this.screenHeight;
     }
 
+<<<<<<< HEAD
     public float getScale(){
         return this.scale;
     }
@@ -284,5 +285,8 @@ public class ThrowableObject{
     public Player getPlayer(){
         return this.player;
     }
+=======
+    public boolean isThrown(){ return thrown; }
+>>>>>>> origin/master
 
 }

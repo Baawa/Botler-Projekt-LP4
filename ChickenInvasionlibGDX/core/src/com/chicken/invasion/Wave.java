@@ -10,14 +10,14 @@ public class Wave implements Runnable{
     private Thread thread;
     private String level;
     private int totalEnemies;
-    private int nbrOfSent = 1;
+    private int nbrOfSent = 0;
 
     public Wave(String level,int totalEnemies){
         this.level = level;
         this.totalEnemies = totalEnemies;
 
         enemies = new ArrayList<Enemy>();
-        enemies.add(new Enemy(this));
+        new Enemy();
 
         thread = new Thread(this);
         thread.start();
@@ -33,12 +33,18 @@ public class Wave implements Runnable{
                 e.printStackTrace();
             }
 
-            enemies.add(new Enemy(this));
-            nbrOfSent++;
+            if (Model.getInstance().getState() == Model.State.RUNNING) {
+                enemies.add(new Enemy());
+                nbrOfSent++;
+            }
         }
     }
 
     public ArrayList<Enemy> getEnemies() {
         return enemies;
+    }
+
+    public String getLevel() {
+        return level;
     }
 }
