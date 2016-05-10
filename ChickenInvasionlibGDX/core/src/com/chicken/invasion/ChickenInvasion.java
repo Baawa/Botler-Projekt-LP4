@@ -81,12 +81,12 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 		startBtn.setX(Gdx.graphics.getWidth() / 200 - 1);
 		startBtn.setY(Gdx.graphics.getHeight() / 200 - 1);
 
-		pauseBtn = new GameButton(new Callable<Void>() {
-			public Void call() throws Exception {
+		pauseBtn = new GameButton((new Callable<Void>() {
+            public Void call() throws Exception {
 				pauseGame();
 				return null;
 			}
-		}, new Texture("pause200x200.png"));
+		}), new Texture("pause200x200.png"));
 		pauseBtn.setSize(200 / 200, 200 / 200);
 		pauseBtn.setX(Gdx.graphics.getWidth() / 100 - 2);
 		pauseBtn.setY(Gdx.graphics.getHeight() / 100 - 1);
@@ -113,50 +113,24 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 			backgroundimg.draw(batch);
 
 			//Check collision
-<<<<<<< HEAD
 			for (Iterator<ThrowableObject> iterThrow = player.getThrowables().iterator(); iterThrow.hasNext();) {
-				ThrowableObject t = iterThrow.next();
-				for (Iterator<Enemy> iterEnemies = wave.getEnemies().iterator(); iterEnemies.hasNext(); ) {
-					Enemy e = iterEnemies.next();
-					if (t.getCollideRect().overlaps(e.getCollideRect())) {
-						iterThrow.remove();
-						iterEnemies.remove();
-						break;
-					}
-=======
-            for (Iterator<Enemy> iterEnemies = wave.getEnemies().iterator(); iterEnemies.hasNext(); ) {
-                Enemy e = iterEnemies.next();
-			    for (Iterator<ThrowableObject> iterThrow = throwables.iterator(); iterThrow.hasNext();) {
-				    ThrowableObject t = iterThrow.next();
-                    if (t.isThrown()) {
-                        if (t.getCollideRect().overlaps(e.getCollideRect())) {
-                            iterThrow.remove();
-                            iterEnemies.remove();
-                            break;
-                        }
+                ThrowableObject t = iterThrow.next();
+                for (Iterator<Enemy> iterEnemies = wave.getEnemies().iterator(); iterEnemies.hasNext(); ) {
+                    Enemy e = iterEnemies.next();
+                    if (t.getCollideRect().overlaps(e.getCollideRect())) {
+                        iterThrow.remove();
+                        iterEnemies.remove();
+                        break;
                     }
->>>>>>> origin/master
-				}
-                if (e.getCollideRect().overlaps(bottom)){
-                    model.stopGame();
+                    if (e.getCollideRect().overlaps(bottom)) {
+                        model.stopGame();
+                    }
                 }
-			}
+            }
 
-<<<<<<< HEAD
 			for (Enemy e : wave.getEnemies()){
 				e.draw(batch);
 			}
-=======
-            //Draw throwables
-			for (ThrowableObject t : throwables){
-				t.updateGraphics(batch);
-			}
-
-            ListIterator<Enemy> iter = wave.getEnemies().listIterator(wave.getEnemies().size());
-            while (iter.hasPrevious()){
-                iter.previous().draw(batch);
-            }
->>>>>>> origin/master
 
 			player.draw(batch);
 

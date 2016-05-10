@@ -6,9 +6,6 @@ import javax.swing.event.ChangeListener;
 /**
  * Created by Albin on 2016-05-03.
  */
-<<<<<<< HEAD
-public class Model{
-=======
 public class Model {
 
     private static Model instance = null;
@@ -21,7 +18,6 @@ public class Model {
         }
         return instance;
     }
->>>>>>> origin/master
 
     public enum State{
         PAUSED, RUNNING, STOPPED
