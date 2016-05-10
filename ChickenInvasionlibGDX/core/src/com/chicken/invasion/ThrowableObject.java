@@ -16,6 +16,9 @@ import com.badlogic.gdx.utils.Array;
 
 import java.util.ArrayList;
 
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+
 /**
  * Created by Albin on 2016-04-26.
  */
@@ -33,6 +36,8 @@ public class ThrowableObject{
     private float orgHeight;
     private Rectangle collideRect;
 
+    private Player player;
+
     private Body body;
     private World world;
     private java.util.ArrayList<ThrowableObject> parentArray;
@@ -45,11 +50,59 @@ public class ThrowableObject{
     private int screenWidth;
     private int screenHeight;
 
-    public ThrowableObject(int x, int y, float scale, String name, Texture image, double speed, int damage, World world, ArrayList<ThrowableObject> parentArray) {
+
+    public ThrowableObject(ThrowableObject to){
+        this.player = to.getPlayer();
+
+        this.name = to.getName();
+        this.image = to.getImage();
+        this.speed = to.getSpeed();
+        this.damage = to.getDamage();
+        this.scale = to.getScale();
+        this.sprite = to.sprite;
+        this.sprite.setSize(this.sprite.getWidth()/this.scale,this.sprite.getHeight()/this.scale);
+
+        this.orgWidth = this.sprite.getWidth();
+        this.orgHeight = this.sprite.getHeight();
+
+        BodyDef bodyDef = new BodyDef();
+        bodyDef.type = BodyDef.BodyType.DynamicBody;
+        bodyDef.position.set(to.getX(),to.getY());
+
+        this.world = to.getWorld();
+
+        body = world.createBody(bodyDef);
+
+        CircleShape circle = new CircleShape();
+        circle.setRadius(this.sprite.getWidth());
+
+        FixtureDef fixtureDef = new FixtureDef();
+        fixtureDef.shape = circle;
+        fixtureDef.density = 0.5f;
+        fixtureDef.friction = 0.4f;
+        fixtureDef.restitution = 0.6f;
+
+        Fixture fixture = body.createFixture(fixtureDef);
+
+        circle.dispose();
+
+        body.setUserData(this.sprite);
+
+        this.parentArray = to.getParentArray();
+        this.parentArray.add(this);
+
+        this.rotation = 2;
+
+        collideRect = sprite.getBoundingRectangle();
+    }
+
+    public ThrowableObject(int x, int y, float scale, String name, Texture image, double speed, int damage, World world, ArrayList<ThrowableObject> parentArray, Player player) {
         //this.x = x;
         //this.y = y;
         //this.screenWidth = screenWidth;
         //this.screenHeight = screenHeight;
+
+        this.player = player;
 
         this.name = name;
         this.image = image;
@@ -134,8 +187,9 @@ public class ThrowableObject{
 
         this.sprite.draw(batch);
 
-        if(this.body.getPosition().y > Gdx.graphics.getHeight() || collided){
-            this.parentArray.remove(this);
+        if(-this.body.getPosition().y > Gdx.graphics.getHeight()/100 || collided){
+            player.removeTO();
+            //this.parentArray.remove(this);
             thrown = false;
             this.world.destroyBody(this.body);
             sprite = null;
@@ -213,6 +267,22 @@ public class ThrowableObject{
 
     public int getScreenHeight(){
         return this.screenHeight;
+    }
+
+    public float getScale(){
+        return this.scale;
+    }
+
+    public World getWorld(){
+        return this.world;
+    }
+
+    public ArrayList<ThrowableObject> getParentArray(){
+        return this.parentArray;
+    }
+
+    public Player getPlayer(){
+        return this.player;
     }
 
 }

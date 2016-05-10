@@ -35,9 +35,8 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 	Model model;
 	SpriteBatch batch;
 	Sprite backgroundimg;
-	ThrowableObject pan;
 	World world;
-	ArrayList<ThrowableObject> throwables = new ArrayList<ThrowableObject>();
+	Player player;
     Wave wave;
 
 	GameButton startBtn;
@@ -48,6 +47,11 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 	@Override
 	public void create () {
 		model = new Model();
+
+		this.world = new World(new Vector2(0, 0), true);
+
+		player = new Player();
+		player.setEquippedTO(new ThrowableObject((int)Gdx.graphics.getWidth()/200,0,100,"Pan",new Texture("bat300x300.png"),3.0,1, this.world, player.getThrowables(), player));
 
 		batch = new SpriteBatch();
 
@@ -63,7 +67,6 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 		backgroundimg.setPosition(0, 0);
 		backgroundimg.setSize(Gdx.graphics.getWidth() / 100, Gdx.graphics.getHeight() / 100);
 
-		this.world = new World(new Vector2(0, 0), true);
 
 		startBtn = new GameButton(new Callable<Void>() {
 			public Void call() throws Exception {
@@ -83,10 +86,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 		}, new Texture("pause200x200.png"));
 		pauseBtn.setSize(200 / 200, 200 / 200);
 		pauseBtn.setX(Gdx.graphics.getWidth() / 100 - 2);
-		pauseBtn.setY(Gdx.graphics.getHeight() / 100 - 2);
-
-		/*pan = new ThrowableObject(Gdx.graphics.getWidth()/200,0,100,"Pan",
-                new Texture("bat300x300.png"),3.0,1, this.world, this.throwables);*/
+		pauseBtn.setY(Gdx.graphics.getHeight() / 100 - 1);
 
         wave = new Wave("1",5);
 
@@ -100,12 +100,16 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 		if (model.getState() == Model.State.RUNNING){
 			Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
+			if (model.shouldSpawnObject()){
+				spawnThrowable();
+				model.setSpawnObject(false);
+			}
 
 			batch.begin();
 			backgroundimg.draw(batch);
 
 			//Check collision
-			for (Iterator<ThrowableObject> iterThrow = throwables.iterator(); iterThrow.hasNext();) {
+			for (Iterator<ThrowableObject> iterThrow = player.getThrowables().iterator(); iterThrow.hasNext();) {
 				ThrowableObject t = iterThrow.next();
 				for (Iterator<Enemy> iterEnemies = wave.getEnemies().iterator(); iterEnemies.hasNext(); ) {
 					Enemy e = iterEnemies.next();
@@ -117,13 +121,11 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 				}
 			}
 
-			for (ThrowableObject t : throwables){
-				t.updateGraphics(batch);
-			}
-
 			for (Enemy e : wave.getEnemies()){
 				e.draw(batch);
 			}
+
+			player.draw(batch);
 
 			pauseBtn.draw(batch);
 
@@ -141,9 +143,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 				e.drawOnly(batch);
 			}
 
-			for (ThrowableObject t : throwables){
-				t.drawOnly(batch);
-			}
+			player.drawOnly(batch);
 
 			batch.end();
 		}
@@ -162,7 +162,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 	}
 
 	private void spawnThrowable(){
-		pan = new ThrowableObject((int)Gdx.graphics.getWidth()/200,0,100,"Pan",new Texture("bat300x300.png"),3.0,1, this.world, this.throwables);
+		player.addThrowables(5);
 	}
 
 	@Override
@@ -174,7 +174,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 	public boolean tap(float x, float y, int count, int button) {
 		Vector3 coords=new Vector3(x,y,0);
 		Vector3 coords2= camera.unproject(coords);
-		
+
 		this.startBtn.clicked(coords2.x,coords2.y);
 		this.pauseBtn.clicked(coords2.x,coords2.y);
 		return true;
@@ -193,12 +193,12 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 	@Override
 	public boolean pan(float x, float y, float deltaX, float deltaY) {
 
-		if ((x >= pan.getX() || x <= pan.getX()+100) && (y >= pan.getY() || y <= pan.getY()+100) && -deltaY > 0){
+		if ((x >= player.getCurrentTO().getX() || x <= player.getCurrentTO().getX()+100) && (y >= player.getCurrentTO().getY() || y <= player.getCurrentTO().getY()+100) && -deltaY > 0){
 			float throwX = deltaX;
 			float throwY = -deltaY;
 			float totalLength = (float)(Math.sqrt(Math.pow(throwX,2)+Math.pow(throwY,2)));
 				if (throwY > 0){
-				pan.throwToPoint(throwX/totalLength,throwY/totalLength);
+					player.getCurrentTO().throwToPoint(throwX/totalLength,throwY/totalLength);
 			}
 
 		}
