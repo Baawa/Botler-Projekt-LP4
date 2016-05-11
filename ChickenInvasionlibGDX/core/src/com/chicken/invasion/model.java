@@ -8,6 +8,7 @@ import javax.swing.event.ChangeListener;
  */
 public class Model {
 
+    //Lol
     private static Model instance = null;
 
     private Model(){}
