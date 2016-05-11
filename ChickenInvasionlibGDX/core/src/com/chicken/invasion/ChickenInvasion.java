@@ -36,7 +36,7 @@ import java.util.Iterator;
 public class ChickenInvasion extends ApplicationAdapter implements GestureDetector.GestureListener{
 	Model model;
 	SpriteBatch batch;
-	Sprite backgroundimg;
+	Sprite backgroundimg, gameOver;
 	World world;
 	Player player;
     Wave wave;
@@ -70,30 +70,16 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 		backgroundimg.setPosition(0, 0);
 		backgroundimg.setSize(Gdx.graphics.getWidth() / 100, Gdx.graphics.getHeight() / 100);
 
-
-		startBtn = new GameButton(new Callable<Void>() {
-			public Void call() throws Exception {
-				startGame();
-				return null;
-			}
-		}, new Texture("play200x200.png"));
-		startBtn.setSize(200 / 100, 200 / 100);
-		startBtn.setX(Gdx.graphics.getWidth() / 200 - 1);
-		startBtn.setY(Gdx.graphics.getHeight() / 200 - 1);
-
-		pauseBtn = new GameButton((new Callable<Void>() {
-            public Void call() throws Exception {
-				pauseGame();
-				return null;
-			}
-		}), new Texture("pause200x200.png"));
-		pauseBtn.setSize(200 / 200, 200 / 200);
-		pauseBtn.setX(Gdx.graphics.getWidth() / 100 - 2);
-		pauseBtn.setY(Gdx.graphics.getHeight() / 100 - 1);
+        initButtons();
 
         wave = new Wave("1",5);
 
         bottom = new Rectangle(0f,0f,25f,0.1f);
+
+        gameOver = new Sprite(new Texture("gameover.png"));
+        gameOver.setSize(1,1);
+        gameOver.setX(Gdx.graphics.getWidth() / 200 - 1);
+        gameOver.setY(Gdx.graphics.getWidth() / 200 - 2);
 
 		Gdx.input.setInputProcessor(new GestureDetector(this));
         Gdx.gl.glClearColor(1, 1, 1, 1);
@@ -101,62 +87,58 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
 	@Override
 	public void render() {
-		if (model.getState() == Model.State.RUNNING){
-			Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+        switch (model.getState()) {
+            case RUNNING:
+                Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
-			if (model.shouldSpawnObject()){
-				spawnThrowable();
-				model.setSpawnObject(false);
-			}
-
-			batch.begin();
-			backgroundimg.draw(batch);
-
-			//Check collision
-			for (Iterator<ThrowableObject> iterThrow = player.getThrowables().iterator(); iterThrow.hasNext();) {
-                ThrowableObject t = iterThrow.next();
-                for (Iterator<Enemy> iterEnemies = wave.getEnemies().iterator(); iterEnemies.hasNext(); ) {
-                    Enemy e = iterEnemies.next();
-                    if (t.getCollideRect().overlaps(e.getCollideRect())) {
-                        iterThrow.remove();
-                        iterEnemies.remove();
-                        break;
-                    }
-                    if (e.getCollideRect().overlaps(bottom)) {
-                        model.stopGame();
-                    }
+                if (model.shouldSpawnObject()) {
+                    spawnThrowable();
+                    model.setSpawnObject(false);
                 }
-            }
 
-			for (Enemy e : wave.getEnemies()){
-				e.draw(batch);
-			}
+                batch.begin();
 
-			player.draw(batch);
+                backgroundimg.draw(batch);
+                checkCollision();
+                drawEnemies();
+                player.draw(batch);
+                pauseBtn.draw(batch);
 
-			pauseBtn.draw(batch);
+                batch.end();
 
-			batch.end();
+                world.step(1 / 60f, 6, 2);
+                break;
 
-			world.step(1 / 60f, 6, 2);
-		}
-		else {
-			batch.begin();
+            case PAUSED:
+            case STOPPED:
+                batch.begin();
 
-			backgroundimg.draw(batch);
+                backgroundimg.draw(batch);
+                drawEnemies();
+                player.drawOnly(batch);
+                startBtn.draw(batch);
 
-            ListIterator<Enemy> iter = wave.getEnemies().listIterator(wave.getEnemies().size());
-            while (iter.hasPrevious()){
-                iter.previous().drawOnly(batch);
-            }
+                batch.end();
+                break;
 
-			player.drawOnly(batch);
+            case GAMEOVER:
+                batch.begin();
 
-            startBtn.draw(batch);
+                backgroundimg.draw(batch);
+                drawEnemies();
+                player.drawOnly(batch);
+                startBtn.draw(batch);
+                gameOver.draw(batch);
 
-			batch.end();
-		}
+                batch.end();
 
+                break;
+
+            default:
+                System.out.print("Nu blev det galet");
+
+                break;
+        }
 	}
 
 	public void startGame(){
@@ -170,9 +152,63 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 		model.pauseGame();
 	}
 
+    private void initButtons() {
+        startBtn = new GameButton(new Callable<Void>() {
+            public Void call() throws Exception {
+                startGame();
+                return null;
+            }
+        }, new Texture("play200x200.png"));
+        startBtn.setSize(200 / 100, 200 / 100);
+        startBtn.setX(Gdx.graphics.getWidth() / 200 - 1);
+        startBtn.setY(Gdx.graphics.getHeight() / 200 - 1);
+
+        pauseBtn = new GameButton((new Callable<Void>() {
+            public Void call() throws Exception {
+                pauseGame();
+                return null;
+            }
+        }), new Texture("pause200x200.png"));
+        pauseBtn.setSize(200 / 200, 200 / 200);
+        pauseBtn.setX(Gdx.graphics.getWidth() / 100 - 2);
+        pauseBtn.setY(Gdx.graphics.getHeight() / 100 - 1);
+    }
+
 	private void spawnThrowable(){
 		player.addThrowables(5);
 	}
+
+    private void checkCollision(){
+        for (Iterator<ThrowableObject> iterThrow = player.getThrowables().iterator(); iterThrow.hasNext();) {
+            ThrowableObject t = iterThrow.next();
+            for (Iterator<Enemy> iterEnemies = wave.getEnemies().iterator(); iterEnemies.hasNext(); ) {
+                Enemy e = iterEnemies.next();
+                if (t.getCollideRect().overlaps(e.getCollideRect())) {
+                    iterThrow.remove();
+                    iterEnemies.remove();
+                    break;
+                }
+                //Check if player lost
+                if (e.getCollideRect().overlaps(bottom)) {
+                    model.gameOver();
+                }
+            }
+        }
+    }
+
+    public void drawEnemies(){
+        ListIterator<Enemy> iter = wave.getEnemies().listIterator(wave.getEnemies().size());
+        while (iter.hasPrevious()){
+            Enemy e = iter.previous();
+
+            //update if not paused
+            if (model.getState() == Model.State.RUNNING) {
+                e.update(Gdx.graphics.getDeltaTime());
+            }
+            //draw
+            e.getSprite().draw(batch);
+        }
+    }
 
 	@Override
 	public boolean touchDown(float x, float y, int pointer, int button) {

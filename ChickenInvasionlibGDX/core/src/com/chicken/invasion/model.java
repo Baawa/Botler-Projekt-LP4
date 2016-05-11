@@ -20,7 +20,7 @@ public class Model {
     }
 
     public enum State{
-        PAUSED, RUNNING, STOPPED
+        PAUSED, RUNNING, STOPPED, GAMEOVER
     }
 
     private State state = State.STOPPED;
@@ -57,6 +57,8 @@ public class Model {
     public void stopGame(){
         this.state = State.STOPPED;
     }
+
+    public void gameOver() { this.state = State.GAMEOVER; }
 
     public void setSpawnObject(Boolean b){
         this.spawnObject = b;

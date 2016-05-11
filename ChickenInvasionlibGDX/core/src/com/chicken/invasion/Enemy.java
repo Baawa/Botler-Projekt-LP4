@@ -33,15 +33,6 @@ public class Enemy {
         health = 10;
     }
 
-    public void drawOnly(SpriteBatch batch){
-        sprite.draw(batch);
-    }
-
-    public void draw(SpriteBatch sb){
-        update(Gdx.graphics.getDeltaTime());
-        sprite.draw(sb);
-    }
-
     public void update(float dt){
         sprite.setSize(sprite.getWidth()+(dt/3.5f), sprite.getHeight()+(dt/3.5f));
         sprite.setX(sprite.getX()-dt/7);
@@ -50,4 +41,6 @@ public class Enemy {
     }
 
     public Rectangle getCollideRect() { return collideRect; }
+
+    public Sprite getSprite() { return sprite; }
 }
