@@ -200,7 +200,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
                     System.out.println("next wave");
                     model.nextWave();
                     wave = new Wave(wave.getLevel()+1, model.getNumberOfEnemies());
-                    
+
                 }
                 break;
             }
