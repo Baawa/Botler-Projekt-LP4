@@ -13,7 +13,7 @@ import java.util.Random;
  */
 public class Enemy {
 
-    private final static Texture IMAGE = new Texture("elchico.png");
+    private final static Texture IMAGE = new Texture("chicoloco.gif");
     private Sprite sprite;
     private int health;
     private float speed;
