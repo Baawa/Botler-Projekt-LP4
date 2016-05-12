@@ -77,9 +77,9 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         bottom = new Rectangle(0f,0f,25f,0.1f);
 
         gameOver = new Sprite(new Texture("gameover.png"));
-        gameOver.setSize(1,1);
-        gameOver.setX(Gdx.graphics.getWidth() / 200 - 1);
-        gameOver.setY(Gdx.graphics.getWidth() / 200 - 2);
+        gameOver.setSize(8,8);
+        gameOver.setX(Gdx.graphics.getWidth() / 200 - 4);
+        gameOver.setY(Gdx.graphics.getWidth() / 200 + 7);
 
 		Gdx.input.setInputProcessor(new GestureDetector(this));
         Gdx.gl.glClearColor(1, 1, 1, 1);
@@ -179,10 +179,10 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 	}
 
     private void checkCollision(){
-        for (Iterator<ThrowableObject> iterThrow = player.getThrowables().iterator(); iterThrow.hasNext();) {
-            ThrowableObject t = iterThrow.next();
-            for (Iterator<Enemy> iterEnemies = wave.getEnemies().iterator(); iterEnemies.hasNext(); ) {
-                Enemy e = iterEnemies.next();
+        for (Iterator<Enemy> iterEnemies = wave.getEnemies().iterator(); iterEnemies.hasNext(); ) {
+            Enemy e = iterEnemies.next();
+            for (Iterator<ThrowableObject> iterThrow = player.getThrowables().iterator(); iterThrow.hasNext(); ) {
+                ThrowableObject t = iterThrow.next();
                 if (t.getCollideRect().overlaps(e.getCollideRect())) {
                     iterThrow.remove();
                     iterEnemies.remove();
