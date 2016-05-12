@@ -12,6 +12,7 @@ import com.badlogic.gdx.physics.box2d.CircleShape;
 import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.World;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.utils.Array;
 
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ import javax.swing.event.ChangeListener;
  */
 public class ThrowableObject{
     private Texture image;
-    public Sprite sprite;
+    private Sprite sprite;
     private String name;
     private double speed = 1;
     private int damage;
@@ -40,7 +41,6 @@ public class ThrowableObject{
 
     private Body body;
     private World world;
-    private java.util.ArrayList<ThrowableObject> parentArray;
 
     /*
     private double x;
@@ -55,26 +55,28 @@ public class ThrowableObject{
         this.player = to.getPlayer();
 
         this.name = to.getName();
-        this.image = to.getImage();
         this.speed = to.getSpeed();
         this.damage = to.getDamage();
         this.scale = to.getScale();
-        this.sprite = to.sprite;
-        this.sprite.setSize(this.sprite.getWidth()/this.scale,this.sprite.getHeight()/this.scale);
+        this.sprite = to.copySprite();
+        this.sprite.setSize(to.getOriginalWidth(), to.getOriginalHeight());
+        this.image = this.sprite.getTexture();
 
-        this.orgWidth = this.sprite.getWidth();
-        this.orgHeight = this.sprite.getHeight();
+        this.orgWidth = to.getOriginalWidth();
+        this.orgHeight = to.getOriginalHeight();
+
+        this.sprite.setRotation(0);
 
         BodyDef bodyDef = new BodyDef();
         bodyDef.type = BodyDef.BodyType.DynamicBody;
-        bodyDef.position.set(to.getX(),to.getY());
+        bodyDef.position.set(Gdx.graphics.getWidth()/200,0);
 
         this.world = to.getWorld();
 
         body = world.createBody(bodyDef);
 
         CircleShape circle = new CircleShape();
-        circle.setRadius(this.sprite.getWidth());
+        circle.setRadius(this.sprite.getWidth()/2);
 
         FixtureDef fixtureDef = new FixtureDef();
         fixtureDef.shape = circle;
@@ -88,15 +90,14 @@ public class ThrowableObject{
 
         body.setUserData(this.sprite);
 
-        this.parentArray = to.getParentArray();
-        this.parentArray.add(this);
-
         this.rotation = 2;
 
-        collideRect = sprite.getBoundingRectangle();
+        this.sprite.setPosition(this.body.getPosition().x, this.body.getPosition().y);
+
+        collideRect = this.sprite.getBoundingRectangle();
     }
 
-    public ThrowableObject(int x, int y, float scale, String name, Texture image, double speed, int damage, World world, ArrayList<ThrowableObject> parentArray, Player player) {
+    public ThrowableObject(int x, int y, float scale, String name, Texture image, double speed, int damage, World world, Player player) {
         //this.x = x;
         //this.y = y;
         //this.screenWidth = screenWidth;
@@ -138,9 +139,6 @@ public class ThrowableObject{
         circle.dispose();
 
         body.setUserData(this.sprite);
-
-        this.parentArray = parentArray;
-        this.parentArray.add(this);
 
         this.rotation = 2;
 
@@ -188,10 +186,10 @@ public class ThrowableObject{
         this.sprite.draw(batch);
 
         if(-this.body.getPosition().y > Gdx.graphics.getHeight()/100 || collided){
-            player.removeTO();
             //this.parentArray.remove(this);
             thrown = false;
             this.world.destroyBody(this.body);
+            player.removeTO();
             sprite = null;
             image.dispose();
         }
@@ -261,12 +259,13 @@ public class ThrowableObject{
         return this.height;
     }
 */
-    public int getScreenWidth(){
-        return this.screenWidth;
+
+    public float getOriginalWidth(){
+        return this.orgWidth;
     }
 
-    public int getScreenHeight(){
-        return this.screenHeight;
+    public float getOriginalHeight(){
+        return this.orgHeight;
     }
 
     public float getScale(){
@@ -277,13 +276,14 @@ public class ThrowableObject{
         return this.world;
     }
 
-    public ArrayList<ThrowableObject> getParentArray(){
-        return this.parentArray;
-    }
 
     public Player getPlayer(){
         return this.player;
     }
     public boolean isThrown(){ return thrown; }
+
+    public Sprite copySprite(){
+        return new Sprite(this.sprite);
+    }
 
 }

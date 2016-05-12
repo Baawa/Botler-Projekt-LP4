@@ -8,7 +8,6 @@ import javax.swing.event.ChangeListener;
  */
 public class Model {
 
-    //Lol
     private static Model instance = null;
 
     private Model(){}
@@ -34,12 +33,12 @@ public class Model {
     }
 
     public int getNumberOfThrowables(){
-        int tmp = (currentWave/2 * 4) + 1;
+        int tmp = (currentWave * 2) + 1;
         return tmp;
     }
 
     public int getNumberOfEnemies(){
-        int tmp = currentWave/2 * 4;
+        int tmp = currentWave * 2;
         return tmp;
     }
 
