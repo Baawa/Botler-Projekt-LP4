@@ -77,9 +77,9 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         bottom = new Rectangle(0f,0f,25f,0.1f);
 
         gameOver = new Sprite(new Texture("gameover.png"));
-        gameOver.setSize(8,8);
+        gameOver.setSize(400/50,237f/50);
         gameOver.setX(Gdx.graphics.getWidth() / 200 - 4);
-        gameOver.setY(Gdx.graphics.getWidth() / 200 + 7);
+        gameOver.setY(Gdx.graphics.getWidth() / 200 + 4f);
 
 		Gdx.input.setInputProcessor(new GestureDetector(this));
         Gdx.gl.glClearColor(1, 1, 1, 1);

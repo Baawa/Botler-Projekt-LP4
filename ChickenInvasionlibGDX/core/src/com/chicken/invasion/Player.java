@@ -53,14 +53,11 @@ public class Player {
 
     public void removeTO(){
 
-        System.out.println(throwables);
         if (throwables.size() > 0){
             this.throwables.remove(0);
-            System.out.println(throwables);
             throwablesAmount -= 1;
             if (throwablesAmount > 0){
                 ThrowableObject to = new ThrowableObject(this.equippedTO);
-                System.out.println(throwables);
                 throwables.add(0, to);
                 System.out.println("TO removed. new Position: " + this.throwables.get(0).getX() + " , " + this.throwables.get(0).getY());
             }
