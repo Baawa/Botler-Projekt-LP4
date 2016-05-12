@@ -13,7 +13,7 @@ import java.util.Random;
  */
 public class Enemy {
 
-    private final static Texture IMAGE = new Texture("chicken.png");
+    private final static Texture IMAGE = new Texture("elchico.png");
     private Sprite sprite;
     private int health;
     private float speed;
@@ -22,10 +22,11 @@ public class Enemy {
     public Enemy(){
 
         sprite = new Sprite(IMAGE);
-        sprite.setSize(0.8f,1.2f);
+        sprite.setSize(2.0f,1.2f);
 
         Random rand = new Random();
-        float x = rand.nextFloat()*(Gdx.graphics.getWidth()/120) + 0.5f;
+        float x = (rand.nextFloat()*(Gdx.graphics.getWidth()/120) + 0.5f);
+        if (x>12){ x--; }
         sprite.setPosition(x, Gdx.graphics.getHeight() / 190);
 
         collideRect = sprite.getBoundingRectangle();

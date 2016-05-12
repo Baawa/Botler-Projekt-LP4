@@ -54,7 +54,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 		this.world = new World(new Vector2(0, 0), true);
 
 		player = new Player();
-		player.setEquippedTO(new ThrowableObject((int)Gdx.graphics.getWidth()/200,0,100,"Pan",new Texture("bat300x300.png"),3.0,1, this.world, player.getThrowables(), player));
+		player.setEquippedTO(new ThrowableObject((int)Gdx.graphics.getWidth()/200,0,100,"Pan",new Texture("bat300x300.png"),3.0,1, this.world, player));
 
 		batch = new SpriteBatch();
 
@@ -72,7 +72,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
         initButtons();
 
-        wave = new Wave("1",5);
+        wave = new Wave(1,model.getNumberOfEnemies());
 
         bottom = new Rectangle(0f,0f,25f,0.1f);
 
@@ -110,6 +110,17 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
                 break;
 
             case PAUSED:
+                batch.begin();
+
+                backgroundimg.draw(batch);
+
+                drawEnemies();
+                player.drawOnly(batch);
+                startBtn.draw(batch);
+
+                batch.end();
+                break;
+
             case STOPPED:
                 batch.begin();
 
@@ -175,28 +186,32 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
     }
 
 	private void spawnThrowable(){
-		player.addThrowables(5);
+		player.addThrowables(model.getNumberOfThrowables());
 	}
 
     private void checkCollision(){
         for (Iterator<Enemy> iterEnemies = wave.getEnemies().iterator(); iterEnemies.hasNext(); ) {
             Enemy e = iterEnemies.next();
-            for (Iterator<ThrowableObject> iterThrow = player.getThrowables().iterator(); iterThrow.hasNext(); ) {
-                ThrowableObject t = iterThrow.next();
-                if (t.getCollideRect().overlaps(e.getCollideRect())) {
-                    iterThrow.remove();
-                    iterEnemies.remove();
-                    break;
+            if (player.getThrowables().get(0).getCollideRect().overlaps(e.getCollideRect())) {
+                player.getCurrentTO().onCollison();
+                iterEnemies.remove();
+
+                if (wave.getEnemies().size()==0){
+                    System.out.println("next wave");
+                    model.nextWave();
+                    wave = new Wave(wave.getLevel()+1, model.getNumberOfEnemies());
+                    
                 }
-                //Check if player lost
-                if (e.getCollideRect().overlaps(bottom)) {
-                    model.gameOver();
-                }
+                break;
+            }
+            //Check if player lost
+            if (e.getCollideRect().overlaps(bottom)) {
+                model.gameOver();
             }
         }
     }
 
-    public void drawEnemies(){
+    private void drawEnemies(){
         ListIterator<Enemy> iter = wave.getEnemies().listIterator(wave.getEnemies().size());
         while (iter.hasPrevious()){
             Enemy e = iter.previous();
@@ -238,15 +253,17 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 	@Override
 	public boolean pan(float x, float y, float deltaX, float deltaY) {
 
-		if ((x >= player.getCurrentTO().getX() || x <= player.getCurrentTO().getX()+100) && (y >= player.getCurrentTO().getY() || y <= player.getCurrentTO().getY()+100) && -deltaY > 0){
-			float throwX = deltaX;
-			float throwY = -deltaY;
-			float totalLength = (float)(Math.sqrt(Math.pow(throwX,2)+Math.pow(throwY,2)));
-				if (throwY > 0){
-					player.getCurrentTO().throwToPoint(throwX/totalLength,throwY/totalLength);
-			}
+        if (model.getState() == Model.State.RUNNING) {
+            if ((x >= player.getCurrentTO().getX() || x <= player.getCurrentTO().getX() + 100) && (y >= player.getCurrentTO().getY() || y <= player.getCurrentTO().getY() + 100) && -deltaY > 0) {
+                float throwX = deltaX;
+                float throwY = -deltaY;
+                float totalLength = (float) (Math.sqrt(Math.pow(throwX, 2) + Math.pow(throwY, 2)));
+                if (throwY > 0) {
+                    player.getCurrentTO().throwToPoint(throwX / totalLength, throwY / totalLength);
+                }
 
-		}
+            }
+        }
 		return true;
 	}
 

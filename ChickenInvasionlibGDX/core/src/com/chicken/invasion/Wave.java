@@ -8,11 +8,11 @@ import java.util.ArrayList;
 public class Wave implements Runnable{
     private ArrayList<Enemy> enemies;
     private Thread thread;
-    private String level;
+    private int level;
     private int totalEnemies;
     private int nbrOfSent = 0;
 
-    public Wave(String level,int totalEnemies){
+    public Wave(int level,int totalEnemies){
         this.level = level;
         this.totalEnemies = totalEnemies;
 
@@ -44,7 +44,7 @@ public class Wave implements Runnable{
         return enemies;
     }
 
-    public String getLevel() {
+    public int getLevel() {
         return level;
     }
 }
