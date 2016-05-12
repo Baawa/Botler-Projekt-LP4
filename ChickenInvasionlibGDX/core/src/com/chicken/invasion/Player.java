@@ -10,7 +10,7 @@ import java.util.ArrayList;
  */
 public class Player {
     private ArrayList<ThrowableObject> throwables = new java.util.ArrayList<ThrowableObject>();
-    private int score;
+    private int score= 0;
     private int chickenWings;
     private ThrowableObject equippedTO;
     private int throwablesAmount = 0;
@@ -64,5 +64,9 @@ public class Player {
 
         }
     }
+
+    public void incScore(){ score++;}
+
+    public int getScore(){ return score; }
 
 }

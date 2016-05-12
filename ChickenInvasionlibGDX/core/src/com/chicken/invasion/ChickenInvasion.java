@@ -3,9 +3,11 @@ package com.chicken.invasion;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Camera;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -34,18 +36,19 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class ChickenInvasion extends ApplicationAdapter implements GestureDetector.GestureListener{
-	Model model;
-	SpriteBatch batch;
-	Sprite backgroundimg, gameOver;
-	World world;
-	Player player;
-    Wave wave;
+	private Model model;
+	private SpriteBatch batch;
+	private Sprite backgroundimg, gameOver;
+	private World world;
+	private Player player;
+    private Wave wave;
     private Rectangle bottom;
+    private BitmapFont font;
 
-	GameButton startBtn;
-	GameButton pauseBtn;
+	private GameButton startBtn;
+	private GameButton pauseBtn;
 
-	Camera camera;
+	private Camera camera;
 	
 	@Override
 	public void create () {
@@ -70,16 +73,14 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 		backgroundimg.setPosition(0, 0);
 		backgroundimg.setSize(Gdx.graphics.getWidth() / 100, Gdx.graphics.getHeight() / 100);
 
-        initButtons();
+        initSymbols();
 
         wave = new Wave(1,model.getNumberOfEnemies());
 
         bottom = new Rectangle(0f,0f,25f,0.1f);
-
-        gameOver = new Sprite(new Texture("gameover.png"));
-        gameOver.setSize(400/50,237f/50);
-        gameOver.setX(Gdx.graphics.getWidth() / 200 - 4);
-        gameOver.setY(Gdx.graphics.getWidth() / 200 + 4f);
+        
+        font = new BitmapFont();
+        font.setColor(Color.WHITE);
 
 		Gdx.input.setInputProcessor(new GestureDetector(this));
         Gdx.gl.glClearColor(1, 1, 1, 1);
@@ -103,6 +104,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
                 drawEnemies();
                 player.draw(batch);
                 pauseBtn.draw(batch);
+                font.draw(batch, String.valueOf(player.getScore()), 0.5f, (float)Gdx.graphics.getHeight() / 100 - 1,3,0,false);
 
                 batch.end();
 
@@ -163,7 +165,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 		model.pauseGame();
 	}
 
-    private void initButtons() {
+    private void initSymbols() {
         startBtn = new GameButton(new Callable<Void>() {
             public Void call() throws Exception {
                 startGame();
@@ -183,6 +185,11 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         pauseBtn.setSize(200 / 200, 200 / 200);
         pauseBtn.setX(Gdx.graphics.getWidth() / 100 - 2);
         pauseBtn.setY(Gdx.graphics.getHeight() / 100 - 1);
+
+        gameOver = new Sprite(new Texture("gameover.png"));
+        gameOver.setSize(400/50,237f/50);
+        gameOver.setX(Gdx.graphics.getWidth() / 200 - 4);
+        gameOver.setY(Gdx.graphics.getWidth() / 200 + 4f);
     }
 
 	private void spawnThrowable(){
@@ -193,14 +200,16 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         for (Iterator<Enemy> iterEnemies = wave.getEnemies().iterator(); iterEnemies.hasNext(); ) {
             Enemy e = iterEnemies.next();
             if (player.getThrowables().get(0).getCollideRect().overlaps(e.getCollideRect())) {
+                player.incScore();
                 player.getCurrentTO().onCollison();
                 iterEnemies.remove();
 
                 if (wave.getEnemies().size()==0){
-                    System.out.println("next wave");
                     model.nextWave();
                     wave = new Wave(wave.getLevel()+1, model.getNumberOfEnemies());
+                    player.addThrowables(model.getNumberOfThrowables());
 
+                    System.out.println("Level: " + wave.getLevel());
                 }
                 break;
             }
@@ -223,6 +232,12 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
             //draw
             e.getSprite().draw(batch);
         }
+    }
+
+    @Override
+    public void dispose(){
+        batch.dispose();
+        font.dispose();
     }
 
 	@Override
