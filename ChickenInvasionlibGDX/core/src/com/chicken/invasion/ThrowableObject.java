@@ -185,13 +185,13 @@ public class ThrowableObject{
 
         this.sprite.draw(batch);
 
-        if(-this.body.getPosition().y > Gdx.graphics.getHeight()/100 || collided){
+        if(this.body.getPosition().y > Gdx.graphics.getHeight()/100 || this.body.getPosition().x < 0 || this.body.getPosition().x > Gdx.graphics.getWidth()/100 || collided){
             //this.parentArray.remove(this);
             thrown = false;
             this.world.destroyBody(this.body);
             player.removeTO();
             sprite = null;
-            image.dispose();
+            //image.dispose();
         }
     }
 

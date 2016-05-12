@@ -78,7 +78,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         wave = new Wave(1,model.getNumberOfEnemies());
 
         bottom = new Rectangle(0f,0f,25f,0.1f);
-
+        
         font = new BitmapFont();
         font.setColor(Color.WHITE);
 
@@ -187,9 +187,9 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         pauseBtn.setY(Gdx.graphics.getHeight() / 100 - 1);
 
         gameOver = new Sprite(new Texture("gameover.png"));
-        gameOver.setSize(8,8);
+        gameOver.setSize(400/50,237f/50);
         gameOver.setX(Gdx.graphics.getWidth() / 200 - 4);
-        gameOver.setY(Gdx.graphics.getWidth() / 200 + 7);
+        gameOver.setY(Gdx.graphics.getWidth() / 200 + 4f);
     }
 
 	private void spawnThrowable(){
