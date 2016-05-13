@@ -38,7 +38,7 @@ import java.util.Iterator;
 public class ChickenInvasion extends ApplicationAdapter implements GestureDetector.GestureListener{
 	private Model model;
 	private SpriteBatch batch;
-	private Sprite backgroundimg, gameOver;
+	private Sprite backgroundimg, gameOver, startBanner;
 	private World world;
 	private Player player;
     private Wave wave;
@@ -136,6 +136,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
                 startBtn.draw(batch);
                 storeBtn.draw(batch);
                 highscoreBtn.draw(batch);
+                startBanner.draw(batch);
 
                 batch.end();
                 break;
@@ -197,7 +198,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
             }
         }, new Texture("store200x200.png"));
         storeBtn.setSize(200 / 100, 200 / 100);
-        storeBtn.setX(Gdx.graphics.getWidth() / 200 - startBtn.getWidth()/2 - 0.5f - storeBtn.getWidth());
+        storeBtn.setX(Gdx.graphics.getWidth() / 200 - startBtn.getWidth() / 2 - 0.5f - storeBtn.getWidth());
         storeBtn.setY(startBtn.getY() - 0.1f);
 
         highscoreBtn = new GameButton(new Callable<Void>() {
@@ -207,7 +208,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
             }
         }, new Texture("highscore200x200.png"));
         highscoreBtn.setSize(200 / 100, 200 / 100);
-        highscoreBtn.setX(Gdx.graphics.getWidth() / 200 + startBtn.getWidth()/2 + 0.5f);
+        highscoreBtn.setX(Gdx.graphics.getWidth() / 200 + startBtn.getWidth() / 2 + 0.5f);
         highscoreBtn.setY(startBtn.getY() - 0.1f);
 
         pauseBtn = new GameButton((new Callable<Void>() {
@@ -224,6 +225,11 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         gameOver.setSize(400/50,237f/50);
         gameOver.setX(Gdx.graphics.getWidth() / 200 - 4);
         gameOver.setY(Gdx.graphics.getWidth() / 200 + 4f);
+
+        startBanner = new Sprite(new Texture("startBanner.png"));
+        startBanner.setSize(350/50,250f/50);
+        startBanner.setX(Gdx.graphics.getWidth() / 200 - startBanner.getWidth()/2);
+        startBanner.setY(Gdx.graphics.getWidth() / 200 + 4f);
     }
 
 	private void spawnThrowable(){
