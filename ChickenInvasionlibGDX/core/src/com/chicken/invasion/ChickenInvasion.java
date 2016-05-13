@@ -47,6 +47,8 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
 	private GameButton startBtn;
 	private GameButton pauseBtn;
+    private GameButton storeBtn;
+    private GameButton highscoreBtn;
 
 	private Camera camera;
 	
@@ -132,6 +134,8 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
                 drawEnemies();
                 player.drawOnly(batch);
                 startBtn.draw(batch);
+                storeBtn.draw(batch);
+                highscoreBtn.draw(batch);
 
                 batch.end();
                 break;
@@ -163,6 +167,14 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 		}
 	}
 
+    public void goToStore(){
+
+    }
+
+    public void goToHighscore(){
+
+    }
+
 	public void pauseGame(){
 		model.pauseGame();
 	}
@@ -173,10 +185,30 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
                 startGame();
                 return null;
             }
-        }, new Texture("play200x200.png"));
-        startBtn.setSize(200 / 100, 200 / 100);
-        startBtn.setX(Gdx.graphics.getWidth() / 200 - 1);
-        startBtn.setY(Gdx.graphics.getHeight() / 200 - 1);
+        }, new Texture("play220x220.png"));
+        startBtn.setSize(220 / 100, 220 / 100);
+        startBtn.setX(Gdx.graphics.getWidth() / 200 - startBtn.getWidth()/2);
+        startBtn.setY(startBtn.getHeight()/2 + 0.1f);
+
+        storeBtn = new GameButton(new Callable<Void>() {
+            public Void call() throws Exception {
+                goToStore();
+                return null;
+            }
+        }, new Texture("store200x200.png"));
+        storeBtn.setSize(200 / 100, 200 / 100);
+        storeBtn.setX(Gdx.graphics.getWidth() / 200 - startBtn.getWidth()/2 - 0.5f - storeBtn.getWidth());
+        storeBtn.setY(startBtn.getY() - 0.1f);
+
+        highscoreBtn = new GameButton(new Callable<Void>() {
+            public Void call() throws Exception {
+                goToHighscore();
+                return null;
+            }
+        }, new Texture("highscore200x200.png"));
+        highscoreBtn.setSize(200 / 100, 200 / 100);
+        highscoreBtn.setX(Gdx.graphics.getWidth() / 200 + startBtn.getWidth()/2 + 0.5f);
+        highscoreBtn.setY(startBtn.getY() - 0.1f);
 
         pauseBtn = new GameButton((new Callable<Void>() {
             public Void call() throws Exception {
@@ -254,6 +286,8 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
 		this.startBtn.clicked(coords2.x,coords2.y);
 		this.pauseBtn.clicked(coords2.x,coords2.y);
+        this.storeBtn.clicked(coords2.x,coords2.y);
+        this.highscoreBtn.clicked(coords2.x, coords2.y);
 		return true;
 	}
 

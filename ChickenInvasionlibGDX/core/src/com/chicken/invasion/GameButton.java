@@ -37,6 +37,14 @@ public class GameButton{
         this.sprite.setSize(w, h);
     }
 
+    public float getWidth(){
+        return this.sprite.getWidth();
+    }
+
+    public float getHeight(){
+        return this.sprite.getHeight();
+    }
+
     public float getX(){
         return this.sprite.getX();
     }
