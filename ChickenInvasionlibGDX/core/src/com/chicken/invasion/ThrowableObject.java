@@ -97,6 +97,36 @@ public class ThrowableObject{
         collideRect = this.sprite.getBoundingRectangle();
     }
 
+    public ThrowableObject(float scale, String name, Texture image, double speed, int damage, World world, Player player) {
+        //this.x = x;
+        //this.y = y;
+        //this.screenWidth = screenWidth;
+        //this.screenHeight = screenHeight;
+
+        this.player = player;
+
+        this.name = name;
+        this.image = image;
+        this.speed = speed;
+        this.damage = damage;
+        this.scale = scale;
+
+        this.sprite = new Sprite(image);
+        this.sprite.setSize(this.sprite.getWidth() / this.scale, this.sprite.getHeight() / this.scale);
+
+        this.orgWidth = this.sprite.getWidth();
+        this.orgHeight = this.sprite.getHeight();
+
+
+        this.world = world;
+
+        this.body = null;
+
+        this.rotation = 2;
+
+    }
+
+
     public ThrowableObject(int x, int y, float scale, String name, Texture image, double speed, int damage, World world, Player player) {
         //this.x = x;
         //this.y = y;

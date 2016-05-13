@@ -57,7 +57,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 		this.world = new World(new Vector2(0, 0), true);
 
 		player = new Player();
-		player.setEquippedTO(new ThrowableObject((int)Gdx.graphics.getWidth()/200,0,100,"Pan",new Texture("bat300x300.png"),3.0,1, this.world, player));
+		player.setEquippedTO(new ThrowableObject(100,"Pan",new Texture("bat300x300.png"),3.0,1, this.world, player));
 
 		batch = new SpriteBatch();
 
@@ -78,8 +78,9 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         wave = new Wave(1,model.getNumberOfEnemies());
 
         bottom = new Rectangle(0f,0f,25f,0.1f);
-        
+
         font = new BitmapFont();
+        font.getData().setScale((float) 1 / 10);
         font.setColor(Color.WHITE);
 
 		Gdx.input.setInputProcessor(new GestureDetector(this));
@@ -104,7 +105,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
                 drawEnemies();
                 player.draw(batch);
                 pauseBtn.draw(batch);
-                font.draw(batch, String.valueOf(player.getScore()), 0.5f, (float)Gdx.graphics.getHeight() / 100 - 1,3,0,false);
+                font.draw(batch, String.valueOf(player.getScore()), (float)Gdx.graphics.getWidth()/200 - 0.5f, (float)Gdx.graphics.getHeight()/100 - 2,1,0,false);
 
                 batch.end();
 
@@ -119,6 +120,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
                 drawEnemies();
                 player.drawOnly(batch);
                 startBtn.draw(batch);
+                font.draw(batch, String.valueOf(player.getScore()), (float)Gdx.graphics.getWidth()/200 - 0.5f, (float)Gdx.graphics.getHeight()/100 - 2,1,0,false);
 
                 batch.end();
                 break;
