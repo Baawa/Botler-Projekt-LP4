@@ -32,6 +32,8 @@ public class Model {
         currentWave += 1;
     }
 
+    public void restartWaves() { currentWave = 1; }
+
     public int getNumberOfThrowables(){
         int tmp = (currentWave * 2) + 1;
         return tmp;

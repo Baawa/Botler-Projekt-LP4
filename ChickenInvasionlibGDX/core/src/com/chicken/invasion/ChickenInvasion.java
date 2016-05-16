@@ -149,6 +149,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
                 player.drawOnly(batch);
                 startBtn.draw(batch);
                 gameOver.draw(batch);
+                font.draw(batch, String.valueOf(player.getScore()), (float)Gdx.graphics.getWidth()/200 - 0.5f, (float)Gdx.graphics.getHeight()/100 - 2,1,0,false);
 
                 batch.end();
 
@@ -162,8 +163,14 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 	}
 
 	public void startGame(){
-		if (model.getState() == Model.State.PAUSED ||model.getState() == Model.State.STOPPED){
-			spawnThrowable();
+		if (model.getState() == Model.State.PAUSED || model.getState() == Model.State.STOPPED || model.getState() == Model.State.GAMEOVER){
+			if (model.getState() == Model.State.GAMEOVER){
+                player.saveScore();
+                model.restartWaves();
+                wave = new Wave(1,model.getNumberOfEnemies());
+            }
+
+            spawnThrowable();
 			model.startGame();
 		}
 	}
@@ -239,7 +246,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
     private void checkCollision(){
         for (Iterator<Enemy> iterEnemies = wave.getEnemies().iterator(); iterEnemies.hasNext(); ) {
             Enemy e = iterEnemies.next();
-            if (player.getThrowables().get(0).getCollideRect().overlaps(e.getCollideRect())) {
+            if (player.getThrowables().get(0).getCollideRect().overlaps(e.getCollideRect()) && player.getCurrentTO().isThrown()) {
                 player.incScore();
                 player.getCurrentTO().onCollison();
                 iterEnemies.remove();
