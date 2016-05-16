@@ -23,7 +23,7 @@ public class Enemy {
     private static final int        FRAME_ROWS = 2;
 
     private Animation               walkAnimation;
-    private static Texture          walkSheet = new Texture("badassanim.png");
+    private static Texture          walkSheet = new Texture("chickenlargeanim.png");
     private TextureRegion           currentFrame;
 
     float stateTime;
@@ -37,15 +37,15 @@ public class Enemy {
                 walkFrames[index++] = tmp[i][j];
             }
         }
-        walkAnimation = new Animation(0.25f, walkFrames);
+        walkAnimation = new Animation(0.2f, walkFrames);
         stateTime = 0f;
 
         Random rand = new Random();
         x = (rand.nextFloat()*(Gdx.graphics.getWidth()/120) + 0.5f);
-        if (x>12){ x--; }
+        if (x>12){ x-=1; }
         y = Gdx.graphics.getHeight() / 190;
 
-        width = 1.2f;
+        width = 2.0f;
         height = 2.0f;
 
         collideRect = new Rectangle(x,y,width,height);

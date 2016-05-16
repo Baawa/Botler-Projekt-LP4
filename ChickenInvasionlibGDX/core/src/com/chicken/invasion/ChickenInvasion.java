@@ -32,6 +32,7 @@ import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Array;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.ListIterator;
 import java.util.concurrent.Callable;
 
@@ -297,20 +298,22 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
             //Check if player lost
             if (e.getCollideRect().overlaps(bottom)) {
                 model.gameOver();
+                break;
             }
         }
     }
 
     private void drawEnemies(){
-        for (Iterator<Enemy> iterEnemies = wave.getEnemies().iterator(); iterEnemies.hasNext(); ) {
-            Enemy e = iterEnemies.next();
-
+        ListIterator<Enemy> li = wave.getEnemies().listIterator(wave.getEnemies().size());
+        // Iterate in reverse.
+        while(li.hasPrevious()) {
+            Enemy e = li.previous();
             //update if not paused
             if (model.getState() == Model.State.RUNNING) {
                 e.update(Gdx.graphics.getDeltaTime());
             }
             //draw
-            batch.draw(e.getTextureRegion(), e.getX(),e.getY(), e.getWidth(),e.getHeight());
+            batch.draw(e.getTextureRegion(), e.getX(), e.getY(), e.getWidth(), e.getHeight());
         }
     }
 
