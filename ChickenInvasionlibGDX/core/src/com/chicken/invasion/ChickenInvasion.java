@@ -86,14 +86,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
         bottom = new Rectangle(0f,0f,25f,0.1f);
 
-        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("fonts/Roboto-Bold.ttf"));
-        FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
-        parameter.size = 100;
-        fontScore = generator.generateFont(parameter);
-        fontScore.getData().setScale(0.03f);
-        fontScore.setColor(Color.WHITE);
-        fontScore.setUseIntegerPositions(false);
-        generator.dispose();
+        initFonts();
 
 		Gdx.input.setInputProcessor(new GestureDetector(this));
         Gdx.gl.glClearColor(1, 1, 1, 1);
@@ -101,9 +94,10 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
 	@Override
 	public void render() {
+        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT | GL20.GL_DEPTH_BUFFER_BIT);
+
         switch (model.getState()) {
             case RUNNING:
-                Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
                 if (model.shouldSpawnObject()) {
                     spawnThrowable();
@@ -119,7 +113,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
                 pauseBtn.draw(batch);
                 fontScore.draw(batch,
                         String.valueOf(player.getScore()),
-                        (float) Gdx.graphics.getWidth() / 200 - 0.5f,
+                        (float) Gdx.graphics.getWidth() / 200,
                         (float) Gdx.graphics.getHeight() / 100 - 2, 0.1f,
                         Align.center,
                         false);
@@ -201,7 +195,6 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 	}
 
     public void goToStore(){
-
     }
 
     public void goToHighscore(){
@@ -264,6 +257,20 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         startBanner.setY(Gdx.graphics.getWidth() / 200 + 4f);
     }
 
+    private void initFonts(){
+        //score
+        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("fonts/Roboto-Bold.ttf"));
+        FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
+        parameter.size = 100;
+        fontScore = generator.generateFont(parameter);
+        fontScore.getData().setScale(0.03f);
+        fontScore.setColor(Color.WHITE);
+        fontScore.setUseIntegerPositions(false);
+        generator.dispose();
+
+        //chicken wings
+    }
+
 	private void spawnThrowable(){
 		player.addThrowables(model.getNumberOfThrowables());
 	}
@@ -303,9 +310,10 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
                 e.update(Gdx.graphics.getDeltaTime());
             }
             //draw
-            e.getSprite().draw(batch);
+            batch.draw(e.getTextureRegion(), e.getX(),e.getY(), e.getWidth(),e.getHeight());
         }
     }
+
 
     @Override
     public void dispose(){
