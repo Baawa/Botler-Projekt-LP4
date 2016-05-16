@@ -1,18 +1,38 @@
 [
     {
-        "merged": "C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\layout\\card_layout.xml",
-        "source": "C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\res\\layout\\card_layout.xml"
+        "merged": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\layout\\store_view.xml",
+        "source": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\res\\layout\\store_view.xml"
     },
     {
-        "merged": "C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\layout\\card_layout.xml",
-        "source": "C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\res\\layout\\card_layout.xml"
+        "merged": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/res/merged/debug/layout/store_view.xml",
+        "source": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/res/layout/store_view.xml"
     },
     {
-        "merged": "C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\layout\\store_view.xml",
-        "source": "C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\res\\layout\\store_view.xml"
+        "merged": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\layout\\card_layout.xml",
+        "source": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\res\\layout\\card_layout.xml"
     },
     {
-        "merged": "C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\layout\\store_view.xml",
-        "source": "C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\res\\layout\\store_view.xml"
+        "merged": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/res/merged/debug/layout/card_layout.xml",
+        "source": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/res/layout/card_layout.xml"
+    },
+    {
+        "merged": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\layout\\store_view.xml",
+        "source": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\res\\layout\\store_view.xml"
+    },
+    {
+        "merged": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\layout\\card_layout.xml",
+        "source": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\res\\layout\\card_layout.xml"
+    },
+    {
+        "merged": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/res/merged/debug/layout/create_weapon_layout.xml",
+        "source": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/res/layout/create_weapon_layout.xml"
+    },
+    {
+        "merged": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/res/merged/debug/layout/highscore_view.xml",
+        "source": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/res/layout/highscore_view.xml"
+    },
+    {
+        "merged": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/res/merged/debug/layout/highscore_content.xml",
+        "source": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/res/layout/highscore_content.xml"
     }
 ]

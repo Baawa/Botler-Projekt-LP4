@@ -5,6 +5,8 @@
     android:versionName="1.0" >
 
     <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="23" />
+    <uses-feature android:name="android.hardware.camera2"></uses-feature>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
 
     <application
         android:allowBackup="true"
@@ -24,6 +26,14 @@
         <activity
             android:name="com.chicken.invasion.Store"
             android:label="StoreV" >
+        </activity>
+        <activity
+            android:name="com.chicken.invasion.HighScore"
+            android:label="HighscoreV">
+        </activity>
+        <activity
+            android:name="com.chicken.invasion.CreateWeapon"
+            android:label="CreateWeaponV">
         </activity>
     </application>
 

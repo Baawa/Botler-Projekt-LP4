@@ -132,13 +132,26 @@ containing a value of this type.
         public static final int play200x200=0x7f020002;
     }
     public static final class id {
-        public static final int textView=0x7f080002;
-        public static final int view_pager=0x7f080001;
+        public static final int button=0x7f080002;
+        public static final int camera_preview=0x7f080006;
+        public static final int highscoreList=0x7f08000a;
+        public static final int imageView=0x7f080003;
+        public static final int imageView2=0x7f080005;
+        public static final int nameID=0x7f080007;
+        public static final int scoreID=0x7f080008;
+        public static final int streangthIndicator=0x7f080001;
+        public static final int takeAPic=0x7f080004;
+        public static final int textView=0x7f08000c;
+        public static final int tstbutton=0x7f080009;
+        public static final int view_pager=0x7f08000b;
         public static final int weapon_view=0x7f080000;
     }
     public static final class layout {
         public static final int card_layout=0x7f030000;
-        public static final int store_view=0x7f030001;
+        public static final int create_weapon_layout=0x7f030001;
+        public static final int highscore_content=0x7f030002;
+        public static final int highscore_view=0x7f030003;
+        public static final int store_view=0x7f030004;
     }
     public static final class string {
         public static final int app_name=0x7f060000;
