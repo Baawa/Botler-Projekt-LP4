@@ -25,6 +25,10 @@
             android:name="com.chicken.invasion.Store"
             android:label="StoreV" >
         </activity>
+        <activity
+            android:name="com.chicken.invasion.HighScore"
+            android:label="HighscoreV">
+        </activity>
     </application>
 
 </manifest>

@@ -6,6 +6,7 @@ import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 
 /**
@@ -27,6 +28,8 @@ public class StoreCardAdapter extends PagerAdapter {
         layoutInflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View item_view = layoutInflater.inflate(R.layout.card_layout,container,false);
         CardView card = (CardView)item_view.findViewById(R.id.weapon_view);
+        ProgressBar streangth = (ProgressBar) item_view.findViewById(R.id.streangthIndicator);
+        streangth.setProgress(30);
         container.addView(item_view);
 
 
