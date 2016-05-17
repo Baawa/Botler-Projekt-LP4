@@ -16,6 +16,7 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 		FacebookSdk.sdkInitialize(getApplicationContext());
 		AppEventsLogger.activateApp(this);
 		AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
+<<<<<<< HEAD
 
 		ChickenInvasion chickenInvasion = new ChickenInvasion();
 		chickenInvasion.setMyGameCallback(this);
@@ -40,5 +41,10 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 	public void onStartSomeActivity(int someParameter, String someOtherParameter) {
 
 
+=======
+		//Intent intent = new Intent(getApplicationContext(),HighScore.class);
+		//startActivity(intent);
+		initialize(new ChickenInvasion(), config);
+>>>>>>> origin/master
 	}
 }
