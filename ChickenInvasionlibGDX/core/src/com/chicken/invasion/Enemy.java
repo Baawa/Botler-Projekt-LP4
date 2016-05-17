@@ -28,6 +28,31 @@ public class Enemy {
 
     float stateTime;
 
+    public Enemy(Enemy e){
+        TextureRegion[][] tmp = TextureRegion.split(walkSheet, walkSheet.getWidth()/FRAME_COLS, walkSheet.getHeight()/FRAME_ROWS);
+        TextureRegion[] walkFrames = new TextureRegion[FRAME_COLS * FRAME_ROWS];
+        int index = 0;
+        for (int i = 0; i < FRAME_ROWS; i++) {
+            for (int j = 0; j < FRAME_COLS; j++) {
+                walkFrames[index++] = tmp[i][j];
+            }
+        }
+        walkAnimation = new Animation(0.09f, walkFrames);
+        stateTime = 0f;
+
+        Random rand = new Random();
+        x = (rand.nextFloat()*(Gdx.graphics.getWidth()/120) + 0.5f);
+        if (x>12){ x-=1; }
+        y = Gdx.graphics.getHeight() / 190;
+
+        width = 2.0f;
+        height = 2.0f;
+
+        collideRect = new Rectangle(x,y,width,height);
+
+        health = 1;
+    }
+
     public Enemy(){
         TextureRegion[][] tmp = TextureRegion.split(walkSheet, walkSheet.getWidth()/FRAME_COLS, walkSheet.getHeight()/FRAME_ROWS);
         TextureRegion[] walkFrames = new TextureRegion[FRAME_COLS * FRAME_ROWS];
@@ -50,7 +75,7 @@ public class Enemy {
 
         collideRect = new Rectangle(x,y,width,height);
 
-        health = 10;
+        health = 1;
     }
 
     public void update(float dt){

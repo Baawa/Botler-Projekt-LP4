@@ -64,7 +64,7 @@ public class Wave implements Runnable{
             tmp = rand.nextInt(potentialEnemies.size());
         }
 
-        return potentialEnemies.get(tmp);
+        return new Enemy(potentialEnemies.get(tmp));
     }
 
     private void spawn(){
