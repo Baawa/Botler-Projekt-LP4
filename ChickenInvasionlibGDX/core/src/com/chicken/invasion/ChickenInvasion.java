@@ -48,7 +48,6 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
     private Wave wave;
     private Rectangle bottom;
     private float scoreWidth, scoreHeight;
-    private GlyphLayout layout;
     private BitmapFont fontScore;
 
 	private GameButton startBtn;
@@ -112,12 +111,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
                 checkCollision();
                 player.draw(batch);
                 pauseBtn.draw(batch);
-                fontScore.draw(batch,
-                        String.valueOf(player.getScore()),
-                        (float) Gdx.graphics.getWidth() / 200,
-                        (float) Gdx.graphics.getHeight() / 100 - 2, 0.1f,
-                        Align.center,
-                        false);
+                drawFonts();
 
                 batch.end();
 
@@ -132,12 +126,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
                 drawEnemies();
                 player.drawOnly(batch);
                 startBtn.draw(batch);
-                fontScore.draw(batch,
-                        String.valueOf(player.getScore()),
-                        (float) Gdx.graphics.getWidth() / 200 - 0.5f,
-                        (float) Gdx.graphics.getHeight() / 100 - 2, 0.1f,
-                        Align.center,
-                        false);
+                drawFonts();
 
                 batch.end();
                 break;
@@ -164,12 +153,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
                 player.drawOnly(batch);
                 startBtn.draw(batch);
                 gameOver.draw(batch);
-                fontScore.draw(batch,
-                        String.valueOf(player.getScore()),
-                        (float) Gdx.graphics.getWidth() / 200 - 0.5f,
-                        (float) Gdx.graphics.getHeight() / 100 - 2, 0.1f,
-                        Align.center,
-                        false);
+                drawFonts();
 
                 batch.end();
 
@@ -177,21 +161,44 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
             default:
                 System.out.print("Nu blev det galet");
-
                 break;
         }
 	}
 
+    private void drawFonts(){
+        //draw score
+        fontScore.draw(batch,
+                String.valueOf(player.getScore()),
+                (float) Gdx.graphics.getWidth() / 200- 0.5f,
+                (float) Gdx.graphics.getHeight() / 100 - 2,
+                0.1f,
+                Align.center,
+                false);
+
+        //Show new wave?
+        if (wave.isDisplayWaveFont()){
+            wave.getWaveFont().draw(batch,
+                    wave.getWaveString(),
+                    wave.getFontX(),
+                    wave.getFontY(),
+                    0f,
+                    Align.center,
+                    false);
+        }
+    }
+
 	public void startGame(){
 		if (model.getState() == Model.State.PAUSED || model.getState() == Model.State.STOPPED || model.getState() == Model.State.GAMEOVER){
-			if (model.getState() == Model.State.GAMEOVER){
-                player.saveScore();
+
+            //restart?
+            if (model.getState() == Model.State.GAMEOVER){
                 model.restartWaves();
                 wave = new Wave(1,model.getNumberOfEnemies());
             }
 
             spawnThrowable();
 			model.startGame();
+            wave.displayWaveFont();
 		}
 	}
 
@@ -259,17 +266,19 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
     }
 
     private void initFonts(){
-        //score
         FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("fonts/Roboto-Bold.ttf"));
         FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
         parameter.size = 100;
+
+        //score
         fontScore = generator.generateFont(parameter);
         fontScore.getData().setScale(0.03f);
         fontScore.setColor(Color.WHITE);
-        fontScore.setUseIntegerPositions(false);
-        generator.dispose();
 
         //chicken wings
+        //TODO
+
+        generator.dispose();
     }
 
 	private void spawnThrowable(){
@@ -290,6 +299,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
                         wave = new Wave(wave.getLevel() + 1, model.getNumberOfEnemies());
                         player.addThrowables(model.getNumberOfThrowables());
 
+                        wave.displayWaveFont();
                         System.out.println("Level: " + wave.getLevel());
                     }
                     break;
@@ -298,6 +308,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
             //Check if player lost
             if (e.getCollideRect().overlaps(bottom)) {
                 model.gameOver();
+                player.saveScore();
                 break;
             }
         }
