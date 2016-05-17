@@ -37,7 +37,7 @@ public class Enemy {
                 walkFrames[index++] = tmp[i][j];
             }
         }
-        walkAnimation = new Animation(0.2f, walkFrames);
+        walkAnimation = new Animation(0.09f, walkFrames);
         stateTime = 0f;
 
         Random rand = new Random();
@@ -60,8 +60,8 @@ public class Enemy {
         x += -dt/7;
         y += -dt/1.2f;
 
-        width += dt/3.5f;
-        height += dt/3.5f;
+        width += dt/3f;
+        height += dt/3f;
 
         collideRect.set(x,y,width,height);
 

@@ -1,7 +1,16 @@
 package com.chicken.invasion;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
+
 import java.util.ArrayList;
+<<<<<<< HEAD
 import java.util.Random;
+=======
+import java.util.Timer;
+>>>>>>> origin/master
 
 /**
  * Created by Kristoffer on 2016-05-02.
@@ -13,6 +22,11 @@ public class Wave implements Runnable{
     private int level;
     private int difficulty;
     private int nbrOfSent = 0;
+    private BitmapFont waveFont;
+    private boolean displayWaveFont = false;
+    private float fontX, fontY;
+
+    private static long startWaveTime;
 
     public Wave(int level,int difficulty){
         this.level = level;
@@ -22,6 +36,8 @@ public class Wave implements Runnable{
 
         potentialEnemies = new ArrayList<Enemy>();
         potentialEnemies.add(new Enemy());
+
+        initNewWaveFont();
 
         thread = new Thread(this);
         thread.start();
@@ -38,7 +54,13 @@ public class Wave implements Runnable{
             }
 
             if (Model.getInstance().getState() == Model.State.RUNNING) {
+<<<<<<< HEAD
                 spawn();
+=======
+                enemies.add(new Enemy());
+                nbrOfSent++;
+
+>>>>>>> origin/master
             }
         }
     }
@@ -75,7 +97,37 @@ public class Wave implements Runnable{
         return enemies;
     }
 
-    public int getLevel() {
-        return level;
+    public void displayWaveFont() { startWaveTime = System.currentTimeMillis(); }
+
+    public boolean isDisplayWaveFont() { return (startWaveTime + 2000)>System.currentTimeMillis();}
+
+    public int getLevel() { return level; }
+
+    public String getWaveString(){ return "Wave " + getLevel(); }
+
+    public BitmapFont getWaveFont(){ return waveFont; }
+
+    public float getFontX() {
+        return fontX;
+    }
+
+    public float getFontY() {
+        return fontY;
+    }
+
+    private void initNewWaveFont(){
+        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("fonts/ChunkfiveEx.ttf"));
+        FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
+        parameter.size = 100;
+
+        waveFont = generator.generateFont(parameter);
+        waveFont.getData().setScale(0.02f);
+        waveFont.setColor(Color.WHITE);
+
+
+        fontX = Gdx.graphics.getWidth() / 200 - 0.5f;
+        fontY = Gdx.graphics.getHeight() / 100 - 7;
+
+        generator.dispose();
     }
 }
