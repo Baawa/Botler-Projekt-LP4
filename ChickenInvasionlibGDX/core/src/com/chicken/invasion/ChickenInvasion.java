@@ -1,8 +1,11 @@
 package com.chicken.invasion;
 
 import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Audio;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
@@ -97,6 +100,12 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
 		Gdx.input.setInputProcessor(new GestureDetector(this));
         Gdx.gl.glClearColor(1, 1, 1, 1);
+
+        // MUSIKAAA!!!
+        Music bgMusic = Gdx.audio.newMusic(Gdx.files.internal("gamemusic/ChickenInvasion-BackgroundMusic.mp3"));
+        bgMusic.setLooping(true);
+        bgMusic.play();
+
 	}
 
 	@Override

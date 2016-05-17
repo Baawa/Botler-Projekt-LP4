@@ -16,8 +16,8 @@ public class AndroidLauncher extends AndroidApplication {
 		FacebookSdk.sdkInitialize(getApplicationContext());
 		AppEventsLogger.activateApp(this);
 		AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
-		Intent intent = new Intent(getApplicationContext(),HighScore.class);
-		startActivity(intent);
-		//initialize(new ChickenInvasion(), config);
+		//Intent intent = new Intent(getApplicationContext(),HighScore.class);
+		//startActivity(intent);
+		initialize(new ChickenInvasion(), config);
 	}
 }
