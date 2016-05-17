@@ -9,15 +9,36 @@ import com.chicken.invasion.ChickenInvasion;
 import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
 
-public class AndroidLauncher extends AndroidApplication {
+public class AndroidLauncher extends AndroidApplication implements ChickenInvasion.GameCallback {
 	@Override
 	protected void onCreate (Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		FacebookSdk.sdkInitialize(getApplicationContext());
 		AppEventsLogger.activateApp(this);
 		AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
-		Intent intent = new Intent(getApplicationContext(),HighScore.class);
+
+		ChickenInvasion chickenInvasion = new ChickenInvasion();
+		chickenInvasion.setMyGameCallback(this);
+		//Intent intent = new Intent(getApplicationContext(),HighScore.class);
+		//startActivity(intent);
+		initialize(chickenInvasion, config);
+	}
+
+	@Override
+	public void onStartActivityA() {
+		Intent intent = new Intent(this, HighScore.class);
 		startActivity(intent);
-		//initialize(new ChickenInvasion(), config);
+	}
+
+	@Override
+	public void onStartActivityB() {
+		Intent intent = new Intent(this, Store.class);
+		startActivity(intent);
+	}
+
+	@Override
+	public void onStartSomeActivity(int someParameter, String someOtherParameter) {
+
+
 	}
 }

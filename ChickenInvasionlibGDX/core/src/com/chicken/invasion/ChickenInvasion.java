@@ -41,6 +41,24 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class ChickenInvasion extends ApplicationAdapter implements GestureDetector.GestureListener{
+
+    //Interface for various callbacks to the android launcher
+    public interface GameCallback {
+        public void onStartActivityA();
+        public void onStartActivityB();
+        public void onStartSomeActivity(int someParameter, String someOtherParameter);
+    }
+
+    // Local variable to hold the callback implementation
+    private GameCallback gameCallback;
+
+    // Setter for the callback
+    public void setMyGameCallback(GameCallback callback) {
+        gameCallback = callback;
+    }
+
+
+
 	private Model model;
 	private SpriteBatch batch;
 	private Sprite backgroundimg, gameOver, startBanner;
@@ -155,7 +173,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         //draw score
         fontScore.draw(batch,
                 String.valueOf(player.getScore()),
-                (float) Gdx.graphics.getWidth() / 200- 0.5f,
+                (float) Gdx.graphics.getWidth() / 200 - 0.5f,
                 (float) Gdx.graphics.getHeight() / 100 - 2,
                 0.1f,
                 Align.center,
@@ -188,11 +206,39 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 		}
 	}
 
-    public void goToStore(){
+    public void createIntent(String className) {
+
+        if (gameCallback != null) {
+
+            // initiate which ever callback method you need.
+            if (className.equals("Store")) {
+                gameCallback.onStartActivityA();
+            } else if (className.equals("HighScore")) {
+                gameCallback.onStartActivityB();
+            }
+        }
+
     }
+    
 
     public void goToHighscore(){
 
+        // check the calling class has actually implemented MyGameCallback
+        /*if (gameCallback != null) {
+
+            // initiate which ever callback method you need.
+            if (someCondition) {
+                gameCallback.onStartActivityA();
+            } else if (someOtherCondition) {
+                gameCallback.onStartActivityB();
+            } else {
+                gameCallback.onStartSomeActivity(someInteger, someString);
+            }
+
+        } else {
+            System.out.print("MyGame" + "To use this class you must implement MyGameCallback!");
+        }
+    }*/
 
     }
 
@@ -325,7 +371,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
         highscoreBtn = new GameButton(new Callable<Void>() {
             public Void call() throws Exception {
-                goToHighscore();
+                createIntent("HighScore");
                 return null;
             }
         }, new Texture("highscore200x200.png"));
@@ -333,7 +379,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
         storeBtn = new GameButton(new Callable<Void>() {
             public Void call() throws Exception {
-                goToStore();
+                createIntent("Store");
                 return null;
             }
         }, new Texture("store200x200.png"));
