@@ -39,7 +39,7 @@ public class Model {
         return tmp;
     }
 
-    public int getNumberOfEnemies(){
+    public int getDifficulty(){
         int tmp = currentWave * 2;
         return tmp;
     }

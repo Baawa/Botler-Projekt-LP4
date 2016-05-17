@@ -1,23 +1,27 @@
 package com.chicken.invasion;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Created by Kristoffer on 2016-05-02.
  */
 public class Wave implements Runnable{
     private ArrayList<Enemy> enemies;
+    private ArrayList<Enemy> potentialEnemies;
     private Thread thread;
     private int level;
-    private int totalEnemies;
+    private int difficulty;
     private int nbrOfSent = 0;
 
-    public Wave(int level,int totalEnemies){
+    public Wave(int level,int difficulty){
         this.level = level;
-        this.totalEnemies = totalEnemies;
+        this.difficulty = difficulty;
 
         enemies = new ArrayList<Enemy>();
-        new Enemy();
+
+        potentialEnemies = new ArrayList<Enemy>();
+        potentialEnemies.add(new Enemy());
 
         thread = new Thread(this);
         thread.start();
@@ -26,7 +30,7 @@ public class Wave implements Runnable{
     @Override
     public void run() {
 
-        while(nbrOfSent<totalEnemies){
+        while(difficulty != 0){
             try {
                 Thread.sleep(2000);
             } catch (InterruptedException e) {
@@ -34,10 +38,37 @@ public class Wave implements Runnable{
             }
 
             if (Model.getInstance().getState() == Model.State.RUNNING) {
-                enemies.add(new Enemy());
-                nbrOfSent++;
+                spawn();
             }
         }
+    }
+
+    private Enemy getRandomEnemy(){
+        Random rand = new Random();
+
+        int tmp = 0;
+
+        if (potentialEnemies.size() > 1){
+            tmp = rand.nextInt(potentialEnemies.size());
+        }
+
+        return potentialEnemies.get(tmp);
+    }
+
+    private void spawn(){
+        while (true){
+            Enemy e = getRandomEnemy();
+            if (e.getHealth() <= this.difficulty){
+                spawnEnemy(e);
+                difficulty -= e.getHealth();
+                break;
+            }
+        }
+    }
+
+    private void spawnEnemy(Enemy e){
+        enemies.add(enemies.size(), e);
+        nbrOfSent++;
     }
 
     public ArrayList<Enemy> getEnemies() {

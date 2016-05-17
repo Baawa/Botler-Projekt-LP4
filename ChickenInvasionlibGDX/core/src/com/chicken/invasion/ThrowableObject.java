@@ -75,7 +75,7 @@ public class ThrowableObject{
         fixtureDef.friction = 0.4f;
         fixtureDef.restitution = 0.6f;
 
-        Fixture fixture = body.createFixture(fixtureDef);
+        body.createFixture(fixtureDef);
 
         circle.dispose();
 
@@ -100,13 +100,11 @@ public class ThrowableObject{
         this.orgWidth = this.sprite.getWidth();
         this.orgHeight = this.sprite.getHeight();
 
-
         this.world = world;
 
         this.body = null;
 
     }
-
 
     public ThrowableObject(int x, int y, float scale, String name, Texture image, World world, Player player) {
 
@@ -139,7 +137,7 @@ public class ThrowableObject{
         fixtureDef.friction = 0.4f;
         fixtureDef.restitution = 0.6f;
 
-        Fixture fixture = body.createFixture(fixtureDef);
+        body.createFixture(fixtureDef);
 
         circle.dispose();
 

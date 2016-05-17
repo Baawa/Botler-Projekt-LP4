@@ -93,4 +93,8 @@ public class Enemy {
     public float getHeight() {
         return height;
     }
+
+    public int getHealth(){
+        return this.health;
+    }
 }

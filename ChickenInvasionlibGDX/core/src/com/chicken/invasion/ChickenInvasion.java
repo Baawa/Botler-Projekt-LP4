@@ -70,7 +70,9 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
 		player = new Player();
         if (player.getCurrentTO() == null){
-            player.setEquippedTO(new ThrowableObject(100, "Bat", new Texture("bat300x300.png"), this.world, player));
+            ThrowableObject tmp = new ThrowableObject(100, "Bat", new Texture("bat300x300.png"), this.world, player);
+            tmp.setSpeed(1.5);
+            player.setEquippedTO(tmp);
         }
 
 		batch = new SpriteBatch();
@@ -87,7 +89,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 		backgroundimg.setPosition(0, 0);
 		backgroundimg.setSize(Gdx.graphics.getWidth() / 100, Gdx.graphics.getHeight() / 100);
 
-        wave = new Wave(1,model.getNumberOfEnemies());
+        wave = new Wave(1,model.getDifficulty());
 
         bottom = new Rectangle(0f,0f,25f,0.1f);
 
@@ -156,7 +158,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 			if (model.getState() == Model.State.GAMEOVER){
                 player.saveScore();
                 model.restartWaves();
-                wave = new Wave(1,model.getNumberOfEnemies());
+                wave = new Wave(1,model.getDifficulty());
             }
 
             spawnThrowable();
@@ -363,7 +365,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
                     if (wave.getEnemies().size() == 0) {
                         model.nextWave();
-                        wave = new Wave(wave.getLevel() + 1, model.getNumberOfEnemies());
+                        wave = new Wave(wave.getLevel() + 1, model.getDifficulty());
                         player.addThrowables(model.getNumberOfThrowables());
 
                         System.out.println("Level: " + wave.getLevel());
