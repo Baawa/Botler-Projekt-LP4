@@ -392,10 +392,8 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
     }
 
     private void drawEnemies(){
-        ListIterator<Enemy> li = wave.getEnemies().listIterator(wave.getEnemies().size());
-        // Iterate in reverse.
-        while(li.hasPrevious()) {
-            Enemy e = li.previous();
+        for (Iterator<Enemy> iterEnemies = wave.getEnemies().iterator(); iterEnemies.hasNext(); ) {
+            Enemy e = iterEnemies.next();
             //update if not paused
             if (model.getState() == Model.State.RUNNING) {
                 e.update(Gdx.graphics.getDeltaTime());
