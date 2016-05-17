@@ -79,7 +79,8 @@ public class Player {
     public void saveScore(){
         //TODO spara om det är nytt highscore
 
-        score = 0;
     }
+
+    public void resetScore(){ score = 0; }
 
 }

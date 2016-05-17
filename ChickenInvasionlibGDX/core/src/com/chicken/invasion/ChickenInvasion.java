@@ -1,6 +1,7 @@
 package com.chicken.invasion;
 
 import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.Color;
@@ -54,17 +55,22 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 	private GameButton pauseBtn;
     private GameButton storeBtn;
     private GameButton highscoreBtn;
+    private GameButton backBtn;
+    private GameButton restartBtn;
 
 	private Camera camera;
 	
 	@Override
 	public void create () {
+
 		model = Model.getInstance();
 
 		this.world = new World(new Vector2(0, 0), true);
 
 		player = new Player();
-		player.setEquippedTO(new ThrowableObject(100,"Pan",new Texture("bat300x300.png"),3.0,1, this.world, player));
+        if (player.getCurrentTO() == null){
+            player.setEquippedTO(new ThrowableObject(100, "Bat", new Texture("bat300x300.png"), this.world, player));
+        }
 
 		batch = new SpriteBatch();
 
@@ -80,13 +86,12 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 		backgroundimg.setPosition(0, 0);
 		backgroundimg.setSize(Gdx.graphics.getWidth() / 100, Gdx.graphics.getHeight() / 100);
 
-        initSymbols();
-
         wave = new Wave(1,model.getNumberOfEnemies());
 
         bottom = new Rectangle(0f,0f,25f,0.1f);
 
         initFonts();
+        initButtons();
 
 		Gdx.input.setInputProcessor(new GestureDetector(this));
         Gdx.gl.glClearColor(1, 1, 1, 1);
@@ -106,12 +111,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
                 batch.begin();
 
-                backgroundimg.draw(batch);
-                drawEnemies();
-                checkCollision();
-                player.draw(batch);
-                pauseBtn.draw(batch);
-                drawFonts();
+                drawRunningGame(batch);
 
                 batch.end();
 
@@ -121,12 +121,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
             case PAUSED:
                 batch.begin();
 
-                backgroundimg.draw(batch);
-
-                drawEnemies();
-                player.drawOnly(batch);
-                startBtn.draw(batch);
-                drawFonts();
+                drawPausedGame(batch);
 
                 batch.end();
                 break;
@@ -134,13 +129,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
             case STOPPED:
                 batch.begin();
 
-                backgroundimg.draw(batch);
-                drawEnemies();
-                player.drawOnly(batch);
-                startBtn.draw(batch);
-                storeBtn.draw(batch);
-                highscoreBtn.draw(batch);
-                startBanner.draw(batch);
+                drawStartScreen(batch);
 
                 batch.end();
                 break;
@@ -148,12 +137,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
             case GAMEOVER:
                 batch.begin();
 
-                backgroundimg.draw(batch);
-                drawEnemies();
-                player.drawOnly(batch);
-                startBtn.draw(batch);
-                gameOver.draw(batch);
-                drawFonts();
+                drawGameOverScreen(batch);
 
                 batch.end();
 
@@ -190,15 +174,13 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 	public void startGame(){
 		if (model.getState() == Model.State.PAUSED || model.getState() == Model.State.STOPPED || model.getState() == Model.State.GAMEOVER){
 
-            //restart?
-            if (model.getState() == Model.State.GAMEOVER){
-                model.restartWaves();
-                wave = new Wave(1,model.getNumberOfEnemies());
+            //show new wave text?
+            if (model.getState() != Model.State.PAUSED){
+                wave.displayWaveFont();
             }
 
             spawnThrowable();
 			model.startGame();
-            wave.displayWaveFont();
 		}
 	}
 
@@ -206,14 +188,111 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
     }
 
     public void goToHighscore(){
+    }
 
+    public void goBack(){
+        model.stopGame();
+    }
+
+    public void restartGame(){
+        model.restartWaves();
+        wave = new Wave(1,model.getNumberOfEnemies());
+        player.resetScore();
+        startGame();
     }
 
 	public void pauseGame(){
 		model.pauseGame();
 	}
 
-    private void initSymbols() {
+    private void drawRunningGame(SpriteBatch batch){
+        backgroundimg.draw(batch);
+        drawEnemies();
+        checkCollision();
+        player.draw(batch);
+        drawFonts();
+
+        pauseBtn.setX(Gdx.graphics.getWidth() / 100 - 2);
+        pauseBtn.setY(Gdx.graphics.getHeight() / 100 - 1.1f);
+        pauseBtn.draw(batch);
+    }
+
+    private void drawGameOverScreen(SpriteBatch batch){
+
+        backgroundimg.draw(batch);
+        drawEnemies();
+        player.drawOnly(batch);
+        drawFonts();
+
+        //Game Over specifics
+        gameOver = new Sprite(new Texture("gameover.png"));
+        gameOver.setSize(400 / 50, 237f / 50);
+        gameOver.setX(Gdx.graphics.getWidth() / 200 - 4);
+        gameOver.setY(Gdx.graphics.getWidth() / 200 + 4f);
+        gameOver.draw(batch);
+
+        restartBtn.setX((Gdx.graphics.getWidth() / 200) + 0.1f + (restartBtn.getWidth() / 2));
+        restartBtn.setY(Gdx.graphics.getHeight() / 200 - 2.0f);
+        restartBtn.draw(batch);
+
+        backBtn.setX((Gdx.graphics.getWidth() / 200) - 0.1f - backBtn.getWidth() - (backBtn.getWidth() / 2));
+        backBtn.setY(Gdx.graphics.getHeight() / 200 - 2.0f);
+        backBtn.draw(batch);
+
+    }
+
+    private void drawStartScreen(SpriteBatch batch){
+
+        backgroundimg.draw(batch);
+
+        startBanner = new Sprite(new Texture("startBanner.png"));
+        startBanner.setSize(350 / 50, 250f / 50);
+        startBanner.setX(Gdx.graphics.getWidth() / 200 - startBanner.getWidth() / 2);
+        startBanner.setY(Gdx.graphics.getWidth() / 200 + 4f);
+        startBanner.draw(batch);
+
+        startBtn.setX(Gdx.graphics.getWidth() / 200 - startBtn.getWidth() / 2);
+        startBtn.setY(startBtn.getHeight() / 2 + 0.1f);
+        startBtn.draw(batch);
+
+        storeBtn.setX(Gdx.graphics.getWidth() / 200 - startBtn.getWidth() / 2 - 0.5f - storeBtn.getWidth());
+        storeBtn.setY(startBtn.getY() - 0.1f);
+        storeBtn.draw(batch);
+
+        highscoreBtn.setX(Gdx.graphics.getWidth() / 200 + startBtn.getWidth() / 2 + 0.5f);
+        highscoreBtn.setY(startBtn.getY() - 0.1f);
+        highscoreBtn.draw(batch);
+    }
+
+    private void drawPausedGame(SpriteBatch batch){
+        backgroundimg.draw(batch);
+        drawEnemies();
+        player.drawOnly(batch);
+        drawFonts();
+
+        //Paused game specifics
+
+        Sprite pauseBanner = new Sprite(new Texture("pausedGame.png"));
+        pauseBanner.setSize(400 / 50, 240f / 50);
+        pauseBanner.setX(Gdx.graphics.getWidth() / 200 - pauseBanner.getWidth() / 2);
+        pauseBanner.setY(Gdx.graphics.getWidth() / 200 + 4f);
+        pauseBanner.draw(batch);
+
+        startBtn.setX(Gdx.graphics.getWidth() / 200 - startBtn.getWidth() / 2);
+        startBtn.setY(Gdx.graphics.getHeight() / 200 - 2.0f);
+        startBtn.draw(batch);
+
+        restartBtn.setX((Gdx.graphics.getWidth() / 200) + 0.1f + (restartBtn.getWidth() / 2));
+        restartBtn.setY(Gdx.graphics.getHeight() / 200 - 2.0f - 1.0f - startBtn.getHeight());
+        restartBtn.draw(batch);
+
+        backBtn.setX((Gdx.graphics.getWidth() / 200) - 0.1f - backBtn.getWidth() - (backBtn.getWidth() / 2));
+        backBtn.setY(Gdx.graphics.getHeight() / 200 - 2.0f - 1.0f - startBtn.getHeight());
+        backBtn.draw(batch);
+
+    }
+
+    private void initButtons(){
         startBtn = new GameButton(new Callable<Void>() {
             public Void call() throws Exception {
                 startGame();
@@ -221,18 +300,22 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
             }
         }, new Texture("play220x220.png"));
         startBtn.setSize(220 / 100, 220 / 100);
-        startBtn.setX(Gdx.graphics.getWidth() / 200 - startBtn.getWidth()/2);
-        startBtn.setY(startBtn.getHeight()/2 + 0.1f);
 
-        storeBtn = new GameButton(new Callable<Void>() {
+        backBtn = new GameButton(new Callable<Void>() {
             public Void call() throws Exception {
-                goToStore();
+                goBack();
                 return null;
             }
-        }, new Texture("store200x200.png"));
-        storeBtn.setSize(200 / 100, 200 / 100);
-        storeBtn.setX(Gdx.graphics.getWidth() / 200 - startBtn.getWidth() / 2 - 0.5f - storeBtn.getWidth());
-        storeBtn.setY(startBtn.getY() - 0.1f);
+        }, new Texture("back220x220.png"));
+        backBtn.setSize(220 / 100, 220 / 100);
+
+        restartBtn = new GameButton(new Callable<Void>() {
+            public Void call() throws Exception {
+                restartGame();
+                return null;
+            }
+        }, new Texture("restart220x220.png"));
+        restartBtn.setSize(220 / 100, 220 / 100);
 
         highscoreBtn = new GameButton(new Callable<Void>() {
             public Void call() throws Exception {
@@ -241,8 +324,14 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
             }
         }, new Texture("highscore200x200.png"));
         highscoreBtn.setSize(200 / 100, 200 / 100);
-        highscoreBtn.setX(Gdx.graphics.getWidth() / 200 + startBtn.getWidth() / 2 + 0.5f);
-        highscoreBtn.setY(startBtn.getY() - 0.1f);
+
+        storeBtn = new GameButton(new Callable<Void>() {
+            public Void call() throws Exception {
+                goToStore();
+                return null;
+            }
+        }, new Texture("store200x200.png"));
+        storeBtn.setSize(200 / 100, 200 / 100);
 
         pauseBtn = new GameButton((new Callable<Void>() {
             public Void call() throws Exception {
@@ -251,18 +340,6 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
             }
         }), new Texture("pause200x200.png"));
         pauseBtn.setSize(200 / 200, 200 / 200);
-        pauseBtn.setX(Gdx.graphics.getWidth() / 100 - 2);
-        pauseBtn.setY(Gdx.graphics.getHeight() / 100 - 1);
-
-        gameOver = new Sprite(new Texture("gameover.png"));
-        gameOver.setSize(400/50,237f/50);
-        gameOver.setX(Gdx.graphics.getWidth() / 200 - 4);
-        gameOver.setY(Gdx.graphics.getWidth() / 200 + 4f);
-
-        startBanner = new Sprite(new Texture("startBanner.png"));
-        startBanner.setSize(350/50,250f/50);
-        startBanner.setX(Gdx.graphics.getWidth() / 200 - startBanner.getWidth()/2);
-        startBanner.setY(Gdx.graphics.getWidth() / 200 + 4f);
     }
 
     private void initFonts(){
@@ -346,10 +423,28 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 		Vector3 coords=new Vector3(x,y,0);
 		Vector3 coords2= camera.unproject(coords);
 
-		this.startBtn.clicked(coords2.x,coords2.y);
-		this.pauseBtn.clicked(coords2.x,coords2.y);
-        this.storeBtn.clicked(coords2.x,coords2.y);
-        this.highscoreBtn.clicked(coords2.x, coords2.y);
+
+        if (model.getState() == Model.State.RUNNING){
+            this.pauseBtn.clicked(coords2.x,coords2.y);
+        }
+
+        if (model.getState() == Model.State.PAUSED){
+            this.startBtn.clicked(coords2.x,coords2.y);
+            this.restartBtn.clicked(coords2.x, coords2.y);
+            this.backBtn.clicked(coords2.x, coords2.y);
+        }
+
+        if (model.getState() == Model.State.STOPPED){
+            this.startBtn.clicked(coords2.x,coords2.y);
+            this.storeBtn.clicked(coords2.x,coords2.y);
+            this.highscoreBtn.clicked(coords2.x, coords2.y);
+        }
+
+        if (model.getState() == Model.State.GAMEOVER){
+            this.restartBtn.clicked(coords2.x, coords2.y);
+            this.backBtn.clicked(coords2.x, coords2.y);
+        }
+
 		return true;
 	}
 

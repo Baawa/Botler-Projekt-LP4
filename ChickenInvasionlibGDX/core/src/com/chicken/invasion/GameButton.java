@@ -55,7 +55,8 @@ public class GameButton{
 
     public void clicked(float x, float y){
         System.out.println("x,y:" + x + "," + y + "\t this x,y:" + getX() + "," + getY());
-        if ((x >= this.getX() && x <= this.getX()+100) && (y >= this.getY() && y <= this.getY()+100)){
+        if ((x >= this.getX() && x <= this.getX()+getWidth()) && (y >= this.getY() && y <= this.getY()+this.getHeight())){
+            System.out.println("Clicked!");
             touchFunc();
         }
     }
