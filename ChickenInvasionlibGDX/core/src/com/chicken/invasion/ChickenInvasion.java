@@ -261,6 +261,13 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
                 false);
 
         //Paused game specifics
+
+        Sprite pauseBanner = new Sprite(new Texture("pausedGame.png"));
+        pauseBanner.setSize(400 / 50, 240f / 50);
+        pauseBanner.setX(Gdx.graphics.getWidth() / 200 - pauseBanner.getWidth() / 2);
+        pauseBanner.setY(Gdx.graphics.getWidth() / 200 + 4f);
+        pauseBanner.draw(batch);
+
         startBtn.setX(Gdx.graphics.getWidth() / 200 - startBtn.getWidth() / 2);
         startBtn.setY(Gdx.graphics.getHeight() / 200 - 2.0f);
         startBtn.draw(batch);
