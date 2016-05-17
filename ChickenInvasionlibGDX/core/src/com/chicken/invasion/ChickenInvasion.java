@@ -69,7 +69,9 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 		this.world = new World(new Vector2(0, 0), true);
 
 		player = new Player();
-		player.setEquippedTO(new ThrowableObject(100,"Pan",new Texture("bat300x300.png"),3.0,1, this.world, player));
+        if (player.getCurrentTO() == null){
+            player.setEquippedTO(new ThrowableObject(100, "Bat", new Texture("bat300x300.png"), this.world, player));
+        }
 
 		batch = new SpriteBatch();
 

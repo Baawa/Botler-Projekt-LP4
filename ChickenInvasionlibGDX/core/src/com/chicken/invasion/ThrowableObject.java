@@ -28,10 +28,10 @@ public class ThrowableObject{
     private Sprite sprite;
     private String name;
     private double speed = 1;
-    private int damage;
+    private int damage = 1;
+    private int rotation = 1;
     private Boolean collided = false;
     private Boolean thrown = false;
-    private int rotation = 0;
     private float scale = 1.0f;
     private float orgWidth;
     private float orgHeight;
@@ -41,15 +41,6 @@ public class ThrowableObject{
 
     private Body body;
     private World world;
-
-    /*
-    private double x;
-    private double y;
-    private double width = 100;
-    private double height = 100;*/
-    private int screenWidth;
-    private int screenHeight;
-
 
     public ThrowableObject(ThrowableObject to){
         this.player = to.getPlayer();
@@ -90,25 +81,17 @@ public class ThrowableObject{
 
         body.setUserData(this.sprite);
 
-        this.rotation = 2;
-
         this.sprite.setPosition(this.body.getPosition().x, this.body.getPosition().y);
 
         collideRect = this.sprite.getBoundingRectangle();
     }
 
-    public ThrowableObject(float scale, String name, Texture image, double speed, int damage, World world, Player player) {
-        //this.x = x;
-        //this.y = y;
-        //this.screenWidth = screenWidth;
-        //this.screenHeight = screenHeight;
+    public ThrowableObject(float scale, String name, Texture image, World world, Player player) {
 
         this.player = player;
 
         this.name = name;
         this.image = image;
-        this.speed = speed;
-        this.damage = damage;
         this.scale = scale;
 
         this.sprite = new Sprite(image);
@@ -122,23 +105,15 @@ public class ThrowableObject{
 
         this.body = null;
 
-        this.rotation = 2;
-
     }
 
 
-    public ThrowableObject(int x, int y, float scale, String name, Texture image, double speed, int damage, World world, Player player) {
-        //this.x = x;
-        //this.y = y;
-        //this.screenWidth = screenWidth;
-        //this.screenHeight = screenHeight;
+    public ThrowableObject(int x, int y, float scale, String name, Texture image, World world, Player player) {
 
         this.player = player;
 
         this.name = name;
         this.image = image;
-        this.speed = speed;
-        this.damage = damage;
         this.scale = scale;
 
         this.sprite = new Sprite(image);
@@ -170,14 +145,13 @@ public class ThrowableObject{
 
         body.setUserData(this.sprite);
 
-        this.rotation = 2;
-
         collideRect = sprite.getBoundingRectangle();
 
     }
 
-    public void currPoss(){
-        System.out.println(body.getPosition());
+    public String currPoss(){
+        String tmp = "Current Position: " + body.getPosition();
+        return tmp;
     }
 
     public void throwToPoint(float x, float y){
@@ -186,8 +160,6 @@ public class ThrowableObject{
             int velocityY = (int)(speed * y * 1000);
 
             body.applyForceToCenter(velocityX, velocityY, true);
-
-            //body.setLinearVelocity(velocityX,velocityY);
 
             thrown = true;
         }
@@ -201,7 +173,6 @@ public class ThrowableObject{
         this.sprite.setPosition(this.body.getPosition().x, this.body.getPosition().y);
 
         if (thrown) {
-            //this.sprite.setRotation(this.sprite.getRotation() + 1);
             this.sprite.rotate(this.rotation);
             this.sprite.setOrigin(this.sprite.getWidth()/2, this.sprite.getHeight()/2);
 
@@ -216,17 +187,11 @@ public class ThrowableObject{
         this.sprite.draw(batch);
 
         if(this.body.getPosition().y > Gdx.graphics.getHeight()/100 || this.body.getPosition().x < 0 || this.body.getPosition().x > Gdx.graphics.getWidth()/100 || collided){
-            //this.parentArray.remove(this);
             thrown = false;
             this.world.destroyBody(this.body);
             player.removeTO();
             sprite = null;
-            //image.dispose();
         }
-    }
-
-    public Rectangle getCollideRect() {
-        return collideRect;
     }
 
     public void onCollison(){
@@ -237,6 +202,22 @@ public class ThrowableObject{
         }
     }
 
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public void setSpeed(double speed){
+        this.speed = speed;
+    }
+
+    public void setDamage(int damage){
+        this.damage = damage;
+    }
+
+    public void setRotationSpeed(int rotationSpeed){
+        this.rotation = rotationSpeed;
+    }
+
     public String getName(){
         return name;
     }
@@ -244,8 +225,17 @@ public class ThrowableObject{
     public double getSpeed(){
         return speed;
     }
+
     public int getDamage(){
         return damage;
+    }
+
+    public int getRotationSpeed(){
+        return this.rotation;
+    }
+
+    public Rectangle getCollideRect() {
+        return collideRect;
     }
 
     public Texture getImage(){
@@ -255,38 +245,14 @@ public class ThrowableObject{
     public void setCollided(Boolean collided){
         this.collided = collided;
     }
-    /*
-    public void setX(double x){
-        this.x = (int)x;
-    }
 
-    public void setY(double y){
-        this.y = (int)y;
-    }
-    */
     public float getX(){
         return this.body.getPosition().x;
     }
+
     public float getY(){
         return this.body.getPosition().y;
     }
-    /*
-    public void setWidth(double width){
-        this.width = width;
-    }
-
-    public void setHeight(double height){
-        this.height = height;
-    }
-
-    public double getWidth(){
-        return this.width;
-    }
-
-    public double getHeight(){
-        return this.height;
-    }
-*/
 
     public float getOriginalWidth(){
         return this.orgWidth;
@@ -304,10 +270,10 @@ public class ThrowableObject{
         return this.world;
     }
 
-
     public Player getPlayer(){
         return this.player;
     }
+
     public boolean isThrown(){ return thrown; }
 
     public Sprite copySprite(){
