@@ -8,5 +8,6 @@
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowFullscreen">true</item>
     </style>
+    <string name="facebook_app_id">746382238</string>
 
 </resources>

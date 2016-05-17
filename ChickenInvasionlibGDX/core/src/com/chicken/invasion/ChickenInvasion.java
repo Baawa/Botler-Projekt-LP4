@@ -192,6 +192,8 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
     }
 
     public void goToHighscore(){
+
+
     }
 
     public void goBack(){

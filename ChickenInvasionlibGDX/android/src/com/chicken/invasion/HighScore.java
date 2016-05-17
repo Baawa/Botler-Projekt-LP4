@@ -3,10 +3,15 @@ package com.chicken.invasion;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
+import com.facebook.FacebookSdk;
+import com.facebook.share.model.ShareLinkContent;
+import com.facebook.share.widget.ShareButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,8 +29,20 @@ public class HighScore extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.highscore_view);
         highscoreList = (ListView)findViewById(R.id.highscoreList);
+
+
+        //SHARE ON FACEBOOK
+        ShareLinkContent content = new ShareLinkContent.Builder()
+                .setContentUrl(Uri.parse("https://developers.facebook.com"))
+                .build();
+
+        ShareButton shareButton = (ShareButton)findViewById(R.id.fb_share_button);
+        shareButton.setShareContent(content);
+
+        //END SHARE ON FACEBOOK
 
         //TEST
         List<Score> testList = new ArrayList<Score>();
@@ -47,7 +64,7 @@ public class HighScore extends Activity{
         scoreAdapter = new HighScoreAdapter(this,R.layout.highscore_content,testList);
         highscoreList.setAdapter(scoreAdapter);
 
-        //SAVE HIGHSCORE
+        /*SAVE HIGHSCORE
 
 
         prefs = this.getSharedPreferences("myPrefsKey", Context.MODE_PRIVATE);
@@ -60,7 +77,7 @@ public class HighScore extends Activity{
         int sssoo = prefs.getInt("PEDRAM",0);
         Log.e("sssi", Integer.toString(sssoo));
 
-        //END SAVE HIGHSCORE
+        END SAVE HIGHSCORE*/
 
 
     }

@@ -28,49 +28,23 @@ import java.io.IOException;
  */
 public class CreateWeapon extends Activity {
 
-    Button btn;
+
     Button takeAPic;
-    ImageView imgView;
-    static final int CAM_REQUEST = 1;
-    File image_file;
-    File file;
-    ImageView sss;
+    ImageView croppedPic;
     File image;
 
-    Uri screenshotUri;
-    private static final int SELECT_PICTURE = 1;
-    private String selectedImagePath;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_weapon_layout);
-        btn = (Button)findViewById(R.id.button);
-        imgView = (ImageView)findViewById(R.id.imageView);
         takeAPic = (Button)findViewById(R.id.takeAPic);
-        sss = (ImageView)findViewById(R.id.imageView2);
+        croppedPic = (ImageView)findViewById(R.id.imageView2);
 
         File sdCardDirectory = Environment.getExternalStorageDirectory();
         image = new File(sdCardDirectory, "testings.jpg");
 
 
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                /*Intent intent = new Intent();
-                intent.setType("image/*");
-                intent.setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(
-                        Intent.createChooser(intent, "Select Picture"),
-                        SELECT_PICTURE);*/
-
-
-
-
-
-            }
-        });
 
         takeAPic.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,7 +73,7 @@ public class CreateWeapon extends Activity {
             Bundle extras = data.getExtras();
             Bitmap immage = extras.getParcelable("data");
             Bitmap dafd = getCroppedBitmap(immage);
-            sss.setImageBitmap(dafd);
+            croppedPic.setImageBitmap(dafd);
         }
 
 
@@ -107,7 +81,7 @@ public class CreateWeapon extends Activity {
         boolean success = false;
 
         // Encode the file as a PNG image.
-        BitmapDrawable drawable = (BitmapDrawable) sss.getDrawable();
+        BitmapDrawable drawable = (BitmapDrawable) croppedPic.getDrawable();
         Bitmap bitmap = drawable.getBitmap();
 
         FileOutputStream outStream;
