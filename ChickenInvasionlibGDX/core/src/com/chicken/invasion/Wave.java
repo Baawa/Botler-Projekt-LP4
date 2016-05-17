@@ -19,7 +19,6 @@ public class Wave implements Runnable{
     private int difficulty;
     private int nbrOfSent = 0;
     private BitmapFont waveFont;
-    private boolean displayWaveFont = false;
     private float fontX, fontY;
 
     private static long startWaveTime;
@@ -119,5 +118,9 @@ public class Wave implements Runnable{
         fontY = Gdx.graphics.getHeight() / 100 - 7;
 
         generator.dispose();
+    }
+
+    public void dispose(){
+        waveFont.dispose();
     }
 }

@@ -176,10 +176,11 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 	public void startGame(){
 		if (model.getState() == Model.State.PAUSED || model.getState() == Model.State.STOPPED || model.getState() == Model.State.GAMEOVER){
 
-			if (model.getState() == Model.State.GAMEOVER){
+			if (model.getState() == Model.State.GAMEOVER || model.getState() == Model.State.STOPPED ){
                 player.saveScore();
                 model.restartWaves();
                 wave = new Wave(1,model.getDifficulty());
+                player.resetScore();
             }
 
             spawnThrowable();
@@ -376,6 +377,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
                     if (wave.getEnemies().size() == 0) {
                         model.nextWave();
+                        wave.dispose();
                         wave = new Wave(wave.getLevel() + 1, model.getDifficulty());
                         player.addThrowables(model.getNumberOfThrowables());
 
@@ -412,6 +414,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         batch.dispose();
         fontScore.dispose();
         world.dispose();
+        wave.dispose();
     }
 
 	@Override
