@@ -5,6 +5,7 @@ import com.badlogic.gdx.Audio;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.Color;
@@ -104,6 +105,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         // MUSIKAAA!!!
         Music bgMusic = Gdx.audio.newMusic(Gdx.files.internal("gamemusic/ChickenInvasion-BackgroundMusic.mp3"));
         bgMusic.setLooping(true);
+        bgMusic.setVolume(0.5f);
         bgMusic.play();
 
 	}
@@ -385,6 +387,11 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
                     player.incScore();
                     player.getCurrentTO().onCollison();
                     iterEnemies.remove();
+                    // MUSIKAAA!!!
+                    Music music = Gdx.audio.newMusic(Gdx.files.internal("gamemusic/ChickenSound.mp3"));
+                    music.setLooping(false);
+                    music.setVolume(1.0f);
+                    music.play();
 
                     if (wave.getEnemies().size() == 0) {
                         model.nextWave();
