@@ -6,11 +6,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 
 import java.util.ArrayList;
-<<<<<<< HEAD
 import java.util.Random;
-=======
-import java.util.Timer;
->>>>>>> origin/master
 
 /**
  * Created by Kristoffer on 2016-05-02.
@@ -54,13 +50,7 @@ public class Wave implements Runnable{
             }
 
             if (Model.getInstance().getState() == Model.State.RUNNING) {
-<<<<<<< HEAD
                 spawn();
-=======
-                enemies.add(new Enemy());
-                nbrOfSent++;
-
->>>>>>> origin/master
             }
         }
     }

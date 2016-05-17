@@ -175,17 +175,11 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
 	public void startGame(){
 		if (model.getState() == Model.State.PAUSED || model.getState() == Model.State.STOPPED || model.getState() == Model.State.GAMEOVER){
-<<<<<<< HEAD
+
 			if (model.getState() == Model.State.GAMEOVER){
                 player.saveScore();
                 model.restartWaves();
                 wave = new Wave(1,model.getDifficulty());
-=======
-
-            //show new wave text?
-            if (model.getState() != Model.State.PAUSED){
-                wave.displayWaveFont();
->>>>>>> origin/master
             }
 
             spawnThrowable();
@@ -205,7 +199,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
     public void restartGame(){
         model.restartWaves();
-        wave = new Wave(1,model.getNumberOfEnemies());
+        wave = new Wave(1,model.getDifficulty());
         player.resetScore();
         startGame();
     }
