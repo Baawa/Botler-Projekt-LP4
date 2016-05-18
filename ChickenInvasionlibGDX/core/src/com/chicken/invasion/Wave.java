@@ -31,7 +31,7 @@ public class Wave implements Runnable{
 
         potentialEnemies = new ArrayList<Enemy>();
         //potentialEnemies.add(new Enemy());
-        potentialEnemies.add(new Enemy("tramp-spritesheet.png"));
+        potentialEnemies.add(new Enemy("tramp-spritesheet.png", 1));
 
         initNewWaveFont();
 
@@ -123,5 +123,8 @@ public class Wave implements Runnable{
 
     public void dispose(){
         waveFont.dispose();
+        for (Enemy e : enemies){
+            e.dispose();
+        }
     }
 }

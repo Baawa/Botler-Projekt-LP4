@@ -69,4 +69,8 @@ public class GameButton{
         }
     }
 
+    public void dispose(){
+        sprite.getTexture().dispose();
+    }
+
 }

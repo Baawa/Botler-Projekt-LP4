@@ -11,6 +11,7 @@ buildscript {
 allprojects {
     apply plugin: "eclipse"
     apply plugin: "idea"
+    buildDir = "C:/tmp/${rootProject.name}/${project.name}"
 
     version = '1.0'
     ext {
