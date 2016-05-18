@@ -20,7 +20,7 @@ public class ThrowableObject{
     private String name;
     private double speed = 1;
     private int damage = 1;
-    private int rotation = 1;
+    private float rotation = 1.0f;
     private Boolean collided = false;
     private Boolean thrown = false;
     private float scale = 1.0f;
@@ -203,7 +203,7 @@ public class ThrowableObject{
         this.damage = damage;
     }
 
-    public void setRotationSpeed(int rotationSpeed){
+    public void setRotationSpeed(float rotationSpeed){
         this.rotation = rotationSpeed;
     }
 
@@ -219,7 +219,7 @@ public class ThrowableObject{
         return damage;
     }
 
-    public int getRotationSpeed(){
+    public float getRotationSpeed(){
         return this.rotation;
     }
 

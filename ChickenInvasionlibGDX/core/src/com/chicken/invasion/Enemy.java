@@ -29,6 +29,7 @@ public class Enemy implements Cloneable{
     float stateTime;
 
     public Enemy(Enemy e){
+        this.walkSheet = e.getWalkSheet();
         TextureRegion[][] tmp = TextureRegion.split(walkSheet, walkSheet.getWidth()/FRAME_COLS, walkSheet.getHeight()/FRAME_ROWS);
         TextureRegion[] walkFrames = new TextureRegion[FRAME_COLS * FRAME_ROWS];
         int index = 0;
@@ -158,8 +159,12 @@ public class Enemy implements Cloneable{
         return clone;
     }
 
-    public void dispose(){
+    public void dispose() {
         walkSheet.dispose();
         currentFrame.getTexture().dispose();
+    }
+
+    public Texture getWalkSheet(){
+        return this.walkSheet;
     }
 }

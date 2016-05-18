@@ -31,7 +31,9 @@ public class Wave implements Runnable{
 
         potentialEnemies = new ArrayList<Enemy>();
         //potentialEnemies.add(new Enemy());
-        potentialEnemies.add(new Enemy("tramp-spritesheet.png", 1));
+        potentialEnemies.add(potentialEnemies.size() ,new Enemy("ekak-spritesheet.png", 1));
+        potentialEnemies.add(potentialEnemies.size() ,new Enemy("army-spritesheet.png", 2));
+        potentialEnemies.add(potentialEnemies.size() ,new Enemy("tramp-spritesheet.png", 4));
 
         initNewWaveFont();
 
@@ -113,6 +115,7 @@ public class Wave implements Runnable{
         waveFont = generator.generateFont(parameter);
         waveFont.getData().setScale(0.02f);
         waveFont.setColor(Color.WHITE);
+        waveFont.setUseIntegerPositions(false);
 
 
         fontX = Gdx.graphics.getWidth() / 200 - 0.5f;
