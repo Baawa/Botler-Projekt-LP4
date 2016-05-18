@@ -23,12 +23,13 @@ public class Enemy {
     private static final int        FRAME_ROWS = 2;
 
     private Animation               walkAnimation;
-    private static Texture          walkSheet = new Texture("chickenlargeanim.png");
+    private Texture          walkSheet = new Texture("chickenlargeanim.png");
     private TextureRegion           currentFrame;
 
     float stateTime;
 
     public Enemy(Enemy e){
+        this.walkSheet = e.getWalkSheet();
         TextureRegion[][] tmp = TextureRegion.split(walkSheet, walkSheet.getWidth()/FRAME_COLS, walkSheet.getHeight()/FRAME_ROWS);
         TextureRegion[] walkFrames = new TextureRegion[FRAME_COLS * FRAME_ROWS];
         int index = 0;
@@ -147,5 +148,9 @@ public class Enemy {
 
     public int getHealth(){
         return this.health;
+    }
+
+    public Texture getWalkSheet(){
+        return this.walkSheet;
     }
 }
