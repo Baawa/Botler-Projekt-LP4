@@ -30,7 +30,8 @@ public class Wave implements Runnable{
         enemies = new ArrayList<Enemy>();
 
         potentialEnemies = new ArrayList<Enemy>();
-        potentialEnemies.add(new Enemy());
+        //potentialEnemies.add(new Enemy());
+        potentialEnemies.add(new Enemy("tramp-spritesheet.png"));
 
         initNewWaveFont();
 
