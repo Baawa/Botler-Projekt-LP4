@@ -199,13 +199,15 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         batch.draw(chickenLeg, 0.1f, Gdx.graphics.getHeight() / 100 - 1f, 1, 1);
 
         //Draw chicken wings
+        fontWings.draw(batch, String.valueOf(player.getChickenWings()), 1.5f, Gdx.graphics.getHeight()/100 - 0.2f);
+        /*
         fontWings.draw(batch,
                 String.valueOf(player.getChickenWings()),
                 1.5f,
-                ((Gdx.graphics.getHeight() / 100)),
+                ((Gdx.graphics.getHeight() / 100) - 0.5f),
                 0f,
                 Align.topLeft,
-                false);
+                false);*/
     }
 
 	public void startGame(){
@@ -464,14 +466,14 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         //chicken wings
         parameter.size = 60;
         fontWings = generator.generateFont(parameter);
-        fontWings.getData().setScale(0.02f);
+        fontWings.getData().setScale(0.015f);
         fontWings.setUseIntegerPositions(false);
-        fontWings.setColor(Color.ORANGE);
+        fontWings.setColor(Color.WHITE);
 
         generator.dispose();
 
         //Chicken leg icon
-        chickenLeg = new Texture("ChickenLeg.png");
+        chickenLeg = new Texture("chickenleg-skevsomfan.png");
     }
 
 	private void spawnThrowable(){
