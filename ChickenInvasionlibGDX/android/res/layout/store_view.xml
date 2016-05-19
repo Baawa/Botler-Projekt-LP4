@@ -29,4 +29,5 @@
         android:layout_height="wrap_content"
         android:text="Backgrounds"
         android:id="@+id/background_store" />
+
 </RelativeLayout>

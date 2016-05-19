@@ -36,6 +36,7 @@ public class ThrowableObject{
     private float orgWidth;
     private float orgHeight;
     private Rectangle collideRect;
+    private boolean available;
 
     private Player player;
 
@@ -90,6 +91,7 @@ public class ThrowableObject{
 
         this.player = player;
 
+        this.available = false;
         this.name = name;
         this.image = image;
         this.scale = scale;
@@ -266,6 +268,14 @@ public class ThrowableObject{
 
     public World getWorld(){
         return this.world;
+    }
+
+    public void setAvailable(boolean available) {
+        this.available = available;
+    }
+
+    public boolean getAvailable(){
+        return this.available;
     }
 
     public Player getPlayer(){
