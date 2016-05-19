@@ -26,20 +26,6 @@
                 android:layout_width="150dp"
                 android:layout_height="10dp"
                 android:id="@+id/streangthIndicator" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/weapon_img" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/weapon_img"
-                android:text="Buy"
-                android:id="@+id/buy_btn" />
-
-
         </RelativeLayout>
 
     </android.support.v7.widget.CardView>
