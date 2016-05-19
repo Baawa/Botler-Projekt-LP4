@@ -5,20 +5,11 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
-import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.CircleShape;
-import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.World;
-import com.badlogic.gdx.scenes.scene2d.ui.Image;
-import com.badlogic.gdx.utils.Array;
-
-import java.util.ArrayList;
-
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 
 /**
  * Created by Albin on 2016-04-26.
@@ -29,7 +20,7 @@ public class ThrowableObject{
     private String name;
     private double speed = 1;
     private int damage = 1;
-    private int rotation = 1;
+    private float rotation = 1.0f;
     private Boolean collided = false;
     private Boolean thrown = false;
     private float scale = 1.0f;
@@ -214,7 +205,7 @@ public class ThrowableObject{
         this.damage = damage;
     }
 
-    public void setRotationSpeed(int rotationSpeed){
+    public void setRotationSpeed(float rotationSpeed){
         this.rotation = rotationSpeed;
     }
 
@@ -230,7 +221,7 @@ public class ThrowableObject{
         return damage;
     }
 
-    public int getRotationSpeed(){
+    public float getRotationSpeed(){
         return this.rotation;
     }
 
@@ -286,6 +277,13 @@ public class ThrowableObject{
 
     public Sprite copySprite(){
         return new Sprite(this.sprite);
+    }
+
+    public void dispose(){
+        image.dispose();
+        sprite.getTexture().dispose();
+        world.dispose();
+        body.getWorld().dispose();
     }
 
 }

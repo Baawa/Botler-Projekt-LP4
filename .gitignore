@@ -174,3 +174,16 @@ gradle-app.setting
 
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
+
+### Android Studio ###
+
+*.iml
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+ChickenInvasionlibGDX/android/build.gradle
+ChickenInvasionlibGDX/android/build.gradle

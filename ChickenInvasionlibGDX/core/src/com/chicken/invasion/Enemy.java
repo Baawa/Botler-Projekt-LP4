@@ -13,7 +13,7 @@ import java.util.Random;
 /**
  * Created by Kristoffer on 2016-05-02.
  */
-public class Enemy {
+public class Enemy implements Cloneable{
     private float                   x,y, width, height;
     private int                     health;
     private float                   speed;
@@ -23,7 +23,7 @@ public class Enemy {
     private static final int        FRAME_ROWS = 2;
 
     private Animation               walkAnimation;
-    private Texture          walkSheet = new Texture("chickenlargeanim.png");
+    private Texture                 walkSheet = new Texture("chickenlargeanim.png");
     private TextureRegion           currentFrame;
 
     float stateTime;
@@ -54,8 +54,8 @@ public class Enemy {
         health = 1;
     }
 
-    public Enemy(String walkSheet, int health){
-        this.walkSheet = new Texture(walkSheet);
+    public Enemy(String image, int health){
+        walkSheet = new Texture(image);
         TextureRegion[][] tmp = TextureRegion.split(this.walkSheet, this.walkSheet.getWidth()/FRAME_COLS, this.walkSheet.getHeight()/FRAME_ROWS);
         TextureRegion[] walkFrames = new TextureRegion[FRAME_COLS * FRAME_ROWS];
         int index = 0;
@@ -116,14 +116,6 @@ public class Enemy {
         height += dt/3f;
 
         collideRect.set(x,y,width,height);
-
-
-        /*
-        sprite.setSize(sprite.getWidth()+(dt/3.5f), sprite.getHeight()+(dt/3.5f));
-        sprite.setX(sprite.getX()-dt/7);
-        sprite.setY(sprite.getY() - dt/1.2f);
-        collideRect = sprite.getBoundingRectangle();
-        */
     }
 
     public Rectangle getCollideRect() { return collideRect; }
@@ -148,6 +140,28 @@ public class Enemy {
 
     public int getHealth(){
         return this.health;
+    }
+
+    @Override
+    public Enemy clone(){
+        Enemy clone = new Enemy();
+        clone.collideRect = this.collideRect;
+        clone.width = this.width;
+        clone.currentFrame = this.currentFrame;
+        clone.health = this.health;
+        clone.height = this.height;
+        clone.speed = this.speed;
+        clone.walkAnimation = this.walkAnimation;
+        clone.walkSheet = this.walkSheet;
+        clone.x = this.x;
+        clone.y  =this.y;
+
+        return clone;
+    }
+
+    public void dispose() {
+        walkSheet.dispose();
+        currentFrame.getTexture().dispose();
     }
 
     public Texture getWalkSheet(){

@@ -18,6 +18,7 @@ android {
         applicationId "com.chicken.invasion"
         minSdkVersion 21
         targetSdkVersion 23
+        //buildDir = "C:/tmp/${rootProject.name}/${project.name}"
     }
 }
 

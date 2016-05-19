@@ -107,6 +107,10 @@ public class Wave implements Runnable{
         return fontY;
     }
 
+    public int getDifficulty(){
+        return difficulty;
+    }
+
     private void initNewWaveFont(){
         FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("fonts/ChunkfiveEx.ttf"));
         FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
@@ -115,6 +119,7 @@ public class Wave implements Runnable{
         waveFont = generator.generateFont(parameter);
         waveFont.getData().setScale(0.02f);
         waveFont.setColor(Color.WHITE);
+        waveFont.setUseIntegerPositions(false);
 
 
         fontX = Gdx.graphics.getWidth() / 200 - 0.5f;
@@ -125,5 +130,8 @@ public class Wave implements Runnable{
 
     public void dispose(){
         waveFont.dispose();
+        for (Enemy e : enemies){
+            e.dispose();
+        }
     }
 }

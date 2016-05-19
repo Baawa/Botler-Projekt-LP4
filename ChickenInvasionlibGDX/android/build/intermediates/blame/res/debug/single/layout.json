@@ -1,5 +1,6 @@
 [
     {
+<<<<<<< HEAD
         "merged": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/res/merged/debug/layout/messenger_button_send_blue_small.xml",
         "source": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.11.0/res/layout/messenger_button_send_blue_small.xml"
     },
@@ -56,6 +57,8 @@
         "source": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/res/layout/create_weapon_layout.xml"
     },
     {
+=======
+>>>>>>> origin/master
         "merged": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/res/merged/debug/layout/messenger_button_send_white_round.xml",
         "source": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.11.0/res/layout/messenger_button_send_white_round.xml"
     },
@@ -72,28 +75,24 @@
         "source": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.11.0/res/layout/com_facebook_login_fragment.xml"
     },
     {
-        "merged": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/res/merged/debug/layout/store_view.xml",
-        "source": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/res/layout/store_view.xml"
+        "merged": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/res/merged/debug/layout/messenger_button_send_white_large.xml",
+        "source": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.11.0/res/layout/messenger_button_send_white_large.xml"
     },
     {
-        "merged": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/res/merged/debug/layout/card_layout.xml",
-        "source": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/res/layout/card_layout.xml"
+        "merged": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/res/merged/debug/layout/messenger_button_send_blue_round.xml",
+        "source": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.11.0/res/layout/messenger_button_send_blue_round.xml"
     },
     {
-        "merged": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/res/merged/debug/layout/messenger_button_send_blue_round.xml",
-        "source": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.11.0/res/layout/messenger_button_send_blue_round.xml"
+        "merged": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/res/merged/debug/layout/com_facebook_tooltip_bubble.xml",
+        "source": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.11.0/res/layout/com_facebook_tooltip_bubble.xml"
     },
     {
-        "merged": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/res/merged/debug/layout/messenger_button_send_white_round.xml",
-        "source": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.11.0/res/layout/messenger_button_send_white_round.xml"
+        "merged": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/res/merged/debug/layout/messenger_button_send_white_small.xml",
+        "source": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.11.0/res/layout/messenger_button_send_white_small.xml"
     },
     {
         "merged": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/res/merged/debug/layout/card_layout.xml",
         "source": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/res/layout/card_layout.xml"
-    },
-    {
-        "merged": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/res/merged/debug/layout/com_facebook_activity_layout.xml",
-        "source": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.11.0/res/layout/com_facebook_activity_layout.xml"
     },
     {
         "merged": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/res/merged/debug/layout/com_facebook_device_auth_dialog_fragment.xml",
@@ -104,19 +103,26 @@
         "source": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/res/layout/highscore_content.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/res/merged/debug/layout/create_weapon_layout.xml",
         "source": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/res/layout/create_weapon_layout.xml"
     },
     {
+=======
+>>>>>>> origin/master
         "merged": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/res/merged/debug/layout/messenger_button_send_blue_small.xml",
         "source": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.11.0/res/layout/messenger_button_send_blue_small.xml"
     },
     {
-        "merged": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/res/merged/debug/layout/com_facebook_tooltip_bubble.xml",
-        "source": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.11.0/res/layout/com_facebook_tooltip_bubble.xml"
+        "merged": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/res/merged/debug/layout/messenger_button_send_blue_large.xml",
+        "source": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.11.0/res/layout/messenger_button_send_blue_large.xml"
     },
     {
         "merged": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/res/merged/debug/layout/com_facebook_activity_layout.xml",
         "source": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.11.0/res/layout/com_facebook_activity_layout.xml"
+    },
+    {
+        "merged": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/res/merged/debug/layout/create_weapon_layout.xml",
+        "source": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/res/layout/create_weapon_layout.xml"
     }
 ]

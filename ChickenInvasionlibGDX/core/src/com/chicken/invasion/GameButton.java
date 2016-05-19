@@ -33,7 +33,7 @@ public class GameButton{
         this.sprite.setY(y);
     }
 
-    public void setSize(int w, int h){
+    public void setSize(float w, float h){
         this.sprite.setSize(w, h);
     }
 
@@ -67,6 +67,10 @@ public class GameButton{
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void dispose(){
+        sprite.getTexture().dispose();
     }
 
 }

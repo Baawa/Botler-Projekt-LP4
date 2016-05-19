@@ -1,47 +1,27 @@
 package com.chicken.invasion;
 
 import com.badlogic.gdx.ApplicationAdapter;
-import com.badlogic.gdx.Audio;
-import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
-import com.badlogic.gdx.audio.Sound;
-import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.input.GestureDetector;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.World;
-import com.badlogic.gdx.scenes.scene2d.Actor;
-import com.badlogic.gdx.scenes.scene2d.Event;
-import com.badlogic.gdx.scenes.scene2d.EventListener;
-import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.InputListener;
-import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
-import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
-import com.badlogic.gdx.scenes.scene2d.utils.SpriteDrawable;
 import com.badlogic.gdx.utils.Align;
-import com.badlogic.gdx.utils.Array;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.ListIterator;
+import java.util.List;
 import java.util.concurrent.Callable;
-
-import java.util.ArrayList;
 import java.util.Iterator;
 
 public class ChickenInvasion extends ApplicationAdapter implements GestureDetector.GestureListener{
@@ -69,8 +49,8 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 	private Player player;
     private Wave wave;
     private Rectangle bottom;
-    private float scoreWidth, scoreHeight;
-    private BitmapFont fontScore;
+    private BitmapFont fontScore, fontWings;
+    Texture chickenLeg;
 
 	private GameButton startBtn;
 	private GameButton pauseBtn;
@@ -78,8 +58,16 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
     private GameButton highscoreBtn;
     private GameButton backBtn;
     private GameButton restartBtn;
+    private GameButton muteBtn;
+    private GameButton unmuteBtn;
+    private GameButton settingsBtn;
 
 	private Camera camera;
+
+    private Music bgMusic;
+
+    private Boolean showSettings = false;
+    private Boolean muteMusic = false;
 	
 	@Override
 	public void create () {
@@ -90,8 +78,9 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
 		player = new Player();
         if (player.getCurrentTO() == null){
-            ThrowableObject tmp = new ThrowableObject(100, "Bat", new Texture("bat300x300.png"), this.world, player);
+            ThrowableObject tmp = new ThrowableObject(100, "Bat", new Texture("beachball200x200.png"), this.world, player);
             tmp.setSpeed(1.5);
+            tmp.setRotationSpeed(0.5f);
             player.setEquippedTO(tmp);
         }
 
@@ -120,10 +109,12 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         Gdx.gl.glClearColor(1, 1, 1, 1);
 
         // MUSIKAAA!!!
-        Music bgMusic = Gdx.audio.newMusic(Gdx.files.internal("gamemusic/ChickenInvasion-BackgroundMusic.mp3"));
-        bgMusic.setLooping(true);
-        bgMusic.setVolume(0.5f);
-        bgMusic.play();
+        if (muteMusic == false) {
+            bgMusic = Gdx.audio.newMusic(Gdx.files.internal("gamemusic/ChickenInvasion-BackgroundMusic.mp3"));
+            bgMusic.setLooping(true);
+            bgMusic.setVolume(0.5f);
+            bgMusic.play();
+        }
 
 	}
 
@@ -199,6 +190,24 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
                     Align.center,
                     false);
         }
+
+    }
+
+    public void drawAlways(){
+        backgroundimg.draw(batch);
+
+        batch.draw(chickenLeg, 0.1f, Gdx.graphics.getHeight() / 100 - 1f, 1, 1);
+
+        //Draw chicken wings
+        fontWings.draw(batch, String.valueOf(player.getChickenWings()), 1.5f, Gdx.graphics.getHeight()/100 - 0.2f);
+        /*
+        fontWings.draw(batch,
+                String.valueOf(player.getChickenWings()),
+                1.5f,
+                ((Gdx.graphics.getHeight() / 100) - 0.5f),
+                0f,
+                Align.topLeft,
+                false);*/
     }
 
 	public void startGame(){
@@ -243,8 +252,27 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 		model.pauseGame();
 	}
 
+    public void mute(){
+        if (muteMusic == true){
+            muteMusic = false;
+            bgMusic = Gdx.audio.newMusic(Gdx.files.internal("gamemusic/ChickenInvasion-BackgroundMusic.mp3"));
+            bgMusic.setLooping(true);
+            bgMusic.setVolume(0.5f);
+            bgMusic.play();
+            return;
+        } else {
+            muteMusic = true;
+            bgMusic.stop();
+            return;
+        }
+    }
+
+    public void showSettingsView(){
+        showSettings = !showSettings;
+    }
+
     private void drawRunningGame(SpriteBatch batch){
-        backgroundimg.draw(batch);
+        drawAlways();
         drawEnemies();
         checkCollision();
         player.draw(batch);
@@ -256,11 +284,9 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
     }
 
     private void drawGameOverScreen(SpriteBatch batch){
-
-        backgroundimg.draw(batch);
+        drawAlways();
         drawEnemies();
         player.drawOnly(batch);
-        drawFonts();
 
         //Game Over specifics
         gameOver = new Sprite(new Texture("gameover.png"));
@@ -281,7 +307,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
     private void drawStartScreen(SpriteBatch batch){
 
-        backgroundimg.draw(batch);
+        drawAlways();
 
         startBanner = new Sprite(new Texture("startBanner.png"));
         startBanner.setSize(350 / 50, 250f / 50);
@@ -300,10 +326,32 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         highscoreBtn.setX(Gdx.graphics.getWidth() / 200 + startBtn.getWidth() / 2 + 0.5f);
         highscoreBtn.setY(startBtn.getY() - 0.1f);
         highscoreBtn.draw(batch);
+
+        settingsBtn.setX(Gdx.graphics.getWidth() / 100 - 0.1f - settingsBtn.getWidth());
+        settingsBtn.setY(Gdx.graphics.getHeight() / 100 - 0.1f - settingsBtn.getHeight());
+        settingsBtn.draw(batch);
+
+        if (showSettings){
+            Sprite settingsView = new Sprite(new Texture("settings.png"));
+            settingsView.setSize(350 / 50, 500 / 50);
+            settingsView.setX(Gdx.graphics.getWidth() / 200 - settingsView.getWidth() / 2);
+            settingsView.setY(Gdx.graphics.getWidth() / 200);
+            settingsView.draw(batch);
+
+            if (muteMusic == false){
+                muteBtn.setX(Gdx.graphics.getWidth() / 200 - muteBtn.getWidth() / 2);
+                muteBtn.setY(Gdx.graphics.getHeight() / 200 - 2.0f);
+                muteBtn.draw(batch);
+            } else{
+                unmuteBtn.setX(Gdx.graphics.getWidth() / 200 - unmuteBtn.getWidth() / 2);
+                unmuteBtn.setY(Gdx.graphics.getHeight() / 200 - 2.0f);
+                unmuteBtn.draw(batch);
+            }
+        }
     }
 
     private void drawPausedGame(SpriteBatch batch){
-        backgroundimg.draw(batch);
+        drawAlways();
         drawEnemies();
         player.drawOnly(batch);
         drawFonts();
@@ -378,22 +426,54 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
             }
         }), new Texture("pause200x200.png"));
         pauseBtn.setSize(200 / 200, 200 / 200);
+
+        muteBtn = new GameButton((new Callable<Void>() {
+            public Void call() throws Exception {
+                mute();
+                return null;
+            }
+        }), new Texture("mute220x220.png"));
+        muteBtn.setSize(220 / 100, 220 / 100);
+
+        unmuteBtn = new GameButton((new Callable<Void>() {
+            public Void call() throws Exception {
+                mute();
+                return null;
+            }
+        }), new Texture("unmute220x220.png"));
+        unmuteBtn.setSize(220 / 100, 220 / 100);
+
+        settingsBtn = new GameButton((new Callable<Void>() {
+            public Void call() throws Exception {
+                showSettingsView();
+                return null;
+            }
+        }), new Texture("cogwheel.png"));
+        settingsBtn.setSize(1, 1);
     }
 
     private void initFonts(){
-        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("fonts/Roboto-Bold.ttf"));
+        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("fonts/ChunkfiveEx.ttf"));
         FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
         parameter.size = 100;
 
         //score
         fontScore = generator.generateFont(parameter);
         fontScore.getData().setScale(0.03f);
+        fontScore.setUseIntegerPositions(false);
         fontScore.setColor(Color.WHITE);
 
         //chicken wings
-        //TODO
+        parameter.size = 60;
+        fontWings = generator.generateFont(parameter);
+        fontWings.getData().setScale(0.015f);
+        fontWings.setUseIntegerPositions(false);
+        fontWings.setColor(Color.WHITE);
 
         generator.dispose();
+
+        //Chicken leg icon
+        chickenLeg = new Texture("chickenleg-skevsomfan.png");
     }
 
 	private void spawnThrowable(){
@@ -414,7 +494,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
                     music.setVolume(1.0f);
                     music.play();
 
-                    if (wave.getEnemies().size() == 0) {
+                    if (wave.getEnemies().size() == 0 && wave.getDifficulty() == 0) {
                         model.nextWave();
                         wave.dispose();
                         wave = new Wave(wave.getLevel() + 1, model.getDifficulty());
@@ -436,15 +516,20 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
     }
 
     private void drawEnemies(){
-        for (Iterator<Enemy> iterEnemies = wave.getEnemies().iterator(); iterEnemies.hasNext(); ) {
-            Enemy e = iterEnemies.next();
-            //update if not paused
-            if (model.getState() == Model.State.RUNNING) {
-                e.update(Gdx.graphics.getDeltaTime());
-            }
-            //draw
-            batch.draw(e.getTextureRegion(), e.getX(), e.getY(), e.getWidth(), e.getHeight());
+        ArrayList<Enemy> temp = new ArrayList<Enemy>(wave.getEnemies().size());
+        for (Enemy e: wave.getEnemies()){
+            temp.add(e);
         }
+        Iterator<Enemy> iterEnemies = temp.iterator();
+            while (iterEnemies.hasNext()) {
+                Enemy e = iterEnemies.next();
+                //update if not paused
+                if (model.getState() == Model.State.RUNNING) {
+                    e.update(Gdx.graphics.getDeltaTime());
+                }
+                //draw
+                batch.draw(e.getTextureRegion(), e.getX(), e.getY(), e.getWidth(), e.getHeight());
+            }
     }
 
 
@@ -452,6 +537,18 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
     public void dispose(){
         batch.dispose();
         fontScore.dispose();
+        fontWings.dispose();
+        chickenLeg.dispose();
+        backgroundimg.getTexture().dispose();
+        gameOver.getTexture().dispose();
+        startBanner.getTexture().dispose();
+        backBtn.dispose();
+        highscoreBtn.dispose();
+        pauseBtn.dispose();
+        restartBtn.dispose();
+        startBtn.dispose();
+        storeBtn.dispose();
+        player.dispose();
         world.dispose();
         wave.dispose();
     }
@@ -481,6 +578,14 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
             this.startBtn.clicked(coords2.x,coords2.y);
             this.storeBtn.clicked(coords2.x,coords2.y);
             this.highscoreBtn.clicked(coords2.x, coords2.y);
+            this.settingsBtn.clicked(coords2.x, coords2.y);
+            if (showSettings){
+                if (muteMusic){
+                    this.unmuteBtn.clicked(coords2.x, coords2.y);
+                } else{
+                    this.muteBtn.clicked(coords2.x, coords2.y);
+                }
+            }
         }
 
         if (model.getState() == Model.State.GAMEOVER){

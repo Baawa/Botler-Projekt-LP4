@@ -69,12 +69,13 @@ public class Player {
         score++;
         addChickenWings(10);
     }
-
-    public void addChickenWings(int amount){
-        chickenWings += amount;
-    }
-
     public int getScore(){ return score; }
+
+    public void addChickenWings(int amount){ chickenWings += amount; }
+
+    public int getChickenWings(){
+        return chickenWings;
+    }
 
     public void saveScore(){
         //TODO spara om det är nytt highscore
@@ -82,5 +83,11 @@ public class Player {
     }
 
     public void resetScore(){ score = 0; }
+
+    public void dispose(){
+        for (ThrowableObject to : throwables){
+            to.dispose();
+        }
+    }
 
 }
