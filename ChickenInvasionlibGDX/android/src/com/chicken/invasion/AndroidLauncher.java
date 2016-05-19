@@ -18,6 +18,7 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 		AppEventsLogger.activateApp(this);
 		AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
 
+        setContentView(R.layout.start_view);
 
 		ChickenInvasion chickenInvasion = new ChickenInvasion();
 		chickenInvasion.setMyGameCallback(this);
