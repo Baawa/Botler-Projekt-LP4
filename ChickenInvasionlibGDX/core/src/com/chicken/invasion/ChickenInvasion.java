@@ -492,7 +492,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
                     music.setVolume(1.0f);
                     music.play();
 
-                    if (wave.getEnemies().size() == 0) {
+                    if (wave.getEnemies().size() == 0 && wave.getDifficulty() == 0) {
                         model.nextWave();
                         wave.dispose();
                         wave = new Wave(wave.getLevel() + 1, model.getDifficulty());

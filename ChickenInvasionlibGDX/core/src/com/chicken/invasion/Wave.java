@@ -107,6 +107,10 @@ public class Wave implements Runnable{
         return fontY;
     }
 
+    public int getDifficulty(){
+        return difficulty;
+    }
+
     private void initNewWaveFont(){
         FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("fonts/ChunkfiveEx.ttf"));
         FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
