@@ -325,15 +325,15 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         highscoreBtn.setY(startBtn.getY() - 0.1f);
         highscoreBtn.draw(batch);
 
-        settingsBtn.setX(Gdx.graphics.getWidth() - 0.5f - settingsBtn.getWidth());
-        settingsBtn.setY(Gdx.graphics.getHeight() - 0.5f);
+        settingsBtn.setX(Gdx.graphics.getWidth() / 100 - 0.1f - settingsBtn.getWidth());
+        settingsBtn.setY(Gdx.graphics.getHeight() / 100 - 0.1f - settingsBtn.getHeight());
         settingsBtn.draw(batch);
 
         if (showSettings){
             Sprite settingsView = new Sprite(new Texture("settings.png"));
             settingsView.setSize(350 / 50, 500 / 50);
             settingsView.setX(Gdx.graphics.getWidth() / 200 - settingsView.getWidth() / 2);
-            settingsView.setY(Gdx.graphics.getWidth() / 200 + (settingsView.getHeight()/2));
+            settingsView.setY(Gdx.graphics.getWidth() / 200);
             settingsView.draw(batch);
 
             if (muteMusic == false){
@@ -431,7 +431,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
                 return null;
             }
         }), new Texture("mute220x220.png"));
-        muteBtn.setSize(220 / 200, 220 / 200);
+        muteBtn.setSize(220 / 100, 220 / 100);
 
         unmuteBtn = new GameButton((new Callable<Void>() {
             public Void call() throws Exception {
@@ -439,7 +439,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
                 return null;
             }
         }), new Texture("unmute220x220.png"));
-        unmuteBtn.setSize(220 / 200, 220 / 200);
+        unmuteBtn.setSize(220 / 100, 220 / 100);
 
         settingsBtn = new GameButton((new Callable<Void>() {
             public Void call() throws Exception {
@@ -447,7 +447,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
                 return null;
             }
         }), new Texture("cogwheel.png"));
-        pauseBtn.setSize(120 / 200, 120 / 200);
+        settingsBtn.setSize(1, 1);
     }
 
     private void initFonts(){
@@ -576,6 +576,14 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
             this.startBtn.clicked(coords2.x,coords2.y);
             this.storeBtn.clicked(coords2.x,coords2.y);
             this.highscoreBtn.clicked(coords2.x, coords2.y);
+            this.settingsBtn.clicked(coords2.x, coords2.y);
+            if (showSettings){
+                if (muteMusic){
+                    this.unmuteBtn.clicked(coords2.x, coords2.y);
+                } else{
+                    this.muteBtn.clicked(coords2.x, coords2.y);
+                }
+            }
         }
 
         if (model.getState() == Model.State.GAMEOVER){
