@@ -58,8 +58,16 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
     private GameButton highscoreBtn;
     private GameButton backBtn;
     private GameButton restartBtn;
+    private GameButton muteBtn;
+    private GameButton unmuteBtn;
+    private GameButton settingsBtn;
 
 	private Camera camera;
+
+    private Music bgMusic;
+
+    private Boolean showSettings = false;
+    private Boolean muteMusic = false;
 	
 	@Override
 	public void create () {
@@ -101,10 +109,12 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         Gdx.gl.glClearColor(1, 1, 1, 1);
 
         // MUSIKAAA!!!
-        Music bgMusic = Gdx.audio.newMusic(Gdx.files.internal("gamemusic/ChickenInvasion-BackgroundMusic.mp3"));
-        bgMusic.setLooping(true);
-        bgMusic.setVolume(0.5f);
-        bgMusic.play();
+        if (muteMusic == false) {
+            bgMusic = Gdx.audio.newMusic(Gdx.files.internal("gamemusic/ChickenInvasion-BackgroundMusic.mp3"));
+            bgMusic.setLooping(true);
+            bgMusic.setVolume(0.5f);
+            bgMusic.play();
+        }
 
 	}
 
@@ -240,6 +250,25 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 		model.pauseGame();
 	}
 
+    public void mute(){
+        if (muteMusic == true){
+            muteMusic = false;
+            bgMusic = Gdx.audio.newMusic(Gdx.files.internal("gamemusic/ChickenInvasion-BackgroundMusic.mp3"));
+            bgMusic.setLooping(true);
+            bgMusic.setVolume(0.5f);
+            bgMusic.play();
+            return;
+        } else {
+            muteMusic = true;
+            bgMusic.stop();
+            return;
+        }
+    }
+
+    public void showSettingsView(){
+        showSettings = !showSettings;
+    }
+
     private void drawRunningGame(SpriteBatch batch){
         drawAlways();
         drawEnemies();
@@ -295,6 +324,28 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         highscoreBtn.setX(Gdx.graphics.getWidth() / 200 + startBtn.getWidth() / 2 + 0.5f);
         highscoreBtn.setY(startBtn.getY() - 0.1f);
         highscoreBtn.draw(batch);
+
+        settingsBtn.setX(Gdx.graphics.getWidth() - 0.5f - settingsBtn.getWidth());
+        settingsBtn.setY(Gdx.graphics.getHeight() - 0.5f);
+        settingsBtn.draw(batch);
+
+        if (showSettings){
+            Sprite settingsView = new Sprite(new Texture("settings.png"));
+            settingsView.setSize(350 / 50, 500 / 50);
+            settingsView.setX(Gdx.graphics.getWidth() / 200 - settingsView.getWidth() / 2);
+            settingsView.setY(Gdx.graphics.getWidth() / 200 + (settingsView.getHeight()/2));
+            settingsView.draw(batch);
+
+            if (muteMusic == false){
+                muteBtn.setX(Gdx.graphics.getWidth() / 200 - muteBtn.getWidth() / 2);
+                muteBtn.setY(Gdx.graphics.getHeight() / 200 - 2.0f);
+                muteBtn.draw(batch);
+            } else{
+                unmuteBtn.setX(Gdx.graphics.getWidth() / 200 - unmuteBtn.getWidth() / 2);
+                unmuteBtn.setY(Gdx.graphics.getHeight() / 200 - 2.0f);
+                unmuteBtn.draw(batch);
+            }
+        }
     }
 
     private void drawPausedGame(SpriteBatch batch){
@@ -373,6 +424,30 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
             }
         }), new Texture("pause200x200.png"));
         pauseBtn.setSize(200 / 200, 200 / 200);
+
+        muteBtn = new GameButton((new Callable<Void>() {
+            public Void call() throws Exception {
+                mute();
+                return null;
+            }
+        }), new Texture("mute220x220.png"));
+        muteBtn.setSize(220 / 200, 220 / 200);
+
+        unmuteBtn = new GameButton((new Callable<Void>() {
+            public Void call() throws Exception {
+                mute();
+                return null;
+            }
+        }), new Texture("unmute220x220.png"));
+        unmuteBtn.setSize(220 / 200, 220 / 200);
+
+        settingsBtn = new GameButton((new Callable<Void>() {
+            public Void call() throws Exception {
+                showSettingsView();
+                return null;
+            }
+        }), new Texture("cogwheel.png"));
+        pauseBtn.setSize(120 / 200, 120 / 200);
     }
 
     private void initFonts(){
