@@ -26,28 +26,21 @@ import java.util.Iterator;
 
 public class ChickenInvasion extends ApplicationAdapter implements GestureDetector.GestureListener{
 
-    //--------------------------------
     //Interface for various callbacks to the android launcher
     public interface GameCallback {
-        void onStartActivityStore();
-        void onStartActivityHighScore();
+        public void onStartActivityStore();
+        public void onStartActivityHighScore();
     }
+
     // Local variable to hold the callback implementation
     private GameCallback gameCallback;
+
     // Setter for the callback
     public void setMyGameCallback(GameCallback callback) {
         gameCallback = callback;
     }
-    //---------------------------------
 
-    //Score callback interface ---------
-    public interface ScoreCallback{
-        void setHighscore(String name, int points);
-    }
-    private ScoreCallback scoreCallback;
 
-    public void setMyScoreCallback(ScoreCallback callback) { scoreCallback = callback; }
-    //----------------------------------
 
 	private Model model;
 	private SpriteBatch batch;
@@ -516,7 +509,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
             //Check if player lost
             if (e.getCollideRect().overlaps(bottom)) {
                 model.gameOver();
-                scoreCallback.setHighscore("Seidon", player.getScore());
+                player.saveScore();
                 break;
             }
         }

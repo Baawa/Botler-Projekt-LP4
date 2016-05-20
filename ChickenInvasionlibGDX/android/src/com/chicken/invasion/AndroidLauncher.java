@@ -21,9 +21,6 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 
 		ChickenInvasion chickenInvasion = new ChickenInvasion();
 		chickenInvasion.setMyGameCallback(this);
-
-        HighScore highScore = new HighScore();
-        chickenInvasion.setMyScoreCallback(highScore);
 		//Intent intent = new Intent(getApplicationContext(),HighScore.class);m
 		//startActivity(intent);
 		initialize(chickenInvasion, config);
@@ -35,7 +32,7 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 		startActivity(intent);
 	}
 
-    @Override
+	@Override
 	public void onStartActivityStore() {
 		Intent intent = new Intent(this, Store.class);
 		startActivity(intent);

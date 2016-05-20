@@ -14,20 +14,17 @@ import com.facebook.share.model.ShareLinkContent;
 import com.facebook.share.widget.ShareButton;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
  * Created by pedramshirmohammad on 16-05-16.
  */
-public class HighScore extends Activity implements ChickenInvasion.ScoreCallback{
+public class HighScore extends Activity{
 
     private ListView highscoreList;
     private HighScoreAdapter scoreAdapter;
     private SharedPreferences prefs;
     private SharedPreferences.Editor edit;
-
-    private static List<Score> topList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,14 +42,8 @@ public class HighScore extends Activity implements ChickenInvasion.ScoreCallback
         ShareButton shareButton = (ShareButton)findViewById(R.id.fb_share_button);
         shareButton.setShareContent(content);
 
-        if (topList == null){
-            topList = new ArrayList<>();
-        }
-
-
         //END SHARE ON FACEBOOK
 
-        /*
         //TEST
         List<Score> testList = new ArrayList<Score>();
 
@@ -70,9 +61,7 @@ public class HighScore extends Activity implements ChickenInvasion.ScoreCallback
         testList.add(ee);
         testList.add(ff);
         //END TEST
-        */
-
-        scoreAdapter = new HighScoreAdapter(this,R.layout.highscore_content,topList);
+        scoreAdapter = new HighScoreAdapter(this,R.layout.highscore_content,testList);
         highscoreList.setAdapter(scoreAdapter);
 
         /*SAVE HIGHSCORE
@@ -90,37 +79,7 @@ public class HighScore extends Activity implements ChickenInvasion.ScoreCallback
 
         END SAVE HIGHSCORE*/
 
-    }
-
-    public static boolean isNewHighscore(int points) {
-        if (topList == null) {
-            topList = new ArrayList<>();
-            return true;
-        }
-
-        for (Score score : topList){
-            if (points > score.getPoints()){
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public static void addNewHighScore(String name, int points){
-        topList.add(new Score(name, points));
-
-        Collections.sort(topList, new ScoreComparator());
-
-        if (topList.size()>10){
-            topList.remove(topList.size()-1);
-        }
 
     }
 
-    @Override
-    public void setHighscore(String name, int points) {
-        if (isNewHighscore(points)){
-            addNewHighScore(name,points);
-        }
-    }
 }
