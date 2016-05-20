@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" >
+<items version="2" />
 
+<<<<<<< HEAD
     <item
         jar="/Users/Albin/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-applinks/1.4.0/8ad21bf21784dacce5f2043afb97218cc377e835/bolts-applinks-1.4.0.jar"
         jumboMode="false"
@@ -106,3 +107,5 @@
     </item>
 
 </items>
+=======
+>>>>>>> origin/master
