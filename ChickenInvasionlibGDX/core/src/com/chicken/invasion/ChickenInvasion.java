@@ -21,15 +21,17 @@ import com.badlogic.gdx.utils.Align;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.concurrent.Callable;
 import java.util.Iterator;
 
 public class ChickenInvasion extends ApplicationAdapter implements GestureDetector.GestureListener{
 
+    //--------------------------------
     //Interface for various callbacks to the android launcher
     public interface GameCallback {
-        public void onStartActivityStore();
-        public void onStartActivityHighScore();
+        void onStartActivityStore();
+        void onStartActivityHighScore();
     }
 
     // Local variable to hold the callback implementation
@@ -39,8 +41,16 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
     public void setMyGameCallback(GameCallback callback) {
         gameCallback = callback;
     }
+    //---------------------------------
 
+    //Score callback interface ---------
+    public interface ScoreCallback{
+        void setHighscore(String name, int points);
+    }
+    private ScoreCallback scoreCallback;
 
+    public void setMyScoreCallback(ScoreCallback callback) { scoreCallback = callback; }
+    //----------------------------------
 
 	private Model model;
 	private SpriteBatch batch;
@@ -485,9 +495,17 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
             Enemy e = iterEnemies.next();
             if (player.getThrowables().size() != 0) {
                 if (player.getThrowables().get(0).getCollideRect().overlaps(e.getCollideRect()) && player.getCurrentTO().isThrown()) {
-                    player.incScore();
                     player.getCurrentTO().onCollison();
-                    iterEnemies.remove();
+
+                    if (player.getCurrentTO().getDamage()>= e.getHealth()){
+                        iterEnemies.remove();
+                        player.incScore();
+                    }
+                    else{
+                        //push and hurt enemy
+                        e.incY();
+                        e.decHealth(player.getCurrentTO().getDamage());
+                    }
                     // MUSIKAAA!!!
                     Music music = Gdx.audio.newMusic(Gdx.files.internal("gamemusic/ChickenSound.mp3"));
                     music.setLooping(false);
@@ -509,7 +527,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
             //Check if player lost
             if (e.getCollideRect().overlaps(bottom)) {
                 model.gameOver();
-                player.saveScore();
+                scoreCallback.setHighscore("Seidon", player.getScore());
                 break;
             }
         }
@@ -520,9 +538,12 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         for (Enemy e: wave.getEnemies()){
             temp.add(e);
         }
-        Iterator<Enemy> iterEnemies = temp.iterator();
-            while (iterEnemies.hasNext()) {
-                Enemy e = iterEnemies.next();
+        // Generate an iterator. Start just after the last element.
+        ListIterator<Enemy> li = temp.listIterator(temp.size());
+
+        // Iterate in reverse.
+        while(li.hasPrevious()) {
+            Enemy e = li.previous();
                 //update if not paused
                 if (model.getState() == Model.State.RUNNING) {
                     e.update(Gdx.graphics.getDeltaTime());
@@ -535,22 +556,21 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
     @Override
     public void dispose(){
+        super.dispose();
+        bgMusic.dispose();
         batch.dispose();
         fontScore.dispose();
         fontWings.dispose();
         chickenLeg.dispose();
-        backgroundimg.getTexture().dispose();
-        gameOver.getTexture().dispose();
-        startBanner.getTexture().dispose();
+        world.dispose();
+        wave.dispose();
+        player.dispose();
         backBtn.dispose();
         highscoreBtn.dispose();
         pauseBtn.dispose();
         restartBtn.dispose();
         startBtn.dispose();
         storeBtn.dispose();
-        player.dispose();
-        world.dispose();
-        wave.dispose();
     }
 
 	@Override
