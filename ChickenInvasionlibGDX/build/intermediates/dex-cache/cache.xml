@@ -2,102 +2,11 @@
 <items version="2" >
 
     <item
-        jar="/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
-        <dex dex="/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/pre-dexed/debug/internal_impl-23.4.0_f2cde1fa3aba961aaf9e006af8627137f215e248.jar" />
-    </item>
-    <item
-        jar="/Users/pedramshirmohammad/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-applinks/1.4.0/8ad21bf21784dacce5f2043afb97218cc377e835/bolts-applinks-1.4.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
-        <dex dex="/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/pre-dexed/debug/bolts-applinks-1.4.0_abd8e4f3400dae3671ec9be8e30c4e28638cb2c5.jar" />
-    </item>
-    <item
-        jar="/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
-        <dex dex="/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.4.0_e5fe12c357a19a29b11f19a46b30082475a70953.jar" />
-    </item>
-    <item
-        jar="/Users/pedramshirmohammad/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.2/b78eaa90aaaf7830e6dffff587ea6e859c2787b2/gdx-box2d-1.9.2.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="b78eaa90aaaf7830e6dffff587ea6e859c2787b2">
-        <dex dex="/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/pre-dexed/debug/gdx-box2d-1.9.2_dfe918438fadc46311a79f51166a845e524f5c7f.jar" />
-    </item>
-    <item
-        jar="/Users/pedramshirmohammad/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-freetype/1.9.2/3609253d14edb1b3ca5aacff4e06989edde75be4/gdx-freetype-1.9.2.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="3609253d14edb1b3ca5aacff4e06989edde75be4">
-        <dex dex="/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/pre-dexed/debug/gdx-freetype-1.9.2_e3a8d1b1dfabf0dc98698db780e93436f33ae579.jar" />
-    </item>
-    <item
-        jar="/Users/pedramshirmohammad/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
-        <dex dex="/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/pre-dexed/debug/support-annotations-23.4.0_ff96d85cbb9a29548d740cc3f93cdd68eb05f935.jar" />
-    </item>
-    <item
         jar="/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/core/build/libs/core-1.0.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="595d2f1ed2d845023c6c69e91bc9cc0949d4a1e5">
+        sha1="eb08d7bfc12cbdcf5727841e74e6670fd4e5d5c8">
         <dex dex="/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/pre-dexed/debug/core-1.0_36436383079c9ab4fc8ed7b3dd2e3a1ade358a68.jar" />
-    </item>
-    <item
-        jar="/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/customtabs/23.4.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="2d1eaa9e0b98f8fc4c2b989d9b30d4f1480648ac">
-        <dex dex="/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/pre-dexed/debug/com.android.support-customtabs-23.4.0_e4bc18b60d58ea8003cbdeeadbf4708b01bfcf74.jar" />
-    </item>
-    <item
-        jar="/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/pl.droidsonroids.gif/android-gif-drawable/1.1.15/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="65067ef43929b76e5425aa6752d73fa4d4a80ed7">
-        <dex dex="/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/pre-dexed/debug/pl.droidsonroids.gif-android-gif-drawable-1.1.15_9b265242653b6ac50964df7a6a5befcb2c98bf1d.jar" />
-    </item>
-    <item
-        jar="/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="384a601bf7671716768cc8586f39816a08ce74c3">
-        <dex dex="/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/pre-dexed/debug/com.facebook.android-facebook-android-sdk-4.12.0_14586208d48211ed516eca6562e4afc57ef2d967.jar" />
-    </item>
-    <item
-        jar="/Users/pedramshirmohammad/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-backend-android/1.9.2/342b830bc718dc1965c8f13fc58dc500e8bd262f/gdx-backend-android-1.9.2.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="342b830bc718dc1965c8f13fc58dc500e8bd262f">
-        <dex dex="/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/pre-dexed/debug/gdx-backend-android-1.9.2_dad257f8c47a1c6d2e891a52c10268d4d5cead97.jar" />
-    </item>
-    <item
-        jar="/Users/pedramshirmohammad/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
-        <dex dex="/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_8b6a16b6b7c67f97d07ce3e5acd3eb22ea2aee07.jar" />
-    </item>
-    <item
-        jar="/Users/pedramshirmohammad/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.2/e641cb91bec06bc64d9ddf7a7d7062caceec73cd/gdx-1.9.2.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="e641cb91bec06bc64d9ddf7a7d7062caceec73cd">
-        <dex dex="/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/pre-dexed/debug/gdx-1.9.2_b61394df62026bea850dcef7c89e422ddd15a0a2.jar" />
-    </item>
-    <item
-        jar="/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.4.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="d9ecde39b460470e655de6e47c05573d2d5a8bfb">
-        <dex dex="/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/pre-dexed/debug/com.android.support-cardview-v7-23.4.0_c34f98b1a978e92ab653ea75677a569378bb9562.jar" />
     </item>
 
 </items>
