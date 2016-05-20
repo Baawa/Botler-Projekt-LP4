@@ -4,23 +4,26 @@ int attr cardElevation 0x7f010002
 int attr cardMaxElevation 0x7f010003
 int attr cardPreventCornerOverlap 0x7f010005
 int attr cardUseCompatPadding 0x7f010004
-int attr com_facebook_auxiliary_view_position 0x7f01000f
-int attr com_facebook_confirm_logout 0x7f010011
-int attr com_facebook_foreground_color 0x7f01000b
-int attr com_facebook_horizontal_alignment 0x7f010010
-int attr com_facebook_is_cropped 0x7f010016
-int attr com_facebook_login_text 0x7f010012
-int attr com_facebook_logout_text 0x7f010013
-int attr com_facebook_object_id 0x7f01000c
-int attr com_facebook_object_type 0x7f01000d
-int attr com_facebook_preset_size 0x7f010015
-int attr com_facebook_style 0x7f01000e
-int attr com_facebook_tooltip_mode 0x7f010014
+int attr com_facebook_auxiliary_view_position 0x7f010012
+int attr com_facebook_confirm_logout 0x7f010014
+int attr com_facebook_foreground_color 0x7f01000e
+int attr com_facebook_horizontal_alignment 0x7f010013
+int attr com_facebook_is_cropped 0x7f010019
+int attr com_facebook_login_text 0x7f010015
+int attr com_facebook_logout_text 0x7f010016
+int attr com_facebook_object_id 0x7f01000f
+int attr com_facebook_object_type 0x7f010010
+int attr com_facebook_preset_size 0x7f010018
+int attr com_facebook_style 0x7f010011
+int attr com_facebook_tooltip_mode 0x7f010017
 int attr contentPadding 0x7f010006
 int attr contentPaddingBottom 0x7f01000a
 int attr contentPaddingLeft 0x7f010007
 int attr contentPaddingRight 0x7f010008
 int attr contentPaddingTop 0x7f010009
+int attr freezesAnimation 0x7f01000d
+int attr gifSource 0x7f01000b
+int attr isOpaque 0x7f01000c
 int color cardview_dark_background 0x7f060000
 int color cardview_light_background 0x7f060001
 int color cardview_shadow_end_color 0x7f060002
@@ -96,18 +99,19 @@ int drawable com_facebook_tooltip_blue_background 0x7f020016
 int drawable com_facebook_tooltip_blue_bottomnub 0x7f020017
 int drawable com_facebook_tooltip_blue_topnub 0x7f020018
 int drawable com_facebook_tooltip_blue_xout 0x7f020019
-int drawable ic_launcher 0x7f02001a
-int drawable messenger_bubble_large_blue 0x7f02001b
-int drawable messenger_bubble_large_white 0x7f02001c
-int drawable messenger_bubble_small_blue 0x7f02001d
-int drawable messenger_bubble_small_white 0x7f02001e
-int drawable messenger_button_blue_bg_round 0x7f02001f
-int drawable messenger_button_blue_bg_selector 0x7f020020
-int drawable messenger_button_send_round_shadow 0x7f020021
-int drawable messenger_button_white_bg_round 0x7f020022
-int drawable messenger_button_white_bg_selector 0x7f020023
-int drawable pan100x100 0x7f020024
-int drawable play200x200 0x7f020025
+int drawable giphy 0x7f02001a
+int drawable ic_launcher 0x7f02001b
+int drawable messenger_bubble_large_blue 0x7f02001c
+int drawable messenger_bubble_large_white 0x7f02001d
+int drawable messenger_bubble_small_blue 0x7f02001e
+int drawable messenger_bubble_small_white 0x7f02001f
+int drawable messenger_button_blue_bg_round 0x7f020020
+int drawable messenger_button_blue_bg_selector 0x7f020021
+int drawable messenger_button_send_round_shadow 0x7f020022
+int drawable messenger_button_white_bg_round 0x7f020023
+int drawable messenger_button_white_bg_selector 0x7f020024
+int drawable pan100x100 0x7f020025
+int drawable play200x200 0x7f020026
 int id automatic 0x7f08000c
 int id background_store 0x7f08002b
 int id bottom 0x7f080006
@@ -166,7 +170,8 @@ int layout messenger_button_send_blue_small 0x7f03000a
 int layout messenger_button_send_white_large 0x7f03000b
 int layout messenger_button_send_white_round 0x7f03000c
 int layout messenger_button_send_white_small 0x7f03000d
-int layout store_view 0x7f03000e
+int layout splashscreen 0x7f03000e
+int layout store_view 0x7f03000f
 int string app_name 0x7f040012
 int string com_facebook_device_auth_instructions 0x7f040000
 int string com_facebook_image_download_unknown_error 0x7f040001
@@ -228,18 +233,23 @@ int styleable CardView_contentPaddingBottom 12
 int styleable CardView_contentPaddingLeft 9
 int styleable CardView_contentPaddingRight 10
 int styleable CardView_contentPaddingTop 11
-int[] styleable com_facebook_like_view { 0x7f01000b, 0x7f01000c, 0x7f01000d, 0x7f01000e, 0x7f01000f, 0x7f010010 }
+int[] styleable GifTextureView { 0x7f01000b, 0x7f01000c }
+int styleable GifTextureView_gifSource 0
+int styleable GifTextureView_isOpaque 1
+int[] styleable GifView { 0x7f01000d }
+int styleable GifView_freezesAnimation 0
+int[] styleable com_facebook_like_view { 0x7f01000e, 0x7f01000f, 0x7f010010, 0x7f010011, 0x7f010012, 0x7f010013 }
 int styleable com_facebook_like_view_com_facebook_auxiliary_view_position 4
 int styleable com_facebook_like_view_com_facebook_foreground_color 0
 int styleable com_facebook_like_view_com_facebook_horizontal_alignment 5
 int styleable com_facebook_like_view_com_facebook_object_id 1
 int styleable com_facebook_like_view_com_facebook_object_type 2
 int styleable com_facebook_like_view_com_facebook_style 3
-int[] styleable com_facebook_login_view { 0x7f010011, 0x7f010012, 0x7f010013, 0x7f010014 }
+int[] styleable com_facebook_login_view { 0x7f010014, 0x7f010015, 0x7f010016, 0x7f010017 }
 int styleable com_facebook_login_view_com_facebook_confirm_logout 0
 int styleable com_facebook_login_view_com_facebook_login_text 1
 int styleable com_facebook_login_view_com_facebook_logout_text 2
 int styleable com_facebook_login_view_com_facebook_tooltip_mode 3
-int[] styleable com_facebook_profile_picture_view { 0x7f010015, 0x7f010016 }
+int[] styleable com_facebook_profile_picture_view { 0x7f010018, 0x7f010019 }
 int styleable com_facebook_profile_picture_view_com_facebook_is_cropped 1
 int styleable com_facebook_profile_picture_view_com_facebook_preset_size 0
