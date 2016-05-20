@@ -499,7 +499,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
                     if (player.getCurrentTO().getDamage()>= e.getHealth()){
                         iterEnemies.remove();
-                        player.incScore();
+                        player.incScore(e.getTotalHealth());
                     }
                     else{
                         //push and hurt enemy

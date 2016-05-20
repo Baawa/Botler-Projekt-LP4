@@ -65,9 +65,9 @@ public class Player {
         }
     }
 
-    public void incScore(){
-        score++;
-        addChickenWings(10);
+    public void incScore(int points){
+        score += points;
+        addChickenWings(points);
     }
     public int getScore(){ return score; }
 
