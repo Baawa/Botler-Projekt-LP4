@@ -39,7 +39,7 @@ public class Store extends Activity {
 
 
         viewPager.setClipToPadding(false);
-        viewPager.setPadding(300, 0, 300, 0);
+        viewPager.setPadding(0, 0, 0, 0);
         CardAdapter = new StoreCardAdapter(this,toList,availability);
         viewPager.setAdapter(CardAdapter);
     }

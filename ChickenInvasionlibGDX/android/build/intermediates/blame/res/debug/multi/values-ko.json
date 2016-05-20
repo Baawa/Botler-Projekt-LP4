@@ -1,5 +1,352 @@
 [
     {
+        "outputFile": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/res/merged/debug/values-ko/values-ko.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 104,
+                    "endOffset": 155
+                },
+                "from": {
+                    "file": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ko/values-ko.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 104,
+                        "endOffset": 155
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 160,
+                    "endColumn": 102,
+                    "endOffset": 258
+                },
+                "from": {
+                    "file": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ko/values-ko.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 160,
+                        "endColumn": 102,
+                        "endOffset": 258
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 263,
+                    "endColumn": 104,
+                    "endOffset": 363
+                },
+                "from": {
+                    "file": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ko/values-ko.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 263,
+                        "endColumn": 104,
+                        "endOffset": 363
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 368,
+                    "endColumn": 91,
+                    "endOffset": 455
+                },
+                "from": {
+                    "file": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ko/values-ko.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 368,
+                        "endColumn": 91,
+                        "endOffset": 455
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 460,
+                    "endColumn": 62,
+                    "endOffset": 518
+                },
+                "from": {
+                    "file": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ko/values-ko.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 460,
+                        "endColumn": 62,
+                        "endOffset": 518
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 523,
+                    "endColumn": 66,
+                    "endOffset": 585
+                },
+                "from": {
+                    "file": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ko/values-ko.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 523,
+                        "endColumn": 66,
+                        "endOffset": 585
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 590,
+                    "endColumn": 59,
+                    "endOffset": 645
+                },
+                "from": {
+                    "file": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ko/values-ko.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 590,
+                        "endColumn": 59,
+                        "endOffset": 645
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 650,
+                    "endColumn": 67,
+                    "endOffset": 713
+                },
+                "from": {
+                    "file": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ko/values-ko.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 650,
+                        "endColumn": 67,
+                        "endOffset": 713
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 718,
+                    "endColumn": 68,
+                    "endOffset": 782
+                },
+                "from": {
+                    "file": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ko/values-ko.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 718,
+                        "endColumn": 68,
+                        "endOffset": 782
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 787,
+                    "endColumn": 84,
+                    "endOffset": 867
+                },
+                "from": {
+                    "file": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ko/values-ko.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 787,
+                        "endColumn": 84,
+                        "endOffset": 867
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 872,
+                    "endColumn": 70,
+                    "endOffset": 938
+                },
+                "from": {
+                    "file": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ko/values-ko.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 872,
+                        "endColumn": 70,
+                        "endOffset": 938
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 943,
+                    "endColumn": 70,
+                    "endOffset": 1009
+                },
+                "from": {
+                    "file": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ko/values-ko.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 943,
+                        "endColumn": 70,
+                        "endOffset": 1009
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 1014,
+                    "endColumn": 77,
+                    "endOffset": 1087
+                },
+                "from": {
+                    "file": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ko/values-ko.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 1014,
+                        "endColumn": 77,
+                        "endOffset": 1087
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 1092,
+                    "endColumn": 94,
+                    "endOffset": 1182
+                },
+                "from": {
+                    "file": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ko/values-ko.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 1092,
+                        "endColumn": 94,
+                        "endOffset": 1182
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 1187,
+                    "endColumn": 61,
+                    "endOffset": 1244
+                },
+                "from": {
+                    "file": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ko/values-ko.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 1187,
+                        "endColumn": 61,
+                        "endOffset": 1244
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 1249,
+                    "endColumn": 63,
+                    "endOffset": 1308
+                },
+                "from": {
+                    "file": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ko/values-ko.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 1249,
+                        "endColumn": 63,
+                        "endOffset": 1308
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 1313,
+                    "endColumn": 99,
+                    "endOffset": 1408
+                },
+                "from": {
+                    "file": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ko/values-ko.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 1313,
+                        "endColumn": 99,
+                        "endOffset": 1408
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 1413,
+                    "endColumn": 58,
+                    "endOffset": 1467
+                },
+                "from": {
+                    "file": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ko/values-ko.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 1413,
+                        "endColumn": 58,
+                        "endOffset": 1467
+                    }
+                }
+            }
+        ]
+    },
+    {
         "outputFile": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\values-ko\\values-ko.xml",
         "map": [
             {
@@ -347,7 +694,7 @@
         ]
     },
     {
-        "outputFile": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/res/merged/debug/values-ko/values-ko.xml",
+        "outputFile": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/res/merged/debug/values-ko/values-ko.xml",
         "map": [
             {
                 "to": {
@@ -358,7 +705,7 @@
                     "endOffset": 155
                 },
                 "from": {
-                    "file": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ko/values-ko.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.11.0/res/values-ko/values-ko.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -377,7 +724,7 @@
                     "endOffset": 258
                 },
                 "from": {
-                    "file": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ko/values-ko.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.11.0/res/values-ko/values-ko.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -396,7 +743,7 @@
                     "endOffset": 363
                 },
                 "from": {
-                    "file": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ko/values-ko.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.11.0/res/values-ko/values-ko.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -415,7 +762,7 @@
                     "endOffset": 455
                 },
                 "from": {
-                    "file": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ko/values-ko.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.11.0/res/values-ko/values-ko.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -434,7 +781,7 @@
                     "endOffset": 518
                 },
                 "from": {
-                    "file": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ko/values-ko.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.11.0/res/values-ko/values-ko.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -453,7 +800,7 @@
                     "endOffset": 585
                 },
                 "from": {
-                    "file": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ko/values-ko.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.11.0/res/values-ko/values-ko.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -472,7 +819,7 @@
                     "endOffset": 645
                 },
                 "from": {
-                    "file": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ko/values-ko.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.11.0/res/values-ko/values-ko.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -491,7 +838,7 @@
                     "endOffset": 713
                 },
                 "from": {
-                    "file": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ko/values-ko.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.11.0/res/values-ko/values-ko.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -510,7 +857,7 @@
                     "endOffset": 782
                 },
                 "from": {
-                    "file": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ko/values-ko.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.11.0/res/values-ko/values-ko.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -529,7 +876,7 @@
                     "endOffset": 867
                 },
                 "from": {
-                    "file": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ko/values-ko.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.11.0/res/values-ko/values-ko.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -548,7 +895,7 @@
                     "endOffset": 938
                 },
                 "from": {
-                    "file": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ko/values-ko.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.11.0/res/values-ko/values-ko.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -567,7 +914,7 @@
                     "endOffset": 1009
                 },
                 "from": {
-                    "file": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ko/values-ko.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.11.0/res/values-ko/values-ko.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -586,7 +933,7 @@
                     "endOffset": 1087
                 },
                 "from": {
-                    "file": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ko/values-ko.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.11.0/res/values-ko/values-ko.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -605,7 +952,7 @@
                     "endOffset": 1182
                 },
                 "from": {
-                    "file": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ko/values-ko.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.11.0/res/values-ko/values-ko.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -624,7 +971,7 @@
                     "endOffset": 1244
                 },
                 "from": {
-                    "file": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ko/values-ko.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.11.0/res/values-ko/values-ko.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
@@ -643,7 +990,7 @@
                     "endOffset": 1308
                 },
                 "from": {
-                    "file": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ko/values-ko.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.11.0/res/values-ko/values-ko.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
@@ -662,7 +1009,7 @@
                     "endOffset": 1408
                 },
                 "from": {
-                    "file": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ko/values-ko.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.11.0/res/values-ko/values-ko.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
@@ -681,7 +1028,7 @@
                     "endOffset": 1467
                 },
                 "from": {
-                    "file": "/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ko/values-ko.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.11.0/res/values-ko/values-ko.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
