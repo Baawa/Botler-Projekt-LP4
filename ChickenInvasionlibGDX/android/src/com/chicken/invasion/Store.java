@@ -52,7 +52,11 @@ public class Store extends Activity {
 
         viewPager.setClipToPadding(false);
 <<<<<<< HEAD
+<<<<<<< HEAD
         viewPager.setPadding(200, 0, 300, 0);
+=======
+        viewPager.setPadding(0, 0, 0, 0);
+>>>>>>> origin/master
 =======
         viewPager.setPadding(0, 0, 0, 0);
 >>>>>>> origin/master
