@@ -16,8 +16,10 @@
 
     <ImageView
         android:layout_width="fill_parent"
-        android:layout_height="150dp"
-        android:id="@+id/imageView3"/>
+        android:layout_height="110dp"
+        android:id="@+id/storebanner"
+        android:src="@drawable/storebanner"
+        android:layout_marginTop="30dp"/>
 
     <TextView
         android:layout_width="wrap_content"
