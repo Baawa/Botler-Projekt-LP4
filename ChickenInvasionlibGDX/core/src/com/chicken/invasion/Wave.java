@@ -55,11 +55,6 @@ public class Wave implements Runnable{
                 spawn();
             }
         }
-        try {
-            thread.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 
     private Enemy getRandomEnemy(){

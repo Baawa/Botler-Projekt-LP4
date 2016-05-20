@@ -271,6 +271,9 @@ public class ThrowableObject{
 
     public void dispose(){
         image.dispose();
+        sprite.getTexture().dispose();
+        world.dispose();
+        body.getWorld().dispose();
     }
 
 }
