@@ -401,6 +401,7 @@ containing a value of this type.
         public static final int progress_bar=0x7f08001c;
         public static final int right=0x7f08000b;
         public static final int scoreID=0x7f080028;
+        public static final int score_view=0x7f08002f;
         public static final int small=0x7f080011;
         public static final int speedIndicator=0x7f080015;
         public static final int speedView=0x7f080017;
@@ -408,7 +409,6 @@ containing a value of this type.
         public static final int storebanner=0x7f08002e;
         public static final int streangthIndicator=0x7f080014;
         public static final int takeAPic=0x7f080024;
-        public static final int textView=0x7f08002f;
         public static final int top=0x7f080008;
         public static final int tstbutton=0x7f080029;
         public static final int unknown=0x7f080002;

@@ -161,6 +161,7 @@ int id page 0x7f080001
 int id progress_bar 0x7f08001c
 int id right 0x7f08000b
 int id scoreID 0x7f080028
+int id score_view 0x7f08002f
 int id small 0x7f080011
 int id speedIndicator 0x7f080015
 int id speedView 0x7f080017
@@ -168,7 +169,6 @@ int id standard 0x7f080005
 int id storebanner 0x7f08002e
 int id streangthIndicator 0x7f080014
 int id takeAPic 0x7f080024
-int id textView 0x7f08002f
 int id top 0x7f080008
 int id tstbutton 0x7f080029
 int id unknown 0x7f080002

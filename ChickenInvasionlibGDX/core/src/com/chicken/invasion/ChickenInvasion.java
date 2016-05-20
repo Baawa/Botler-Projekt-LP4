@@ -30,7 +30,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
     //--------------------------------
     //Interface for various callbacks to the android launcher
     public interface GameCallback {
-        void onStartActivityStore();
+        void onStartActivityStore(int score);
         void onStartActivityHighScore();
     }
 
@@ -240,7 +240,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
             // initiate which ever callback method you need.
             if (className.equals("Store")) {
-                gameCallback.onStartActivityStore();
+                gameCallback.onStartActivityStore(player.getScore());
             } else if (className.equals("HighScore")) {
                 gameCallback.onStartActivityHighScore();
             }
@@ -500,6 +500,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
                     if (player.getCurrentTO().getDamage()>= e.getHealth()){
                         iterEnemies.remove();
                         player.incScore();
+
                     }
                     else{
                         //push and hurt enemy

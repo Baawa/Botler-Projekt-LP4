@@ -36,8 +36,9 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 	}
 
 	@Override
-	public void onStartActivityStore() {
+	public void onStartActivityStore(int score) {
 		Intent intent = new Intent(this, Store.class);
+		intent.putExtra("PLAYER_SCORE",score);
 		startActivity(intent);
 	}
 

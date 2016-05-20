@@ -2,9 +2,12 @@ package com.chicken.invasion;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,6 +25,9 @@ public class Store extends Activity {
     private SharedPreferences prefs;
     private SharedPreferences.Editor edit;
     HashMap<String,Boolean> availability;
+    Intent intent;
+    int playerSore;
+    TextView scoreView;
 
 
     @Override
@@ -29,8 +35,14 @@ public class Store extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.store_view);
         viewPager = (ViewPager) findViewById(R.id.view_pager);
+        scoreView = (TextView)findViewById(R.id.score_view);
         prefs = this.getSharedPreferences("myList", Context.MODE_PRIVATE);
         edit = prefs.edit();
+
+        intent = getIntent();
+        playerSore = intent.getIntExtra("PLAYER_SCORE", 0)*10;
+
+        scoreView.setText(Integer.toString(playerSore));
 
         mWeapon = new Weapon();
         toList = mWeapon.getVapen();
@@ -39,7 +51,11 @@ public class Store extends Activity {
 
 
         viewPager.setClipToPadding(false);
-        viewPager.setPadding(300, 0, 300, 0);
+<<<<<<< HEAD
+        viewPager.setPadding(200, 0, 300, 0);
+=======
+        viewPager.setPadding(0, 0, 0, 0);
+>>>>>>> origin/master
         CardAdapter = new StoreCardAdapter(this,toList,availability);
         viewPager.setAdapter(CardAdapter);
     }
