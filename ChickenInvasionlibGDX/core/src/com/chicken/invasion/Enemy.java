@@ -51,7 +51,7 @@ public class Enemy implements Cloneable{
 
         collideRect = new Rectangle(x,y,width,height);
 
-        health = e.getHealth();;
+        health = 1;
     }
 
     public Enemy(String image, int health){
@@ -126,10 +126,6 @@ public class Enemy implements Cloneable{
         return x;
     }
 
-    public void incY(){
-        this.y ++;
-    }
-
     public float getY() {
         return y;
     }
@@ -144,10 +140,6 @@ public class Enemy implements Cloneable{
 
     public int getHealth(){
         return this.health;
-    }
-
-    public void decHealth(int damage){
-        this.health -= damage;
     }
 
     @Override
@@ -169,6 +161,7 @@ public class Enemy implements Cloneable{
 
     public void dispose() {
         walkSheet.dispose();
+        currentFrame.getTexture().dispose();
     }
 
     public Texture getWalkSheet(){
