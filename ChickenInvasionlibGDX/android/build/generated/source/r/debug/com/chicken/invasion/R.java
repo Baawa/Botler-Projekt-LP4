@@ -413,7 +413,7 @@ containing a value of this type.
         public static final int tstbutton=0x7f080029;
         public static final int unknown=0x7f080002;
         public static final int view_pager=0x7f08002d;
-        public static final int weaponVeiw=0x7f080013;
+        public static final int weapon_img=0x7f080013;
         public static final int weapon_view=0x7f080012;
     }
     public static final class layout {

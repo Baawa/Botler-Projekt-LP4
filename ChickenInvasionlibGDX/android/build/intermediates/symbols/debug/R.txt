@@ -173,7 +173,7 @@ int id top 0x7f080008
 int id tstbutton 0x7f080029
 int id unknown 0x7f080002
 int id view_pager 0x7f08002d
-int id weaponVeiw 0x7f080013
+int id weapon_img 0x7f080013
 int id weapon_view 0x7f080012
 int layout card_layout 0x7f030000
 int layout com_facebook_activity_layout 0x7f030001
