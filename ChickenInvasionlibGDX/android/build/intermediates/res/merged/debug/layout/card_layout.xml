@@ -56,7 +56,7 @@
                     android:id="@+id/streangthIndicator"
                     android:progressTint="#196aff"
                     android:layout_marginLeft="60dp"
-                    android:layout_marginBottom="115dp"
+                    android:layout_marginBottom="120dp"
                     android:progressBackgroundTint="#00ffffff"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentBottom="true"/>
