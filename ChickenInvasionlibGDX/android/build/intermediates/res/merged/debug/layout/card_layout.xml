@@ -54,7 +54,7 @@
                     android:layout_width="150dp"
                     android:layout_height="20dp"
                     android:id="@+id/streangthIndicator"
-                    android:progressTint="#196aff"
+                    android:progressTint="#d10000"
                     android:layout_marginLeft="60dp"
                     android:layout_marginBottom="120dp"
                     android:progressBackgroundTint="#00ffffff"
@@ -66,12 +66,14 @@
                     android:layout_width="150dp"
                     android:layout_height="20dp"
                     android:id="@+id/speedIndicator"
-                    android:progressTint="#196aff"
+                    android:progressTint="#0086e2"
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentLeft="true"
                     android:layout_marginLeft="60dp"
                     android:layout_marginBottom="80dp"
-                    android:progressBackgroundTint="#00ffffff"/>
+                    android:progressBackgroundTint="#00ffffff"
+                    android:progress="5"
+                    android:max="15"/>
 
                 <ImageView
                     android:layout_width="30dp"
@@ -80,7 +82,7 @@
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentEnd="false"
-                    android:background="@drawable/damageicon200x200"
+                    android:background="@drawable/damageiconnew"
                     android:layout_marginLeft="20dp"
                     android:layout_marginBottom="115dp"/>
 
@@ -91,7 +93,7 @@
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentEnd="false"
-                    android:background="@drawable/speedicon"
+                    android:background="@drawable/speediconnew"
                     android:layout_marginLeft="20dp"
                     android:layout_marginBottom="75dp"/>
             </RelativeLayout>

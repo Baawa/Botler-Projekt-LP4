@@ -16,16 +16,16 @@
         "source": "C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\drawable-xhdpi-v4\\com_facebook_favicon_white.png"
     },
     {
-        "merged": "C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\com_facebook_button_like_icon_selected.png",
-        "source": "C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\drawable-xhdpi-v4\\com_facebook_button_like_icon_selected.png"
+        "merged": "C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\com_facebook_tooltip_blue_topnub.png",
+        "source": "C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\drawable-xhdpi-v4\\com_facebook_tooltip_blue_topnub.png"
     },
     {
         "merged": "C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\com_facebook_tooltip_blue_background.9.png",
         "source": "C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\drawable-xhdpi-v4\\com_facebook_tooltip_blue_background.9.png"
     },
     {
-        "merged": "C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\com_facebook_tooltip_blue_topnub.png",
-        "source": "C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\drawable-xhdpi-v4\\com_facebook_tooltip_blue_topnub.png"
+        "merged": "C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\com_facebook_button_like_icon_selected.png",
+        "source": "C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\drawable-xhdpi-v4\\com_facebook_button_like_icon_selected.png"
     },
     {
         "merged": "C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\com_facebook_button_send_icon_blue.png",
@@ -96,6 +96,10 @@
         "source": "C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\drawable-xhdpi-v4\\com_facebook_tooltip_black_background.9.png"
     },
     {
+        "merged": "C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\speediconnew.png",
+        "source": "C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\res\\drawable-xhdpi\\speediconnew.png"
+    },
+    {
         "merged": "C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_launcher.png",
         "source": "C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\res\\drawable-xhdpi\\ic_launcher.png"
     },
@@ -110,6 +114,10 @@
     {
         "merged": "C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\play200x200.png",
         "source": "C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\res\\drawable-xhdpi\\play200x200.png"
+    },
+    {
+        "merged": "C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\damageiconnew.png",
+        "source": "C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\res\\drawable-xhdpi\\damageiconnew.png"
     },
     {
         "merged": "C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\smokinggif.gif",

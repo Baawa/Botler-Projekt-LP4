@@ -4,12 +4,12 @@
         "source": "C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\res\\drawable-mdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\pan100x100.png",
-        "source": "C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\res\\drawable-mdpi\\pan100x100.png"
-    },
-    {
         "merged": "C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\com_facebook_button_icon_white.png",
         "source": "C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\drawable-mdpi-v4\\com_facebook_button_icon_white.png"
+    },
+    {
+        "merged": "C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\pan100x100.png",
+        "source": "C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\res\\drawable-mdpi\\pan100x100.png"
     },
     {
         "merged": "C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\com_facebook_tooltip_black_xout.png",
