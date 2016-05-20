@@ -5,6 +5,7 @@
         jar="/Users/Albin/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-applinks/1.4.0/8ad21bf21784dacce5f2043afb97218cc377e835/bolts-applinks-1.4.0.jar"
         jumboMode="false"
         revision="23.0.1"
+<<<<<<< HEAD
         sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
         <dex dex="/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/pre-dexed/debug/bolts-applinks-1.4.0_e6c646d5a0085bb0e1337ac86c27a46cce41c198.jar" />
     </item>
@@ -98,6 +99,10 @@
         revision="23.0.1"
         sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
         <dex dex="/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/pre-dexed/debug/support-annotations-23.2.1_9b44ea255523a23b1fc4274399fe6b1fb2c0daf7.jar" />
+=======
+        sha1="25e5bb0dddf01c5890898d6f6e4171aa26994ad5">
+        <dex dex="C:\Users\Kristoffer Ek\Documents\GitHub\Chicken-Invasion-Projekt-LP4\ChickenInvasionlibGDX\android\build\intermediates\pre-dexed\debug\core-1.0_ffd180a74895daedf87a61767cc35511716ba8b7.jar" />
+>>>>>>> origin/master
     </item>
 
 </items>
