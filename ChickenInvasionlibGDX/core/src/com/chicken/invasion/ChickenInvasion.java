@@ -90,6 +90,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 		player = new Player();
         if (player.getCurrentTO() == null){
             ThrowableObject tmp = new ThrowableObject(100, "Bat", new Texture("beachball200x200.png"), this.world, player);
+            tmp.setDamage(0.5);
             tmp.setSpeed(1.5);
             tmp.setRotationSpeed(0.5f);
             player.setEquippedTO(tmp);
