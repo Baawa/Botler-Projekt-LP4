@@ -1,34 +1,42 @@
 [
     {
-        "merged": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\color\\com_facebook_button_text_color.xml",
-        "source": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.12.0\\res\\color\\com_facebook_button_text_color.xml"
+        "merged": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\color\\com_facebook_button_text_color.xml",
+        "source": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\color\\com_facebook_button_text_color.xml"
     },
     {
-        "merged": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\color\\com_facebook_button_text_color.xml",
-        "source": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\color\\com_facebook_button_text_color.xml"
+        "merged": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\color\\com_facebook_button_text_color.xml",
+        "source": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\color\\com_facebook_button_text_color.xml"
     },
     {
-        "merged": "C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\color\\com_facebook_button_text_color.xml",
-        "source": "C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\color\\com_facebook_button_text_color.xml"
+        "merged": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\color\\com_facebook_send_button_text_color.xml",
+        "source": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\color\\com_facebook_send_button_text_color.xml"
     },
     {
-        "merged": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\color\\com_facebook_send_button_text_color.xml",
-        "source": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\color\\com_facebook_send_button_text_color.xml"
+        "merged": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\color\\com_facebook_send_button_text_color.xml",
+        "source": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\color\\com_facebook_send_button_text_color.xml"
     },
     {
-        "merged": "C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\color\\com_facebook_send_button_text_color.xml",
-        "source": "C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\color\\com_facebook_send_button_text_color.xml"
+        "merged": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/res/merged/debug/color/com_facebook_send_button_text_color.xml",
+        "source": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/color/com_facebook_send_button_text_color.xml"
     },
     {
-        "merged": "C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\color\\com_facebook_send_button_text_color.xml",
-        "source": "C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\color\\com_facebook_send_button_text_color.xml"
+        "merged": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\color\\com_facebook_button_text_color.xml",
+        "source": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.12.0\\res\\color\\com_facebook_button_text_color.xml"
     },
     {
-        "merged": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\color\\com_facebook_send_button_text_color.xml",
-        "source": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.12.0\\res\\color\\com_facebook_send_button_text_color.xml"
+        "merged": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\color\\com_facebook_send_button_text_color.xml",
+        "source": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.12.0\\res\\color\\com_facebook_send_button_text_color.xml"
     },
     {
-        "merged": "C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\color\\com_facebook_button_text_color.xml",
-        "source": "C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\color\\com_facebook_button_text_color.xml"
+        "merged": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/res/merged/debug/color/com_facebook_button_text_color.xml",
+        "source": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/color/com_facebook_button_text_color.xml"
+    },
+    {
+        "merged": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\color\\com_facebook_button_text_color.xml",
+        "source": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\color\\com_facebook_button_text_color.xml"
+    },
+    {
+        "merged": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\color\\com_facebook_send_button_text_color.xml",
+        "source": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\color\\com_facebook_send_button_text_color.xml"
     }
 ]

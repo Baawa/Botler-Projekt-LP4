@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\values-ms\\values-ms.xml",
+        "outputFile": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\values-ms\\values-ms.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 167
                 },
                 "from": {
-                    "file": "C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -30,7 +30,7 @@
                     "endOffset": 290
                 },
                 "from": {
-                    "file": "C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -49,7 +49,7 @@
                     "endOffset": 385
                 },
                 "from": {
-                    "file": "C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -68,7 +68,7 @@
                     "endOffset": 452
                 },
                 "from": {
-                    "file": "C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -87,7 +87,7 @@
                     "endOffset": 520
                 },
                 "from": {
-                    "file": "C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -106,7 +106,7 @@
                     "endOffset": 582
                 },
                 "from": {
-                    "file": "C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -125,7 +125,7 @@
                     "endOffset": 653
                 },
                 "from": {
-                    "file": "C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -144,7 +144,7 @@
                     "endOffset": 728
                 },
                 "from": {
-                    "file": "C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -163,7 +163,7 @@
                     "endOffset": 824
                 },
                 "from": {
-                    "file": "C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -182,7 +182,7 @@
                     "endOffset": 901
                 },
                 "from": {
-                    "file": "C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -201,7 +201,7 @@
                     "endOffset": 978
                 },
                 "from": {
-                    "file": "C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -220,7 +220,7 @@
                     "endOffset": 1068
                 },
                 "from": {
-                    "file": "C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -239,7 +239,7 @@
                     "endOffset": 1177
                 },
                 "from": {
-                    "file": "C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -258,7 +258,7 @@
                     "endOffset": 1242
                 },
                 "from": {
-                    "file": "C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -277,7 +277,7 @@
                     "endOffset": 1308
                 },
                 "from": {
-                    "file": "C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
@@ -296,7 +296,7 @@
                     "endOffset": 1447
                 },
                 "from": {
-                    "file": "C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
@@ -315,7 +315,7 @@
                     "endOffset": 1509
                 },
                 "from": {
-                    "file": "C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
@@ -328,7 +328,7 @@
         ]
     },
     {
-        "outputFile": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\values-ms\\values-ms.xml",
+        "outputFile": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/res/merged/debug/values-ms/values-ms.xml",
         "map": [
             {
                 "to": {
@@ -339,7 +339,7 @@
                     "endOffset": 167
                 },
                 "from": {
-                    "file": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ms/values-ms.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -358,7 +358,7 @@
                     "endOffset": 290
                 },
                 "from": {
-                    "file": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ms/values-ms.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -377,7 +377,7 @@
                     "endOffset": 385
                 },
                 "from": {
-                    "file": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ms/values-ms.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -396,7 +396,7 @@
                     "endOffset": 452
                 },
                 "from": {
-                    "file": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ms/values-ms.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -415,7 +415,7 @@
                     "endOffset": 520
                 },
                 "from": {
-                    "file": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ms/values-ms.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -434,7 +434,7 @@
                     "endOffset": 582
                 },
                 "from": {
-                    "file": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ms/values-ms.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -453,7 +453,7 @@
                     "endOffset": 653
                 },
                 "from": {
-                    "file": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ms/values-ms.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -472,7 +472,7 @@
                     "endOffset": 728
                 },
                 "from": {
-                    "file": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ms/values-ms.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -491,7 +491,7 @@
                     "endOffset": 824
                 },
                 "from": {
-                    "file": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ms/values-ms.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -510,7 +510,7 @@
                     "endOffset": 901
                 },
                 "from": {
-                    "file": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ms/values-ms.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -529,7 +529,7 @@
                     "endOffset": 978
                 },
                 "from": {
-                    "file": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ms/values-ms.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -548,7 +548,7 @@
                     "endOffset": 1068
                 },
                 "from": {
-                    "file": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ms/values-ms.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -567,7 +567,7 @@
                     "endOffset": 1177
                 },
                 "from": {
-                    "file": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ms/values-ms.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -586,7 +586,7 @@
                     "endOffset": 1242
                 },
                 "from": {
-                    "file": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ms/values-ms.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -605,7 +605,7 @@
                     "endOffset": 1308
                 },
                 "from": {
-                    "file": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ms/values-ms.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
@@ -624,7 +624,7 @@
                     "endOffset": 1447
                 },
                 "from": {
-                    "file": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ms/values-ms.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
@@ -643,7 +643,7 @@
                     "endOffset": 1509
                 },
                 "from": {
-                    "file": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/values-ms/values-ms.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
@@ -656,7 +656,7 @@
         ]
     },
     {
-        "outputFile": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\values-ms\\values-ms.xml",
+        "outputFile": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\values-ms\\values-ms.xml",
         "map": [
             {
                 "to": {
@@ -667,7 +667,7 @@
                     "endOffset": 167
                 },
                 "from": {
-                    "file": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.12.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.12.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -686,7 +686,7 @@
                     "endOffset": 290
                 },
                 "from": {
-                    "file": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.12.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.12.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -705,7 +705,7 @@
                     "endOffset": 385
                 },
                 "from": {
-                    "file": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.12.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.12.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -724,7 +724,7 @@
                     "endOffset": 452
                 },
                 "from": {
-                    "file": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.12.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.12.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -743,7 +743,7 @@
                     "endOffset": 520
                 },
                 "from": {
-                    "file": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.12.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.12.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -762,7 +762,7 @@
                     "endOffset": 582
                 },
                 "from": {
-                    "file": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.12.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.12.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -781,7 +781,7 @@
                     "endOffset": 653
                 },
                 "from": {
-                    "file": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.12.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.12.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -800,7 +800,7 @@
                     "endOffset": 728
                 },
                 "from": {
-                    "file": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.12.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.12.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -819,7 +819,7 @@
                     "endOffset": 824
                 },
                 "from": {
-                    "file": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.12.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.12.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -838,7 +838,7 @@
                     "endOffset": 901
                 },
                 "from": {
-                    "file": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.12.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.12.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -857,7 +857,7 @@
                     "endOffset": 978
                 },
                 "from": {
-                    "file": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.12.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.12.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -876,7 +876,7 @@
                     "endOffset": 1068
                 },
                 "from": {
-                    "file": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.12.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.12.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -895,7 +895,7 @@
                     "endOffset": 1177
                 },
                 "from": {
-                    "file": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.12.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.12.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -914,7 +914,7 @@
                     "endOffset": 1242
                 },
                 "from": {
-                    "file": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.12.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.12.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -933,7 +933,7 @@
                     "endOffset": 1308
                 },
                 "from": {
-                    "file": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.12.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.12.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
@@ -952,7 +952,7 @@
                     "endOffset": 1447
                 },
                 "from": {
-                    "file": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.12.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.12.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
@@ -971,7 +971,7 @@
                     "endOffset": 1509
                 },
                 "from": {
-                    "file": "C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.12.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.12.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
@@ -984,7 +984,7 @@
         ]
     },
     {
-        "outputFile": "C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\values-ms\\values-ms.xml",
+        "outputFile": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\values-ms\\values-ms.xml",
         "map": [
             {
                 "to": {
@@ -995,7 +995,7 @@
                     "endOffset": 167
                 },
                 "from": {
-                    "file": "C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -1014,7 +1014,7 @@
                     "endOffset": 290
                 },
                 "from": {
-                    "file": "C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -1033,7 +1033,7 @@
                     "endOffset": 385
                 },
                 "from": {
-                    "file": "C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -1052,7 +1052,7 @@
                     "endOffset": 452
                 },
                 "from": {
-                    "file": "C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -1071,7 +1071,7 @@
                     "endOffset": 520
                 },
                 "from": {
-                    "file": "C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -1090,7 +1090,7 @@
                     "endOffset": 582
                 },
                 "from": {
-                    "file": "C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -1109,7 +1109,7 @@
                     "endOffset": 653
                 },
                 "from": {
-                    "file": "C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -1128,7 +1128,7 @@
                     "endOffset": 728
                 },
                 "from": {
-                    "file": "C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -1147,7 +1147,7 @@
                     "endOffset": 824
                 },
                 "from": {
-                    "file": "C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -1166,7 +1166,7 @@
                     "endOffset": 901
                 },
                 "from": {
-                    "file": "C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -1185,7 +1185,7 @@
                     "endOffset": 978
                 },
                 "from": {
-                    "file": "C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -1204,7 +1204,7 @@
                     "endOffset": 1068
                 },
                 "from": {
-                    "file": "C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -1223,7 +1223,7 @@
                     "endOffset": 1177
                 },
                 "from": {
-                    "file": "C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -1242,7 +1242,7 @@
                     "endOffset": 1242
                 },
                 "from": {
-                    "file": "C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -1261,7 +1261,7 @@
                     "endOffset": 1308
                 },
                 "from": {
-                    "file": "C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
@@ -1280,7 +1280,7 @@
                     "endOffset": 1447
                 },
                 "from": {
-                    "file": "C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
@@ -1299,7 +1299,335 @@
                     "endOffset": 1509
                 },
                 "from": {
-                    "file": "C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\Albin\\Documents\\Java\\Git\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 1452,
+                        "endColumn": 61,
+                        "endOffset": 1509
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\Users\\Kristoffer Ek\\Documents\\GitHub\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\android\\build\\intermediates\\res\\merged\\debug\\values-ms\\values-ms.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 116,
+                    "endOffset": 167
+                },
+                "from": {
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 116,
+                        "endOffset": 167
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 172,
+                    "endColumn": 122,
+                    "endOffset": 290
+                },
+                "from": {
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 172,
+                        "endColumn": 122,
+                        "endOffset": 290
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 295,
+                    "endColumn": 94,
+                    "endOffset": 385
+                },
+                "from": {
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 295,
+                        "endColumn": 94,
+                        "endOffset": 385
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 390,
+                    "endColumn": 66,
+                    "endOffset": 452
+                },
+                "from": {
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 390,
+                        "endColumn": 66,
+                        "endOffset": 452
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 457,
+                    "endColumn": 67,
+                    "endOffset": 520
+                },
+                "from": {
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 457,
+                        "endColumn": 67,
+                        "endOffset": 520
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 525,
+                    "endColumn": 61,
+                    "endOffset": 582
+                },
+                "from": {
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 525,
+                        "endColumn": 61,
+                        "endOffset": 582
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 587,
+                    "endColumn": 70,
+                    "endOffset": 653
+                },
+                "from": {
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 587,
+                        "endColumn": 70,
+                        "endOffset": 653
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 658,
+                    "endColumn": 74,
+                    "endOffset": 728
+                },
+                "from": {
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 658,
+                        "endColumn": 74,
+                        "endOffset": 728
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 733,
+                    "endColumn": 95,
+                    "endOffset": 824
+                },
+                "from": {
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 733,
+                        "endColumn": 95,
+                        "endOffset": 824
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 829,
+                    "endColumn": 76,
+                    "endOffset": 901
+                },
+                "from": {
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 829,
+                        "endColumn": 76,
+                        "endOffset": 901
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 906,
+                    "endColumn": 76,
+                    "endOffset": 978
+                },
+                "from": {
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 906,
+                        "endColumn": 76,
+                        "endOffset": 978
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 983,
+                    "endColumn": 89,
+                    "endOffset": 1068
+                },
+                "from": {
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 983,
+                        "endColumn": 89,
+                        "endOffset": 1068
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 1073,
+                    "endColumn": 108,
+                    "endOffset": 1177
+                },
+                "from": {
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 1073,
+                        "endColumn": 108,
+                        "endOffset": 1177
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 1182,
+                    "endColumn": 64,
+                    "endOffset": 1242
+                },
+                "from": {
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 1182,
+                        "endColumn": 64,
+                        "endOffset": 1242
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 1247,
+                    "endColumn": 65,
+                    "endOffset": 1308
+                },
+                "from": {
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 1247,
+                        "endColumn": 65,
+                        "endOffset": 1308
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 1313,
+                    "endColumn": 138,
+                    "endOffset": 1447
+                },
+                "from": {
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 1313,
+                        "endColumn": 138,
+                        "endOffset": 1447
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 1452,
+                    "endColumn": 61,
+                    "endOffset": 1509
+                },
+                "from": {
+                    "file": "/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/C:\\Users\\pedramshirmohammad\\Desktop\\Chicken-Invasion-Projekt-LP4\\ChickenInvasionlibGDX\\C:\\tmp\\ChickenInvasionlibGDX\\android\\intermediates\\exploded-aar\\com.facebook.android\\facebook-android-sdk\\4.11.0\\res\\values-ms\\values-ms.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,

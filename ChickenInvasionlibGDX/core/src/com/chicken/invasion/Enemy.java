@@ -19,6 +19,7 @@ public class Enemy implements Cloneable{
     private double totalHealth;
     private float speed;
     private Rectangle collideRect;
+    private Boolean push;
 
     private static final int FRAME_COLS = 4;
     private static final int FRAME_ROWS = 2;
@@ -54,9 +55,10 @@ public class Enemy implements Cloneable{
 
         health = e.getHealth();
         totalHealth = e.getHealth();
+        this.push = e.getPush();
     }
 
-    public Enemy(String image, int health){
+    public Enemy(String image, int health, boolean canBePushed){
         walkSheet = new Texture(image);
         TextureRegion[][] tmp = TextureRegion.split(this.walkSheet, this.walkSheet.getWidth()/FRAME_COLS, this.walkSheet.getHeight()/FRAME_ROWS);
         TextureRegion[] walkFrames = new TextureRegion[FRAME_COLS * FRAME_ROWS];
@@ -81,6 +83,8 @@ public class Enemy implements Cloneable{
 
         this.health = health;
         this.totalHealth = health;
+
+        this.push = canBePushed;
     }
 
     public Enemy(){
@@ -131,7 +135,9 @@ public class Enemy implements Cloneable{
     }
 
     public void incY(){
-        this.y ++;
+        if (this.push){
+            this.y ++;
+        }
     }
 
     public float getY() {
@@ -158,6 +164,14 @@ public class Enemy implements Cloneable{
         this.health -= damage;
     }
 
+    public void setPush(Boolean push){
+        this.push = push;
+    }
+
+    public Boolean getPush(){
+        return this.push;
+    }
+
     @Override
     public Enemy clone(){
         Enemy clone = new Enemy();
@@ -171,6 +185,7 @@ public class Enemy implements Cloneable{
         clone.walkSheet = this.walkSheet;
         clone.x = this.x;
         clone.y  =this.y;
+        clone.setPush(this.push);
 
         return clone;
     }
