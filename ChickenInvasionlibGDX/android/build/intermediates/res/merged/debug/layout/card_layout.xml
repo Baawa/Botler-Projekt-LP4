@@ -59,7 +59,8 @@
                     android:layout_marginBottom="120dp"
                     android:progressBackgroundTint="#00ffffff"
                     android:layout_alignParentLeft="true"
-                    android:layout_alignParentBottom="true"/>
+                    android:layout_alignParentBottom="true"
+                    android:progress="56" />
 
                 <ProgressBar
                     style="?android:attr/progressBarStyleHorizontal"
@@ -96,6 +97,39 @@
                     android:background="@drawable/speediconnew"
                     android:layout_marginLeft="20dp"
                     android:layout_marginBottom="75dp"/>
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Title"
+                    android:id="@+id/textView"
+                    android:textColor="#000000"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Price"
+                    android:id="@+id/textView2"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="24dp"
+                    android:textColor="#000000"
+                    android:textAlignment="center"
+                    android:textSize="25dp" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/imageView4"
+                    android:src="@drawable/chickenleg"
+                    android:layout_alignTop="@+id/textView2"
+                    android:layout_alignEnd="@+id/speedIndicator" />
             </RelativeLayout>
 
         </RelativeLayout>
