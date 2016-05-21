@@ -40,8 +40,12 @@ public class Model {
     }
 
     public int getDifficulty(){
-        int tmp = currentWave * 2;
-        return tmp;
+        if (currentWave > 2){
+            int tmp = (int)(2 * Math.pow(currentWave, 2) / 3);
+            return tmp;
+        } else {
+            return currentWave * 2;
+        }
     }
 
     public State getState(){
