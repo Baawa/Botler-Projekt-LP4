@@ -16,6 +16,7 @@ import java.util.Random;
 public class Enemy implements Cloneable{
     private float                   x,y, width, height;
     private int                     health;
+    private int                      totalHealth;
     private float                   speed;
     private Rectangle               collideRect;
 
@@ -52,6 +53,7 @@ public class Enemy implements Cloneable{
         collideRect = new Rectangle(x,y,width,height);
 
         health = e.getHealth();
+        totalHealth = e.getHealth();
     }
 
     public Enemy(String image, int health){
@@ -78,6 +80,7 @@ public class Enemy implements Cloneable{
         collideRect = new Rectangle(x,y,width,height);
 
         this.health = health;
+        this.totalHealth = health;
     }
 
     public Enemy(){
@@ -103,6 +106,7 @@ public class Enemy implements Cloneable{
         collideRect = new Rectangle(x,y,width,height);
 
         health = 1;
+        totalHealth = 1;
     }
 
     public void update(float dt){
@@ -144,6 +148,10 @@ public class Enemy implements Cloneable{
 
     public int getHealth(){
         return this.health;
+    }
+
+    public int getTotalHealth(){
+        return this.totalHealth;
     }
 
     public void decHealth(int damage){
