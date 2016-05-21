@@ -55,39 +55,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChickenInvasion.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ChickenInvasion.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/chicken/invasion/ChickenInvasion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.93410856">
-              <caret line="645" column="17" selection-start-line="645" selection-start-column="17" selection-end-line="645" selection-end-column="17" />
-              <folding>
-                <element signature="e#7758#7759#0" expanded="true" />
-                <element signature="e#7790#7791#0" expanded="true" />
-                <element signature="e#7985#7986#0" expanded="true" />
-                <element signature="e#8009#8010#0" expanded="true" />
-                <element signature="e#8479#8480#0" expanded="true" />
-                <element signature="e#8523#8524#0" expanded="true" />
-                <element signature="e#12864#13018#0" expanded="true" />
-                <element signature="e#13017#13018#0" expanded="true" />
-                <element signature="e#13135#13286#0" expanded="true" />
-                <element signature="e#13285#13286#0" expanded="true" />
-                <element signature="e#13405#13561#0" expanded="true" />
-                <element signature="e#13560#13561#0" expanded="true" />
-                <element signature="e#13688#13856#0" expanded="true" />
-                <element signature="e#13855#13856#0" expanded="true" />
-                <element signature="e#13983#14147#0" expanded="true" />
-                <element signature="e#14146#14147#0" expanded="true" />
-                <element signature="e#14267#14421#0" expanded="true" />
-                <element signature="e#14420#14421#0" expanded="true" />
-                <element signature="e#14541#14690#0" expanded="true" />
-                <element signature="e#14689#14690#0" expanded="true" />
-                <element signature="e#14810#14959#0" expanded="true" />
-                <element signature="e#14958#14959#0" expanded="true" />
-                <element signature="e#15085#15246#0" expanded="true" />
-                <element signature="e#15245#15246#0" expanded="true" />
-                <element signature="e#16136#16137#0" expanded="true" />
-                <element signature="e#16194#16195#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0">
+              <caret line="647" column="13" selection-start-line="646" selection-start-column="0" selection-end-line="647" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/android/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6181818">
+              <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -145,12 +128,6 @@
               <caret line="57" column="40" selection-start-line="57" selection-start-column="40" selection-end-line="57" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#921#1076#0" expanded="true" />
-                <element signature="e#1075#1076#0" expanded="true" />
-                <element signature="e#1114#1631#0" expanded="true" />
-                <element signature="e#1630#1631#0" expanded="true" />
-                <element signature="e#1725#1970#0" expanded="true" />
-                <element signature="e#1969#1970#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -657,24 +634,24 @@
                 <option name="name" value="preReleaseUnitTestBuild" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare com.android.support:cardview-v7:23.2.1" />
+                <option name="description" value="Prepare com.android.support:cardview-v7:23.4.0" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="prepareComAndroidSupportCardviewV72321Library" />
+                <option name="name" value="prepareComAndroidSupportCardviewV72340Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare com.android.support:customtabs:23.2.1" />
+                <option name="description" value="Prepare com.android.support:customtabs:23.4.0" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="prepareComAndroidSupportCustomtabs2321Library" />
+                <option name="name" value="prepareComAndroidSupportCustomtabs2340Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare com.android.support:support-v4:23.2.1" />
+                <option name="description" value="Prepare com.android.support:support-v4:23.4.0" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="prepareComAndroidSupportSupportV42321Library" />
+                <option name="name" value="prepareComAndroidSupportSupportV42340Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare com.facebook.android:facebook-android-sdk:4.11.0" />
+                <option name="description" value="Prepare com.facebook.android:facebook-android-sdk:4.12.0" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="prepareComFacebookAndroidFacebookAndroidSdk4110Library" />
+                <option name="name" value="prepareComFacebookAndroidFacebookAndroidSdk4120Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
@@ -1314,24 +1291,24 @@
                 <option name="name" value="preReleaseUnitTestBuild" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare com.android.support:cardview-v7:23.2.1" />
+                <option name="description" value="Prepare com.android.support:cardview-v7:23.4.0" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/android" />
-                <option name="name" value="prepareComAndroidSupportCardviewV72321Library" />
+                <option name="name" value="prepareComAndroidSupportCardviewV72340Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare com.android.support:customtabs:23.2.1" />
+                <option name="description" value="Prepare com.android.support:customtabs:23.4.0" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/android" />
-                <option name="name" value="prepareComAndroidSupportCustomtabs2321Library" />
+                <option name="name" value="prepareComAndroidSupportCustomtabs2340Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare com.android.support:support-v4:23.2.1" />
+                <option name="description" value="Prepare com.android.support:support-v4:23.4.0" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/android" />
-                <option name="name" value="prepareComAndroidSupportSupportV42321Library" />
+                <option name="name" value="prepareComAndroidSupportSupportV42340Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare com.facebook.android:facebook-android-sdk:4.11.0" />
+                <option name="description" value="Prepare com.facebook.android:facebook-android-sdk:4.12.0" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/android" />
-                <option name="name" value="prepareComFacebookAndroidFacebookAndroidSdk4110Library" />
+                <option name="name" value="prepareComFacebookAndroidFacebookAndroidSdk4120Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/android" />
@@ -1694,7 +1671,7 @@
     <option name="modificationStamps">
       <map>
         <entry key="$PROJECT_DIR$" value="5855075348000" />
-        <entry key="C:\Users\Kristoffer Ek\Documents\GitHub\Chicken-Invasion-Projekt-LP4\ChickenInvasionlibGDX" value="5855082715440" />
+        <entry key="C:\Users\Kristoffer Ek\Documents\GitHub\Chicken-Invasion-Projekt-LP4\ChickenInvasionlibGDX" value="5855091900406" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -2159,7 +2136,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/android/build.gradle" />
         <option value="$PROJECT_DIR$/android/assets/data/uiskin.json" />
         <option value="$PROJECT_DIR$/core/src/com/chicken/invasion/Enemy.java" />
         <option value="$PROJECT_DIR$/core/src/com/chicken/invasion/Player.java" />
@@ -2170,6 +2146,7 @@
         <option value="$PROJECT_DIR$/android/src/com/chicken/invasion/HighScore.java" />
         <option value="$PROJECT_DIR$/android/src/com/chicken/invasion/AndroidLauncher.java" />
         <option value="$PROJECT_DIR$/core/src/com/chicken/invasion/ChickenInvasion.java" />
+        <option value="$PROJECT_DIR$/android/build.gradle" />
       </list>
     </option>
   </component>
@@ -2205,10 +2182,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane" />
-      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2244,77 +2217,13 @@
               <option name="myItemId" value="ChickenInvasionlibGDX" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="android" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ChickenInvasionlibGDX" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="android" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ChickenInvasionlibGDX" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="android" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ChickenInvasionlibGDX" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="android" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="invasion" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ChickenInvasionlibGDX" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="android" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manifests" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidManifestsGroupNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2519,7 +2428,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19032258" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19032258" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -2555,6 +2464,70 @@
     <entry file="file://$PROJECT_DIR$/android/src/com/chicken/invasion/Store.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="74" selection-start-line="38" selection-start-column="74" selection-end-line="38" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/chicken/invasion/ChickenInvasion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/chicken/invasion/GameButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="65" column="29" selection-start-line="65" selection-start-column="29" selection-end-line="65" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/src/com/chicken/invasion/AndroidLauncher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="40" column="44" selection-start-line="40" selection-start-column="44" selection-end-line="40" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/src/com/chicken/invasion/HighScore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="98" column="38" selection-start-line="98" selection-start-column="38" selection-end-line="98" selection-end-column="38" />
+          <folding>
+            <element signature="e#2792#2793#0" expanded="true" />
+            <element signature="e#2837#2838#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/res/layout/inputname.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/src/com/chicken/invasion/InputName.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="57" column="40" selection-start-line="57" selection-start-column="40" selection-end-line="57" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/src/com/chicken/invasion/Store.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
           <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding />
         </state>
@@ -2572,7 +2545,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2580,34 +2552,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#7758#7759#0" expanded="true" />
-            <element signature="e#7790#7791#0" expanded="true" />
-            <element signature="e#7985#7986#0" expanded="true" />
-            <element signature="e#8009#8010#0" expanded="true" />
-            <element signature="e#8479#8480#0" expanded="true" />
-            <element signature="e#8523#8524#0" expanded="true" />
-            <element signature="e#12864#13018#0" expanded="true" />
-            <element signature="e#13017#13018#0" expanded="true" />
-            <element signature="e#13135#13286#0" expanded="true" />
-            <element signature="e#13285#13286#0" expanded="true" />
-            <element signature="e#13405#13561#0" expanded="true" />
-            <element signature="e#13560#13561#0" expanded="true" />
-            <element signature="e#13688#13856#0" expanded="true" />
-            <element signature="e#13855#13856#0" expanded="true" />
-            <element signature="e#13983#14147#0" expanded="true" />
-            <element signature="e#14146#14147#0" expanded="true" />
-            <element signature="e#14267#14421#0" expanded="true" />
-            <element signature="e#14420#14421#0" expanded="true" />
-            <element signature="e#14541#14690#0" expanded="true" />
-            <element signature="e#14689#14690#0" expanded="true" />
-            <element signature="e#14810#14959#0" expanded="true" />
-            <element signature="e#14958#14959#0" expanded="true" />
-            <element signature="e#15085#15246#0" expanded="true" />
-            <element signature="e#15245#15246#0" expanded="true" />
-            <element signature="e#16136#16137#0" expanded="true" />
-            <element signature="e#16194#16195#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2661,7 +2606,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2669,34 +2613,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="290" column="50" selection-start-line="290" selection-start-column="50" selection-end-line="290" selection-end-column="50" />
-          <folding>
-            <element signature="e#7758#7759#0" expanded="true" />
-            <element signature="e#7790#7791#0" expanded="true" />
-            <element signature="e#7985#7986#0" expanded="true" />
-            <element signature="e#8009#8010#0" expanded="true" />
-            <element signature="e#8479#8480#0" expanded="true" />
-            <element signature="e#8523#8524#0" expanded="true" />
-            <element signature="e#12864#13018#0" expanded="true" />
-            <element signature="e#13017#13018#0" expanded="true" />
-            <element signature="e#13135#13286#0" expanded="true" />
-            <element signature="e#13285#13286#0" expanded="true" />
-            <element signature="e#13405#13561#0" expanded="true" />
-            <element signature="e#13560#13561#0" expanded="true" />
-            <element signature="e#13688#13856#0" expanded="true" />
-            <element signature="e#13855#13856#0" expanded="true" />
-            <element signature="e#13983#14147#0" expanded="true" />
-            <element signature="e#14146#14147#0" expanded="true" />
-            <element signature="e#14267#14421#0" expanded="true" />
-            <element signature="e#14420#14421#0" expanded="true" />
-            <element signature="e#14541#14690#0" expanded="true" />
-            <element signature="e#14689#14690#0" expanded="true" />
-            <element signature="e#14810#14959#0" expanded="true" />
-            <element signature="e#14958#14959#0" expanded="true" />
-            <element signature="e#15085#15246#0" expanded="true" />
-            <element signature="e#15245#15246#0" expanded="true" />
-            <element signature="e#16136#16137#0" expanded="true" />
-            <element signature="e#16194#16195#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2730,24 +2647,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.11.0/res/drawable-xhdpi-v4/com_facebook_tooltip_black_bottomnub.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7713249">
-          <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/android/src/com/chicken/invasion/StoreCardAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2821,12 +2724,6 @@
           <caret line="57" column="40" selection-start-line="57" selection-start-column="40" selection-end-line="57" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#921#1076#0" expanded="true" />
-            <element signature="e#1075#1076#0" expanded="true" />
-            <element signature="e#1114#1631#0" expanded="true" />
-            <element signature="e#1630#1631#0" expanded="true" />
-            <element signature="e#1725#1970#0" expanded="true" />
-            <element signature="e#1969#1970#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2850,38 +2747,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/res/drawable-xxhdpi-v4/com_facebook_button_send_icon_white.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/chicken/invasion/ChickenInvasion.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.93410856">
-          <caret line="645" column="17" selection-start-line="645" selection-start-column="17" selection-end-line="645" selection-end-column="17" />
-          <folding>
-            <element signature="e#7758#7759#0" expanded="true" />
-            <element signature="e#7790#7791#0" expanded="true" />
-            <element signature="e#7985#7986#0" expanded="true" />
-            <element signature="e#8009#8010#0" expanded="true" />
-            <element signature="e#8479#8480#0" expanded="true" />
-            <element signature="e#8523#8524#0" expanded="true" />
-            <element signature="e#12864#13018#0" expanded="true" />
-            <element signature="e#13017#13018#0" expanded="true" />
-            <element signature="e#13135#13286#0" expanded="true" />
-            <element signature="e#13285#13286#0" expanded="true" />
-            <element signature="e#13405#13561#0" expanded="true" />
-            <element signature="e#13560#13561#0" expanded="true" />
-            <element signature="e#13688#13856#0" expanded="true" />
-            <element signature="e#13855#13856#0" expanded="true" />
-            <element signature="e#13983#14147#0" expanded="true" />
-            <element signature="e#14146#14147#0" expanded="true" />
-            <element signature="e#14267#14421#0" expanded="true" />
-            <element signature="e#14420#14421#0" expanded="true" />
-            <element signature="e#14541#14690#0" expanded="true" />
-            <element signature="e#14689#14690#0" expanded="true" />
-            <element signature="e#14810#14959#0" expanded="true" />
-            <element signature="e#14958#14959#0" expanded="true" />
-            <element signature="e#15085#15246#0" expanded="true" />
-            <element signature="e#15245#15246#0" expanded="true" />
-            <element signature="e#16136#16137#0" expanded="true" />
-            <element signature="e#16194#16195#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0">
+          <caret line="647" column="13" selection-start-line="646" selection-start-column="0" selection-end-line="647" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6181818">
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
