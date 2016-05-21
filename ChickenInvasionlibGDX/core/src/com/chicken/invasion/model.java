@@ -35,13 +35,17 @@ public class Model {
     public void restartWaves() { currentWave = 1; }
 
     public int getNumberOfThrowables(){
-        int tmp = (currentWave * 2) + 1;
+        int tmp = getDifficulty() + 2;
         return tmp;
     }
 
     public int getDifficulty(){
-        int tmp = currentWave * 2;
-        return tmp;
+        if (currentWave > 2){
+            int tmp = (int)(2 * Math.pow(currentWave, 2) / 3);
+            return tmp;
+        } else {
+            return currentWave * 2;
+        }
     }
 
     public State getState(){

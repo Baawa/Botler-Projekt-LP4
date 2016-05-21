@@ -78,7 +78,7 @@
       <file leaf-file-name="ChickenInvasion.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/src/com/chicken/invasion/ChickenInvasion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.24727273">
+            <state vertical-scroll-proportion="0.2635659">
               <caret line="317" column="31" selection-start-line="317" selection-start-column="31" selection-end-line="317" selection-end-column="31" />
               <folding>
                 <element signature="e#4865#5068#0" expanded="true" />
@@ -2252,6 +2252,7 @@
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_5_API_23" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
+    <property name="FullScreen" value="false" />
   </component>
   <component name="RunManager" selected="Android Application.android">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -2413,6 +2414,9 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="8536b19e-0607-47ed-84f5-ad60da8ddce8" name="Default" comment="" />
@@ -2424,7 +2428,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32873562" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2434,7 +2438,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32988507" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32988507" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2458,6 +2462,14 @@
       <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.50503355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -2597,7 +2609,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/chicken/invasion/ChickenInvasion.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24727273">
+        <state vertical-scroll-proportion="0.2635659">
           <caret line="317" column="31" selection-start-line="317" selection-start-column="31" selection-end-line="317" selection-end-column="31" />
           <folding>
             <element signature="e#4865#5068#0" expanded="true" />
