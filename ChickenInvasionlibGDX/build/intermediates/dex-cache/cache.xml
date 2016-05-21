@@ -2,11 +2,16 @@
 <items version="2" >
 
     <item
-        jar="/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/core/build/libs/core-1.0.jar"
+        jar="C:\Users\Kristoffer Ek\Documents\GitHub\Chicken-Invasion-Projekt-LP4\ChickenInvasionlibGDX\core\build\libs\core-1.0.jar"
         jumboMode="false"
         revision="23.0.1"
+<<<<<<< HEAD
         sha1="7ac1c762210b7f610cbbe531d1e3612a3dc8246d">
         <dex dex="/Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/pre-dexed/debug/core-1.0_3b31a1ad8472149b9f537b656b2b41b02940a96a.jar" />
+=======
+        sha1="9327987c7263a863246238e015400bcc306717df">
+        <dex dex="C:\Users\Kristoffer Ek\Documents\GitHub\Chicken-Invasion-Projekt-LP4\ChickenInvasionlibGDX\android\build\intermediates\pre-dexed\debug\core-1.0_ffd180a74895daedf87a61767cc35511716ba8b7.jar" />
+>>>>>>> origin/master
     </item>
 
 </items>

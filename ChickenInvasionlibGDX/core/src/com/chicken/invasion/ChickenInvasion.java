@@ -17,6 +17,8 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.World;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.badlogic.gdx.scenes.scene2d.ui.TextField;
 import com.badlogic.gdx.utils.Align;
 
 import java.util.ArrayList;
@@ -62,6 +64,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
     private Rectangle bottom;
     private BitmapFont fontScore, fontWings;
     Texture chickenLeg;
+    private TextField highScoreInput;
 
 	private GameButton startBtn;
 	private GameButton pauseBtn;
@@ -128,6 +131,20 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
             bgMusic.play();
         }
 
+        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("fonts/ChunkfiveEx.ttf"));
+        FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
+        parameter.size = 20;
+        highScoreInput = new TextField("Hej", new TextField.TextFieldStyle(generator.generateFont(parameter), Color.BLACK,null,null,null));
+        highScoreInput.setMessageText("Click here!");
+        highScoreInput.setAlignment(Align.center);
+        highScoreInput.setBounds(1,1,2,2);
+
+        highScoreInput.setTextFieldListener(new TextField.TextFieldListener() {
+            public void keyTyped(TextField textField, char key) {
+                if (key == '\n') textField.getOnscreenKeyboard().show(false);
+            }
+        });
+
 	}
 
 	@Override
@@ -144,6 +161,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
                 batch.begin();
 
+                //highScoreInput.draw(batch,255);
                 drawRunningGame(batch);
 
                 batch.end();
@@ -226,7 +244,6 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 		if (model.getState() == Model.State.PAUSED || model.getState() == Model.State.STOPPED || model.getState() == Model.State.GAMEOVER){
 
 			if (model.getState() == Model.State.GAMEOVER || model.getState() == Model.State.STOPPED ){
-                player.saveScore();
                 model.restartWaves();
                 wave = new Wave(1,model.getDifficulty());
                 player.resetScore();
@@ -503,7 +520,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
                     if (player.getCurrentTO().getDamage()>= e.getHealth()){
                         iterEnemies.remove();
-                        player.incScore();
+                        player.incScore(e.getTotalHealth());
 
                     }
                     else{

@@ -32,7 +32,7 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 
         HighScore highScore = new HighScore();
         chickenInvasion.setMyScoreCallback(highScore);
-		//Intent intent = new Intent(getApplicationContext(),HighScore.class);m
+		//Intent intent = new Intent(getApplicationContext(),HighScore.class);
 		//startActivity(intent);
 		initialize(chickenInvasion, config);
 	}
