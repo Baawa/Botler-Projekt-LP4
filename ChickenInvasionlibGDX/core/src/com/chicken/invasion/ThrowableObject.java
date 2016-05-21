@@ -18,6 +18,7 @@ public class ThrowableObject{
     private Texture image;
     private Sprite sprite;
     private String name;
+    private int price;
     private double speed = 1;
     private int damage = 1;
     private float rotation = 1.0f;
@@ -267,6 +268,11 @@ public class ThrowableObject{
 
     public Sprite copySprite(){
         return new Sprite(this.sprite);
+    }
+
+    public int getPrice(){
+        int tmp = (int)(this.damage * this.speed * 100);
+        return tmp;
     }
 
     public void dispose(){
