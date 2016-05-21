@@ -14,22 +14,18 @@ import java.util.Random;
  * Created by Kristoffer on 2016-05-02.
  */
 public class Enemy implements Cloneable{
-    private float                   x,y, width, height;
-<<<<<<< HEAD
-    private double                     health;
-=======
-    private int                     health;
-    private int                      totalHealth;
->>>>>>> origin/master
-    private float                   speed;
-    private Rectangle               collideRect;
+    private float x,y, width, height;
+    private double health;
+    private double totalHealth;
+    private float speed;
+    private Rectangle collideRect;
 
-    private static final int        FRAME_COLS = 4;
-    private static final int        FRAME_ROWS = 2;
+    private static final int FRAME_COLS = 4;
+    private static final int FRAME_ROWS = 2;
 
-    private Animation               walkAnimation;
-    private Texture                 walkSheet = new Texture("chickenlargeanim.png");
-    private TextureRegion           currentFrame;
+    private Animation walkAnimation;
+    private Texture walkSheet = new Texture("chickenlargeanim.png");
+    private TextureRegion currentFrame;
 
     float stateTime;
 
@@ -154,15 +150,11 @@ public class Enemy implements Cloneable{
         return this.health;
     }
 
-<<<<<<< HEAD
-    public void decHealth(double damage){
-=======
-    public int getTotalHealth(){
+    public double getTotalHealth(){
         return this.totalHealth;
     }
 
-    public void decHealth(int damage){
->>>>>>> origin/master
+    public void decHealth(double damage){
         this.health -= damage;
     }
 
