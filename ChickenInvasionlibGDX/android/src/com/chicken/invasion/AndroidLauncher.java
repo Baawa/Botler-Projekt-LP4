@@ -31,7 +31,7 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 		chickenInvasion.setMyGameCallback(this);
 
         HighScore highScore = new HighScore();
-        chickenInvasion.setMyScoreCallback(highScore);
+        chickenInvasion.setMyIsHighScoreCallback(highScore);
 		//Intent intent = new Intent(getApplicationContext(),HighScore.class);
 		//startActivity(intent);
 		initialize(chickenInvasion, config);
@@ -43,7 +43,14 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 		startActivity(intent);
 	}
 
-	@Override
+    @Override
+    public void onStartActivityInputName(int points) {
+        Intent intent = new Intent(this, InputName.class);
+        intent.putExtra("score", points);
+        startActivity(intent);
+    }
+
+    @Override
 	public void saveScore(int score) {
 		if (pref.getInt("TOTAL_SCORE",0) == 0){
 			totScore = score;

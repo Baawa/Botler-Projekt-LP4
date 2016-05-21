@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * Created by pedramshirmohammad on 16-05-16.
  */
-public class HighScore extends Activity implements ChickenInvasion.ScoreCallback{
+public class HighScore extends Activity implements ChickenInvasion.isHighScoreCallback{
 
     private ListView highscoreList;
     private HighScoreAdapter scoreAdapter;
@@ -90,15 +90,12 @@ public class HighScore extends Activity implements ChickenInvasion.ScoreCallback
         Collections.sort(topList, new ScoreComparator());
 
         if (topList.size()>10){
-            topList.remove(topList.size()-1);
+            topList.remove(topList.size() - 1);
         }
     }
 
     @Override
-    public void setHighscore(String name, int points) {
-        if (isNewHighscore(points)){
-            addNewHighScore(name, points);
-        }
+    public boolean isHighscore(int points) {
+        return isNewHighscore(points);
     }
-
 }

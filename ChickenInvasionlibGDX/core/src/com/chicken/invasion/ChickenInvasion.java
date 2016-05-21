@@ -17,9 +17,12 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.World;
+import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.TextField;
 import com.badlogic.gdx.utils.Align;
+import com.badlogic.gdx.utils.viewport.ScreenViewport;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +37,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
     public interface GameCallback {
         void onStartActivityStore();
         void onStartActivityHighScore();
+        void onStartActivityInputName(int points);
         void saveScore(int score);
     }
 
@@ -47,12 +51,12 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
     //---------------------------------
 
     //Score callback interface ---------
-    public interface ScoreCallback{
-        void setHighscore(String name, int points);
+    public interface isHighScoreCallback{
+        boolean isHighscore(int points);
     }
-    private ScoreCallback scoreCallback;
+    private isHighScoreCallback isHighScoreCallback;
 
-    public void setMyScoreCallback(ScoreCallback callback) { scoreCallback = callback; }
+    public void setMyIsHighScoreCallback(isHighScoreCallback callback) { isHighScoreCallback = callback; }
     //----------------------------------
 
 	private Model model;
@@ -65,6 +69,9 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
     private BitmapFont fontScore, fontWings;
     Texture chickenLeg;
     private TextField highScoreInput;
+    private FreeTypeFontGenerator fontGenerator;
+    private FreeTypeFontGenerator.FreeTypeFontParameter parameter;
+    private Stage stage;
 
 	private GameButton startBtn;
 	private GameButton pauseBtn;
@@ -129,21 +136,6 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
             bgMusic.setVolume(0.5f);
             bgMusic.play();
         }
-
-        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("fonts/ChunkfiveEx.ttf"));
-        FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
-        parameter.size = 20;
-        highScoreInput = new TextField("Hej", new TextField.TextFieldStyle(generator.generateFont(parameter), Color.BLACK,null,null,null));
-        highScoreInput.setMessageText("Click here!");
-        highScoreInput.setAlignment(Align.center);
-        highScoreInput.setBounds(1,1,2,2);
-
-        highScoreInput.setTextFieldListener(new TextField.TextFieldListener() {
-            public void keyTyped(TextField textField, char key) {
-                if (key == '\n') textField.getOnscreenKeyboard().show(false);
-            }
-        });
-
 	}
 
 	@Override
@@ -229,14 +221,6 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
         //Draw chicken wings
         fontWings.draw(batch, String.valueOf(player.getChickenWings()), 1.5f, Gdx.graphics.getHeight()/100 - 0.2f);
-        /*
-        fontWings.draw(batch,
-                String.valueOf(player.getChickenWings()),
-                1.5f,
-                ((Gdx.graphics.getHeight() / 100) - 0.5f),
-                0f,
-                Align.topLeft,
-                false);*/
     }
 
 	public void startGame(){
@@ -261,6 +245,8 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
                 gameCallback.onStartActivityStore();
             } else if (className.equals("HighScore")) {
                 gameCallback.onStartActivityHighScore();
+            } else if (className.equals("InputName")) {
+                gameCallback.onStartActivityInputName(player.getScore());
             }
         }
     }
@@ -326,11 +312,11 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         gameOver.draw(batch);
 
         restartBtn.setX((Gdx.graphics.getWidth() / 200) + 0.1f + (restartBtn.getWidth() / 2));
-        restartBtn.setY(Gdx.graphics.getHeight() / 200 - 2.0f);
+        restartBtn.setY(Gdx.graphics.getHeight() / 200 - 3.0f);
         restartBtn.draw(batch);
 
         backBtn.setX((Gdx.graphics.getWidth() / 200) - 0.1f - backBtn.getWidth() - (backBtn.getWidth() / 2));
-        backBtn.setY(Gdx.graphics.getHeight() / 200 - 2.0f);
+        backBtn.setY(Gdx.graphics.getHeight() / 200 - 3.0f);
         backBtn.draw(batch);
 
     }
@@ -483,24 +469,22 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
     }
 
     private void initFonts(){
-        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("fonts/ChunkfiveEx.ttf"));
-        FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
+        fontGenerator = new FreeTypeFontGenerator(Gdx.files.internal("fonts/ChunkfiveEx.ttf"));
+        parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
         parameter.size = 100;
 
         //score
-        fontScore = generator.generateFont(parameter);
+        fontScore = fontGenerator.generateFont(parameter);
         fontScore.getData().setScale(0.03f);
         fontScore.setUseIntegerPositions(false);
         fontScore.setColor(Color.WHITE);
 
         //chicken wings
         parameter.size = 60;
-        fontWings = generator.generateFont(parameter);
+        fontWings = fontGenerator.generateFont(parameter);
         fontWings.getData().setScale(0.015f);
         fontWings.setUseIntegerPositions(false);
         fontWings.setColor(Color.WHITE);
-
-        generator.dispose();
 
         //Chicken leg icon
         chickenLeg = new Texture("chickenleg-skevsomfan.png");
@@ -548,7 +532,9 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
             //Check if player lost
             if (e.getCollideRect().overlaps(bottom)) {
                 model.gameOver();
-                scoreCallback.setHighscore("Seidon", player.getScore());
+                if (isHighScoreCallback.isHighscore(player.getScore())){
+                    createIntent("InputName");
+                }
                 break;
             }
         }
@@ -573,7 +559,6 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
                 batch.draw(e.getTextureRegion(), e.getX(), e.getY(), e.getWidth(), e.getHeight());
             }
     }
-
 
     @Override
     public void dispose(){
