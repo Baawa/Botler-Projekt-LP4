@@ -18,9 +18,9 @@ public class ThrowableObject{
     private Texture image;
     private Sprite sprite;
     private String name;
-    private int price;
+    private int price = 0;
     private double speed = 1;
-    private int damage = 1;
+    private double damage = 1;
     private float rotation = 1.0f;
     private Boolean collided = false;
     private Boolean thrown = false;
@@ -185,7 +185,7 @@ public class ThrowableObject{
     }
 
     public void onCollison(){
-        if (damage == 1){
+        if (damage <= 1){
             setCollided(true);
         } else{
             damage -= 1;
@@ -200,7 +200,7 @@ public class ThrowableObject{
         this.speed = speed;
     }
 
-    public void setDamage(int damage){
+    public void setDamage(double damage){
         this.damage = damage;
     }
 
@@ -216,7 +216,7 @@ public class ThrowableObject{
         return speed;
     }
 
-    public int getDamage(){
+    public double getDamage(){
         return damage;
     }
 

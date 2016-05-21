@@ -45,7 +45,7 @@ public class StoreCardAdapter extends PagerAdapter {
         layoutInflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View item_view = layoutInflater.inflate(R.layout.card_layout,container,false);
         CardView card = (CardView)item_view.findViewById(R.id.weapon_view);
-        ProgressBar streangth = (ProgressBar) item_view.findViewById(R.id.streangthIndicator);
+        ProgressBar strength = (ProgressBar) item_view.findViewById(R.id.streangthIndicator);
         weaponImg = (ImageView)item_view.findViewById(R.id.weapon_img);
 
 
@@ -68,7 +68,7 @@ public class StoreCardAdapter extends PagerAdapter {
         });*/
 
 
-        streangth.setProgress(mWeapons.get(position).getDamage()*10);
+        strength.setProgress((int)mWeapons.get(position).getDamage()*10);
         weaponImg.setImageDrawable(mDrawable);
         container.addView(item_view);
 

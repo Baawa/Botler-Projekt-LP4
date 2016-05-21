@@ -1,2 +1,14 @@
 
 *.class
+ChickenInvasionlibGDX/.gradle/2.10/taskArtifacts/cache.properties.lock
+ChickenInvasionlibGDX/.gradle/2.10/taskArtifacts/fileHashes.bin
+ChickenInvasionlibGDX/.gradle/2.10/taskArtifacts/fileSnapshots.bin
+ChickenInvasionlibGDX/.gradle/2.10/taskArtifacts/taskArtifacts.bin
+ChickenInvasionlibGDX/.idea/workspace.xml
+*.json
+*.json
+ChickenInvasionlibGDX/android/build/intermediates/classes/debug/com/chicken/invasion/CreateWeapon.class
+ChickenInvasionlibGDX/android/build/intermediates/incremental/mergeDebugResources/merger.xml
+ChickenInvasionlibGDX/android/build/outputs/logs/manifest-merger-debug-report.txt
+*.class
+*.jar
