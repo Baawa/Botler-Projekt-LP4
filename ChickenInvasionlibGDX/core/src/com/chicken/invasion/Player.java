@@ -15,6 +15,7 @@ public class Player {
     private ThrowableObject equippedTO;
     private int throwablesAmount = 0;
 
+
     public void addThrowables(int amount){
         throwablesAmount += amount;
         if (throwables.size() == 0){

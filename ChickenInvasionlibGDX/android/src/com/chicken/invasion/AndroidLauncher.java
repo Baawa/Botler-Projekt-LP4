@@ -17,6 +17,8 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 	SharedPreferences.Editor edit;
 	int totScore;
 
+    private ChickenInvasion controller;
+
 	@Override
 	protected void onCreate (Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -27,15 +29,19 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 		edit = pref.edit();
 
 
-		ChickenInvasion chickenInvasion = new ChickenInvasion();
-		chickenInvasion.setMyGameCallback(this);
+		controller = new ChickenInvasion();
+        Store.setController(controller);
+
+		controller.setMyGameCallback(this);
 
         HighScore highScore = new HighScore();
-        chickenInvasion.setMyIsHighScoreCallback(highScore);
+        controller.setMyIsHighScoreCallback(highScore);
 		//Intent intent = new Intent(getApplicationContext(),HighScore.class);
 		//startActivity(intent);
-		initialize(chickenInvasion, config);
+		initialize(controller, config);
 	}
+
+    //CALLBACKS -------------------
 
 	@Override
 	public void onStartActivityHighScore() {
@@ -67,7 +73,6 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 	@Override
 	public void onStartActivityStore() {
 		Intent intent = new Intent(this, Store.class);
-		intent.putExtra("PLAYER_SCORE",totScore);
 		startActivity(intent);
 	}
 

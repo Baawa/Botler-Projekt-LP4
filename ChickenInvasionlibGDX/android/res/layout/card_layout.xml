@@ -17,7 +17,7 @@
         android:layout_alignParentEnd="false"
         android:layout_alignParentStart="false"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="60dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         >
@@ -33,7 +33,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
-                    android:id="@+id/weapon_img"
+                    android:id="@+id/weaponImg"
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
                     android:src="@drawable/beachball200x200"
@@ -53,14 +53,16 @@
                     style="?android:attr/progressBarStyleHorizontal"
                     android:layout_width="150dp"
                     android:layout_height="20dp"
-                    android:id="@+id/streangthIndicator"
+                    android:id="@+id/damageIndicator"
                     android:progressTint="#d10000"
                     android:layout_marginLeft="60dp"
                     android:layout_marginBottom="120dp"
-                    android:progressBackgroundTint="#00ffffff"
+                    android:progressBackgroundTint="#FFF"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentBottom="true"
-                    android:progress="56" />
+                    android:progress="0"
+                    android:indeterminate="false"
+                    android:max="200"/>
 
                 <ProgressBar
                     style="?android:attr/progressBarStyleHorizontal"
@@ -72,9 +74,10 @@
                     android:layout_alignParentLeft="true"
                     android:layout_marginLeft="60dp"
                     android:layout_marginBottom="80dp"
-                    android:progressBackgroundTint="#00ffffff"
-                    android:progress="5"
-                    android:max="15"/>
+                    android:progressBackgroundTint="#FFF"
+                    android:progress="0"
+                    android:max="20"
+                    android:indeterminate="false"/>
 
                 <ImageView
                     android:layout_width="30dp"
@@ -103,33 +106,47 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="Title"
-                    android:id="@+id/textView"
+                    android:id="@+id/name"
                     android:textColor="#000000"
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp"
-                    android:textSize="20dp" />
+                    android:textSize="20dp"
+                    android:gravity="center_horizontal"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Price"
-                    android:id="@+id/textView2"
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_alignParentEnd="false"
+                    android:layout_alignParentStart="false"
                     android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginBottom="24dp"
-                    android:textColor="#000000"
-                    android:textAlignment="center"
-                    android:textSize="25dp" />
+                    android:gravity="center_vertical|center_horizontal">
 
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:id="@+id/imageView4"
-                    android:src="@drawable/chickenleg"
-                    android:layout_alignTop="@+id/textView2"
-                    android:layout_alignEnd="@+id/speedIndicator" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="10"
+                        android:id="@+id/price"
+                        android:textColor="#000000"
+                        android:textAlignment="center"
+                        android:textSize="25dp"
+                        android:layout_alignTop="@+id/imageView4"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center_vertical|right"
+                        android:layout_marginRight="10dp"/>
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:id="@+id/imageView4"
+                        android:src="@drawable/chickenleg"
+                        android:layout_alignParentBottom="true"
+                        android:layout_toEndOf="@+id/price"/>
+                </RelativeLayout>
+
             </RelativeLayout>
 
         </RelativeLayout>

@@ -32,7 +32,6 @@ import java.util.Iterator;
 
 public class ChickenInvasion extends ApplicationAdapter implements GestureDetector.GestureListener{
 
-    //--------------------------------
     //Interface for various callbacks to the android launcher
     public interface GameCallback {
         void onStartActivityStore();
@@ -40,38 +39,34 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         void onStartActivityInputName(int points);
         void saveScore(int score);
     }
-
     // Local variable to hold the callback implementation
     private GameCallback gameCallback;
-
     // Setter for the callback
     public void setMyGameCallback(GameCallback callback) {
         gameCallback = callback;
     }
-    //---------------------------------
+    //END GameCallback------------------------------
 
     //Score callback interface ---------
     public interface isHighScoreCallback{
         boolean isHighscore(int points);
     }
+    // Local variable to hold the callback implementation
     private isHighScoreCallback isHighScoreCallback;
-
+    // Setter for the callback
     public void setMyIsHighScoreCallback(isHighScoreCallback callback) { isHighScoreCallback = callback; }
-    //----------------------------------
+    //END isHighScoreCallback-------------------------------
 
 	private Model model;
 	private SpriteBatch batch;
-	private Sprite backgroundimg, gameOver, startBanner;
-	private World world;
+	private Sprite backgroundimg;
+    private World world;
 	private Player player;
     private Wave wave;
     private Rectangle bottom;
     private BitmapFont fontScore, fontWings;
-    Texture chickenLeg;
-    private TextField highScoreInput;
-    private FreeTypeFontGenerator fontGenerator;
-    private FreeTypeFontGenerator.FreeTypeFontParameter parameter;
-    private Stage stage;
+    private Texture chickenLeg;
+    private ThrowableHolder throwableHolder;
 
 	private GameButton startBtn;
 	private GameButton pauseBtn;
@@ -84,7 +79,6 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
     private GameButton settingsBtn;
 
 	private Camera camera;
-
     private Music bgMusic;
 
     private Boolean showSettings = false;
@@ -94,12 +88,12 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 	public void create () {
 
 		model = Model.getInstance();
-
+        player = new Player();
 		this.world = new World(new Vector2(0, 0), true);
+        throwableHolder = new ThrowableHolder(this, world);
 
-		player = new Player();
         if (player.getCurrentTO() == null){
-            ThrowableObject tmp = new ThrowableObject(100, "Bat", new Texture("beachball200x200.png"), this.world, player);
+            ThrowableObject tmp = new ThrowableObject("Beachball", "beachball200x200", this.world, player);
             tmp.setDamage(1);
             tmp.setSpeed(1.5);
             tmp.setRotationSpeed(0.5f);
@@ -192,7 +186,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         }
 	}
 
-    private void drawFonts(){
+    private void drawFonts() {
         //draw score
         fontScore.draw(batch,
                 String.valueOf(player.getScore()),
@@ -306,7 +300,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
 
         //Game Over specifics
-        gameOver = new Sprite(new Texture("gameover.png"));
+        Sprite gameOver = new Sprite(new Texture("gameover.png"));
         gameOver.setSize(400 / 50, 237f / 50);
         gameOver.setX(Gdx.graphics.getWidth() / 200 - 4);
         gameOver.setY(Gdx.graphics.getWidth() / 200 + 4f);
@@ -326,7 +320,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
         drawAlways();
 
-        startBanner = new Sprite(new Texture("startBanner.png"));
+        Sprite startBanner = new Sprite(new Texture("startBanner.png"));
         startBanner.setSize(350 / 50, 250f / 50);
         startBanner.setX(Gdx.graphics.getWidth() / 200 - startBanner.getWidth() / 2);
         startBanner.setY(Gdx.graphics.getWidth() / 200 + 4f);
@@ -470,8 +464,8 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
     }
 
     private void initFonts(){
-        fontGenerator = new FreeTypeFontGenerator(Gdx.files.internal("fonts/ChunkfiveEx.ttf"));
-        parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
+        FreeTypeFontGenerator fontGenerator = new FreeTypeFontGenerator(Gdx.files.internal("fonts/ChunkfiveEx.ttf"));
+        FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
         parameter.size = 100;
 
         //score
@@ -579,6 +573,17 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         startBtn.dispose();
         storeBtn.dispose();
     }
+
+    public Player getPlayer(){
+        return player;
+    }
+
+    public ThrowableHolder getThrowableHolder(){
+        return throwableHolder;
+    }
+
+
+    // GESTURES -------------------------------------------------------------------------
 
 	@Override
 	public boolean touchDown(float x, float y, int pointer, int button) {

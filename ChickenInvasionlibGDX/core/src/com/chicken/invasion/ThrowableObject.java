@@ -15,10 +15,11 @@ import com.badlogic.gdx.physics.box2d.World;
  * Created by Albin on 2016-04-26.
  */
 public class ThrowableObject{
+    private String imageURL;
     private Texture image;
     private Sprite sprite;
     private String name;
-    private int price = 0;
+    private boolean purchased;
     private double speed = 1;
     private double damage = 1;
     private float rotation = 1.0f;
@@ -43,7 +44,9 @@ public class ThrowableObject{
         this.scale = to.getScale();
         this.sprite = to.copySprite();
         this.sprite.setSize(to.getOriginalWidth(), to.getOriginalHeight());
+        this.imageURL = to.getImageURL();
         this.image = this.sprite.getTexture();
+        this.purchased = false;
 
         this.orgWidth = to.getOriginalWidth();
         this.orgHeight = to.getOriginalHeight();
@@ -78,13 +81,15 @@ public class ThrowableObject{
         collideRect = this.sprite.getBoundingRectangle();
     }
 
-    public ThrowableObject(float scale, String name, Texture image, World world, Player player) {
+    public ThrowableObject(String name, String imageURL, World world, Player player) {
 
         this.player = player;
 
         this.name = name;
-        this.image = image;
-        this.scale = scale;
+        this.imageURL = imageURL;
+        this.image = new Texture(imageURL+".png");
+        this.scale = 100;
+        this.purchased = false;
 
         this.sprite = new Sprite(image);
         this.sprite.setSize(this.sprite.getWidth() / this.scale, this.sprite.getHeight() / this.scale);
@@ -98,13 +103,15 @@ public class ThrowableObject{
 
     }
 
-    public ThrowableObject(int x, int y, float scale, String name, Texture image, World world, Player player) {
+    public ThrowableObject(int x, int y, float scale, String name, String imageURL, World world, Player player) {
 
         this.player = player;
 
         this.name = name;
-        this.image = image;
+        this.imageURL = imageURL;
+        this.image = new Texture(imageURL+".png");
         this.scale = scale;
+        this.purchased = false;
 
         this.sprite = new Sprite(image);
         this.sprite.setSize(this.sprite.getWidth()/this.scale,this.sprite.getHeight()/this.scale);
@@ -196,6 +203,10 @@ public class ThrowableObject{
         this.name = name;
     }
 
+    public String getImageURL(){
+        return imageURL;
+    }
+
     public void setSpeed(double speed){
         this.speed = speed;
     }
@@ -271,8 +282,15 @@ public class ThrowableObject{
     }
 
     public int getPrice(){
-        int tmp = (int)(this.damage * this.speed * 100);
-        return tmp;
+        return (int)(this.damage * this.speed * 100);
+    }
+
+    public boolean isPurchased(){
+        return purchased;
+    }
+
+    public void setPurchased(boolean purchased){
+        this.purchased = purchased;
     }
 
     public void dispose(){

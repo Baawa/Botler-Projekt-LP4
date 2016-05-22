@@ -2,6 +2,7 @@ package com.chicken.invasion;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v7.widget.CardView;
@@ -12,6 +13,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import java.util.HashMap;
 import java.util.List;
@@ -24,55 +26,50 @@ public class StoreCardAdapter extends PagerAdapter {
 
 
     private Context ctx;
-    private LayoutInflater layoutInflater;
-    private List<ThrowableObject> mWeapons;
-    private ImageView weaponImg;
-    private HashMap<String,Boolean> availability;
+    public List<ThrowableObject> mWeapons;
     private SharedPreferences pref;
     private SharedPreferences.Editor edit;
+    private ChickenInvasion controller;
 
-    public StoreCardAdapter(Context ctx, List<ThrowableObject> mWeapons,HashMap<String,Boolean> availability){
+    public StoreCardAdapter(Context ctx, ChickenInvasion controller){
         this.ctx = ctx;
-        this.mWeapons = mWeapons;
-        this.availability = availability;
+        this.controller = controller;
+        this.mWeapons = controller.getThrowableHolder().getThrowables();
         pref = ctx.getSharedPreferences("myList", Context.MODE_PRIVATE);
         edit = pref.edit();
     }
 
     @Override
     public Object instantiateItem(ViewGroup container, final int position) {
+        mWeapons = controller.getThrowableHolder().getThrowables();
+        ThrowableObject currWeapon = mWeapons.get(position);
+        LayoutInflater layoutInflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        layoutInflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View item_view = layoutInflater.inflate(R.layout.card_layout,container,false);
-        CardView card = (CardView)item_view.findViewById(R.id.weapon_view);
-        ProgressBar strength = (ProgressBar) item_view.findViewById(R.id.streangthIndicator);
-        weaponImg = (ImageView)item_view.findViewById(R.id.weapon_img);
+        // card_view.xml LAYOUT
+        View item_view = layoutInflater.inflate(R.layout.card_layout, container, false);
 
+        //IMAGE
+        ImageView weaponImg = (ImageView) item_view.findViewById(R.id.weaponImg);
+        Resources res = ctx.getResources();
+        int resID = res.getIdentifier(currWeapon.getImageURL() , "drawable", ctx.getPackageName());
+        weaponImg.setImageDrawable(res.getDrawable(resID));
 
-        Drawable mDrawable = item_view.getResources().getDrawable(R.drawable.pan100x100);
+        //WEAPON INFO
+        ProgressBar damage = (ProgressBar) item_view.findViewById(R.id.damageIndicator);
+        damage.setProgress((int) currWeapon.getDamage()*10);
+        ProgressBar speed = (ProgressBar) item_view.findViewById(R.id.speedIndicator);
+        speed.setProgress((int) (currWeapon.getSpeed()*10));
 
-        /*if (availability.get(mWeapons.get(position).getName())){
-            buyBtn.setText("EQUIP");
+        TextView name = (TextView) item_view.findViewById(R.id.name);
+        name.setText(currWeapon.getName());
+        TextView price = (TextView) item_view.findViewById(R.id.price);
+        if (currWeapon.isPurchased()){
+            price.setText((currWeapon.getPrice() / 3) + "");
+        }else {
+            price.setText(currWeapon.getPrice() + "");
         }
 
-
-        buyBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                availability.put(mWeapons.get(position).getName(),true);
-                for (Map.Entry<String,Boolean> e: availability.entrySet()){
-                    edit.putBoolean(e.getKey(),e.getValue());
-                    edit.commit();
-                }
-            }
-        });*/
-
-
-        strength.setProgress((int)mWeapons.get(position).getDamage()*10);
-        weaponImg.setImageDrawable(mDrawable);
         container.addView(item_view);
-
-
         return item_view;
     }
 
@@ -91,4 +88,5 @@ public class StoreCardAdapter extends PagerAdapter {
     public boolean isViewFromObject(View view, Object object) {
         return (view == object);
     }
+
 }
