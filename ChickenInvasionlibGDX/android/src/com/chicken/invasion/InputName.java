@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 
 /**
@@ -50,7 +51,7 @@ public class InputName extends Activity {
             }
         });
 
-        Button save = (Button)findViewById(R.id.saveBtn);
+        ImageButton save = (ImageButton)findViewById(R.id.saveBtn);
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

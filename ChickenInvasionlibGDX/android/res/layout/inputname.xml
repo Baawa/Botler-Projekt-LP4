@@ -24,12 +24,24 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SAVE HIGH SCORE"
+    <ImageButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:id="@+id/saveBtn"
+        android:src="@drawable/forward220x220"
+        android:background="#00ffffff"
+        android:cropToPadding="false"
+        android:scaleType="fitCenter"
         android:layout_below="@+id/nameInput"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="49dp"/>
+        android:layout_marginTop="10dp" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="110dp"
+        android:id="@+id/imageView5"
+        android:src="@drawable/recordbanner"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/scoreLabel" />
+
 </RelativeLayout>
