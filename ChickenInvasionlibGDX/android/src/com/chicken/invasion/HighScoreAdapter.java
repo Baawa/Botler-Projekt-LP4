@@ -47,14 +47,6 @@ public class HighScoreAdapter extends ArrayAdapter<Score> {
 
         }
 
-        Button tstButton = (Button) v.findViewById(R.id.tstbutton);
-        tstButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
         return v;
     }
 

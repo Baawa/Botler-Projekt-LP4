@@ -288,7 +288,6 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         checkCollision();
         player.draw(batch);
         drawFonts();
-        gameCallback.saveScore(player.getScore());
 
         pauseBtn.setX(Gdx.graphics.getWidth() / 100 - 2);
         pauseBtn.setY(Gdx.graphics.getHeight() / 100 - 1.1f);
@@ -529,6 +528,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
             //Check if player lost
             if (e.getCollideRect().overlaps(bottom)) {
                 model.gameOver();
+                gameCallback.saveScore(player.getChickenWings());
                 if (isHighScoreCallback.isHighscore(player.getScore())){
                     createIntent("InputName");
                 }

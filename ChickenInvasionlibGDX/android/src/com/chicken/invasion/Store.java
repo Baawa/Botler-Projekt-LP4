@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 
 import android.util.Log;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 
@@ -34,9 +35,13 @@ public class Store extends Activity implements ViewPager.OnPageChangeListener, V
     private List<ThrowableObject> toList;
     private SharedPreferences prefs;
     private SharedPreferences.Editor edit;
-    private TextView scoreView;
     private ImageButton buyAndEquip;
-
+    private Button goToBackground;
+    BuyBackgroundAdapter backgroundAdapter;
+    private RelativeLayout storeLayout;
+    ImageButton upgrade;
+    private int totalScore;
+    private TextView scoreView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,15 +49,26 @@ public class Store extends Activity implements ViewPager.OnPageChangeListener, V
         setContentView(R.layout.store_view);
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         scoreView = (TextView)findViewById(R.id.score_view);
-        prefs = this.getSharedPreferences("myList", Context.MODE_PRIVATE);
+        goToBackground = (Button)findViewById(R.id.goto_background);
+        upgrade = (ImageButton) findViewById(R.id.upgradeBtn);
+        storeLayout = (RelativeLayout)findViewById(R.id.storeLayout);
+        scoreView = (TextView)findViewById(R.id.score_view);
+
+        prefs = this.getSharedPreferences("myPrefsKey", Context.MODE_PRIVATE);
         edit = prefs.edit();
+        totalScore = prefs.getInt("TOTAL_SCORE", 0);
+        Log.e("KYCKLING",Integer.toString(totalScore));
+        scoreView.setText(Integer.toString(totalScore));
+
+        backgroundAdapter = new BuyBackgroundAdapter(this);
 
 
-        scoreView.setText(controller.getPlayer().getChickenWings()+"");
+        //scoreView.setText(controller.getPlayer().getChickenWings()+"");
 
 
 
-        scoreView.setText(controller.getPlayer().getChickenWings()+"");
+        //scoreView.setText(controller.getPlayer().getChickenWings()+"");
+
 
 
         toList = controller.getThrowableHolder().getThrowables();
@@ -64,6 +80,16 @@ public class Store extends Activity implements ViewPager.OnPageChangeListener, V
         cardAdapter = new StoreCardAdapter(this,controller);
         viewPager.setAdapter(cardAdapter);
 
+
+        goToBackground.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                storeLayout.removeView(upgrade);
+                viewPager.setAdapter(backgroundAdapter);
+            }
+        });
+
+
         //BUTTONS
         buyAndEquip = (ImageButton) findViewById(R.id.buyAndEquipBtn);
         ThrowableObject to = toList.get(viewPager.getCurrentItem());
@@ -71,7 +97,6 @@ public class Store extends Activity implements ViewPager.OnPageChangeListener, V
             buyAndEquip.setImageDrawable(getResources().getDrawable(R.drawable.equipicon200x200));
         }
         buyAndEquip.setOnClickListener(this);
-        ImageButton upgrade = (ImageButton) findViewById(R.id.upgradeBtn);
         upgrade.setOnClickListener(this);
         //-------------
 

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.inputmethodservice.Keyboard;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -13,6 +14,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+import com.facebook.FacebookSdk;
+import com.facebook.share.model.ShareLinkContent;
+import com.facebook.share.widget.ShareButton;
+
 
 /**
  * Created by Kristoffer on 2016-05-21.
@@ -20,22 +25,30 @@ import android.widget.ImageButton;
 public class InputName extends Activity {
 
     private int playerScore;
-    private HighScore highScore;
     private SharedPreferences prefs;
     private SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        FacebookSdk.sdkInitialize(getApplicationContext());
         Intent intent = getIntent();
-        playerScore = intent.getIntExtra("score",0);
+        playerScore = intent.getIntExtra("score", 0);
+
 
         prefs = this.getSharedPreferences("myPrefsKey", Context.MODE_PRIVATE);
         editor = prefs.edit();
 
         setContentView(R.layout.inputname);
 
-        highScore = new HighScore();
+        //SHARE ON FACEBOOK
+        ShareLinkContent content = new ShareLinkContent.Builder()
+                .setContentUrl(Uri.parse("https://developers.facebook.com"))
+                .build();
+
+        ShareButton shareButton = (ShareButton)findViewById(R.id.fb_share_button);
+        shareButton.setShareContent(content);
+        //END SHARE ON FACEBOOK
 
         final EditText inputName = (EditText)findViewById(R.id.nameInput);
 

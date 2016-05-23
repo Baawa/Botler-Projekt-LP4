@@ -32,16 +32,12 @@ public class HighScore extends Activity implements ChickenInvasion.isHighScoreCa
     private SharedPreferences prefs;
     private  SharedPreferences.Editor edit;
 
-    private Button tstBtn;
-
     private static List<Score> topList;
-    private Gson gson;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.highscore_view);
         highscoreList = (ListView)findViewById(R.id.highscoreList);
         prefs = this.getSharedPreferences("myPrefsKey", Context.MODE_PRIVATE);
@@ -50,21 +46,6 @@ public class HighScore extends Activity implements ChickenInvasion.isHighScoreCa
         if(topList== null){
             topList = AndroidLauncher.getPrevHighScore();
         }
-
-
-
-
-        tstBtn = (Button)findViewById(R.id.tstbutton);
-
-
-        //SHARE ON FACEBOOK
-        ShareLinkContent content = new ShareLinkContent.Builder()
-                .setContentUrl(Uri.parse("https://developers.facebook.com"))
-                .build();
-
-        ShareButton shareButton = (ShareButton)findViewById(R.id.fb_share_button);
-        shareButton.setShareContent(content);
-        //END SHARE ON FACEBOOK
 
 
         scoreAdapter = new HighScoreAdapter(this,R.layout.highscore_content,topList);
