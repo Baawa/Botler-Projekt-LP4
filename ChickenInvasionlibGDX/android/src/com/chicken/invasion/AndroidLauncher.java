@@ -26,6 +26,7 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
     private ChickenInvasion controller;
 	private static List<Score> topList;
 
+
 	@Override
 	protected void onCreate (Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -41,6 +42,8 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 		Type type = new TypeToken<List<Score>>(){}.getType();
 		topList= gson.fromJson(json, type);
 		//--END GET SAVED SCORES
+
+
 
 		controller = new ChickenInvasion();
         Store.setController(controller);
@@ -73,20 +76,26 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
         startActivity(intent);
     }
 
+
+
+
     @Override
 	public void saveScore(int score) {
 		if (pref.getInt("TOTAL_SCORE",0) == 0){
 			totScore = score;
-			Log.e("KYCKLING2",Integer.toString(totScore));
 			edit.putInt("TOTAL_SCORE",score);
 			edit.commit();
 		}
 		else {
 			totScore = pref.getInt("TOTAL_SCORE",0) + score;
-			Log.e("KYCKLING3",Integer.toString(totScore));
 			edit.putInt("TOTAL_SCORE",totScore);
 			edit.commit();
 		}
+	}
+
+	@Override
+	public int getChickenLegs() {
+		return pref.getInt("TOTAL_SCORE", 0);
 	}
 
 	@Override

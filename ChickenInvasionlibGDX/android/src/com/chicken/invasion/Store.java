@@ -57,18 +57,9 @@ public class Store extends Activity implements ViewPager.OnPageChangeListener, V
         prefs = this.getSharedPreferences("myPrefsKey", Context.MODE_PRIVATE);
         edit = prefs.edit();
         totalScore = prefs.getInt("TOTAL_SCORE", 0);
-        Log.e("KYCKLING",Integer.toString(totalScore));
         scoreView.setText(Integer.toString(totalScore));
 
         backgroundAdapter = new BuyBackgroundAdapter(this);
-
-
-        //scoreView.setText(controller.getPlayer().getChickenWings()+"");
-
-
-
-        //scoreView.setText(controller.getPlayer().getChickenWings()+"");
-
 
 
         toList = controller.getThrowableHolder().getThrowables();

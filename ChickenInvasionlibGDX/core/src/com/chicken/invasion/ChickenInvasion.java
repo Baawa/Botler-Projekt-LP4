@@ -38,6 +38,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         void onStartActivityHighScore();
         void onStartActivityInputName(int points);
         void saveScore(int score);
+        int getChickenLegs();
     }
 
     // Local variable to hold the callback implementation
@@ -125,6 +126,8 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
 		Gdx.input.setInputProcessor(new GestureDetector(this));
         Gdx.gl.glClearColor(1, 1, 1, 1);
+
+        player.addChickenWings(gameCallback.getChickenLegs());
 
         // MUSIKAAA!!!
         if (muteMusic == false) {
@@ -528,7 +531,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
             //Check if player lost
             if (e.getCollideRect().overlaps(bottom)) {
                 model.gameOver();
-                gameCallback.saveScore(player.getChickenWings());
+                gameCallback.saveScore(player.getScore());
                 if (isHighScoreCallback.isHighscore(player.getScore())){
                     createIntent("InputName");
                 }
