@@ -22,13 +22,16 @@
         android:layout_marginRight="40dp"
         >
 
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="215dp">
+
 
                 <ImageView
                     android:layout_width="match_parent"
@@ -146,6 +149,9 @@
                         android:layout_alignParentBottom="true"
                         android:layout_toEndOf="@+id/price"/>
                 </RelativeLayout>
+
+
+
 
             </RelativeLayout>
 

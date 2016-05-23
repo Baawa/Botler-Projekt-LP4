@@ -6,16 +6,21 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 import com.facebook.FacebookSdk;
 import com.facebook.share.model.ShareLinkContent;
 import com.facebook.share.widget.ShareButton;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by pedramshirmohammad on 16-05-16.
@@ -25,9 +30,13 @@ public class HighScore extends Activity implements ChickenInvasion.isHighScoreCa
     private ListView highscoreList;
     private HighScoreAdapter scoreAdapter;
     private SharedPreferences prefs;
-    private SharedPreferences.Editor edit;
+    private  SharedPreferences.Editor edit;
+
+    private Button tstBtn;
 
     private static List<Score> topList;
+    private Gson gson;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +44,17 @@ public class HighScore extends Activity implements ChickenInvasion.isHighScoreCa
         FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.highscore_view);
         highscoreList = (ListView)findViewById(R.id.highscoreList);
+        prefs = this.getSharedPreferences("myPrefsKey", Context.MODE_PRIVATE);
+        edit = prefs.edit();
+
+        if(topList== null){
+            topList = AndroidLauncher.getPrevHighScore();
+        }
+
+
+
+
+        tstBtn = (Button)findViewById(R.id.tstbutton);
 
 
         //SHARE ON FACEBOOK
@@ -46,31 +66,16 @@ public class HighScore extends Activity implements ChickenInvasion.isHighScoreCa
         shareButton.setShareContent(content);
         //END SHARE ON FACEBOOK
 
-        if (topList == null){
-            topList = new ArrayList<>();
-        }
 
         scoreAdapter = new HighScoreAdapter(this,R.layout.highscore_content,topList);
         highscoreList.setAdapter(scoreAdapter);
 
-        /*SAVE HIGHSCORE
-
-
-        prefs = this.getSharedPreferences("myPrefsKey", Context.MODE_PRIVATE);
-        edit = prefs.edit();
-
-        edit.putInt("PEDRAM", 2333);
-        edit.commit();
-        Toast.makeText(getApplicationContext(), "SAVED", Toast.LENGTH_LONG).show();
-
-        int sssoo = prefs.getInt("PEDRAM",0);
-        Log.e("sssi", Integer.toString(sssoo));
-
-        END SAVE HIGHSCORE*/
-
     }
 
     public static boolean isNewHighscore(int points) {
+
+        topList = AndroidLauncher.getPrevHighScore();
+
         if (topList == null) {
             topList = new ArrayList<>();
             return true;
@@ -84,14 +89,20 @@ public class HighScore extends Activity implements ChickenInvasion.isHighScoreCa
         return false;
     }
 
-    public static void addNewHighScore(String name, int points){
+    public static void addNewHighScore(String name, int points,SharedPreferences.Editor editor){
         topList.add(new Score(name, points));
+
+        Gson gson = new Gson();
 
         Collections.sort(topList, new ScoreComparator());
 
         if (topList.size()>10){
             topList.remove(topList.size() - 1);
         }
+
+        String json = gson.toJson(topList);
+        editor.putString("MyObject", json);
+        editor.commit();
     }
 
     @Override

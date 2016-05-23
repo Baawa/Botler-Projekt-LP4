@@ -6,10 +6,15 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-import android.support.v7.widget.CardView;
+
+import android.util.Log;
+import android.widget.ImageButton;
+
+
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
+
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,7 +47,13 @@ public class Store extends Activity implements ViewPager.OnPageChangeListener, V
         prefs = this.getSharedPreferences("myList", Context.MODE_PRIVATE);
         edit = prefs.edit();
 
+
         scoreView.setText(controller.getPlayer().getChickenWings()+"");
+
+
+
+        scoreView.setText(controller.getPlayer().getChickenWings()+"");
+
 
         toList = controller.getThrowableHolder().getThrowables();
 
@@ -61,6 +72,19 @@ public class Store extends Activity implements ViewPager.OnPageChangeListener, V
         }
         buyAndEquip.setOnClickListener(this);
         ImageButton upgrade = (ImageButton) findViewById(R.id.upgradeBtn);
+        upgrade.setOnClickListener(this);
+        //-------------
+
+
+
+        //BUTTONS
+        buyAndEquip = (ImageButton) findViewById(R.id.buyAndEquipBtn);
+        to = toList.get(viewPager.getCurrentItem());
+        if (to.isPurchased()){
+            buyAndEquip.setImageDrawable(getResources().getDrawable(R.drawable.equipicon200x200));
+        }
+        buyAndEquip.setOnClickListener(this);
+        upgrade = (ImageButton) findViewById(R.id.upgradeBtn);
         upgrade.setOnClickListener(this);
         //-------------
 

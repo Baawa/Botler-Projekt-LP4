@@ -4,12 +4,18 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
 import com.chicken.invasion.ChickenInvasion;
 import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.List;
 
 public class AndroidLauncher extends AndroidApplication implements ChickenInvasion.GameCallback {
 
@@ -18,6 +24,7 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 	int totScore;
 
     private ChickenInvasion controller;
+	private static List<Score> topList;
 
 	@Override
 	protected void onCreate (Bundle savedInstanceState) {
@@ -25,9 +32,15 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 		FacebookSdk.sdkInitialize(getApplicationContext());
 		AppEventsLogger.activateApp(this);
 		AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
-		pref = this.getSharedPreferences("TOTAL_SCORE", Context.MODE_PRIVATE);
+		pref = this.getSharedPreferences("myPrefsKey", Context.MODE_PRIVATE);
 		edit = pref.edit();
 
+		//GET SAVED SCORES
+		Gson gson = new Gson();
+		String json = pref.getString("MyObject", "");
+		Type type = new TypeToken<List<Score>>(){}.getType();
+		topList= gson.fromJson(json, type);
+		//--END GET SAVED SCORES
 
 		controller = new ChickenInvasion();
         Store.setController(controller);
@@ -39,6 +52,10 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 		//Intent intent = new Intent(getApplicationContext(),HighScore.class);
 		//startActivity(intent);
 		initialize(controller, config);
+	}
+
+	public static List<Score> getPrevHighScore(){
+		return topList;
 	}
 
     //CALLBACKS -------------------
@@ -76,4 +93,10 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 		startActivity(intent);
 	}
 
+	@Override
+	protected void onPause() {
+		super.onPause();
+
+		Log.e("BLIR","FORSTORD");
+	}
 }

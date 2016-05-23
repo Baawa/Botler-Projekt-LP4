@@ -12,7 +12,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="200dp" />
+        android:layout_marginTop="250dp" />
 
     <com.facebook.share.widget.ShareButton
         android:layout_width="wrap_content"
@@ -30,5 +30,14 @@
         android:layout_marginTop="35dp"
         android:src="@drawable/highscorebanner"
         android:layout_alignParentEnd="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="tst_btn"
+        android:id="@+id/tstbutton"
+        android:layout_alignTop="@+id/imageView3"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

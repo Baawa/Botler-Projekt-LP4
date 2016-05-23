@@ -39,8 +39,10 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         void onStartActivityInputName(int points);
         void saveScore(int score);
     }
+
     // Local variable to hold the callback implementation
     private GameCallback gameCallback;
+
     // Setter for the callback
     public void setMyGameCallback(GameCallback callback) {
         gameCallback = callback;

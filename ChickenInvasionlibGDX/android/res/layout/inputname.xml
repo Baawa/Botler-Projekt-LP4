@@ -8,7 +8,8 @@
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:id="@+id/nameInput"
-        android:text="Enter your name.."
+        android:text=""
+        android:hint="Enter your name.."
         android:textSize="25sp"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"/>
