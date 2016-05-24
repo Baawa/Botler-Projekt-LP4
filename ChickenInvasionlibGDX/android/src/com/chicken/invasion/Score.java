@@ -3,7 +3,7 @@ package com.chicken.invasion;
 /**
  * Created by pedramshirmohammad on 16-05-16.
  */
-public class Score {
+public class Score{
 
     private int points;
     private String name;

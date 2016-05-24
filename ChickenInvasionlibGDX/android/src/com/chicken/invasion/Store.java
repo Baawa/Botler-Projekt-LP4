@@ -6,10 +6,16 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-import android.support.v7.widget.CardView;
+
+import android.util.Log;
+import android.widget.Button;
+import android.widget.ImageButton;
+
+
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
+
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,8 +35,13 @@ public class Store extends Activity implements ViewPager.OnPageChangeListener, V
     private List<ThrowableObject> toList;
     private SharedPreferences prefs;
     private SharedPreferences.Editor edit;
-    private TextView scoreView;
     private ImageButton buyAndEquip;
+    private Button goToBackground;
+    BuyBackgroundAdapter backgroundAdapter;
+    private RelativeLayout storeLayout;
+    ImageButton upgrade;
+    private int totalScore;
+    private TextView scoreView;
 
 
     @Override
@@ -39,12 +50,21 @@ public class Store extends Activity implements ViewPager.OnPageChangeListener, V
         setContentView(R.layout.store_view);
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         scoreView = (TextView)findViewById(R.id.score_view);
-        prefs = this.getSharedPreferences("myList", Context.MODE_PRIVATE);
-        edit = prefs.edit();
+        goToBackground = (Button)findViewById(R.id.goto_background);
+        upgrade = (ImageButton) findViewById(R.id.upgradeBtn);
+        storeLayout = (RelativeLayout)findViewById(R.id.storeLayout);
+        scoreView = (TextView)findViewById(R.id.score_view);
 
-        scoreView.setText(controller.getPlayer().getChickenWings()+"");
+        prefs = this.getSharedPreferences("myPrefsKey", Context.MODE_PRIVATE);
+        edit = prefs.edit();
+        totalScore = prefs.getInt("TOTAL_SCORE", 0);
+        scoreView.setText(Integer.toString(totalScore));
+
+        backgroundAdapter = new BuyBackgroundAdapter(this);
+
 
         toList = controller.getThrowableHolder().getThrowables();
+        getSavedAvailability();
 
         viewPager.setClipToPadding(false);
 
@@ -53,6 +73,16 @@ public class Store extends Activity implements ViewPager.OnPageChangeListener, V
         cardAdapter = new StoreCardAdapter(this,controller);
         viewPager.setAdapter(cardAdapter);
 
+
+        goToBackground.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                storeLayout.removeView(upgrade);
+                viewPager.setAdapter(backgroundAdapter);
+            }
+        });
+
+
         //BUTTONS
         buyAndEquip = (ImageButton) findViewById(R.id.buyAndEquipBtn);
         ThrowableObject to = toList.get(viewPager.getCurrentItem());
@@ -60,21 +90,40 @@ public class Store extends Activity implements ViewPager.OnPageChangeListener, V
             buyAndEquip.setImageDrawable(getResources().getDrawable(R.drawable.equipicon200x200));
         }
         buyAndEquip.setOnClickListener(this);
-        ImageButton upgrade = (ImageButton) findViewById(R.id.upgradeBtn);
+        upgrade.setOnClickListener(this);
+        //-------------
+
+
+
+        //BUTTONS
+        buyAndEquip = (ImageButton) findViewById(R.id.buyAndEquipBtn);
+        to = toList.get(viewPager.getCurrentItem());
+        if (to.isPurchased()){
+            buyAndEquip.setImageDrawable(getResources().getDrawable(R.drawable.equipicon200x200));
+        }
+        buyAndEquip.setOnClickListener(this);
+        upgrade = (ImageButton) findViewById(R.id.upgradeBtn);
         upgrade.setOnClickListener(this);
         //-------------
 
         viewPager.addOnPageChangeListener(this);
     }
 
-    public HashMap<String,Boolean> getSavedAvailability(HashMap<String,Boolean> map){
-        for (Map.Entry<String,Boolean> e: map.entrySet()){
-            boolean savedResult = prefs.getBoolean(e.getKey(),e.getValue());
-            map.put(e.getKey(),savedResult);
+    public void getSavedAvailability(){
+        for (int i=0;i<toList.size();i++){
+            boolean temp = prefs.getBoolean(toList.get(i).getName(),false);
+            toList.get(i).setPurchased(temp);
         }
-        return map;
+        toList.get(0).setPurchased(true);
     }
 
+
+    public void saveTO(List<ThrowableObject> list){
+        for (ThrowableObject e: list){
+            edit.putBoolean(e.getName(), e.isPurchased());
+            edit.commit();
+        }
+    }
 
     // SWIPE LISTENER
     public static void setController(ChickenInvasion c){
@@ -96,11 +145,11 @@ public class Store extends Activity implements ViewPager.OnPageChangeListener, V
         }
 
     }
-
     @Override
     public void onPageScrollStateChanged(int state) {
 
     }
+
     // END SWIPE LISTENER
 
     // BUTTON CLICK LISTENER
@@ -132,6 +181,7 @@ public class Store extends Activity implements ViewPager.OnPageChangeListener, V
                         Toast.makeText(this, "Purchased " + to.getName() + ". Equip to try it out!",
                                 Toast.LENGTH_LONG).show();
                         viewPager.setAdapter(cardAdapter);
+                        saveTO(toList);
                     }
                 }
                 break;
