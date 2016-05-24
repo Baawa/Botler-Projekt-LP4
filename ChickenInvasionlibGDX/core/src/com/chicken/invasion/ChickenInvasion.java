@@ -39,6 +39,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         void onStartActivityInputName(int points);
         void saveScore(int score);
         int getChickenLegs();
+        ThrowableObject setTO();
     }
 
     // Local variable to hold the callback implementation
@@ -90,18 +91,19 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 	@Override
 	public void create () {
 
+        System.out.print("OnCreate");
 		model = Model.getInstance();
         player = new Player();
 		this.world = new World(new Vector2(0, 0), true);
         throwableHolder = new ThrowableHolder(this, world);
 
-        if (player.getCurrentTO() == null){
+        /*if (player.getCurrentTO() == null){
             ThrowableObject tmp = new ThrowableObject("Beachball", "beachball200x200", this.world, player);
             tmp.setDamage(1);
             tmp.setSpeed(1.5);
             tmp.setRotationSpeed(0.5f);
             player.setEquippedTO(tmp);
-        }
+        }*/
 
 		batch = new SpriteBatch();
 
@@ -135,6 +137,11 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
             bgMusic.setLooping(true);
             bgMusic.setVolume(0.5f);
             bgMusic.play();
+        }
+        if(player.getCurrentTO() == null){
+           ThrowableObject tempTO2 =  gameCallback.setTO();
+            player.removeTO();
+            player.setEquippedTO(tempTO2);
         }
 	}
 
@@ -490,6 +497,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
     }
 
 	private void spawnThrowable(){
+
 		player.addThrowables(model.getNumberOfThrowables());
 	}
 

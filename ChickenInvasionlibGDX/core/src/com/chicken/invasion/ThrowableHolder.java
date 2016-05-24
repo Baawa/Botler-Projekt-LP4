@@ -12,6 +12,7 @@ import java.util.Map;
  */
 public class ThrowableHolder {
     private List<ThrowableObject> throwables;
+    private ThrowableObject equippedTO;
 
     public ThrowableHolder(ChickenInvasion controller, World world){
         throwables = new ArrayList<ThrowableObject>();
@@ -23,6 +24,8 @@ public class ThrowableHolder {
         beachBall.setRotationSpeed(0.5f);
         beachBall.setPurchased(true);
         throwables.add(beachBall);
+
+        equippedTO = throwables.get(0);
 
         //Pan
         ThrowableObject stekpanna = new ThrowableObject("Pan","pan100x100",world,controller.getPlayer());
@@ -43,5 +46,13 @@ public class ThrowableHolder {
 
     public List<ThrowableObject> getThrowables() {
         return throwables;
+    }
+
+    public void setEquipedTO(ThrowableObject to){
+        equippedTO = to;
+    }
+
+    public ThrowableObject getEquippedTO() {
+        return equippedTO;
     }
 }

@@ -41,6 +41,10 @@
             android:name="com.chicken.invasion.CreateWeapon"
             android:label="CreateWeaponV">
         </activity>
+        <activity
+            android:name="com.chicken.invasion.BackgroundStore"
+            android:label="BackgroundStoreV">
+        </activity>
         <activity android:name=".InputName">
         </activity>
         <activity android:name="com.facebook.FacebookActivity"

@@ -50,6 +50,7 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 
 		controller.setMyGameCallback(this);
 
+
         HighScore highScore = new HighScore();
         controller.setMyIsHighScoreCallback(highScore);
 		//Intent intent = new Intent(getApplicationContext(),HighScore.class);
@@ -96,6 +97,11 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 	@Override
 	public int getChickenLegs() {
 		return pref.getInt("TOTAL_SCORE", 0);
+	}
+
+	@Override
+	public ThrowableObject setTO() {
+		return controller.getThrowableHolder().getThrowables().get(pref.getInt("EQUIPPED", 0));
 	}
 
 	@Override

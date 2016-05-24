@@ -42,7 +42,7 @@ public class Store extends Activity implements ViewPager.OnPageChangeListener, V
     ImageButton upgrade;
     private int totalScore;
     private TextView scoreView;
-
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +54,7 @@ public class Store extends Activity implements ViewPager.OnPageChangeListener, V
         upgrade = (ImageButton) findViewById(R.id.upgradeBtn);
         storeLayout = (RelativeLayout)findViewById(R.id.storeLayout);
         scoreView = (TextView)findViewById(R.id.score_view);
+        intent = new Intent(this,BackgroundStore.class);
 
         prefs = this.getSharedPreferences("myPrefsKey", Context.MODE_PRIVATE);
         edit = prefs.edit();
@@ -77,8 +78,7 @@ public class Store extends Activity implements ViewPager.OnPageChangeListener, V
         goToBackground.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                storeLayout.removeView(upgrade);
-                viewPager.setAdapter(backgroundAdapter);
+                startActivity(intent);
             }
         });
 
@@ -117,6 +117,10 @@ public class Store extends Activity implements ViewPager.OnPageChangeListener, V
         toList.get(0).setPurchased(true);
     }
 
+    public void saveEquippedTO(int index){
+        edit.putInt("EQUIPPED",index);
+        edit.commit();
+    }
 
     public void saveTO(List<ThrowableObject> list){
         for (ThrowableObject e: list){
@@ -162,9 +166,11 @@ public class Store extends Activity implements ViewPager.OnPageChangeListener, V
                 //Check if player owns weapon
                 if (to.isPurchased()){
                     // EQUIP
+                    controller.getPlayer().removeTO();
                     controller.getPlayer().setEquippedTO(to);
-                    Toast.makeText(this, to.getName()+" is now equipped!",
+                    Toast.makeText(this, to.getName() + " is now equipped!",
                             Toast.LENGTH_LONG).show();
+                    saveEquippedTO(viewPager.getCurrentItem());
                 }
                 //Player wants to buy weapon
                 else{
