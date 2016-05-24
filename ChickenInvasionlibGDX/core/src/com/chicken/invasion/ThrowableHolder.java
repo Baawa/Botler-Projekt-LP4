@@ -1,6 +1,5 @@
 package com.chicken.invasion;
 
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.physics.box2d.World;
 
 import java.util.ArrayList;

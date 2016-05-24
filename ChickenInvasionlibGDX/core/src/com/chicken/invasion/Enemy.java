@@ -19,13 +19,13 @@ public class Enemy implements Cloneable{
     private double totalHealth;
     private float speed;
     private Rectangle collideRect;
-    private Boolean push;
+    private boolean push;
 
     private static final int FRAME_COLS = 4;
     private static final int FRAME_ROWS = 2;
 
     private Animation walkAnimation;
-    private Texture walkSheet = new Texture("chickenlargeanim.png");
+    private Texture walkSheet;
     private TextureRegion currentFrame;
 
     float stateTime;
@@ -88,29 +88,19 @@ public class Enemy implements Cloneable{
     }
 
     public Enemy(){
-        TextureRegion[][] tmp = TextureRegion.split(walkSheet, walkSheet.getWidth()/FRAME_COLS, walkSheet.getHeight()/FRAME_ROWS);
-        TextureRegion[] walkFrames = new TextureRegion[FRAME_COLS * FRAME_ROWS];
-        int index = 0;
-        for (int i = 0; i < FRAME_ROWS; i++) {
-            for (int j = 0; j < FRAME_COLS; j++) {
-                walkFrames[index++] = tmp[i][j];
-            }
-        }
-        walkAnimation = new Animation(0.09f, walkFrames);
-        stateTime = 0f;
-
         Random rand = new Random();
-        x = (rand.nextFloat()*(Gdx.graphics.getWidth()/120) + 0.5f);
-        if (x>12){ x-=1; }
-        y = Gdx.graphics.getHeight() / 190;
+        //x = (rand.nextFloat()*(Gdx.graphics.getWidth()/120) + 0.5f);
+        //if (x>12){ x-=1; }
+        //y = Gdx.graphics.getHeight() / 190;
 
         width = 2.0f;
         height = 2.0f;
 
-        collideRect = new Rectangle(x,y,width,height);
+        //collideRect = new Rectangle(x,y,width,height);
 
         health = 1;
         totalHealth = 1;
+        push = true;
     }
 
     public void update(float dt){
@@ -164,11 +154,11 @@ public class Enemy implements Cloneable{
         this.health -= damage;
     }
 
-    public void setPush(Boolean push){
+    public void setPush(boolean push){
         this.push = push;
     }
 
-    public Boolean getPush(){
+    public boolean getPush(){
         return this.push;
     }
 

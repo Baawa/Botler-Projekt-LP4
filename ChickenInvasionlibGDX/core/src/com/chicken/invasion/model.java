@@ -9,6 +9,10 @@ import javax.swing.event.ChangeListener;
 public class Model {
 
     private static Model instance = null;
+    private State state = State.STOPPED;
+    private int currentWave = 1;
+
+    private boolean spawnObject = false;
 
     private Model(){}
 
@@ -22,11 +26,6 @@ public class Model {
     public enum State{
         PAUSED, RUNNING, STOPPED, GAMEOVER
     }
-
-    private State state = State.STOPPED;
-    private int currentWave = 1;
-
-    private Boolean spawnObject = false;
 
     public void nextWave(){
         currentWave += 1;
@@ -66,11 +65,11 @@ public class Model {
 
     public void gameOver() { this.state = State.GAMEOVER; }
 
-    public void setSpawnObject(Boolean b){
+    public void setSpawnObject(boolean b){
         this.spawnObject = b;
     }
 
-    public Boolean shouldSpawnObject(){
+    public boolean shouldSpawnObject(){
         return this.spawnObject;
     }
 
