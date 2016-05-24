@@ -43,6 +43,7 @@ public class Store extends Activity implements ViewPager.OnPageChangeListener, V
     private int totalScore;
     private TextView scoreView;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +64,7 @@ public class Store extends Activity implements ViewPager.OnPageChangeListener, V
 
 
         toList = controller.getThrowableHolder().getThrowables();
+        getSavedAvailability();
 
         viewPager.setClipToPadding(false);
 
@@ -107,14 +109,21 @@ public class Store extends Activity implements ViewPager.OnPageChangeListener, V
         viewPager.addOnPageChangeListener(this);
     }
 
-    public HashMap<String,Boolean> getSavedAvailability(HashMap<String,Boolean> map){
-        for (Map.Entry<String,Boolean> e: map.entrySet()){
-            boolean savedResult = prefs.getBoolean(e.getKey(),e.getValue());
-            map.put(e.getKey(),savedResult);
+    public void getSavedAvailability(){
+        for (int i=0;i<toList.size();i++){
+            boolean temp = prefs.getBoolean(toList.get(i).getName(),false);
+            toList.get(i).setPurchased(temp);
         }
-        return map;
+        toList.get(0).setPurchased(true);
     }
 
+
+    public void saveTO(List<ThrowableObject> list){
+        for (ThrowableObject e: list){
+            edit.putBoolean(e.getName(), e.isPurchased());
+            edit.commit();
+        }
+    }
 
     // SWIPE LISTENER
     public static void setController(ChickenInvasion c){
@@ -136,11 +145,11 @@ public class Store extends Activity implements ViewPager.OnPageChangeListener, V
         }
 
     }
-
     @Override
     public void onPageScrollStateChanged(int state) {
 
     }
+
     // END SWIPE LISTENER
 
     // BUTTON CLICK LISTENER
@@ -172,6 +181,7 @@ public class Store extends Activity implements ViewPager.OnPageChangeListener, V
                         Toast.makeText(this, "Purchased " + to.getName() + ". Equip to try it out!",
                                 Toast.LENGTH_LONG).show();
                         viewPager.setAdapter(cardAdapter);
+                        saveTO(toList);
                     }
                 }
                 break;
