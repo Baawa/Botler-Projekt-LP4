@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.support.v4.view.PagerAdapter;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,16 +28,12 @@ public class StoreCardAdapter extends PagerAdapter {
 
     private Context ctx;
     public List<ThrowableObject> mWeapons;
-    private SharedPreferences pref;
-    private SharedPreferences.Editor edit;
     private ChickenInvasion controller;
 
     public StoreCardAdapter(Context ctx, ChickenInvasion controller){
         this.ctx = ctx;
         this.controller = controller;
         this.mWeapons = controller.getThrowableHolder().getThrowables();
-        pref = ctx.getSharedPreferences("myList", Context.MODE_PRIVATE);
-        edit = pref.edit();
     }
 
     @Override
@@ -53,6 +50,7 @@ public class StoreCardAdapter extends PagerAdapter {
         //IMAGE
         ImageView weaponImg = (ImageView) item_view.findViewById(R.id.weaponImg);
         Resources res = ctx.getResources();
+        Log.e("SSTORE",currWeapon.getImageURL());
         int resID = res.getIdentifier(currWeapon.getImageURL() , "drawable", ctx.getPackageName());
         weaponImg.setImageDrawable(res.getDrawable(resID));
 

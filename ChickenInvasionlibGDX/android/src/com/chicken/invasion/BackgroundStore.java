@@ -17,9 +17,9 @@ public class BackgroundStore extends Store implements iStore{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        adapter = new BuyBackgroundAdapter(this);
         intent = new Intent(this,WeaponStore.class);
         itemList = controller.getBackgroundHolder().getThrowables();
+        adapter = new BuyBackgroundAdapter(this,controller);
         getSavedAvailability(itemList);
         viewPager.setAdapter(adapter);
         initBuyAndEquip(itemList);

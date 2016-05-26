@@ -5,6 +5,7 @@
     android:background="@drawable/desertbackground500x900"
                 android:id="@+id/storeLayout">
 
+
     <android.support.v4.view.ViewPager
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -79,6 +80,5 @@
         android:scaleType="fitCenter"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true" />
-
 
 </RelativeLayout>
