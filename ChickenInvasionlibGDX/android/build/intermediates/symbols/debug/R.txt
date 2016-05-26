@@ -128,7 +128,9 @@ int drawable smokinggif 0x7f020033
 int drawable speedicon 0x7f020034
 int drawable speediconnew 0x7f020035
 int drawable storebanner 0x7f020036
-int drawable upgradeicon200x200 0x7f020037
+int drawable switchbackground 0x7f020037
+int drawable switchweapons 0x7f020038
+int drawable upgradeicon200x200 0x7f020039
 int id automatic 0x7f08000c
 int id bottom 0x7f080006
 int id box_count 0x7f080003
@@ -151,7 +153,7 @@ int id damageIndicator 0x7f080015
 int id damageView 0x7f080017
 int id display_always 0x7f08000d
 int id fb_share_button 0x7f080033
-int id goto_background 0x7f08003c
+int id goto_btn 0x7f08003c
 int id highscoreList 0x7f08002d
 int id imageView 0x7f080039
 int id imageView2 0x7f080029

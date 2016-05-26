@@ -71,6 +71,8 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
     private BitmapFont fontScore, fontWings;
     private Texture chickenLeg;
     private ThrowableHolder throwableHolder;
+    private BackgroundHolder backgroundHolder;
+    private Background bGround;
 
 	private GameButton startBtn;
 	private GameButton pauseBtn;
@@ -96,6 +98,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         player = new Player();
 		this.world = new World(new Vector2(0, 0), true);
         throwableHolder = new ThrowableHolder(this, world);
+        backgroundHolder = new BackgroundHolder(this,world);
 
         /*if (player.getCurrentTO() == null){
             ThrowableObject tmp = new ThrowableObject("Beachball", "beachball200x200", this.world, player);
@@ -114,7 +117,8 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 		batch.setProjectionMatrix(camera.combined);
 
         //Background
-        Texture backgroundtexture = new Texture("desertbackground500x900.png");
+
+        Texture backgroundtexture = new Texture(bGround.getImageURL());
 		backgroundimg = new Sprite(backgroundtexture);
 		backgroundimg.setPosition(0, 0);
 		backgroundimg.setSize(Gdx.graphics.getWidth() / 100, Gdx.graphics.getHeight() / 100);
@@ -595,6 +599,17 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         return throwableHolder;
     }
 
+    public void setBackground(Background b) {
+        bGround = b;
+    }
+
+    public Background getEquippedBGround(){
+        return bGround;
+    }
+
+    public BackgroundHolder getBackgroundHolder() {
+        return backgroundHolder;
+    }
 
     // GESTURES -------------------------------------------------------------------------
 

@@ -50,6 +50,8 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 
 		controller.setMyGameCallback(this);
 
+		getEquippedBackground();
+
 
         HighScore highScore = new HighScore();
         controller.setMyIsHighScoreCallback(highScore);
@@ -60,6 +62,12 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 
 	public static List<Score> getPrevHighScore(){
 		return topList;
+	}
+
+	public void getEquippedBackground(){
+
+		Background desert =  new Background("Desert","desertbackground500x900.png",150);
+		controller.setBackground(desert);
 	}
 
     //CALLBACKS -------------------
@@ -106,7 +114,7 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 
 	@Override
 	public void onStartActivityStore() {
-		Intent intent = new Intent(this, Store.class);
+		Intent intent = new Intent(this, WeaponStore.class);
 		startActivity(intent);
 	}
 

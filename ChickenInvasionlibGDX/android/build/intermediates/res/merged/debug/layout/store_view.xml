@@ -70,13 +70,14 @@
         android:layout_alignParentStart="true"
         android:layout_marginBottom="15dp"/>
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Backgrounds"
-        android:id="@+id/goto_background"
-        android:layout_alignBottom="@+id/score_view"
+    <ImageButton
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="#00101010"
+        android:id="@+id/goto_btn"
+        android:cropToPadding="false"
+        android:scaleType="fitCenter"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true" />
 
 

@@ -366,7 +366,9 @@ containing a value of this type.
         public static final int speedicon=0x7f020034;
         public static final int speediconnew=0x7f020035;
         public static final int storebanner=0x7f020036;
-        public static final int upgradeicon200x200=0x7f020037;
+        public static final int switchbackground=0x7f020037;
+        public static final int switchweapons=0x7f020038;
+        public static final int upgradeicon200x200=0x7f020039;
     }
     public static final class id {
         public static final int automatic=0x7f08000c;
@@ -391,7 +393,7 @@ containing a value of this type.
         public static final int damageView=0x7f080017;
         public static final int display_always=0x7f08000d;
         public static final int fb_share_button=0x7f080033;
-        public static final int goto_background=0x7f08003c;
+        public static final int goto_btn=0x7f08003c;
         public static final int highscoreList=0x7f08002d;
         public static final int imageView=0x7f080039;
         public static final int imageView2=0x7f080029;

@@ -10,9 +10,8 @@ import java.util.Map;
 /**
  * Created by Kristoffer on 2016-05-22.
  */
-public class ThrowableHolder {
+public class ThrowableHolder implements iHolder {
     private List<ThrowableObject> throwables;
-    private ThrowableObject equippedTO;
 
     public ThrowableHolder(ChickenInvasion controller, World world){
         throwables = new ArrayList<ThrowableObject>();
@@ -25,7 +24,7 @@ public class ThrowableHolder {
         beachBall.setPurchased(true);
         throwables.add(beachBall);
 
-        equippedTO = throwables.get(0);
+
 
         //Pan
         ThrowableObject stekpanna = new ThrowableObject("Pan","pan100x100",world,controller.getPlayer());
@@ -44,15 +43,10 @@ public class ThrowableHolder {
         throwables.add(bat);
     }
 
+    @Override
     public List<ThrowableObject> getThrowables() {
         return throwables;
     }
 
-    public void setEquipedTO(ThrowableObject to){
-        equippedTO = to;
-    }
 
-    public ThrowableObject getEquippedTO() {
-        return equippedTO;
-    }
 }

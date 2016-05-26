@@ -14,7 +14,7 @@ import com.badlogic.gdx.physics.box2d.World;
 /**
  * Created by Albin on 2016-04-26.
  */
-public class ThrowableObject{
+public class ThrowableObject implements iItem{
     private String imageURL;
     private Texture image;
     private Sprite sprite;
@@ -219,6 +219,7 @@ public class ThrowableObject{
         this.rotation = rotationSpeed;
     }
 
+    @Override
     public String getName(){
         return name;
     }
@@ -281,14 +282,17 @@ public class ThrowableObject{
         return new Sprite(this.sprite);
     }
 
+    @Override
     public int getPrice(){
         return (int)(this.damage * this.speed * 100);
     }
 
+    @Override
     public boolean isPurchased(){
         return purchased;
     }
 
+    @Override
     public void setPurchased(boolean purchased){
         this.purchased = purchased;
     }

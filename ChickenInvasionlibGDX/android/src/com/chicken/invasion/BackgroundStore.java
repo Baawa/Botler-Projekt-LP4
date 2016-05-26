@@ -1,25 +1,46 @@
 package com.chicken.invasion;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageButton;
-import android.widget.RelativeLayout;
 
 /**
- * Created by pedramshirmohammad on 16-05-24.
+ * Created by pedramshirmohammad on 16-05-25.
  */
-public class BackgroundStore extends Activity{
+public class BackgroundStore extends Store implements iStore{
 
-    private RelativeLayout storeLayout;
-    private ImageButton upgradeBtn;
+    private Intent intent;
+    private BuyBackgroundAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.store_view);
-        storeLayout = (RelativeLayout)findViewById(R.id.storeLayout);
-        upgradeBtn = (ImageButton)findViewById(R.id.upgradeBtn);
-        storeLayout.removeView(upgradeBtn);
-
+        adapter = new BuyBackgroundAdapter(this);
+        intent = new Intent(this,WeaponStore.class);
+        itemList = controller.getBackgroundHolder().getThrowables();
+        getSavedAvailability(itemList);
+        viewPager.setAdapter(adapter);
+        initBuyAndEquip(itemList);
+        initSwitchBackground();
+        initUpgradeButton();
     }
+
+    @Override
+    public void initSwitchBackground() {
+        goToBackground.setImageDrawable(getResources().getDrawable(R.drawable.switchweapons));
+        goToBackground.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(intent);
+            }
+        });
+    }
+
+    @Override
+    public void initUpgradeButton() {
+        storeLayout.removeView(upgrade);
+    }
+
 }

@@ -1,6 +1,7 @@
 package com.chicken.invasion;
 
 import android.app.Activity;
+import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -27,19 +28,19 @@ import java.util.Map;
 /**
  * Created by pedramshirmohammad on 16-04-26.
  */
-public class Store extends Activity implements ViewPager.OnPageChangeListener, View.OnClickListener{
+public abstract class Store extends Activity implements ViewPager.OnPageChangeListener, View.OnClickListener{
 
-    private ViewPager viewPager;
+    protected ViewPager viewPager;
     private StoreCardAdapter cardAdapter;
-    private static ChickenInvasion controller;
-    private List<ThrowableObject> toList;
+    protected List<? extends iItem> itemList;
+    protected static ChickenInvasion controller;
     private SharedPreferences prefs;
     private SharedPreferences.Editor edit;
     private ImageButton buyAndEquip;
-    private Button goToBackground;
+    protected ImageButton goToBackground;
     BuyBackgroundAdapter backgroundAdapter;
-    private RelativeLayout storeLayout;
-    ImageButton upgrade;
+    protected RelativeLayout storeLayout;
+    protected ImageButton upgrade;
     private int totalScore;
     private TextView scoreView;
     private Intent intent;
@@ -50,80 +51,66 @@ public class Store extends Activity implements ViewPager.OnPageChangeListener, V
         setContentView(R.layout.store_view);
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         scoreView = (TextView)findViewById(R.id.score_view);
-        goToBackground = (Button)findViewById(R.id.goto_background);
+        goToBackground = (ImageButton)findViewById(R.id.goto_btn);
         upgrade = (ImageButton) findViewById(R.id.upgradeBtn);
         storeLayout = (RelativeLayout)findViewById(R.id.storeLayout);
         scoreView = (TextView)findViewById(R.id.score_view);
-        intent = new Intent(this,BackgroundStore.class);
+
+
 
         prefs = this.getSharedPreferences("myPrefsKey", Context.MODE_PRIVATE);
         edit = prefs.edit();
         totalScore = prefs.getInt("TOTAL_SCORE", 0);
         scoreView.setText(Integer.toString(totalScore));
 
-        backgroundAdapter = new BuyBackgroundAdapter(this);
 
 
-        toList = controller.getThrowableHolder().getThrowables();
-        getSavedAvailability();
 
         viewPager.setClipToPadding(false);
 
         viewPager.setPadding(0, 0, 0, 0);
 
-        cardAdapter = new StoreCardAdapter(this,controller);
-        viewPager.setAdapter(cardAdapter);
+
+        //cardAdapter = new StoreCardAdapter(this,controller);
+        //viewPager.setAdapter(cardAdapter);
 
 
-        goToBackground.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(intent);
-            }
-        });
 
 
-        //BUTTONS
-        buyAndEquip = (ImageButton) findViewById(R.id.buyAndEquipBtn);
-        ThrowableObject to = toList.get(viewPager.getCurrentItem());
-        if (to.isPurchased()){
-            buyAndEquip.setImageDrawable(getResources().getDrawable(R.drawable.equipicon200x200));
-        }
-        buyAndEquip.setOnClickListener(this);
-        upgrade.setOnClickListener(this);
+        //initUpgradeBtn();
         //-------------
 
-
-
-        //BUTTONS
-        buyAndEquip = (ImageButton) findViewById(R.id.buyAndEquipBtn);
-        to = toList.get(viewPager.getCurrentItem());
-        if (to.isPurchased()){
-            buyAndEquip.setImageDrawable(getResources().getDrawable(R.drawable.equipicon200x200));
-        }
-        buyAndEquip.setOnClickListener(this);
-        upgrade = (ImageButton) findViewById(R.id.upgradeBtn);
-        upgrade.setOnClickListener(this);
-        //-------------
 
         viewPager.addOnPageChangeListener(this);
     }
 
-    public void getSavedAvailability(){
-        for (int i=0;i<toList.size();i++){
-            boolean temp = prefs.getBoolean(toList.get(i).getName(),false);
-            toList.get(i).setPurchased(temp);
+    public <T extends iItem> void getSavedAvailability(List<T> itemList){
+        for (int i=0;i<itemList.size();i++){
+            boolean temp = prefs.getBoolean(itemList.get(i).getName(),false);
+            itemList.get(i).setPurchased(temp);
         }
-        toList.get(0).setPurchased(true);
+        itemList.get(0).setPurchased(true);
     }
 
-    public void saveEquippedTO(int index){
-        edit.putInt("EQUIPPED",index);
+    protected <T extends iItem> void initBuyAndEquip(List<T> itemList){
+        buyAndEquip = (ImageButton) findViewById(R.id.buyAndEquipBtn);
+        iItem to = itemList.get(viewPager.getCurrentItem());
+        if (to.isPurchased()){
+            buyAndEquip.setImageDrawable(getResources().getDrawable(R.drawable.equipicon200x200));
+        }
+        buyAndEquip.setOnClickListener(this);
+    }
+
+
+
+
+    public void saveEquippedTO(int index,String name){
+        edit.putInt(name +"_EQUIPPED",index);
         edit.commit();
     }
 
-    public void saveTO(List<ThrowableObject> list){
-        for (ThrowableObject e: list){
+    public <T extends iItem> void saveTO(List<T> list){
+        for (iItem e: list){
             edit.putBoolean(e.getName(), e.isPurchased());
             edit.commit();
         }
@@ -141,13 +128,13 @@ public class Store extends Activity implements ViewPager.OnPageChangeListener, V
 
     @Override
     public void onPageSelected(int position) {
-        ThrowableObject to = toList.get(position);
+
+        iItem to = itemList.get(position);
         if (to.isPurchased()){
             buyAndEquip.setImageDrawable(getResources().getDrawable(R.drawable.equipicon200x200));
         } else {
             buyAndEquip.setImageDrawable(getResources().getDrawable(R.drawable.buyicon200x200));
         }
-
     }
     @Override
     public void onPageScrollStateChanged(int state) {
@@ -159,20 +146,28 @@ public class Store extends Activity implements ViewPager.OnPageChangeListener, V
     // BUTTON CLICK LISTENER
     @Override
     public void onClick(View v) {
-        ThrowableObject to = toList.get(viewPager.getCurrentItem());
+        iItem to = itemList.get(viewPager.getCurrentItem());
         switch (v.getId()) {
             case R.id.buyAndEquipBtn:
 
-                //Check if player owns weapon
+                //Check if player owns item
                 if (to.isPurchased()){
                     // EQUIP
-                    controller.getPlayer().removeTO();
-                    controller.getPlayer().setEquippedTO(to);
+                    if(to.getClass() == ThrowableObject.class){
+                        controller.getPlayer().removeTO();
+                        controller.getPlayer().setEquippedTO((ThrowableObject) to);
+                    }
+                    else {
+                        controller.setBackground((Background) to);
+                    }
+
                     Toast.makeText(this, to.getName() + " is now equipped!",
                             Toast.LENGTH_LONG).show();
-                    saveEquippedTO(viewPager.getCurrentItem());
+                    saveEquippedTO(viewPager.getCurrentItem(),to.getName());
                 }
-                //Player wants to buy weapon
+
+
+                //Player wants to buy item
                 else{
                     if (controller.getPlayer().getChickenWings()<to.getPrice()){
                         // PLAYER HAS NO MONEY
@@ -187,7 +182,7 @@ public class Store extends Activity implements ViewPager.OnPageChangeListener, V
                         Toast.makeText(this, "Purchased " + to.getName() + ". Equip to try it out!",
                                 Toast.LENGTH_LONG).show();
                         viewPager.setAdapter(cardAdapter);
-                        saveTO(toList);
+                        saveTO(itemList);
                     }
                 }
                 break;
@@ -200,8 +195,10 @@ public class Store extends Activity implements ViewPager.OnPageChangeListener, V
                                 Toast.LENGTH_LONG).show();
                     }else {
                         //UPGRADE
-                        to.setDamage(to.getDamage() + 0.5);
-                        to.setSpeed(to.getSpeed() + 0.2);
+                        ThrowableObject toObject = (ThrowableObject) to;
+                        toObject.setDamage(toObject.getDamage() + 0.5);
+                        toObject.setSpeed(toObject.getSpeed() + 0.2);
+                        cardAdapter = new StoreCardAdapter(this,controller);
                         viewPager.setAdapter(cardAdapter);
                     }
                 } else {
