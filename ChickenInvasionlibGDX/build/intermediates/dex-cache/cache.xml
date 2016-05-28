@@ -1,2 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/core/build/libs/core-1.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="713acd60754e96a3f7559bec7f973eb774a66639">
+        <dex dex="/Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/pre-dexed/debug/core-1.0_36436383079c9ab4fc8ed7b3dd2e3a1ade358a68.jar" />
+    </item>
+
+</items>

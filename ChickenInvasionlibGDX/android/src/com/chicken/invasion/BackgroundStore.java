@@ -33,7 +33,7 @@ public class BackgroundStore extends Store implements iStore{
         goToBackground.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent.setFlags(intent.getFlags() | Intent.FLAG_ACTIVITY_NO_HISTORY);
+                intent.setFlags(intent.getFlags() | Intent.FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY);
                 startActivity(intent);
             }
         });

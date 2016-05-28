@@ -44,6 +44,8 @@ public abstract class Store extends Activity implements ViewPager.OnPageChangeLi
     private int totalScore;
     private TextView scoreView;
     protected Intent intent;
+    private boolean first = true;
+    private String backgroundSource;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,14 +58,7 @@ public abstract class Store extends Activity implements ViewPager.OnPageChangeLi
         storeLayout = (RelativeLayout)findViewById(R.id.storeLayout);
         scoreView = (TextView)findViewById(R.id.score_view);
 
-
-
         intent = getIntent();
-        String backgroundSource =  intent.getStringExtra("USED_BACKGROUND");
-        int id = getResources().getIdentifier(backgroundSource, "drawable", getPackageName());
-        storeLayout.setBackgroundResource(id);
-
-
 
         prefs = this.getSharedPreferences("myPrefsKey", Context.MODE_PRIVATE);
         edit = prefs.edit();
@@ -71,25 +66,43 @@ public abstract class Store extends Activity implements ViewPager.OnPageChangeLi
         scoreView.setText(Integer.toString(totalScore));
 
 
-
-
         viewPager.setClipToPadding(false);
-
         viewPager.setPadding(0, 0, 0, 0);
-
-
-        //cardAdapter = new StoreCardAdapter(this,controller);
-        //viewPager.setAdapter(cardAdapter);
-
-
-
-
-        //initUpgradeBtn();
-        //-------------
-
 
         viewPager.addOnPageChangeListener(this);
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        intent = getIntent();
+        backgroundSource = AndroidLauncher.getInom().getImageURL();
+        //backgroundSource = intent.getStringExtra("USED_BACKGROUND");
+        int id = getResources().getIdentifier(backgroundSource, "drawable", getPackageName());
+        storeLayout.setBackgroundResource(id);
+    }
+
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+
+        iItem to = itemList.get(position);
+        if (to.isPurchased()){
+            buyAndEquip.setImageDrawable(getResources().getDrawable(R.drawable.equipicon200x200,null));
+        } else {
+            buyAndEquip.setImageDrawable(getResources().getDrawable(R.drawable.buyicon200x200,null));
+        }
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+
+    }
+
 
     public <T extends iItem> void getSavedAvailability(List<T> itemList){
         for (int i=0;i<itemList.size();i++){
@@ -108,9 +121,6 @@ public abstract class Store extends Activity implements ViewPager.OnPageChangeLi
         buyAndEquip.setOnClickListener(this);
     }
 
-
-
-
     public void saveEquippedTO(int index,String itemType){
         edit.putInt(itemType +"_EQUIPPED",index);
         edit.commit();
@@ -123,34 +133,12 @@ public abstract class Store extends Activity implements ViewPager.OnPageChangeLi
         }
     }
 
-    // SWIPE LISTENER
+    
     public static void setController(ChickenInvasion c){
         controller = c;
     }
 
-    @Override
-    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
-    }
-
-    @Override
-    public void onPageSelected(int position) {
-
-        iItem to = itemList.get(position);
-        if (to.isPurchased()){
-            buyAndEquip.setImageDrawable(getResources().getDrawable(R.drawable.equipicon200x200,null));
-        } else {
-            buyAndEquip.setImageDrawable(getResources().getDrawable(R.drawable.buyicon200x200,null));
-        }
-    }
-    @Override
-    public void onPageScrollStateChanged(int state) {
-
-    }
-
-    // END SWIPE LISTENER
-
-    // BUTTON CLICK LISTENER
     @Override
     public void onClick(View v) {
         iItem to = itemList.get(viewPager.getCurrentItem());
@@ -168,6 +156,7 @@ public abstract class Store extends Activity implements ViewPager.OnPageChangeLi
                     else {
                         controller.setBackground((Background) to);
                         saveEquippedTO(viewPager.getCurrentItem(), "BACKGROUND");
+                        onStart();
                     }
 
                     Toast.makeText(this, to.getName() + " is now equipped!",

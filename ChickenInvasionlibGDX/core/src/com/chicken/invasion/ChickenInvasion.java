@@ -91,11 +91,10 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
     private Boolean showSettings = false;
     private Boolean muteMusic = false;
-	
-	@Override
+
+    @Override
 	public void create () {
 
-        System.out.print("OnCreate");
 		model = Model.getInstance();
         player = new Player();
 		this.world = new World(new Vector2(0, 0), true);
@@ -148,6 +147,13 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
             player.setEquippedTO(tempTO2);
         }
 	}
+
+    @Override
+    public void resume() {
+        super.resume();
+        setBackground(gameCallback.getEquippedBackground());
+        drawBackground();
+    }
 
 	@Override
 	public void render() {

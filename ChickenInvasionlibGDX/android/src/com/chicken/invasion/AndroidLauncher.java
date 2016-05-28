@@ -46,19 +46,13 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 		//--END GET SAVED SCORES
 
 
-
 		controller = new ChickenInvasion();
         Store.setController(controller);
-
 		controller.setMyGameCallback(this);
-
-
 
 
         HighScore highScore = new HighScore();
         controller.setMyIsHighScoreCallback(highScore);
-		//Intent intent = new Intent(getApplicationContext(),HighScore.class);
-		//startActivity(intent);
 		initialize(controller, config);
 	}
 
@@ -78,6 +72,7 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 	@Override
 	public void onStartActivityHighScore() {
 		intent.setClass(this, HighScore.class);
+		intent.putExtra("USED_BACKGROUND", getEquippedBackground().getImageURL());
 		startActivity(intent);
 	}
 
@@ -88,6 +83,9 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
         startActivity(intent);
     }
 
+	public static Background getInom(){
+		return controller.getBackgroundHolder().getThrowables().get(pref.getInt("BACKGROUND_EQUIPPED", 0));
+	}
 
 
 
@@ -118,7 +116,8 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 	@Override
 	public void onStartActivityStore() {
 		intent.setClass(this, WeaponStore.class);
-		intent.putExtra("USED_BACKGROUND",getEquippedBackground().getImageURL());
+		intent.putExtra("USED_BACKGROUND", getEquippedBackground().getImageURL());
+		intent.setFlags(intent.getFlags() | Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
 		startActivity(intent);
 	}
 
