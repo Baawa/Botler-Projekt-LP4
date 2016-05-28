@@ -19,11 +19,12 @@ import java.util.List;
 
 public class AndroidLauncher extends AndroidApplication implements ChickenInvasion.GameCallback {
 
-	SharedPreferences pref;
+	static SharedPreferences pref;
 	SharedPreferences.Editor edit;
 	int totScore;
+	private Intent intent;
 
-    private ChickenInvasion controller;
+    private static ChickenInvasion controller;
 	private static List<Score> topList;
 
 
@@ -35,6 +36,7 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 		AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
 		pref = this.getSharedPreferences("myPrefsKey", Context.MODE_PRIVATE);
 		edit = pref.edit();
+		intent = new Intent(this, WeaponStore.class);
 
 		//GET SAVED SCORES
 		Gson gson = new Gson();
@@ -50,7 +52,7 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 
 		controller.setMyGameCallback(this);
 
-		getEquippedBackground();
+
 
 
         HighScore highScore = new HighScore();
@@ -64,23 +66,24 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 		return topList;
 	}
 
-	public void getEquippedBackground(){
 
-		Background desert =  new Background("Desert","desertbackground500x900.png",150);
-		controller.setBackground(desert);
+
+	@Override
+	public Background getEquippedBackground(){
+			return controller.getBackgroundHolder().getThrowables().get(pref.getInt("BACKGROUND_EQUIPPED", 0));
 	}
 
     //CALLBACKS -------------------
 
 	@Override
 	public void onStartActivityHighScore() {
-		Intent intent = new Intent(this, HighScore.class);
+		intent.setClass(this, HighScore.class);
 		startActivity(intent);
 	}
 
     @Override
     public void onStartActivityInputName(int points) {
-        Intent intent = new Intent(this, InputName.class);
+        intent.setClass(this, InputName.class);
         intent.putExtra("score", points);
         startActivity(intent);
     }
@@ -114,7 +117,8 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 
 	@Override
 	public void onStartActivityStore() {
-		Intent intent = new Intent(this, WeaponStore.class);
+		intent.setClass(this, WeaponStore.class);
+		intent.putExtra("USED_BACKGROUND",getEquippedBackground().getImageURL());
 		startActivity(intent);
 	}
 

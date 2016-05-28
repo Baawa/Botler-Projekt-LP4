@@ -19,7 +19,7 @@ uses-sdk
 ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:7:5-74
 MERGED from [com.android.support:support-v4:23.4.0] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:cardview-v7:23.4.0] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.4.0/AndroidManifest.xml:20:5-43
-MERGED from [com.facebook.android:facebook-android-sdk:4.12.0] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-android-sdk:4.12.1] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.1/AndroidManifest.xml:24:5-26:41
 MERGED from [com.android.support:cardview-v7:23.4.0] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.4.0/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-v4:23.4.0] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:customtabs:23.4.0] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/customtabs/23.4.0/AndroidManifest.xml:20:5-44
@@ -49,7 +49,7 @@ application
 ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:13:5-60:19
 MERGED from [com.android.support:support-v4:23.4.0] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:cardview-v7:23.4.0] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.4.0/AndroidManifest.xml:22:5-20
-MERGED from [com.facebook.android:facebook-android-sdk:4.12.0] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/AndroidManifest.xml:28:5-37:19
+MERGED from [com.facebook.android:facebook-android-sdk:4.12.1] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.1/AndroidManifest.xml:28:5-37:19
 MERGED from [com.android.support:cardview-v7:23.4.0] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.4.0/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.4.0] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:customtabs:23.4.0] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/customtabs/23.4.0/AndroidManifest.xml:22:5-20
@@ -120,7 +120,7 @@ ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/Chicke
 		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:49:19-44
 activity#com.facebook.FacebookActivity
 ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:51:9-55:48
-MERGED from [com.facebook.android:facebook-android-sdk:4.12.0] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/AndroidManifest.xml:29:9-32:75
+MERGED from [com.facebook.android:facebook-android-sdk:4.12.1] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.1/AndroidManifest.xml:29:9-32:75
 	android:label
 		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:55:13-45
 	android:configChanges
@@ -144,8 +144,8 @@ ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/Chicke
 	android:name
 		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:58:13-64
 activity#com.facebook.CustomTabActivity
-ADDED from [com.facebook.android:facebook-android-sdk:4.12.0] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/AndroidManifest.xml:33:9-36:20
+ADDED from [com.facebook.android:facebook-android-sdk:4.12.1] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.1/AndroidManifest.xml:33:9-36:20
 	android:exported
-		ADDED from [com.facebook.android:facebook-android-sdk:4.12.0] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/AndroidManifest.xml:35:13-36
+		ADDED from [com.facebook.android:facebook-android-sdk:4.12.1] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.1/AndroidManifest.xml:35:13-36
 	android:name
-		ADDED from [com.facebook.android:facebook-android-sdk:4.12.0] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.0/AndroidManifest.xml:34:13-58
+		ADDED from [com.facebook.android:facebook-android-sdk:4.12.1] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.1/AndroidManifest.xml:34:13-58

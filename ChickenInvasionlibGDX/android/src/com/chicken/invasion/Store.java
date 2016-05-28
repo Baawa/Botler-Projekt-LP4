@@ -43,7 +43,7 @@ public abstract class Store extends Activity implements ViewPager.OnPageChangeLi
     protected ImageButton upgrade;
     private int totalScore;
     private TextView scoreView;
-    private Intent intent;
+    protected Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +55,13 @@ public abstract class Store extends Activity implements ViewPager.OnPageChangeLi
         upgrade = (ImageButton) findViewById(R.id.upgradeBtn);
         storeLayout = (RelativeLayout)findViewById(R.id.storeLayout);
         scoreView = (TextView)findViewById(R.id.score_view);
+
+
+
+        intent = getIntent();
+        String backgroundSource =  intent.getStringExtra("USED_BACKGROUND");
+        int id = getResources().getIdentifier(backgroundSource, "drawable", getPackageName());
+        storeLayout.setBackgroundResource(id);
 
 
 
@@ -96,7 +103,7 @@ public abstract class Store extends Activity implements ViewPager.OnPageChangeLi
         buyAndEquip = (ImageButton) findViewById(R.id.buyAndEquipBtn);
         iItem to = itemList.get(viewPager.getCurrentItem());
         if (to.isPurchased()){
-            buyAndEquip.setImageDrawable(getResources().getDrawable(R.drawable.equipicon200x200));
+            buyAndEquip.setImageDrawable(getResources().getDrawable(R.drawable.equipicon200x200,null));
         }
         buyAndEquip.setOnClickListener(this);
     }
@@ -104,8 +111,8 @@ public abstract class Store extends Activity implements ViewPager.OnPageChangeLi
 
 
 
-    public void saveEquippedTO(int index,String name){
-        edit.putInt(name +"_EQUIPPED",index);
+    public void saveEquippedTO(int index,String itemType){
+        edit.putInt(itemType +"_EQUIPPED",index);
         edit.commit();
     }
 
@@ -131,9 +138,9 @@ public abstract class Store extends Activity implements ViewPager.OnPageChangeLi
 
         iItem to = itemList.get(position);
         if (to.isPurchased()){
-            buyAndEquip.setImageDrawable(getResources().getDrawable(R.drawable.equipicon200x200));
+            buyAndEquip.setImageDrawable(getResources().getDrawable(R.drawable.equipicon200x200,null));
         } else {
-            buyAndEquip.setImageDrawable(getResources().getDrawable(R.drawable.buyicon200x200));
+            buyAndEquip.setImageDrawable(getResources().getDrawable(R.drawable.buyicon200x200,null));
         }
     }
     @Override
@@ -156,14 +163,15 @@ public abstract class Store extends Activity implements ViewPager.OnPageChangeLi
                     if(to.getClass() == ThrowableObject.class){
                         controller.getPlayer().removeTO();
                         controller.getPlayer().setEquippedTO((ThrowableObject) to);
+                        saveEquippedTO(viewPager.getCurrentItem(), "THROWABLE");
                     }
                     else {
                         controller.setBackground((Background) to);
+                        saveEquippedTO(viewPager.getCurrentItem(), "BACKGROUND");
                     }
 
                     Toast.makeText(this, to.getName() + " is now equipped!",
                             Toast.LENGTH_LONG).show();
-                    saveEquippedTO(viewPager.getCurrentItem(),to.getName());
                 }
 
 

@@ -11,13 +11,13 @@ import android.widget.ImageButton;
  */
 public class BackgroundStore extends Store implements iStore{
 
-    private Intent intent;
+
     private BuyBackgroundAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        intent = new Intent(this,WeaponStore.class);
+        intent.setClass(this,WeaponStore.class);
         itemList = controller.getBackgroundHolder().getThrowables();
         adapter = new BuyBackgroundAdapter(this,controller);
         getSavedAvailability(itemList);
@@ -33,6 +33,7 @@ public class BackgroundStore extends Store implements iStore{
         goToBackground.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                intent.setFlags(intent.getFlags() | Intent.FLAG_ACTIVITY_NO_HISTORY);
                 startActivity(intent);
             }
         });

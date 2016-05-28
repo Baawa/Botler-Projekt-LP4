@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class WeaponStore extends Store implements iStore {
 
-    private Intent intent;
+
 
     private StoreCardAdapter adapter;
 
@@ -20,7 +20,7 @@ public class WeaponStore extends Store implements iStore {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         adapter = new StoreCardAdapter(this,controller);
-        intent = new Intent(this,BackgroundStore.class);
+        intent.setClass(this, BackgroundStore.class);
         itemList = controller.getThrowableHolder().getThrowables();
         getSavedAvailability(itemList);
         viewPager.setAdapter(adapter);
@@ -35,6 +35,7 @@ public class WeaponStore extends Store implements iStore {
         goToBackground.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                intent.setFlags(intent.getFlags() | Intent.FLAG_ACTIVITY_NO_HISTORY);
                 startActivity(intent);
             }
         });

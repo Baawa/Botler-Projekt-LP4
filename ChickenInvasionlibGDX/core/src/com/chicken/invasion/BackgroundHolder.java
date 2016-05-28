@@ -13,7 +13,7 @@ public class BackgroundHolder implements iHolder {
     private List<Background> backgrounds;
     private Background equippedBackground;
 
-    public BackgroundHolder(ChickenInvasion controller, World world){
+    public BackgroundHolder(){
         backgrounds = new ArrayList<Background>();
 
         Background desert =  new Background("Desert","desertbackground500x900",150);

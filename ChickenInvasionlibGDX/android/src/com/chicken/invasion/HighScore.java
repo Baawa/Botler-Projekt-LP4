@@ -2,6 +2,7 @@ package com.chicken.invasion;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 import com.facebook.FacebookSdk;
 import com.facebook.share.model.ShareLinkContent;
@@ -31,7 +33,8 @@ public class HighScore extends Activity implements ChickenInvasion.isHighScoreCa
     private HighScoreAdapter scoreAdapter;
     private SharedPreferences prefs;
     private  SharedPreferences.Editor edit;
-
+    private RelativeLayout highScoreLayout;
+    private Intent intent;
     private static List<Score> topList;
 
 
@@ -42,6 +45,12 @@ public class HighScore extends Activity implements ChickenInvasion.isHighScoreCa
         highscoreList = (ListView)findViewById(R.id.highscoreList);
         prefs = this.getSharedPreferences("myPrefsKey", Context.MODE_PRIVATE);
         edit = prefs.edit();
+        highScoreLayout = (RelativeLayout)findViewById(R.id.highscore_layout);
+
+        intent = getIntent();
+        String backgroundSource =  intent.getStringExtra("USED_BACKGROUND");
+        int id = getResources().getIdentifier(backgroundSource, "drawable", getPackageName());
+        highScoreLayout.setBackgroundResource(id);
 
         if(topList== null){
             topList = AndroidLauncher.getPrevHighScore();

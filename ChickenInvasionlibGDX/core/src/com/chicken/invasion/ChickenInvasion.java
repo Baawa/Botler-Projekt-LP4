@@ -40,6 +40,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         void saveScore(int score);
         int getChickenLegs();
         ThrowableObject setTO();
+        Background getEquippedBackground();
     }
 
     // Local variable to hold the callback implementation
@@ -73,6 +74,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
     private ThrowableHolder throwableHolder;
     private BackgroundHolder backgroundHolder;
     private Background bGround;
+    private Texture backgroundtexture;
 
 	private GameButton startBtn;
 	private GameButton pauseBtn;
@@ -98,7 +100,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         player = new Player();
 		this.world = new World(new Vector2(0, 0), true);
         throwableHolder = new ThrowableHolder(this, world);
-        backgroundHolder = new BackgroundHolder(this,world);
+        backgroundHolder = new BackgroundHolder();
 
         /*if (player.getCurrentTO() == null){
             ThrowableObject tmp = new ThrowableObject("Beachball", "beachball200x200", this.world, player);
@@ -118,10 +120,8 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
         //Background
 
-        Texture backgroundtexture = new Texture(bGround.getImageURL());
-		backgroundimg = new Sprite(backgroundtexture);
-		backgroundimg.setPosition(0, 0);
-		backgroundimg.setSize(Gdx.graphics.getWidth() / 100, Gdx.graphics.getHeight() / 100);
+        setBackground(gameCallback.getEquippedBackground());
+        drawBackground();
 
         wave = new Wave(1,model.getDifficulty());
 
@@ -238,6 +238,9 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 		if (model.getState() == Model.State.PAUSED || model.getState() == Model.State.STOPPED || model.getState() == Model.State.GAMEOVER){
 
 			if (model.getState() == Model.State.GAMEOVER || model.getState() == Model.State.STOPPED ){
+                System.out.print("SPELET STARTAR");
+                drawBackground();
+                System.out.print("SPELET STARTAR2");
                 model.restartWaves();
                 wave = new Wave(1,model.getDifficulty());
                 player.resetScore();
@@ -247,6 +250,13 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 			model.startGame();
 		}
 	}
+
+    public void drawBackground(){
+        backgroundtexture = new Texture(bGround.getImageURL() + ".png");
+        backgroundimg = new Sprite(backgroundtexture);
+        backgroundimg.setPosition(0, 0);
+        backgroundimg.setSize(Gdx.graphics.getWidth() / 100, Gdx.graphics.getHeight() / 100);
+    }
 
     public void createIntent(String className) {
         if (gameCallback != null) {
