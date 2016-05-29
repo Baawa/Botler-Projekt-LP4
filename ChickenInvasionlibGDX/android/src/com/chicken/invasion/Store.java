@@ -47,6 +47,8 @@ public abstract class Store extends Activity implements ViewPager.OnPageChangeLi
     private boolean first = true;
     private String backgroundSource;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -107,7 +109,7 @@ public abstract class Store extends Activity implements ViewPager.OnPageChangeLi
     public <T extends iItem> void getSavedAvailability(List<T> itemList){
         for (int i=0;i<itemList.size();i++){
             boolean temp = prefs.getBoolean(itemList.get(i).getName(),false);
-            itemList.get(i).setPurchased(temp);
+            itemList.get(i).setPurchased(false);
         }
         itemList.get(0).setPurchased(true);
     }
@@ -122,8 +124,25 @@ public abstract class Store extends Activity implements ViewPager.OnPageChangeLi
     }
 
     public void saveEquippedTO(int index,String itemType){
-        edit.putInt(itemType +"_EQUIPPED",index);
+        edit.putInt(itemType + "_EQUIPPED", index);
         edit.commit();
+    }
+
+    public void saveUpdate(ThrowableObject weapon){
+        edit.putString(weapon.getName() + "_DAMAGE", String.valueOf(weapon.getDamage()));
+        edit.putString(weapon.getName() + "_SPEED", String.valueOf(weapon.getSpeed()));
+        edit.commit();
+    }
+
+    public void getUpdate(List<ThrowableObject> toList){
+        for(ThrowableObject e : toList){
+            String tempDamage = prefs.getString(e.getName() + "_DAMAGE","");
+            String tempSpeed = prefs.getString(e.getName() + "_SPEED","");
+            if(!tempDamage.equals("") && !tempSpeed.equals("")) {
+                e.setDamage(Double.parseDouble(tempDamage));
+                e.setSpeed(Double.parseDouble(tempSpeed));
+            }
+        }
     }
 
     public <T extends iItem> void saveTO(List<T> list){
@@ -133,9 +152,14 @@ public abstract class Store extends Activity implements ViewPager.OnPageChangeLi
         }
     }
 
-    
+
     public static void setController(ChickenInvasion c){
         controller = c;
+    }
+
+    public void setScore(int price){
+        totalScore = totalScore + price;
+        scoreView.setText(Integer.toString(totalScore));
     }
 
 
@@ -175,9 +199,11 @@ public abstract class Store extends Activity implements ViewPager.OnPageChangeLi
                         //Withdraw the price
                         controller.getPlayer().addChickenWings(to.getPrice() / -1);
                         to.setPurchased(true);
+                        setScore(-to.getPrice());
                         buyAndEquip.setImageDrawable(getResources().getDrawable(R.drawable.equipicon200x200));
                         Toast.makeText(this, "Purchased " + to.getName() + ". Equip to try it out!",
                                 Toast.LENGTH_LONG).show();
+                        cardAdapter = new StoreCardAdapter(this, controller);
                         viewPager.setAdapter(cardAdapter);
                         saveTO(itemList);
                     }
@@ -193,9 +219,13 @@ public abstract class Store extends Activity implements ViewPager.OnPageChangeLi
                     }else {
                         //UPGRADE
                         ThrowableObject toObject = (ThrowableObject) to;
+                        setScore(to.getPrice()/- 3);
+                        controller.getGameCallback().saveScore(-(to.getPrice() / 3));
+                        controller.getPlayer().addChickenWings(to.getPrice() / -3);
                         toObject.setDamage(toObject.getDamage() + 0.5);
                         toObject.setSpeed(toObject.getSpeed() + 0.2);
-                        cardAdapter = new StoreCardAdapter(this,controller);
+                        saveUpdate(toObject);
+                        cardAdapter = new StoreCardAdapter(this, controller);
                         viewPager.setAdapter(cardAdapter);
                     }
                 } else {

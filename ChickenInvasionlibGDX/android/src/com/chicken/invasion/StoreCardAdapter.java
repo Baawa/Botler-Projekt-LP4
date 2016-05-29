@@ -50,13 +50,13 @@ public class StoreCardAdapter extends PagerAdapter {
         //IMAGE
         ImageView weaponImg = (ImageView) item_view.findViewById(R.id.weaponImg);
         Resources res = ctx.getResources();
-        Log.e("SSTORE",currWeapon.getImageURL());
         int resID = res.getIdentifier(currWeapon.getImageURL() , "drawable", ctx.getPackageName());
         weaponImg.setImageDrawable(res.getDrawable(resID));
 
         //WEAPON INFO
         ProgressBar damage = (ProgressBar) item_view.findViewById(R.id.damageIndicator);
-        damage.setProgress((int) currWeapon.getDamage()*10);
+        damage.setProgress((int) currWeapon.getDamage() * 10);
+
         ProgressBar speed = (ProgressBar) item_view.findViewById(R.id.speedIndicator);
         speed.setProgress((int) (currWeapon.getSpeed()*10));
 

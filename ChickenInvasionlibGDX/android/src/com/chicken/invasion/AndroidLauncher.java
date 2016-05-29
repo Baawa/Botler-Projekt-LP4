@@ -122,9 +122,15 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 	}
 
 	@Override
-	protected void onPause() {
-		super.onPause();
-
-		Log.e("BLIR","FORSTORD");
+	public void getTOUpgrade(){
+		List<ThrowableObject> tempList = controller.getThrowableHolder().getThrowables();
+		for (ThrowableObject e : tempList){
+			String tempDamage = pref.getString(e.getName() + "_DAMAGE","");
+			String tempSpeed = pref.getString(e.getName() + "_SPEED","");
+			if(!tempDamage.equals("") && !tempSpeed.equals("")) {
+				e.setDamage(Double.parseDouble(tempDamage));
+				e.setSpeed(Double.parseDouble(tempSpeed));
+			}
+		}
 	}
 }

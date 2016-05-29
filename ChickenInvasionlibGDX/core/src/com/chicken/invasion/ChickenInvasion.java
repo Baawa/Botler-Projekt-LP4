@@ -41,6 +41,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         int getChickenLegs();
         ThrowableObject setTO();
         Background getEquippedBackground();
+        void getTOUpgrade();
     }
 
     // Local variable to hold the callback implementation
@@ -133,6 +134,8 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         Gdx.gl.glClearColor(1, 1, 1, 1);
 
         player.addChickenWings(gameCallback.getChickenLegs());
+
+        gameCallback.getTOUpgrade();
 
         // MUSIKAAA!!!
         if (muteMusic == false) {
@@ -609,6 +612,10 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
     public Player getPlayer(){
         return player;
+    }
+
+    public GameCallback getGameCallback() {
+        return gameCallback;
     }
 
     public ThrowableHolder getThrowableHolder(){

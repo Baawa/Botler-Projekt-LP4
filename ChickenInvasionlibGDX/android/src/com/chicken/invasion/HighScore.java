@@ -47,18 +47,22 @@ public class HighScore extends Activity implements ChickenInvasion.isHighScoreCa
         edit = prefs.edit();
         highScoreLayout = (RelativeLayout)findViewById(R.id.highscore_layout);
 
+        //SET BACKGROUND
         intent = getIntent();
         String backgroundSource =  intent.getStringExtra("USED_BACKGROUND");
         int id = getResources().getIdentifier(backgroundSource, "drawable", getPackageName());
         highScoreLayout.setBackgroundResource(id);
+        //--END SET BACKGROUND
 
         if(topList== null){
-            topList = AndroidLauncher.getPrevHighScore();
+            if(AndroidLauncher.getPrevHighScore() != null ){
+                Log.e("ANVANDS","NU");
+                topList = AndroidLauncher.getPrevHighScore();
+                scoreAdapter = new HighScoreAdapter(this,R.layout.highscore_content,topList);
+                highscoreList.setAdapter(scoreAdapter);
+            }
         }
 
-
-        scoreAdapter = new HighScoreAdapter(this,R.layout.highscore_content,topList);
-        highscoreList.setAdapter(scoreAdapter);
 
     }
 
