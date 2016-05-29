@@ -1,151 +1,151 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:2:1-62:12
+ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:2:1-62:12
 	package
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:3:5-35
-		INJECTED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml
-		INJECTED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:3:5-35
+		INJECTED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml
+		INJECTED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml
 	android:versionName
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:5:5-30
-		INJECTED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml
-		INJECTED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:5:5-30
+		INJECTED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml
+		INJECTED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml
 	android:versionCode
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:4:5-28
-		INJECTED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml
-		INJECTED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:4:5-28
+		INJECTED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml
+		INJECTED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:2:11-69
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:2:11-69
 uses-sdk
-ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:7:5-74
-MERGED from [com.android.support:support-v4:23.4.0] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:cardview-v7:23.4.0] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.4.0/AndroidManifest.xml:20:5-43
-MERGED from [com.facebook.android:facebook-android-sdk:4.12.1] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.1/AndroidManifest.xml:24:5-26:41
-MERGED from [com.android.support:cardview-v7:23.4.0] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.4.0/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.4.0] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:customtabs:23.4.0] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/customtabs/23.4.0/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:23.4.0] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:20:5-43
-MERGED from [pl.droidsonroids.gif:android-gif-drawable:1.1.15] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/pl.droidsonroids.gif/android-gif-drawable/1.1.15/AndroidManifest.xml:7:5-9:41
+ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:7:5-74
+MERGED from [com.android.support:support-v4:23.4.0] /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:cardview-v7:23.4.0] /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.4.0/AndroidManifest.xml:20:5-43
+MERGED from [com.facebook.android:facebook-android-sdk:4.12.1] /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.1/AndroidManifest.xml:24:5-26:41
+MERGED from [com.android.support:cardview-v7:23.4.0] /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.4.0/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.4.0] /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:customtabs:23.4.0] /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/customtabs/23.4.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:23.4.0] /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:20:5-43
+MERGED from [pl.droidsonroids.gif:android-gif-drawable:1.1.15] /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/pl.droidsonroids.gif/android-gif-drawable/1.1.15/AndroidManifest.xml:7:5-9:41
 	android:targetSdkVersion
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:7:42-71
-		INJECTED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml
-		INJECTED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:7:42-71
+		INJECTED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml
+		INJECTED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml
 	android:minSdkVersion
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:7:15-41
-		INJECTED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml
-		INJECTED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:7:15-41
+		INJECTED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml
+		INJECTED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml
 uses-feature#android.hardware.camera2
-ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:8:5-74
+ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:8:5-74
 	android:name
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:8:19-58
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:8:19-58
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:9:5-97
+ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:9:5-97
 	android:name
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:9:22-78
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:9:22-78
 uses-permission#android.permission.INTERNET
-ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:10:5-66
+ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:10:5-66
 	android:name
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:10:22-64
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:10:22-64
 application
-ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:13:5-60:19
-MERGED from [com.android.support:support-v4:23.4.0] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:cardview-v7:23.4.0] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.4.0/AndroidManifest.xml:22:5-20
-MERGED from [com.facebook.android:facebook-android-sdk:4.12.1] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.1/AndroidManifest.xml:28:5-37:19
-MERGED from [com.android.support:cardview-v7:23.4.0] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.4.0/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.4.0] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:customtabs:23.4.0] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/customtabs/23.4.0/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.4.0] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:22:5-20
+ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:13:5-60:19
+MERGED from [com.android.support:support-v4:23.4.0] /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:cardview-v7:23.4.0] /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.4.0/AndroidManifest.xml:22:5-20
+MERGED from [com.facebook.android:facebook-android-sdk:4.12.1] /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.1/AndroidManifest.xml:28:5-37:19
+MERGED from [com.android.support:cardview-v7:23.4.0] /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.4.0/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.4.0] /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:customtabs:23.4.0] /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/customtabs/23.4.0/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.4.0] /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/AndroidManifest.xml:22:5-20
 	android:label
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:16:9-41
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:16:9-41
 	android:allowBackup
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:14:9-35
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:14:9-35
 	android:icon
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:15:9-45
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:15:9-45
 	android:theme
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:17:9-40
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:17:9-40
 	android:name
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:18:9-38
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:18:9-38
 activity#com.chicken.invasion.SplashScreen
-ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:19:9-27:20
+ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:19:9-27:20
 	android:screenOrientation
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:22:13-49
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:22:13-49
 	android:label
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:21:13-45
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:21:13-45
 	android:name
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:20:13-41
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:20:13-41
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:23:13-26:29
+ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:23:13-26:29
 action#android.intent.action.MAIN
-ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:24:17-69
+ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:24:17-69
 	android:name
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:24:25-66
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:24:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:25:17-77
+ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:25:17-77
 	android:name
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:25:27-74
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:25:27-74
 activity#com.chicken.invasion.AndroidLauncher
-ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:28:9-32:20
+ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:28:9-32:20
 	android:screenOrientation
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:30:13-49
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:30:13-49
 	android:configChanges
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:31:13-83
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:31:13-83
 	android:name
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:29:13-64
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:29:13-64
 activity#com.chicken.invasion.HighScore
-ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:33:9-36:20
+ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:33:9-36:20
 	android:label
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:35:13-39
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:35:13-39
 	android:name
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:34:13-58
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:34:13-58
 activity#com.chicken.invasion.CreateWeapon
-ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:37:9-40:20
+ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:37:9-40:20
 	android:label
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:39:13-42
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:39:13-42
 	android:name
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:38:13-61
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:38:13-61
 activity#com.chicken.invasion.BackgroundStore
-ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:41:9-44:20
+ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:41:9-44:20
 	android:label
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:43:13-45
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:43:13-45
 	android:name
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:42:13-64
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:42:13-64
 activity#com.chicken.invasion.WeaponStore
-ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:45:9-48:20
+ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:45:9-48:20
 	android:label
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:47:13-41
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:47:13-41
 	android:name
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:46:13-60
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:46:13-60
 activity#com.chicken.invasion.InputName
-ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:49:9-50:20
+ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:49:9-50:20
 	android:name
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:49:19-44
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:49:19-44
 activity#com.facebook.FacebookActivity
-ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:51:9-55:48
-MERGED from [com.facebook.android:facebook-android-sdk:4.12.1] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.1/AndroidManifest.xml:29:9-32:75
+ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:51:9-55:48
+MERGED from [com.facebook.android:facebook-android-sdk:4.12.1] /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.1/AndroidManifest.xml:29:9-32:75
 	android:label
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:55:13-45
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:55:13-45
 	android:configChanges
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:52:13-113
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:52:13-113
 	android:theme
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:54:13-72
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:54:13-72
 	android:name
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:51:19-63
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:51:19-63
 meta-data#com.facebook.sdk.ApplicationId
-ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:56:9-107
+ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:56:9-107
 	android:value
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:56:66-105
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:56:66-105
 	android:name
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:56:20-65
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:56:20-65
 provider#com.facebook.FacebookContentProvider
-ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:57:9-59:38
+ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:57:9-59:38
 	android:authorities
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:57:19-96
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:57:19-96
 	android:exported
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:59:13-36
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:59:13-36
 	android:name
-		ADDED from /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:58:13-64
+		ADDED from /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/AndroidManifest.xml:58:13-64
 activity#com.facebook.CustomTabActivity
-ADDED from [com.facebook.android:facebook-android-sdk:4.12.1] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.1/AndroidManifest.xml:33:9-36:20
+ADDED from [com.facebook.android:facebook-android-sdk:4.12.1] /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.1/AndroidManifest.xml:33:9-36:20
 	android:exported
-		ADDED from [com.facebook.android:facebook-android-sdk:4.12.1] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.1/AndroidManifest.xml:35:13-36
+		ADDED from [com.facebook.android:facebook-android-sdk:4.12.1] /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.1/AndroidManifest.xml:35:13-36
 	android:name
-		ADDED from [com.facebook.android:facebook-android-sdk:4.12.1] /Users/pedramshirmohammad/Desktop/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.1/AndroidManifest.xml:34:13-58
+		ADDED from [com.facebook.android:facebook-android-sdk:4.12.1] /Users/Albin/Documents/Java/Git/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.12.1/AndroidManifest.xml:34:13-58
