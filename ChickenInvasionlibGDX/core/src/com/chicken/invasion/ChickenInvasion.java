@@ -151,12 +151,14 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         }
 	}
 
+
     @Override
     public void resume() {
         super.resume();
         setBackground(gameCallback.getEquippedBackground());
         drawBackground();
     }
+
 
 	@Override
 	public void render() {
