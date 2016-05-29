@@ -100,8 +100,8 @@
     <orderEntry type="library" exported="" name="customtabs-23.4.0" level="project" />
     <orderEntry type="library" exported="" name="support-v4-23.4.0" level="project" />
     <orderEntry type="library" exported="" name="android-gif-drawable-1.1.15" level="project" />
-    <orderEntry type="library" exported="" name="gdx-freetype-1.9.2" level="project" />
     <orderEntry type="library" exported="" name="gdx-box2d-1.9.2" level="project" />
+    <orderEntry type="library" exported="" name="gdx-freetype-1.9.2" level="project" />
     <orderEntry type="module" module-name="core" exported="" />
   </component>
 </module>

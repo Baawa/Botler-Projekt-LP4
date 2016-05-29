@@ -48,7 +48,7 @@ public class InputName extends Activity {
         scoreLabel.setText(Integer.toString(controller.getPlayer().getScore()));
         //SHARE ON FACEBOOK
         ShareLinkContent content = new ShareLinkContent.Builder()
-                .setContentUrl(Uri.parse("https://developers.facebook.com"))
+                .setContentDescription("Look at my Chicken Invasion score " + Integer.toString(controller.getPlayer().getScore()))
                 .build();
 
         ShareButton shareButton = (ShareButton)findViewById(R.id.fb_share_button);

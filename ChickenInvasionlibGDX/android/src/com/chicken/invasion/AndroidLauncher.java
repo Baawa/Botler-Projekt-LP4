@@ -110,8 +110,8 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 	}
 
 	@Override
-	public ThrowableObject setTO() {
-		return controller.getThrowableHolder().getThrowables().get(pref.getInt("EQUIPPED", 0));
+	public ThrowableObject getTO() {
+		return controller.getThrowableHolder().getThrowables().get(pref.getInt("THROWABLE_EQUIPPED", 0));
 	}
 
 	@Override
