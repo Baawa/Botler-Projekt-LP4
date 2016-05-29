@@ -156,7 +156,6 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         super.resume();
         setBackground(gameCallback.getEquippedBackground());
         drawBackground();
-        player.setEquippedTO(gameCallback.getTO());
     }
 
 
