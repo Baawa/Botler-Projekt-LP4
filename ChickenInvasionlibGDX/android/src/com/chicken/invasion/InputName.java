@@ -13,6 +13,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.facebook.FacebookSdk;
 import com.facebook.share.model.ShareLinkContent;
@@ -27,6 +28,8 @@ public class InputName extends Activity {
     private int playerScore;
     private SharedPreferences prefs;
     private SharedPreferences.Editor editor;
+    private TextView scoreLabel;
+    private static ChickenInvasion controller;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +44,8 @@ public class InputName extends Activity {
 
         setContentView(R.layout.inputname);
 
+        scoreLabel = (TextView)findViewById(R.id.scoreLabel);
+        scoreLabel.setText(Integer.toString(controller.getPlayer().getScore()));
         //SHARE ON FACEBOOK
         ShareLinkContent content = new ShareLinkContent.Builder()
                 .setContentUrl(Uri.parse("https://developers.facebook.com"))
@@ -78,5 +83,9 @@ public class InputName extends Activity {
                 InputName.this.finish();
             }
         });
+    }
+
+    public static void setController(ChickenInvasion c){
+        controller = c;
     }
 }

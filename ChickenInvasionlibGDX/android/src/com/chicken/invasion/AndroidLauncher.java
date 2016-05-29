@@ -48,6 +48,7 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 
 		controller = new ChickenInvasion();
         Store.setController(controller);
+		InputName.setController(controller);
 		controller.setMyGameCallback(this);
 
 

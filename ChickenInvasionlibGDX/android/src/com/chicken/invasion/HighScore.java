@@ -58,9 +58,11 @@ public class HighScore extends Activity implements ChickenInvasion.isHighScoreCa
             if(AndroidLauncher.getPrevHighScore() != null ){
                 Log.e("ANVANDS","NU");
                 topList = AndroidLauncher.getPrevHighScore();
-                scoreAdapter = new HighScoreAdapter(this,R.layout.highscore_content,topList);
-                highscoreList.setAdapter(scoreAdapter);
             }
+        }
+        if(topList != null){
+            scoreAdapter = new HighScoreAdapter(this,R.layout.highscore_content,topList);
+            highscoreList.setAdapter(scoreAdapter);
         }
 
 

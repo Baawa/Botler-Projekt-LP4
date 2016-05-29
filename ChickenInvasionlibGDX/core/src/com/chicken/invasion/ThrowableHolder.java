@@ -64,13 +64,7 @@ public class ThrowableHolder implements iHolder {
         spike.setPurchased(false);
         throwables.add(spike);
 
-        //Cash Money
-        ThrowableObject cashM = new ThrowableObject("Cash Money","moneybag200x200",world,controller.getPlayer());
-        cashM.setDamage(7);
-        cashM.setSpeed(1.5f);
-        cashM.setRotationSpeed(0.6f);
-        cashM.setPurchased(false);
-        throwables.add(cashM);
+        
 
     }
 
