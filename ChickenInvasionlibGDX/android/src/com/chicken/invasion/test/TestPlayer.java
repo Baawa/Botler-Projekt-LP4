@@ -2,13 +2,13 @@ package com.chicken.invasion.test;
 
 import android.test.InstrumentationTestCase;
 
-import com.chicken.invasion.Player;
+import com.chicken.invasion.PlayerObject;
 
 public class TestPlayer extends InstrumentationTestCase{
-    private Player p;
+    private PlayerObject p;
 
     public void test() throws Exception {
-        p = new Player();
+        p = new PlayerObject();
         assertEquals(0,p.getChickenWings());
         assertEquals(0,p.getScore());
         p.incScore(10);

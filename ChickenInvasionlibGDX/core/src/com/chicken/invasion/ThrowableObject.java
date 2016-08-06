@@ -30,13 +30,13 @@ public class ThrowableObject implements iItem{
     private float orgHeight;
     private Rectangle collideRect;
 
-    private Player player;
+    private PlayerObject playerObject;
 
     private Body body;
     private World world;
 
     public ThrowableObject(ThrowableObject to){
-        this.player = to.getPlayer();
+        this.playerObject = to.getPlayerObject();
 
         this.name = to.getName();
         this.speed = to.getSpeed();
@@ -81,9 +81,9 @@ public class ThrowableObject implements iItem{
         collideRect = this.sprite.getBoundingRectangle();
     }
 
-    public ThrowableObject(String name, String imageURL, World world, Player player) {
+    public ThrowableObject(String name, String imageURL, World world, PlayerObject playerObject) {
 
-        this.player = player;
+        this.playerObject = playerObject;
 
         this.name = name;
         this.imageURL = imageURL;
@@ -103,9 +103,9 @@ public class ThrowableObject implements iItem{
 
     }
 
-    public ThrowableObject(int x, int y, float scale, String name, String imageURL, World world, Player player) {
+    public ThrowableObject(int x, int y, float scale, String name, String imageURL, World world, PlayerObject playerObject) {
 
-        this.player = player;
+        this.playerObject = playerObject;
 
         this.name = name;
         this.imageURL = imageURL;
@@ -186,7 +186,7 @@ public class ThrowableObject implements iItem{
         if(this.body.getPosition().y > Gdx.graphics.getHeight()/100 || this.body.getPosition().x < 0 || this.body.getPosition().x > Gdx.graphics.getWidth()/100 || collided){
             thrown = false;
             this.world.destroyBody(this.body);
-            player.removeTO();
+            playerObject.removeTO();
             sprite = null;
         }
     }
@@ -272,8 +272,8 @@ public class ThrowableObject implements iItem{
         return this.world;
     }
 
-    public Player getPlayer(){
-        return this.player;
+    public PlayerObject getPlayerObject(){
+        return this.playerObject;
     }
 
     public boolean isThrown(){ return thrown; }

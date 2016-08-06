@@ -61,7 +61,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 	private SpriteBatch batch;
 	private Sprite backgroundimg;
     private World world;
-	private Player player;
+	private PlayerObject playerObject;
     private Wave wave;
     private Rectangle bottom;
     private BitmapFont fontScore, fontWings;
@@ -91,17 +91,17 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 	public void create () {
 
 		model = Model.getInstance();
-        player = new Player();
+        playerObject = new PlayerObject();
 		this.world = new World(new Vector2(0, 0), true);
         throwableHolder = new ThrowableHolder(this, world);
         backgroundHolder = new BackgroundHolder();
 
-        /*if (player.getCurrentTO() == null){
-            ThrowableObject tmp = new ThrowableObject("Beachball", "beachball200x200", this.world, player);
+        /*if (playerObject.getCurrentTO() == null){
+            ThrowableObject tmp = new ThrowableObject("Beachball", "beachball200x200", this.world, playerObject);
             tmp.setDamage(1);
             tmp.setSpeed(1.5);
             tmp.setRotationSpeed(0.5f);
-            player.setEquippedTO(tmp);
+            playerObject.setEquippedTO(tmp);
         }*/
 
 		batch = new SpriteBatch();
@@ -126,7 +126,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 		Gdx.input.setInputProcessor(new GestureDetector(this));
         Gdx.gl.glClearColor(1, 1, 1, 1);
 
-        player.addChickenWings(gameCallback.getChickenLegs());
+        playerObject.addChickenWings(gameCallback.getChickenLegs());
 
         gameCallback.getTOUpgrade();
 
@@ -137,10 +137,10 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
             bgMusic.setVolume(0.5f);
             bgMusic.play();
         }
-        if(player.getCurrentTO() == null){
+        if(playerObject.getCurrentTO() == null){
            ThrowableObject tempTO2 =  gameCallback.getTO();
-            player.removeTO();
-            player.setEquippedTO(tempTO2);
+            playerObject.removeTO();
+            playerObject.setEquippedTO(tempTO2);
         }
 	}
 
@@ -209,7 +209,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
     private void drawFonts() {
         //draw score
         fontScore.draw(batch,
-                String.valueOf(player.getScore()),
+                String.valueOf(playerObject.getScore()),
                 (float) Gdx.graphics.getWidth() / 200 - 0.5f,
                 (float) Gdx.graphics.getHeight() / 100 - 2,
                 0.1f,
@@ -235,7 +235,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         batch.draw(chickenLeg, 0.1f, Gdx.graphics.getHeight() / 100 - 1f, 1, 1);
 
         //Draw chicken wings
-        fontWings.draw(batch, String.valueOf(player.getChickenWings()), 1.5f, Gdx.graphics.getHeight()/100 - 0.2f);
+        fontWings.draw(batch, String.valueOf(playerObject.getChickenWings()), 1.5f, Gdx.graphics.getHeight()/100 - 0.2f);
     }
 
 	public void startGame(){
@@ -245,7 +245,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
                 drawBackground();
                 model.restartWaves();
                 wave = new Wave(1,model.getDifficulty());
-                player.resetScore();
+                playerObject.resetScore();
             }
 
             spawnThrowable();
@@ -269,7 +269,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
             } else if (className.equals("HighScore")) {
                 gameCallback.onStartActivityHighScore();
             } else if (className.equals("InputName")) {
-                gameCallback.onStartActivityInputName(player.getScore());
+                gameCallback.onStartActivityInputName(playerObject.getScore());
             }
         }
     }
@@ -281,7 +281,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
     public void restartGame(){
         model.restartWaves();
         wave = new Wave(1,model.getDifficulty());
-        player.resetScore();
+        playerObject.resetScore();
         startGame();
     }
 
@@ -312,7 +312,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         drawAlways();
         drawEnemies();
         checkCollision();
-        player.draw(batch);
+        playerObject.draw(batch);
         drawFonts();
 
         pauseBtn.setX(Gdx.graphics.getWidth() / 100 - 2);
@@ -323,7 +323,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
     private void drawGameOverScreen(SpriteBatch batch){
         drawAlways();
         drawEnemies();
-        player.drawOnly(batch);
+        playerObject.drawOnly(batch);
 
 
         //Game Over specifics
@@ -391,7 +391,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
     private void drawPausedGame(SpriteBatch batch){
         drawAlways();
         drawEnemies();
-        player.drawOnly(batch);
+        playerObject.drawOnly(batch);
         drawFonts();
 
         //Paused game specifics
@@ -514,25 +514,25 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 
 	private void spawnThrowable(){
 
-		player.addThrowables(model.getNumberOfThrowables());
+		playerObject.addThrowables(model.getNumberOfThrowables());
 	}
 
     private void checkCollision(){
         for (Iterator<EnemyObject> iterEnemies = wave.getEnemies().iterator(); iterEnemies.hasNext(); ) {
             EnemyObject e = iterEnemies.next();
-            if (player.getThrowables().size() != 0) {
-                if (player.getThrowables().get(0).getCollideRect().overlaps(e.getCollideRect()) && player.getCurrentTO().isThrown()) {
-                    player.getCurrentTO().onCollison();
+            if (playerObject.getThrowables().size() != 0) {
+                if (playerObject.getThrowables().get(0).getCollideRect().overlaps(e.getCollideRect()) && playerObject.getCurrentTO().isThrown()) {
+                    playerObject.getCurrentTO().onCollison();
 
-                    if (player.getCurrentTO().getDamage()>= e.getHealth()){
+                    if (playerObject.getCurrentTO().getDamage()>= e.getHealth()){
                         iterEnemies.remove();
-                        player.incScore((int)e.getTotalHealth());
+                        playerObject.incScore((int)e.getTotalHealth());
 
                     }
                     else{
                         //push and hurt enemy
                         e.incY();
-                        e.decHealth(player.getCurrentTO().getDamage());
+                        e.decHealth(playerObject.getCurrentTO().getDamage());
                     }
                     // MUSIKAAA!!!
                     Music music = Gdx.audio.newMusic(Gdx.files.internal("gamemusic/ChickenSound.mp3"));
@@ -544,7 +544,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
                         model.nextWave();
                         wave.dispose();
                         wave = new Wave(wave.getLevel() + 1, model.getDifficulty());
-                        player.addThrowables(model.getNumberOfThrowables());
+                        playerObject.addThrowables(model.getNumberOfThrowables());
 
                         wave.displayWaveFont();
                         System.out.println("Level: " + wave.getLevel());
@@ -552,11 +552,11 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
                     break;
                 }
             }
-            //Check if player lost
+            //Check if playerObject lost
             if (e.getCollideRect().overlaps(bottom)) {
                 model.gameOver();
-                gameCallback.saveScore(player.getScore());
-                if (isHighScoreCallback.isHighscore(player.getScore())){
+                gameCallback.saveScore(playerObject.getScore());
+                if (isHighScoreCallback.isHighscore(playerObject.getScore())){
                     createIntent("InputName");
                 }
                 break;
@@ -594,7 +594,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         chickenLeg.dispose();
         world.dispose();
         wave.dispose();
-        player.dispose();
+        playerObject.dispose();
         backBtn.dispose();
         highscoreBtn.dispose();
         pauseBtn.dispose();
@@ -603,8 +603,8 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         storeBtn.dispose();
     }
 
-    public Player getPlayer(){
-        return player;
+    public PlayerObject getPlayerObject(){
+        return playerObject;
     }
 
     public GameCallback getGameCallback() {
@@ -685,13 +685,13 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 	@Override
 	public boolean pan(float x, float y, float deltaX, float deltaY) {
 
-        if (model.getState() == Model.State.RUNNING && player.getThrowables().size() != 0) {
-            if ((x >= player.getCurrentTO().getX() || x <= player.getCurrentTO().getX() + 100) && (y >= player.getCurrentTO().getY() || y <= player.getCurrentTO().getY() + 100) && -deltaY > 0) {
+        if (model.getState() == Model.State.RUNNING && playerObject.getThrowables().size() != 0) {
+            if ((x >= playerObject.getCurrentTO().getX() || x <= playerObject.getCurrentTO().getX() + 100) && (y >= playerObject.getCurrentTO().getY() || y <= playerObject.getCurrentTO().getY() + 100) && -deltaY > 0) {
                 float throwX = deltaX;
                 float throwY = -deltaY;
                 float totalLength = (float) (Math.sqrt(Math.pow(throwX, 2) + Math.pow(throwY, 2)));
                 if (throwY > 0) {
-                    player.getCurrentTO().throwToPoint(throwX / totalLength, throwY / totalLength);
+                    playerObject.getCurrentTO().throwToPoint(throwX / totalLength, throwY / totalLength);
                 }
 
             }

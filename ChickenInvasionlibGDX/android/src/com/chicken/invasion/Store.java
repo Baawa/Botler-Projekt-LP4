@@ -1,29 +1,22 @@
 package com.chicken.invasion;
 
 import android.app.Activity;
-import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 
-import android.util.Log;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by pedramshirmohammad on 16-04-26.
@@ -173,8 +166,8 @@ public abstract class Store extends Activity implements ViewPager.OnPageChangeLi
                 if (to.isPurchased()){
                     // EQUIP
                     if(to.getClass() == ThrowableObject.class){
-                        controller.getPlayer().removeTO();
-                        controller.getPlayer().setEquippedTO((ThrowableObject) to);
+                        controller.getPlayerObject().removeTO();
+                        controller.getPlayerObject().setEquippedTO((ThrowableObject) to);
                         saveEquippedTO(viewPager.getCurrentItem(), "THROWABLE");
                     }
                     else {
@@ -188,16 +181,16 @@ public abstract class Store extends Activity implements ViewPager.OnPageChangeLi
                 }
 
 
-                //Player wants to buy item
+                //PlayerObject wants to buy item
                 else{
-                    if (controller.getPlayer().getChickenWings()<to.getPrice()){
+                    if (controller.getPlayerObject().getChickenWings()<to.getPrice()){
                         // PLAYER HAS NO MONEY
                         Toast.makeText(this, "Not enough chicken legs. Play some more!",
                                 Toast.LENGTH_LONG).show();
                     } else {
                         //BUY
                         //Withdraw the price
-                        controller.getPlayer().addChickenWings(to.getPrice() / -1);
+                        controller.getPlayerObject().addChickenWings(to.getPrice() / -1);
                         to.setPurchased(true);
                         setScore(-to.getPrice());
                         buyAndEquip.setImageDrawable(getResources().getDrawable(R.drawable.equipicon200x200));
@@ -212,7 +205,7 @@ public abstract class Store extends Activity implements ViewPager.OnPageChangeLi
 
             case R.id.upgradeBtn:
                 if (to.isPurchased()){
-                    if (controller.getPlayer().getChickenWings()<to.getPrice()/3){
+                    if (controller.getPlayerObject().getChickenWings()<to.getPrice()/3){
                         // NO MONEY
                         Toast.makeText(this, "Not enough chicken legs. Play some more!",
                                 Toast.LENGTH_LONG).show();
@@ -221,7 +214,7 @@ public abstract class Store extends Activity implements ViewPager.OnPageChangeLi
                         ThrowableObject toObject = (ThrowableObject) to;
                         setScore(to.getPrice()/- 3);
                         controller.getGameCallback().saveScore(-(to.getPrice() / 3));
-                        controller.getPlayer().addChickenWings(to.getPrice() / -3);
+                        controller.getPlayerObject().addChickenWings(to.getPrice() / -3);
                         toObject.setDamage(toObject.getDamage() + 0.5);
                         toObject.setSpeed(toObject.getSpeed() + 0.2);
                         saveUpdate(toObject);

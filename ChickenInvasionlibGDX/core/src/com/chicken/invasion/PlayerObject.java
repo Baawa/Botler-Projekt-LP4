@@ -8,7 +8,7 @@ import java.util.ArrayList;
 /**
  * Created by Albin on 2016-05-06.
  */
-public class Player {
+public class PlayerObject {
     private ArrayList<ThrowableObject> throwables = new java.util.ArrayList<ThrowableObject>();
     private int score= 0;
     private int chickenWings = 0;
