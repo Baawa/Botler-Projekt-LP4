@@ -3,8 +3,6 @@ package com.chicken.invasion;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
-import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
 
@@ -13,7 +11,7 @@ import java.util.Random;
 /**
  * Created by Kristoffer on 2016-05-02.
  */
-public class Enemy implements Cloneable{
+public class EnemyObject implements Cloneable{
     private float x,y, width, height;
     private double health;
     private double totalHealth;
@@ -30,7 +28,7 @@ public class Enemy implements Cloneable{
 
     float stateTime;
 
-    public Enemy(Enemy e){
+    public EnemyObject(EnemyObject e){
         this.walkSheet = e.getWalkSheet();
         TextureRegion[][] tmp = TextureRegion.split(walkSheet, walkSheet.getWidth()/FRAME_COLS, walkSheet.getHeight()/FRAME_ROWS);
         TextureRegion[] walkFrames = new TextureRegion[FRAME_COLS * FRAME_ROWS];
@@ -58,7 +56,7 @@ public class Enemy implements Cloneable{
         this.push = e.getPush();
     }
 
-    public Enemy(String image, int health, boolean canBePushed){
+    public EnemyObject(String image, int health, boolean canBePushed){
         walkSheet = new Texture(image);
         TextureRegion[][] tmp = TextureRegion.split(this.walkSheet, this.walkSheet.getWidth()/FRAME_COLS, this.walkSheet.getHeight()/FRAME_ROWS);
         TextureRegion[] walkFrames = new TextureRegion[FRAME_COLS * FRAME_ROWS];
@@ -87,7 +85,7 @@ public class Enemy implements Cloneable{
         this.push = canBePushed;
     }
 
-    public Enemy(){
+    public EnemyObject(){
         Random rand = new Random();
         //x = (rand.nextFloat()*(Gdx.graphics.getWidth()/120) + 0.5f);
         //if (x>12){ x-=1; }
@@ -163,8 +161,8 @@ public class Enemy implements Cloneable{
     }
 
     @Override
-    public Enemy clone(){
-        Enemy clone = new Enemy();
+    public EnemyObject clone(){
+        EnemyObject clone = new EnemyObject();
         clone.collideRect = this.collideRect;
         clone.width = this.width;
         clone.currentFrame = this.currentFrame;

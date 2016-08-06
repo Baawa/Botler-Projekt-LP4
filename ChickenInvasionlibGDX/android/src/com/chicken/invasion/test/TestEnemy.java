@@ -2,12 +2,12 @@ package com.chicken.invasion.test;
 
 import android.test.InstrumentationTestCase;
 
-import com.chicken.invasion.Enemy;
+import com.chicken.invasion.EnemyObject;
 
 public class TestEnemy extends InstrumentationTestCase {
-    Enemy e;
+    EnemyObject e;
     public void test() throws Exception {
-        e = new Enemy();
+        e = new EnemyObject();
         assertEquals(true, e.getPush());
         assertEquals(2.0f,e.getHeight());
         assertEquals(2.0f,e.getWidth());

@@ -12,8 +12,8 @@ import java.util.Random;
  * Created by Kristoffer on 2016-05-02.
  */
 public class Wave implements Runnable{
-    private ArrayList<Enemy> enemies;
-    private ArrayList<Enemy> potentialEnemies;
+    private ArrayList<EnemyObject> enemies;
+    private ArrayList<EnemyObject> potentialEnemies;
     private Thread thread;
     private int level;
     private int difficulty;
@@ -27,14 +27,14 @@ public class Wave implements Runnable{
         this.level = level;
         this.difficulty = difficulty;
 
-        enemies = new ArrayList<Enemy>();
+        enemies = new ArrayList<EnemyObject>();
 
-        potentialEnemies = new ArrayList<Enemy>();
-        //potentialEnemies.add(new Enemy());
-        potentialEnemies.add(potentialEnemies.size() ,new Enemy("ekak-spritesheet.png", 1, true));
-        potentialEnemies.add(potentialEnemies.size() ,new Enemy("army-spritesheet.png", 2, true));
-        potentialEnemies.add(potentialEnemies.size() ,new Enemy("tramp-spritesheet.png", 4, true));
-        potentialEnemies.add(potentialEnemies.size() ,new Enemy("robo-sheet.png", 10, false));
+        potentialEnemies = new ArrayList<EnemyObject>();
+        //potentialEnemies.add(new EnemyObject());
+        potentialEnemies.add(potentialEnemies.size() ,new EnemyObject("ekak-spritesheet.png", 1, true));
+        potentialEnemies.add(potentialEnemies.size() ,new EnemyObject("army-spritesheet.png", 2, true));
+        potentialEnemies.add(potentialEnemies.size() ,new EnemyObject("tramp-spritesheet.png", 4, true));
+        potentialEnemies.add(potentialEnemies.size() ,new EnemyObject("robo-sheet.png", 10, false));
 
         initNewWaveFont();
 
@@ -63,7 +63,7 @@ public class Wave implements Runnable{
         }
     }
 
-    private Enemy getRandomEnemy(){
+    private EnemyObject getRandomEnemy(){
         Random rand = new Random();
 
         int tmp = 0;
@@ -72,12 +72,12 @@ public class Wave implements Runnable{
             tmp = rand.nextInt(potentialEnemies.size());
         }
 
-        return new Enemy(potentialEnemies.get(tmp));
+        return new EnemyObject(potentialEnemies.get(tmp));
     }
 
     private void spawn(){
         while (true){
-            Enemy e = getRandomEnemy();
+            EnemyObject e = getRandomEnemy();
             if (e.getHealth() <= this.difficulty){
                 spawnEnemy(e);
                 difficulty -= e.getHealth();
@@ -86,12 +86,12 @@ public class Wave implements Runnable{
         }
     }
 
-    private void spawnEnemy(Enemy e){
+    private void spawnEnemy(EnemyObject e){
         enemies.add(enemies.size(), e);
         nbrOfSent++;
     }
 
-    public ArrayList<Enemy> getEnemies() {
+    public ArrayList<EnemyObject> getEnemies() {
         return enemies;
     }
 
@@ -136,7 +136,7 @@ public class Wave implements Runnable{
 
     public void dispose(){
         waveFont.dispose();
-        for (Enemy e : enemies){
+        for (EnemyObject e : enemies){
             e.dispose();
         }
     }

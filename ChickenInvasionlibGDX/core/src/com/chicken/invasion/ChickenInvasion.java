@@ -17,15 +17,9 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.World;
-import com.badlogic.gdx.scenes.scene2d.Actor;
-import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.badlogic.gdx.scenes.scene2d.ui.TextField;
 import com.badlogic.gdx.utils.Align;
-import com.badlogic.gdx.utils.viewport.ScreenViewport;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.ListIterator;
 import java.util.concurrent.Callable;
 import java.util.Iterator;
@@ -524,8 +518,8 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
 	}
 
     private void checkCollision(){
-        for (Iterator<Enemy> iterEnemies = wave.getEnemies().iterator(); iterEnemies.hasNext(); ) {
-            Enemy e = iterEnemies.next();
+        for (Iterator<EnemyObject> iterEnemies = wave.getEnemies().iterator(); iterEnemies.hasNext(); ) {
+            EnemyObject e = iterEnemies.next();
             if (player.getThrowables().size() != 0) {
                 if (player.getThrowables().get(0).getCollideRect().overlaps(e.getCollideRect()) && player.getCurrentTO().isThrown()) {
                     player.getCurrentTO().onCollison();
@@ -571,16 +565,16 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
     }
 
     private void drawEnemies(){
-        ArrayList<Enemy> temp = new ArrayList<Enemy>(wave.getEnemies().size());
-        for (Enemy e: wave.getEnemies()){
+        ArrayList<EnemyObject> temp = new ArrayList<EnemyObject>(wave.getEnemies().size());
+        for (EnemyObject e: wave.getEnemies()){
             temp.add(e);
         }
         // Generate an iterator. Start just after the last element.
-        ListIterator<Enemy> li = temp.listIterator(temp.size());
+        ListIterator<EnemyObject> li = temp.listIterator(temp.size());
 
         // Iterate in reverse.
         while(li.hasPrevious()) {
-            Enemy e = li.previous();
+            EnemyObject e = li.previous();
                 //update if not paused
                 if (model.getState() == Model.State.RUNNING) {
                     e.update(Gdx.graphics.getDeltaTime());

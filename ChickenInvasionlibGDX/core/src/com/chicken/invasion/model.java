@@ -73,4 +73,8 @@ public class Model {
         return this.spawnObject;
     }
 
+    public void getThrowables(){
+
+    }
+
 }
