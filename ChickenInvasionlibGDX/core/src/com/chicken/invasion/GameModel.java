@@ -1,11 +1,17 @@
 package com.chicken.invasion;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Music;
 import com.chicken.invasion.Enemy_Throwable.*;
 import com.chicken.invasion.Enemy_Throwable.Throwable;
+import com.chicken.invasion.Helpers.CIMusicPlayer;
+import com.chicken.invasion.Helpers.MusicPlayer;
 import com.chicken.invasion.Helpers.Player;
 import com.chicken.invasion.Store.StoreCollection;
+import com.chicken.invasion.oldstuff.EnemyObject;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -27,6 +33,8 @@ public class GameModel {
     private StoreCollection backgrounds;
 
     private Player player;
+
+    private MusicPlayer musicPlayer;
 
     //------------
     private static GameModel instance = null;
@@ -97,6 +105,52 @@ public class GameModel {
 
     public StoreCollection getBackgrounds(){
         return this.backgrounds;
+    }
+
+    public void setMusicPlayer(MusicPlayer musicPlayer){
+        this.musicPlayer = musicPlayer;
+    }
+
+    public MusicPlayer getMusicPlayer(){
+        return this.musicPlayer;
+    }
+
+    public void checkCollisions(){
+        for (Iterator<Enemy> iterEnemies = this.enemies.iterator(); iterEnemies.hasNext(); ){
+            Enemy e = iterEnemies.next();
+            if (this.throwables.size() != 0){
+                if (this.throwables.get(0).getCollisionRect().overlaps(e.getCollisionRect()) && this.getCurrentThrowable().isThrown()) {
+                    //Adjust throwable
+                    if (this.getCurrentThrowable().getDamage() <= 1){
+                        this.getCurrentThrowable().setCollided(true);
+                    } else{
+                        this.getCurrentThrowable().decHP(1);
+                    }
+
+                    //Adjust enemy
+                    if (this.getCurrentThrowable().getDamage() >= e.getHP()){
+                        iterEnemies.remove();
+                        this.player.setScore(this.player.getScore()+e.getHP());
+                    } else{
+                        e.pushBack();
+                        e.decHP(this.getCurrentThrowable().getDamage());
+                    }
+
+                    this.musicPlayer.playMusic("gamemusic/ChickenSound.mp3");
+
+                    if (this.enemies.size() == 0 && this.getDifficulty() == 0){
+                        this.nextWave();
+                    }
+
+                }
+            }
+
+            //If the enemy has reached the player
+            if (e.getY() <= 0){
+                this.gameOver();
+                //Do some other stuff
+            }
+        }
     }
 
     public State getState(){

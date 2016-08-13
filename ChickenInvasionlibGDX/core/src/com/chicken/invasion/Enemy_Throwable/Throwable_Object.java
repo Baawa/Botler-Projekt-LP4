@@ -146,6 +146,10 @@ public class Throwable_Object implements Throwable, Cloneable{
         }
     }
 
+    public boolean isThrown(){
+        return this.isThrown();
+    }
+
     public void updatePosition() {
         this.sprite.setPosition(this.body.getPosition().x, this.body.getPosition().y);
 

@@ -26,6 +26,8 @@ public interface Throwable {
 
     void ThrowToPoint(float x, float y);
 
+    boolean isThrown();
+
     void updatePosition();
 
     float getScale();
