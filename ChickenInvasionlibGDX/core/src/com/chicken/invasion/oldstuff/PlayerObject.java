@@ -1,6 +1,5 @@
-package com.chicken.invasion;
+package com.chicken.invasion.oldstuff;
 
-import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import java.util.ArrayList;

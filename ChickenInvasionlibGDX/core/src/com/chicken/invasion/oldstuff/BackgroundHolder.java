@@ -1,6 +1,4 @@
-package com.chicken.invasion;
-
-import com.badlogic.gdx.physics.box2d.World;
+package com.chicken.invasion.oldstuff;
 
 import java.util.ArrayList;
 import java.util.List;

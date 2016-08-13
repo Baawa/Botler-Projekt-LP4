@@ -1,9 +1,9 @@
-package com.chicken.invasion;
+package com.chicken.invasion.oldstuff;
 
 /**
  * Created by pedramshirmohammad on 16-05-25.
  */
-public class Background implements iItem{
+public class Background implements iItem {
 
     private String name;
     private String imageURL;

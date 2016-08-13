@@ -4,11 +4,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
-import com.chicken.invasion.ChickenInvasion;
+import com.chicken.invasion.oldstuff.ChickenInvasion;
 import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
 import com.google.gson.Gson;
@@ -64,7 +63,7 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 
 
 	@Override
-	public Background getEquippedBackground(){
+	public com.chicken.invasion.oldstuff.Background getEquippedBackground(){
 			return controller.getBackgroundHolder().getThrowables().get(pref.getInt("BACKGROUND_EQUIPPED", 0));
 	}
 
@@ -84,7 +83,7 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
         startActivity(intent);
     }
 
-	public static Background getInom(){
+	public static com.chicken.invasion.oldstuff.Background getInom(){
 		return controller.getBackgroundHolder().getThrowables().get(pref.getInt("BACKGROUND_EQUIPPED", 0));
 	}
 
@@ -110,7 +109,7 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 	}
 
 	@Override
-	public ThrowableObject getTO() {
+	public com.chicken.invasion.oldstuff.ThrowableObject getTO() {
 		return controller.getThrowableHolder().getThrowables().get(pref.getInt("THROWABLE_EQUIPPED", 0));
 	}
 
@@ -124,8 +123,8 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 
 	@Override
 	public void getTOUpgrade(){
-		List<ThrowableObject> tempList = controller.getThrowableHolder().getThrowables();
-		for (ThrowableObject e : tempList){
+		List<com.chicken.invasion.oldstuff.ThrowableObject> tempList = controller.getThrowableHolder().getThrowables();
+		for (com.chicken.invasion.oldstuff.ThrowableObject e : tempList){
 			String tempDamage = pref.getString(e.getName() + "_DAMAGE","");
 			String tempSpeed = pref.getString(e.getName() + "_SPEED","");
 			if(!tempDamage.equals("") && !tempSpeed.equals("")) {

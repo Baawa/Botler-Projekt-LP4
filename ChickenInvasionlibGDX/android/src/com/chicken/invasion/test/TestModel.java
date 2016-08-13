@@ -2,7 +2,7 @@ package com.chicken.invasion.test;
 
 import android.test.InstrumentationTestCase;
 
-import com.chicken.invasion.Model;
+import com.chicken.invasion.oldstuff.Model;
 
 public class TestModel extends InstrumentationTestCase{
 

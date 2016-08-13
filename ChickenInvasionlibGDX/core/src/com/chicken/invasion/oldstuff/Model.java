@@ -1,7 +1,4 @@
-package com.chicken.invasion;
-
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
+package com.chicken.invasion.oldstuff;
 
 /**
  * Created by Albin on 2016-05-03.

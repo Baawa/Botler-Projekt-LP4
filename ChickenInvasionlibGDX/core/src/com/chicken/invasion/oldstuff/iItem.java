@@ -1,4 +1,4 @@
-package com.chicken.invasion;
+package com.chicken.invasion.oldstuff;
 
 /**
  * Created by pedramshirmohammad on 16-05-25.

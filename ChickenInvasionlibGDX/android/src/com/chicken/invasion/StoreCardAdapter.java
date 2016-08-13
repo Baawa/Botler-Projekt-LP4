@@ -1,24 +1,17 @@
 package com.chicken.invasion;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
 import android.support.v4.view.PagerAdapter;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by pedramshirmohammad on 16-04-26.
@@ -27,10 +20,10 @@ public class StoreCardAdapter extends PagerAdapter {
 
 
     private Context ctx;
-    public List<ThrowableObject> mWeapons;
-    private ChickenInvasion controller;
+    public List<com.chicken.invasion.oldstuff.ThrowableObject> mWeapons;
+    private com.chicken.invasion.oldstuff.ChickenInvasion controller;
 
-    public StoreCardAdapter(Context ctx, ChickenInvasion controller){
+    public StoreCardAdapter(Context ctx, com.chicken.invasion.oldstuff.ChickenInvasion controller){
         this.ctx = ctx;
         this.controller = controller;
         this.mWeapons = controller.getThrowableHolder().getThrowables();
@@ -41,7 +34,7 @@ public class StoreCardAdapter extends PagerAdapter {
 
 
         mWeapons = controller.getThrowableHolder().getThrowables();
-        ThrowableObject currWeapon = mWeapons.get(position);
+        com.chicken.invasion.oldstuff.ThrowableObject currWeapon = mWeapons.get(position);
         LayoutInflater layoutInflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         // card_view.xml LAYOUT

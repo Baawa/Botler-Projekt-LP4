@@ -1,4 +1,4 @@
-package com.chicken.invasion;
+package com.chicken.invasion.oldstuff;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
@@ -14,7 +14,7 @@ import com.badlogic.gdx.physics.box2d.World;
 /**
  * Created by Albin on 2016-04-26.
  */
-public class ThrowableObject implements iItem{
+public class ThrowableObject implements iItem {
     private String imageURL;
     private Texture image;
     private Sprite sprite;

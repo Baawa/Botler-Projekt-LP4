@@ -26,7 +26,7 @@ public class InputName extends Activity {
     private SharedPreferences prefs;
     private SharedPreferences.Editor editor;
     private TextView scoreLabel;
-    private static ChickenInvasion controller;
+    private static com.chicken.invasion.oldstuff.ChickenInvasion controller;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,7 +82,7 @@ public class InputName extends Activity {
         });
     }
 
-    public static void setController(ChickenInvasion c){
+    public static void setController(com.chicken.invasion.oldstuff.ChickenInvasion c){
         controller = c;
     }
 }

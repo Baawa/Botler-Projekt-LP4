@@ -1,4 +1,4 @@
-package com.chicken.invasion;
+package com.chicken.invasion.oldstuff;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;

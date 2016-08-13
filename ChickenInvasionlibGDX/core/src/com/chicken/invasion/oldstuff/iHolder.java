@@ -1,4 +1,4 @@
-package com.chicken.invasion;
+package com.chicken.invasion.oldstuff;
 
 import java.util.List;
 

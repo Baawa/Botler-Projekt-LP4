@@ -2,7 +2,7 @@ package com.chicken.invasion.test;
 
 import android.test.InstrumentationTestCase;
 
-import com.chicken.invasion.EnemyObject;
+import com.chicken.invasion.oldstuff.EnemyObject;
 
 public class TestEnemy extends InstrumentationTestCase {
     EnemyObject e;

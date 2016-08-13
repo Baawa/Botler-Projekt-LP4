@@ -2,7 +2,7 @@ package com.chicken.invasion.test;
 
 import android.test.InstrumentationTestCase;
 
-import com.chicken.invasion.PlayerObject;
+import com.chicken.invasion.oldstuff.PlayerObject;
 
 public class TestPlayer extends InstrumentationTestCase{
     private PlayerObject p;

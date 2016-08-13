@@ -1,7 +1,6 @@
 package com.chicken.invasion;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.support.v4.view.PagerAdapter;
 import android.util.Log;
@@ -9,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -21,10 +19,10 @@ import java.util.List;
 public class BuyBackgroundAdapter extends PagerAdapter {
 
     private Context ctx;
-    private List<Background> mBackgrounds;
-    private ChickenInvasion controller;
+    private List<com.chicken.invasion.oldstuff.Background> mBackgrounds;
+    private com.chicken.invasion.oldstuff.ChickenInvasion controller;
 
-    public BuyBackgroundAdapter(Context ctx,ChickenInvasion controller){
+    public BuyBackgroundAdapter(Context ctx, com.chicken.invasion.oldstuff.ChickenInvasion controller){
         this.ctx = ctx;
         this.controller = controller;
         mBackgrounds = controller.getBackgroundHolder().getThrowables();
@@ -34,7 +32,7 @@ public class BuyBackgroundAdapter extends PagerAdapter {
     public Object instantiateItem(ViewGroup container, final int position) {
 
 
-        Background currBackground = mBackgrounds.get(position);
+        com.chicken.invasion.oldstuff.Background currBackground = mBackgrounds.get(position);
         LayoutInflater layoutInflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         // card_view.xml LAYOUT

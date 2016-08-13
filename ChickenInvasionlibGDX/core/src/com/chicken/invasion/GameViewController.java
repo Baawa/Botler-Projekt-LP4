@@ -3,6 +3,7 @@ package com.chicken.invasion;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.input.GestureDetector;
 import com.badlogic.gdx.math.Vector2;
+import com.chicken.invasion.Helpers.CIBackgroundCollection;
 import com.chicken.invasion.Helpers.CIPlayer;
 
 /**
@@ -15,7 +16,7 @@ public class GameViewController extends ApplicationAdapter implements GestureDet
     public void create() {
         this.model = GameModel.getInstance();
         this.model.setPlayer(new CIPlayer());
-
+        this.model.setBackgrounds(new CIBackgroundCollection());
 
     }
 

@@ -1,4 +1,4 @@
-package com.chicken.invasion;
+package com.chicken.invasion.oldstuff;
 
 import com.badlogic.gdx.physics.box2d.World;
 
@@ -11,7 +11,7 @@ import java.util.List;
 public class ThrowableHolder implements iHolder {
     private List<ThrowableObject> throwables;
 
-    public ThrowableHolder(ChickenInvasion controller, World world){
+    public ThrowableHolder(com.chicken.invasion.oldstuff.ChickenInvasion controller, World world){
         throwables = new ArrayList<ThrowableObject>();
 
         //Beach ball

@@ -16,6 +16,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.chicken.invasion.oldstuff.ThrowableObject;
+
 import java.util.List;
 
 /**
@@ -25,8 +27,8 @@ public abstract class Store extends Activity implements ViewPager.OnPageChangeLi
 
     protected ViewPager viewPager;
     private StoreCardAdapter cardAdapter;
-    protected List<? extends iItem> itemList;
-    protected static ChickenInvasion controller;
+    protected List<? extends com.chicken.invasion.oldstuff.iItem> itemList;
+    protected static com.chicken.invasion.oldstuff.ChickenInvasion controller;
     private SharedPreferences prefs;
     private SharedPreferences.Editor edit;
     private ImageButton buyAndEquip;
@@ -85,7 +87,7 @@ public abstract class Store extends Activity implements ViewPager.OnPageChangeLi
     @Override
     public void onPageSelected(int position) {
 
-        iItem to = itemList.get(position);
+        com.chicken.invasion.oldstuff.iItem to = itemList.get(position);
         if (to.isPurchased()){
             buyAndEquip.setImageDrawable(getResources().getDrawable(R.drawable.equipicon200x200,null));
         } else {
@@ -99,7 +101,7 @@ public abstract class Store extends Activity implements ViewPager.OnPageChangeLi
     }
 
 
-    public <T extends iItem> void getSavedAvailability(List<T> itemList){
+    public <T extends com.chicken.invasion.oldstuff.iItem> void getSavedAvailability(List<T> itemList){
         for (int i=0;i<itemList.size();i++){
             boolean temp = prefs.getBoolean(itemList.get(i).getName(),false);
             itemList.get(i).setPurchased(temp);
@@ -107,9 +109,9 @@ public abstract class Store extends Activity implements ViewPager.OnPageChangeLi
         itemList.get(0).setPurchased(true);
     }
 
-    protected <T extends iItem> void initBuyAndEquip(List<T> itemList){
+    protected <T extends com.chicken.invasion.oldstuff.iItem> void initBuyAndEquip(List<T> itemList){
         buyAndEquip = (ImageButton) findViewById(R.id.buyAndEquipBtn);
-        iItem to = itemList.get(viewPager.getCurrentItem());
+        com.chicken.invasion.oldstuff.iItem to = itemList.get(viewPager.getCurrentItem());
         if (to.isPurchased()){
             buyAndEquip.setImageDrawable(getResources().getDrawable(R.drawable.equipicon200x200,null));
         }
@@ -121,14 +123,14 @@ public abstract class Store extends Activity implements ViewPager.OnPageChangeLi
         edit.commit();
     }
 
-    public void saveUpdate(ThrowableObject weapon){
+    public void saveUpdate(com.chicken.invasion.oldstuff.ThrowableObject weapon){
         edit.putString(weapon.getName() + "_DAMAGE", String.valueOf(weapon.getDamage()));
         edit.putString(weapon.getName() + "_SPEED", String.valueOf(weapon.getSpeed()));
         edit.commit();
     }
 
-    public void getUpdate(List<ThrowableObject> toList){
-        for(ThrowableObject e : toList){
+    public void getUpdate(List<com.chicken.invasion.oldstuff.ThrowableObject> toList){
+        for(com.chicken.invasion.oldstuff.ThrowableObject e : toList){
             String tempDamage = prefs.getString(e.getName() + "_DAMAGE","");
             String tempSpeed = prefs.getString(e.getName() + "_SPEED","");
             if(!tempDamage.equals("") && !tempSpeed.equals("")) {
@@ -138,15 +140,15 @@ public abstract class Store extends Activity implements ViewPager.OnPageChangeLi
         }
     }
 
-    public <T extends iItem> void saveTO(List<T> list){
-        for (iItem e: list){
+    public <T extends com.chicken.invasion.oldstuff.iItem> void saveTO(List<T> list){
+        for (com.chicken.invasion.oldstuff.iItem e: list){
             edit.putBoolean(e.getName(), e.isPurchased());
             edit.commit();
         }
     }
 
 
-    public static void setController(ChickenInvasion c){
+    public static void setController(com.chicken.invasion.oldstuff.ChickenInvasion c){
         controller = c;
     }
 
@@ -158,20 +160,20 @@ public abstract class Store extends Activity implements ViewPager.OnPageChangeLi
 
     @Override
     public void onClick(View v) {
-        iItem to = itemList.get(viewPager.getCurrentItem());
+        com.chicken.invasion.oldstuff.iItem to = itemList.get(viewPager.getCurrentItem());
         switch (v.getId()) {
             case R.id.buyAndEquipBtn:
 
                 //Check if player owns item
                 if (to.isPurchased()){
                     // EQUIP
-                    if(to.getClass() == ThrowableObject.class){
+                    if(to.getClass() == com.chicken.invasion.oldstuff.ThrowableObject.class){
                         controller.getPlayerObject().removeTO();
-                        controller.getPlayerObject().setEquippedTO((ThrowableObject) to);
+                        controller.getPlayerObject().setEquippedTO((com.chicken.invasion.oldstuff.ThrowableObject) to);
                         saveEquippedTO(viewPager.getCurrentItem(), "THROWABLE");
                     }
                     else {
-                        controller.setBackground((Background) to);
+                        controller.setBackground((com.chicken.invasion.oldstuff.Background) to);
                         saveEquippedTO(viewPager.getCurrentItem(), "BACKGROUND");
                         onStart();
                     }
@@ -211,7 +213,7 @@ public abstract class Store extends Activity implements ViewPager.OnPageChangeLi
                                 Toast.LENGTH_LONG).show();
                     }else {
                         //UPGRADE
-                        ThrowableObject toObject = (ThrowableObject) to;
+                        com.chicken.invasion.oldstuff.ThrowableObject toObject = (ThrowableObject) to;
                         setScore(to.getPrice()/- 3);
                         controller.getGameCallback().saveScore(-(to.getPrice() / 3));
                         controller.getPlayerObject().addChickenWings(to.getPrice() / -3);
