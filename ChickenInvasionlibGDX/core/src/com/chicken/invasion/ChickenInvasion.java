@@ -417,7 +417,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
     }
 
     private void initButtons(){
-        startBtn = new GameButton(new Callable<Void>() {
+        startBtn = new com.chicken.invasion.Helpers.GameButton(new Callable<Void>() {
             public Void call() throws Exception {
                 startGame();
                 return null;
@@ -425,7 +425,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         }, new Texture("play220x220.png"));
         startBtn.setSize(220 / 100, 220 / 100);
 
-        backBtn = new GameButton(new Callable<Void>() {
+        backBtn = new com.chicken.invasion.Helpers.GameButton(new Callable<Void>() {
             public Void call() throws Exception {
                 goBack();
                 return null;
@@ -433,7 +433,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         }, new Texture("back220x220.png"));
         backBtn.setSize(220 / 100, 220 / 100);
 
-        restartBtn = new GameButton(new Callable<Void>() {
+        restartBtn = new com.chicken.invasion.Helpers.GameButton(new Callable<Void>() {
             public Void call() throws Exception {
                 restartGame();
                 return null;
@@ -441,7 +441,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         }, new Texture("restart220x220.png"));
         restartBtn.setSize(220 / 100, 220 / 100);
 
-        highscoreBtn = new GameButton(new Callable<Void>() {
+        highscoreBtn = new com.chicken.invasion.Helpers.GameButton(new Callable<Void>() {
             public Void call() throws Exception {
                 createIntent("HighScore");
                 return null;
@@ -449,7 +449,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         }, new Texture("highscore200x200.png"));
         highscoreBtn.setSize(200 / 100, 200 / 100);
 
-        storeBtn = new GameButton(new Callable<Void>() {
+        storeBtn = new com.chicken.invasion.Helpers.GameButton(new Callable<Void>() {
             public Void call() throws Exception {
                 createIntent("Store");
                 return null;
@@ -457,7 +457,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         }, new Texture("store200x200.png"));
         storeBtn.setSize(200 / 100, 200 / 100);
 
-        pauseBtn = new GameButton((new Callable<Void>() {
+        pauseBtn = new com.chicken.invasion.Helpers.GameButton((new Callable<Void>() {
             public Void call() throws Exception {
                 pauseGame();
                 return null;
@@ -465,7 +465,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         }), new Texture("pause200x200.png"));
         pauseBtn.setSize(200 / 200, 200 / 200);
 
-        muteBtn = new GameButton((new Callable<Void>() {
+        muteBtn = new com.chicken.invasion.Helpers.GameButton((new Callable<Void>() {
             public Void call() throws Exception {
                 mute();
                 return null;
@@ -473,7 +473,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         }), new Texture("mute220x220.png"));
         muteBtn.setSize(220 / 100, 220 / 100);
 
-        unmuteBtn = new GameButton((new Callable<Void>() {
+        unmuteBtn = new com.chicken.invasion.Helpers.GameButton((new Callable<Void>() {
             public Void call() throws Exception {
                 mute();
                 return null;
@@ -481,7 +481,7 @@ public class ChickenInvasion extends ApplicationAdapter implements GestureDetect
         }), new Texture("unmute220x220.png"));
         unmuteBtn.setSize(220 / 100, 220 / 100);
 
-        settingsBtn = new GameButton((new Callable<Void>() {
+        settingsBtn = new com.chicken.invasion.Helpers.GameButton((new Callable<Void>() {
             public Void call() throws Exception {
                 showSettingsView();
                 return null;

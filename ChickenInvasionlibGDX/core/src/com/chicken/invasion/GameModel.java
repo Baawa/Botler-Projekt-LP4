@@ -3,8 +3,10 @@ package com.chicken.invasion;
 import com.chicken.invasion.Enemy_Throwable.*;
 import com.chicken.invasion.Enemy_Throwable.Throwable;
 import com.chicken.invasion.Helpers.Player;
+import com.chicken.invasion.Store.StoreCollection;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Albin on 2016-08-06.
@@ -16,11 +18,13 @@ public class GameModel {
 
     private State state = State.STOPPED;
 
-    private int currentWave = 1;
+    private int currentWave = 0;
 
     private ArrayList<Throwable> throwables = new ArrayList<Throwable>();
 
     private ArrayList<Enemy> enemies = new ArrayList<Enemy>();
+
+    private StoreCollection backgrounds;
 
     private Player player;
 
@@ -55,7 +59,7 @@ public class GameModel {
         }
     }
 
-    public int getDifficulty(){
+    private int getDifficulty(){
         if (currentWave > 2){
             int tmp = (int)(2 * Math.pow(currentWave, 2) / 3);
             return tmp;
@@ -64,7 +68,7 @@ public class GameModel {
         }
     }
 
-    public int getNumberOfThrowables(){
+    private int getNumberOfThrowables(){
         int tmp = getDifficulty() + 2;
         return tmp;
     }
@@ -77,6 +81,22 @@ public class GameModel {
         for (int i = 0; i < getNumberOfThrowables(); i++){
             throwables.add(player.getEquippedThrowable());
         }
+    }
+
+    public void setPlayer(Player player){
+        this.player = player;
+    }
+
+    public Player getPlayer(){
+        return this.player;
+    }
+
+    public void setBackgrounds(StoreCollection backgrounds){
+        this.backgrounds = backgrounds;
+    }
+
+    public StoreCollection getBackgrounds(){
+        return this.backgrounds;
     }
 
     public State getState(){

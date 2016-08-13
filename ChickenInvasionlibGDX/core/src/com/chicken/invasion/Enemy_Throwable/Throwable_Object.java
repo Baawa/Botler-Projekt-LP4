@@ -14,7 +14,7 @@ import com.chicken.invasion.Helpers.CollisionRect;
 /**
  * Created by Albin on 2016-08-06.
  */
-public class Throwable_Object implements Throwable{
+public class Throwable_Object implements Throwable, Cloneable{
     private float x;
     private float y;
 
@@ -44,7 +44,11 @@ public class Throwable_Object implements Throwable{
 
     private float orgHeight;
 
+    private String imageURL;
+
     public Throwable_Object(String imageURL, World world) {
+        this.imageURL = imageURL;
+
         this.sprite = new Sprite(new Texture(imageURL+".png"));
 
         this.sprite.setSize(this.sprite.getWidth() / this.scale, this.sprite.getHeight() / this.scale);
@@ -77,7 +81,6 @@ public class Throwable_Object implements Throwable{
 
         this.collRect.setCollisionRect(sprite.getBoundingRectangle());
     }
-
 
     public void decHP(float amount) {
         hp -= amount;
@@ -177,6 +180,20 @@ public class Throwable_Object implements Throwable{
 
     public float getSpeed(){
         return this.speed;
+    }
+
+    public Throwable_Object clone(){
+        Throwable_Object to = new Throwable_Object(this.imageURL, this.world);
+
+        to.setSpeed(this.getSpeed());
+
+        to.setDamage(this.getDamage());
+
+        to.scale = this.scale;
+
+        to.sprite.setPosition(this.getX(),this.getY());
+
+        return to;
     }
 
 }
