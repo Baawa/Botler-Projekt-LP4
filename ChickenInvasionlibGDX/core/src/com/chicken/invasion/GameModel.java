@@ -31,6 +31,10 @@ public class GameModel {
 
     private StoreCollection backgrounds;
 
+    private EnemyCollection enemyCollection;
+
+    private ThrowableCollection throwableCollection;
+
     private Background_Object currentBackground;
 
     private Player player;
@@ -76,6 +80,8 @@ public class GameModel {
         currentWave += 1;
 
         fillUpThrowables();
+
+        activeEnemies = enemyCollection.getRandomSetOfEnemies(this.getDifficulty());
 
         wave = new Wave();
     }
@@ -141,6 +147,18 @@ public class GameModel {
 
     public void setBackgrounds(StoreCollection backgrounds){
         this.backgrounds = backgrounds;
+    }
+
+    public void setEnemyCollection(EnemyCollection enemyCollection){
+        this.enemyCollection = enemyCollection;
+    }
+
+    public void setThrowableCollection(ThrowableCollection throwableCollection){
+        this.throwableCollection = throwableCollection;
+    }
+
+    public ThrowableCollection getThrowableCollection(){
+        return this.throwableCollection;
     }
 
     public StoreCollection getBackgrounds(){

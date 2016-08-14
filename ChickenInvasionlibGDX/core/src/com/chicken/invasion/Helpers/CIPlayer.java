@@ -23,12 +23,12 @@ public class CIPlayer implements Player {
     }
 
     @Override
-    public void setChickenWings(int chickenWings) {
+    public void setChickenLegs(int chickenWings) {
         this.chickenWings = chickenWings;
     }
 
     @Override
-    public int getChickenWings(int chickenWings) {
+    public int getChickenLegs() {
         return this.chickenWings;
     }
 

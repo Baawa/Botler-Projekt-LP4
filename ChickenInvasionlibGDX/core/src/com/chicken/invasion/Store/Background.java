@@ -5,4 +5,6 @@ package com.chicken.invasion.Store;
  */
 public interface Background {
     public Object getSprite();
+
+    public String getImageURL();
 }

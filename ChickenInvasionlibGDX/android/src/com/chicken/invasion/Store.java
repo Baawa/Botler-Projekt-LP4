@@ -28,7 +28,7 @@ public abstract class Store extends Activity implements ViewPager.OnPageChangeLi
     protected ViewPager viewPager;
     private StoreCardAdapter cardAdapter;
     protected List<? extends com.chicken.invasion.oldstuff.iItem> itemList;
-    protected static com.chicken.invasion.oldstuff.ChickenInvasion controller;
+    protected static GameViewController controller;
     private SharedPreferences prefs;
     private SharedPreferences.Editor edit;
     private ImageButton buyAndEquip;
@@ -148,7 +148,7 @@ public abstract class Store extends Activity implements ViewPager.OnPageChangeLi
     }
 
 
-    public static void setController(com.chicken.invasion.oldstuff.ChickenInvasion c){
+    public static void setController(GameViewController c){
         controller = c;
     }
 

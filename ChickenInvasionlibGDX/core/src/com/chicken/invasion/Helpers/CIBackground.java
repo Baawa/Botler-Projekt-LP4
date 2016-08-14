@@ -17,7 +17,11 @@ public class CIBackground extends Background_Object {
 
     private boolean purchased = false;
 
+    private String imageURL;
+
     public CIBackground(String ImageURL, String name, int price){
+        this.imageURL = imageURL;
+
         this.sprite = new Sprite(new Texture(ImageURL));
 
         this.name = name;
@@ -48,5 +52,10 @@ public class CIBackground extends Background_Object {
     @Override
     public int getPrice() {
         return this.price;
+    }
+
+    @Override
+    public String getImageURL(){
+        return this.imageURL;
     }
 }

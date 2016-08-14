@@ -9,6 +9,7 @@ import android.util.Log;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
+import com.chicken.invasion.CallBack.HighscoreCallback;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
@@ -18,7 +19,7 @@ import java.util.List;
 /**
  * Created by pedramshirmohammad on 16-05-16.
  */
-public class HighScore extends Activity implements com.chicken.invasion.oldstuff.ChickenInvasion.isHighScoreCallback{
+public class HighScore extends Activity implements HighscoreCallback {
 
     private static List<Score> topList;
 

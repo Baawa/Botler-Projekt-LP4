@@ -12,8 +12,9 @@ public class CIWeapon extends Throwable_Object implements StoreItem {
 
     private boolean purchased = false;
 
-    public CIWeapon(String imageURL, World world){
+    public CIWeapon(String name, String imageURL, World world){
         super(imageURL,world);
+        this.name = name;
     }
 
     @Override

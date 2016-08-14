@@ -18,7 +18,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.Align;
-import com.chicken.invasion.GameButton;
+import com.chicken.invasion.Helpers.GameButton;
 
 import java.util.ArrayList;
 import java.util.ListIterator;

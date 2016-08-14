@@ -7,23 +7,30 @@ import android.os.Bundle;
 
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
-import com.chicken.invasion.oldstuff.ChickenInvasion;
+import com.chicken.invasion.CallBack.GameCallback;
+import com.chicken.invasion.Enemy_Throwable.Throwable_Object;
+import com.chicken.invasion.GameViewController;
+import com.chicken.invasion.Helpers.CIBackground;
+import com.chicken.invasion.Helpers.CIBackgroundCollection;
+import com.chicken.invasion.Weapons.CIWeapon;
+import com.chicken.invasion.Weapons.WeaponCollection;
 import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 
-public class AndroidLauncher extends AndroidApplication implements ChickenInvasion.GameCallback {
+public class AndroidLauncher extends AndroidApplication implements GameCallback {
 
 	static SharedPreferences pref;
 	SharedPreferences.Editor edit;
 	int totScore;
 	private Intent intent;
 
-    private static ChickenInvasion controller;
+    private static GameViewController controller;
 	private static List<Score> topList;
 
 
@@ -44,15 +51,15 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 		topList= gson.fromJson(json, type);
 		//--END GET SAVED SCORES
 
-
-		controller = new ChickenInvasion();
+		
+		controller = new GameViewController();
         Store.setController(controller);
 		InputName.setController(controller);
 		controller.setMyGameCallback(this);
 
 
         HighScore highScore = new HighScore();
-        controller.setMyIsHighScoreCallback(highScore);
+        controller.setHighscoreCallback(highScore);
 		initialize(controller, config);
 	}
 
@@ -63,8 +70,8 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 
 
 	@Override
-	public com.chicken.invasion.oldstuff.Background getEquippedBackground(){
-			return controller.getBackgroundHolder().getThrowables().get(pref.getInt("BACKGROUND_EQUIPPED", 0));
+	public CIBackground getEquippedBackground(){
+		return new CIBackgroundCollection().getStoreItems().get(pref.getInt("BACKGROUND_EQUIPPED", 0));
 	}
 
     //CALLBACKS -------------------
@@ -83,11 +90,9 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
         startActivity(intent);
     }
 
-	public static com.chicken.invasion.oldstuff.Background getInom(){
-		return controller.getBackgroundHolder().getThrowables().get(pref.getInt("BACKGROUND_EQUIPPED", 0));
+	public static CIBackground getInom(){
+		return new CIBackgroundCollection().getStoreItems().get(pref.getInt("BACKGROUND_EQUIPPED", 0));
 	}
-
-
 
     @Override
 	public void saveScore(int score) {
@@ -109,8 +114,8 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 	}
 
 	@Override
-	public com.chicken.invasion.oldstuff.ThrowableObject getTO() {
-		return controller.getThrowableHolder().getThrowables().get(pref.getInt("THROWABLE_EQUIPPED", 0));
+	public CIWeapon getTO() {
+		return (CIWeapon)GameModel.getInstance().getThrowableCollection().getThrowables().get(pref.getInt("THROWABLE_EQUIPPED", 0));
 	}
 
 	@Override
@@ -123,13 +128,13 @@ public class AndroidLauncher extends AndroidApplication implements ChickenInvasi
 
 	@Override
 	public void getTOUpgrade(){
-		List<com.chicken.invasion.oldstuff.ThrowableObject> tempList = controller.getThrowableHolder().getThrowables();
-		for (com.chicken.invasion.oldstuff.ThrowableObject e : tempList){
+		ArrayList<CIWeapon> tempList = GameModel.getInstance().getThrowableCollection().getThrowables();
+		for (CIWeapon e : tempList){
 			String tempDamage = pref.getString(e.getName() + "_DAMAGE","");
 			String tempSpeed = pref.getString(e.getName() + "_SPEED","");
 			if(!tempDamage.equals("") && !tempSpeed.equals("")) {
-				e.setDamage(Double.parseDouble(tempDamage));
-				e.setSpeed(Double.parseDouble(tempSpeed));
+				e.setDamage(Float.parseFloat(tempDamage));
+				e.setSpeed(Float.parseFloat(tempSpeed));
 			}
 		}
 	}

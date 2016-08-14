@@ -25,6 +25,7 @@ import com.chicken.invasion.Enemy_Throwable.CIEnemy;
 import com.chicken.invasion.Helpers.CIBackground;
 import com.chicken.invasion.Helpers.CIBackgroundCollection;
 import com.chicken.invasion.Helpers.CICollisionRect;
+import com.chicken.invasion.Helpers.CIEnemyCollection;
 import com.chicken.invasion.Helpers.CIMusicPlayer;
 import com.chicken.invasion.Helpers.CIPlayer;
 import com.chicken.invasion.Weapons.CIWeapon;
@@ -60,6 +61,7 @@ public class GameViewController extends ApplicationAdapter implements GestureDet
         this.model.setPlayer(new CIPlayer());
         this.model.setBackgrounds(new CIBackgroundCollection());
         this.model.setBottomRect(new CICollisionRect(new Rectangle(0f, 0f, 25f, 0.1f)));
+        this.model.setEnemyCollection(new CIEnemyCollection());
 
         batch = new SpriteBatch();
 
@@ -561,7 +563,7 @@ public class GameViewController extends ApplicationAdapter implements GestureDet
 
     private HighscoreCallback highscoreCallback;
 
-    public void setMyHighScoreCallback(HighscoreCallback callback) { this.highscoreCallback = callback; }
+    public void setHighscoreCallback(HighscoreCallback callback) { this.highscoreCallback = callback; }
 
     public void createIntent(String className) {
         if (gameCallback != null) {
