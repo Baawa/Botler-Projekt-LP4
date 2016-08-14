@@ -5,11 +5,12 @@ import com.badlogic.gdx.audio.Music;
 import com.chicken.invasion.Enemy_Throwable.*;
 import com.chicken.invasion.Enemy_Throwable.Throwable;
 import com.chicken.invasion.Enemy_Throwable.Enemy;
+import com.chicken.invasion.Helpers.Background_Object;
 import com.chicken.invasion.Helpers.CIMusicPlayer;
 import com.chicken.invasion.Helpers.CollisionRect;
 import com.chicken.invasion.Helpers.MusicPlayer;
 import com.chicken.invasion.Helpers.Player;
-import com.chicken.invasion.Store.StoreCollection;
+import com.chicken.invasion.Store.*;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -25,7 +26,11 @@ public class GameModel {
 
     private ArrayList<Enemy> enemies = new ArrayList<Enemy>();
 
+    private ArrayList<Enemy> activeEnemies = new ArrayList<Enemy>();
+
     private StoreCollection backgrounds;
+
+    private Background_Object currentBackground;
 
     private Player player;
 
@@ -34,6 +39,8 @@ public class GameModel {
     private CollisionRect bottomRect;
 
     private boolean musicOn = true;
+
+    private boolean showSettings = false;
 
     //------------
     private static GameModel instance = null;
@@ -50,6 +57,16 @@ public class GameModel {
 
     public void startNewGame(){
         musicPlayer.playBgMusic("gamemusic/ChickenInvasion-BackgroundMusic.mp3");
+
+        restartWaves();
+
+        player.setScore(0);
+    }
+
+    public void restartGame(){
+        restartWaves();
+
+        player.setScore(0);
     }
 
     public void nextWave() {
@@ -68,6 +85,10 @@ public class GameModel {
         } else{
             return null;
         }
+    }
+
+    public ArrayList<Enemy> getActiveEnemies(){
+        return this.activeEnemies;
     }
 
     private int getDifficulty(){
@@ -108,6 +129,14 @@ public class GameModel {
 
     public StoreCollection getBackgrounds(){
         return this.backgrounds;
+    }
+
+    public void setCurrentBackground(Background_Object bg){
+        this.currentBackground = bg;
+    }
+
+    public Background_Object getCurrentBackground(){
+        return this.currentBackground;
     }
 
     public void setMusicPlayer(MusicPlayer musicPlayer){
@@ -164,14 +193,26 @@ public class GameModel {
         }
     }
 
-    public void muteMusic(){
-        musicOn = false;
-        musicPlayer.stopBgMusic();
+    public void toggleMusic(){
+        if (musicOn){
+            musicOn = false;
+            musicPlayer.stopBgMusic();
+        } else{
+            musicOn = true;
+            musicPlayer.playBgMusic("gamemusic/ChickenInvasion-BackgroundMusic.mp3");
+        }
     }
 
-    public void unmuteMusic(){
-        musicOn = true;
-        musicPlayer.playBgMusic("gamemusic/ChickenInvasion-BackgroundMusic.mp3");
+    public boolean isMusicOn(){
+        return musicOn;
+    }
+
+    public void toggleSettingsView(){
+        showSettings = !showSettings;
+    }
+
+    public boolean isShowSettings(){
+        return showSettings;
     }
 
     //State-------------------

@@ -12,7 +12,12 @@ public interface Enemy {
     float getX();
     float getY();
 
-    Object getImage();
+    float getWidth();
+    float getHeight();
+
+    Object getSprite();
+
+    void update(float dt);
 
     CollisionRect getCollisionRect();
 

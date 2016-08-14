@@ -135,7 +135,7 @@ public class Throwable_Object implements Throwable, Cloneable{
         return this.collided;
     }
 
-    public void ThrowToPoint(float x, float y) {
+    public void throwToPoint(float x, float y) {
         if (!thrown){
             int velocityX = (int)(speed * x * 1000);
             int velocityY = (int)(speed * y * 1000);

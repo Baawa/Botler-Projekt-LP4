@@ -24,7 +24,7 @@ public interface Throwable {
     void setCollided(Boolean collided);
     Boolean hasCollided();
 
-    void ThrowToPoint(float x, float y);
+    void throwToPoint(float x, float y);
 
     boolean isThrown();
 

@@ -8,7 +8,7 @@ import com.chicken.invasion.Store.StoreItem;
 /**
  * Created by Albin on 2016-08-13.
  */
-public class CIBackground implements Background, StoreItem {
+public class CIBackground extends Background_Object {
     private Sprite sprite;
 
     private int price;
