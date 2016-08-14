@@ -115,6 +115,17 @@ public class GameModel {
         }
     }
 
+    public void spawnEnemy(){
+        if (enemiesLeft()) {
+            activeEnemies.add(enemies.get(0));
+            enemies.remove(0);
+        }
+    }
+
+    public boolean enemiesLeft(){
+        return enemies.size() > 0;
+    }
+
     public void setPlayer(Player player){
         this.player = player;
     }
