@@ -10,6 +10,7 @@ import com.chicken.invasion.Helpers.CIMusicPlayer;
 import com.chicken.invasion.Helpers.CollisionRect;
 import com.chicken.invasion.Helpers.MusicPlayer;
 import com.chicken.invasion.Helpers.Player;
+import com.chicken.invasion.Helpers.Wave;
 import com.chicken.invasion.Store.*;
 
 import java.util.ArrayList;
@@ -42,6 +43,8 @@ public class GameModel {
 
     private boolean showSettings = false;
 
+    private Wave wave;
+
     //------------
     private static GameModel instance = null;
 
@@ -73,6 +76,8 @@ public class GameModel {
         currentWave += 1;
 
         fillUpThrowables();
+
+        wave = new Wave();
     }
 
     public void restartWaves() {
