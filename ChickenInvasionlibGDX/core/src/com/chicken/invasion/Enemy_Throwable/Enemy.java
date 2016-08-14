@@ -15,6 +15,9 @@ public interface Enemy {
     float getWidth();
     float getHeight();
 
+    void setSpeed(float speed);
+    float getSpeed();
+
     Object getSprite();
 
     void update(float dt);
