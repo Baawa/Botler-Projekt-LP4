@@ -5,4 +5,8 @@ package com.chicken.invasion.Helpers;
  */
 public interface MusicPlayer {
     public void playMusic(String filename);
+
+    public void playBgMusic(String filename);
+
+    public void stopBgMusic();
 }

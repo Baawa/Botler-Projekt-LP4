@@ -7,10 +7,8 @@ import com.chicken.invasion.Store.StoreItem;
 /**
  * Created by Albin on 2016-08-06.
  */
-public class Ball_Weapon extends Throwable_Object implements StoreItem{
+public class Ball_Weapon extends CIWeapon{
     private String name = "Gatsby's Beach Ball";
-
-    private boolean purchased = false;
 
     public Ball_Weapon(World world) {
         super("beachball200x200", world);
@@ -19,19 +17,5 @@ public class Ball_Weapon extends Throwable_Object implements StoreItem{
         this.setSpeed(1.2f);
     }
 
-    public String getName(){
-        return this.name;
-    }
 
-    public void setPurchased(boolean purchased){
-        this.purchased = purchased;
-    }
-
-    public boolean isPurchased(){
-        return this.purchased;
-    }
-
-    public int getPrice(){
-        return (int)(this.getDamage() * this.getSpeed() * 100);
-    }
 }

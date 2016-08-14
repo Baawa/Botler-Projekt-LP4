@@ -10,8 +10,8 @@ public interface Player {
     void setScore(int score);
     int getScore();
 
-    void setChickenWings(int chickenWings);
-    int getChickenWings(int chickenWings);
+    void setChickenLegs(int chickenLegs);
+    int getChickenLegs();
 
     void setEquippedThrowable(Throwable throwable);
     Throwable getEquippedThrowable(); // Remember to return a copied version of the Throwable!

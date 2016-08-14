@@ -4,11 +4,12 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
 import com.chicken.invasion.Enemy_Throwable.*;
 import com.chicken.invasion.Enemy_Throwable.Throwable;
+import com.chicken.invasion.Enemy_Throwable.Enemy;
 import com.chicken.invasion.Helpers.CIMusicPlayer;
+import com.chicken.invasion.Helpers.CollisionRect;
 import com.chicken.invasion.Helpers.MusicPlayer;
 import com.chicken.invasion.Helpers.Player;
 import com.chicken.invasion.Store.StoreCollection;
-import com.chicken.invasion.oldstuff.EnemyObject;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -18,12 +19,6 @@ import java.util.List;
  * Created by Albin on 2016-08-06.
  */
 public class GameModel {
-    public enum State{
-        PAUSED, RUNNING, STOPPED, GAMEOVER
-    }
-
-    private State state = State.STOPPED;
-
     private int currentWave = 0;
 
     private ArrayList<Throwable> throwables = new ArrayList<Throwable>();
@@ -35,6 +30,10 @@ public class GameModel {
     private Player player;
 
     private MusicPlayer musicPlayer;
+
+    private CollisionRect bottomRect;
+
+    private boolean musicOn = true;
 
     //------------
     private static GameModel instance = null;
@@ -48,6 +47,10 @@ public class GameModel {
         return instance;
     }
     //------------
+
+    public void startNewGame(){
+        musicPlayer.playBgMusic("gamemusic/ChickenInvasion-BackgroundMusic.mp3");
+    }
 
     public void nextWave() {
         currentWave += 1;
@@ -115,6 +118,14 @@ public class GameModel {
         return this.musicPlayer;
     }
 
+    public void setBottomRect(CollisionRect rect){
+        this.bottomRect = rect;
+    }
+
+    public CollisionRect getBottomRect(){
+        return this.bottomRect;
+    }
+
     public void checkCollisions(){
         for (Iterator<Enemy> iterEnemies = this.enemies.iterator(); iterEnemies.hasNext(); ){
             Enemy e = iterEnemies.next();
@@ -130,7 +141,7 @@ public class GameModel {
                     //Adjust enemy
                     if (this.getCurrentThrowable().getDamage() >= e.getHP()){
                         iterEnemies.remove();
-                        this.player.setScore(this.player.getScore()+e.getHP());
+                        this.player.setScore((int)(this.player.getScore()+e.getHP()));
                     } else{
                         e.pushBack();
                         e.decHP(this.getCurrentThrowable().getDamage());
@@ -146,12 +157,30 @@ public class GameModel {
             }
 
             //If the enemy has reached the player
-            if (e.getY() <= 0){
+            if (e.getCollisionRect().overlaps(bottomRect)){
                 this.gameOver();
                 //Do some other stuff
             }
         }
     }
+
+    public void muteMusic(){
+        musicOn = false;
+        musicPlayer.stopBgMusic();
+    }
+
+    public void unmuteMusic(){
+        musicOn = true;
+        musicPlayer.playBgMusic("gamemusic/ChickenInvasion-BackgroundMusic.mp3");
+    }
+
+    //State-------------------
+
+    public enum State{
+        PAUSED, RUNNING, STOPPED, GAMEOVER
+    }
+
+    private State state = State.STOPPED;
 
     public State getState(){
         return this.state;

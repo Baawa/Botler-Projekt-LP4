@@ -2,13 +2,15 @@ package com.chicken.invasion.Helpers;
 
 import com.badlogic.gdx.math.Rectangle;
 
-import org.w3c.dom.css.Rect;
-
 /**
  * Created by Albin on 2016-08-06.
  */
 public class CICollisionRect implements CollisionRect{
     private Rectangle rect;
+
+    public CICollisionRect(Rectangle rect){
+        this.rect = rect;
+    }
 
     public void setCollisionRect(Rectangle rect){
         this.rect = rect;
