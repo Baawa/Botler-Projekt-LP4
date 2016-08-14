@@ -20,12 +20,6 @@ import java.util.List;
  */
 public class HighScore extends Activity implements com.chicken.invasion.oldstuff.ChickenInvasion.isHighScoreCallback{
 
-    private ListView highscoreList;
-    private HighScoreAdapter scoreAdapter;
-    private SharedPreferences prefs;
-    private  SharedPreferences.Editor edit;
-    private RelativeLayout highScoreLayout;
-    private Intent intent;
     private static List<Score> topList;
 
 
@@ -33,26 +27,25 @@ public class HighScore extends Activity implements com.chicken.invasion.oldstuff
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.highscore_view);
-        highscoreList = (ListView)findViewById(R.id.highscoreList);
-        prefs = this.getSharedPreferences("myPrefsKey", Context.MODE_PRIVATE);
-        edit = prefs.edit();
-        highScoreLayout = (RelativeLayout)findViewById(R.id.highscore_layout);
+        ListView highscoreList = (ListView)findViewById(R.id.highscoreList);
+        SharedPreferences prefs = this.getSharedPreferences("myPrefsKey", Context.MODE_PRIVATE);
+        SharedPreferences.Editor edit = prefs.edit();
+        RelativeLayout highScoreLayout = (RelativeLayout)findViewById(R.id.highscore_layout);
 
         //SET BACKGROUND
-        intent = getIntent();
+        Intent intent = getIntent();
         String backgroundSource =  intent.getStringExtra("USED_BACKGROUND");
         int id = getResources().getIdentifier(backgroundSource, "drawable", getPackageName());
         highScoreLayout.setBackgroundResource(id);
         //--END SET BACKGROUND
 
-        if(topList== null){
+        if(topList == null){
             if(AndroidLauncher.getPrevHighScore() != null ){
-                Log.e("ANVANDS","NU");
                 topList = AndroidLauncher.getPrevHighScore();
             }
         }
         if(topList != null){
-            scoreAdapter = new HighScoreAdapter(this,R.layout.highscore_content,topList);
+            HighScoreAdapter scoreAdapter = new HighScoreAdapter(this,R.layout.highscore_content,topList);
             highscoreList.setAdapter(scoreAdapter);
         }
 
