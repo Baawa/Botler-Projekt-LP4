@@ -2,12 +2,12 @@ package com.chicken.invasion.Weapons;
 
 import com.badlogic.gdx.physics.box2d.World;
 import com.chicken.invasion.Enemy_Throwable.Throwable_Object;
-import com.chicken.invasion.Store.StoreItem;
+import com.chicken.invasion.CIStore.Storeitem;
 
 /**
  * Created by Albin on 2016-08-14.
  */
-public class CIWeapon extends Throwable_Object implements StoreItem {
+public class CIWeapon extends Throwable_Object implements Storeitem {
     private String name;
 
     private boolean purchased = false;

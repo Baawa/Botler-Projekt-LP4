@@ -2,8 +2,6 @@ package com.chicken.invasion.Helpers;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.chicken.invasion.Store.Background;
-import com.chicken.invasion.Store.StoreItem;
 
 /**
  * Created by Albin on 2016-08-13.

@@ -3,6 +3,7 @@ package com.chicken.invasion;
 import android.content.Context;
 import android.content.res.Resources;
 
+import android.support.v4.view.PagerAdapter;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,28 +12,32 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.chicken.invasion.CIStore.Storeitem;
+import com.chicken.invasion.Helpers.Background_Object;
+import com.chicken.invasion.Helpers.CIBackground;
+
 import java.util.List;
 
 /**
  * Created by pedramshirmohammad on 16-05-23.
  */
-public class BuyBackgroundAdapter {
+public class BuyBackgroundAdapter extends PagerAdapter {
 
-    /*private Context ctx;
-    private List<com.chicken.invasion.oldstuff.Background> mBackgrounds;
-    private com.chicken.invasion.oldstuff.ChickenInvasion controller;
+    private Context ctx;
+    private List<Background_Object> mBackgrounds;
+    private GameViewController controller;
 
-    public BuyBackgroundAdapter(Context ctx, com.chicken.invasion.oldstuff.ChickenInvasion controller){
+    public BuyBackgroundAdapter(Context ctx, GameViewController controller){
         this.ctx = ctx;
         this.controller = controller;
-        mBackgrounds = controller.getBackgroundHolder().getThrowables();
+        mBackgrounds = GameModel.getInstance().getBackgrounds().getStoreItems();
     }
 
     @Override
     public Object instantiateItem(ViewGroup container, final int position) {
 
 
-        com.chicken.invasion.oldstuff.Background currBackground = mBackgrounds.get(position);
+        CIBackground currBackground = (CIBackground)mBackgrounds.get(position);
         LayoutInflater layoutInflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         // card_view.xml LAYOUT
@@ -42,9 +47,9 @@ public class BuyBackgroundAdapter {
         //IMAGE
         ImageView BackgroundImg = (ImageView) item_view.findViewById(R.id.Background_Img);
         Resources res = ctx.getResources();
-        Log.e("BACC",currBackground.getImageURL());
-        int resID = res.getIdentifier(currBackground.getImageURL() , "drawable", ctx.getPackageName());
-        BackgroundImg.setImageDrawable(res.getDrawable(resID));
+        //Log.e("BACC",currBackground.getImageURL());
+        //int resID = res.getIdentifier(currBackground.getImageURL() , "drawable", ctx.getPackageName());
+        //BackgroundImg.setImageDrawable(res.getDrawable(resID));
 
         TextView name = (TextView) item_view.findViewById(R.id.background_name);
         name.setText(currBackground.getName());
@@ -74,5 +79,5 @@ public class BuyBackgroundAdapter {
     @Override
     public boolean isViewFromObject(View view, Object object) {
         return view == object;
-    }*/
+    }
 }

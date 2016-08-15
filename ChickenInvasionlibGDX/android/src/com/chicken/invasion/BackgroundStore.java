@@ -9,16 +9,16 @@ import android.widget.ImageButton;
 /**
  * Created by pedramshirmohammad on 16-05-25.
  */
-public class BackgroundStore {
+public class BackgroundStore extends Store implements iStore {
 
 
-    /*private BuyBackgroundAdapter adapter;
+    private BuyBackgroundAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        intent.setClass(this,WeaponStore.class);
-        itemList = controller.getBackgroundHolder().getThrowables();
+        intent.setClass(this, WeaponStore.class);
+        itemList = GameModel.getInstance().getBackgrounds().getStoreItems();
         adapter = new BuyBackgroundAdapter(this,controller);
         getSavedAvailability(itemList);
         viewPager.setAdapter(adapter);
@@ -42,6 +42,6 @@ public class BackgroundStore {
     @Override
     public void initUpgradeButton() {
         storeLayout.removeView(upgrade);
-    }*/
+    }
 
 }

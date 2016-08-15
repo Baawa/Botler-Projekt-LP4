@@ -1,10 +1,8 @@
 package com.chicken.invasion.Helpers;
 
-import com.chicken.invasion.Store.StoreCollection;
-import com.chicken.invasion.Store.StoreItem;
+import com.chicken.invasion.CIStore.StoreCollection;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Albin on 2016-08-13.

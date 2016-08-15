@@ -53,8 +53,8 @@ public class AndroidLauncher extends AndroidApplication implements GameCallback 
 
 
 		controller = new GameViewController();
-        //Store.setController(controller);
-		//InputName.setController(controller);
+        Store.setController(controller);
+		InputName.setController(controller);
 		controller.setMyGameCallback(this);
 
 

@@ -35,9 +35,9 @@ public class HighScore extends Activity implements HighscoreCallback {
 
         //SET BACKGROUND
         Intent intent = getIntent();
-        String backgroundSource =  intent.getStringExtra("USED_BACKGROUND");
-        int id = getResources().getIdentifier(backgroundSource, "drawable", getPackageName());
-        highScoreLayout.setBackgroundResource(id);
+        //String backgroundSource =  intent.getStringExtra("USED_BACKGROUND");
+        //int id = getResources().getIdentifier(backgroundSource, "drawable", getPackageName());
+        //highScoreLayout.setBackgroundResource(id);
         //--END SET BACKGROUND
 
         if(topList == null){

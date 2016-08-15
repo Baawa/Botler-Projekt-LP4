@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 
 
+import android.support.v4.view.ViewPager;
 import android.widget.ImageButton;
 
 
@@ -18,6 +19,7 @@ import android.widget.Toast;
 
 import com.chicken.invasion.Helpers.CIBackground;
 import com.chicken.invasion.Weapons.CIWeapon;
+import com.chicken.invasion.CIStore.Storeitem;
 
 
 import java.util.List;
@@ -25,11 +27,11 @@ import java.util.List;
 /**
  * Created by pedramshirmohammad on 16-04-26.
  */
-public abstract class Store extends Activity implements View.OnClickListener{
+public abstract class Store extends Activity implements View.OnClickListener, ViewPager.OnPageChangeListener{
 
-    /*protected ViewPager viewPager;
+    protected ViewPager viewPager;
     private StoreCardAdapter cardAdapter;
-    protected List<? extends StoreItem> itemList;
+    protected List<? extends Storeitem> itemList;
     protected static GameViewController controller;
     private SharedPreferences prefs;
     private SharedPreferences.Editor edit;
@@ -77,8 +79,8 @@ public abstract class Store extends Activity implements View.OnClickListener{
         intent = getIntent();
         backgroundSource = AndroidLauncher.getInom().getImageURL();
         //backgroundSource = intent.getStringExtra("USED_BACKGROUND");
-        int id = getResources().getIdentifier(backgroundSource, "drawable", getPackageName());
-        storeLayout.setBackgroundResource(id);
+        //int id = getResources().getIdentifier(backgroundSource, "drawable", getPackageName());
+        //storeLayout.setBackgroundResource(id);
     }
 
     @Override
@@ -89,7 +91,7 @@ public abstract class Store extends Activity implements View.OnClickListener{
     @Override
     public void onPageSelected(int position) {
 
-        StoreItem to = itemList.get(position);
+        Storeitem to = itemList.get(position);
         if (to.isPurchased()){
             buyAndEquip.setImageDrawable(getResources().getDrawable(R.drawable.equipicon200x200,null));
         } else {
@@ -103,7 +105,7 @@ public abstract class Store extends Activity implements View.OnClickListener{
     }
 
 
-    public <T extends StoreItem> void getSavedAvailability(List<T> itemList){
+    public <T extends Storeitem> void getSavedAvailability(List<T> itemList){
         for (int i=0;i<itemList.size();i++){
             boolean temp = prefs.getBoolean(itemList.get(i).getName(),false);
             itemList.get(i).setPurchased(temp);
@@ -111,9 +113,9 @@ public abstract class Store extends Activity implements View.OnClickListener{
         itemList.get(0).setPurchased(true);
     }
 
-    protected <T extends StoreItem> void initBuyAndEquip(List<T> itemList){
+    protected <T extends Storeitem> void initBuyAndEquip(List<T> itemList){
         buyAndEquip = (ImageButton) findViewById(R.id.buyAndEquipBtn);
-        StoreItem to = itemList.get(viewPager.getCurrentItem());
+        Storeitem to = itemList.get(viewPager.getCurrentItem());
         if (to.isPurchased()){
             buyAndEquip.setImageDrawable(getResources().getDrawable(R.drawable.equipicon200x200,null));
         }
@@ -142,8 +144,8 @@ public abstract class Store extends Activity implements View.OnClickListener{
         }
     }
 
-    public <T extends StoreItem> void saveTO(List<T> list){
-        for (StoreItem e: list){
+    public <T extends Storeitem> void saveTO(List<T> list){
+        for (Storeitem e: list){
             edit.putBoolean(e.getName(), e.isPurchased());
             edit.commit();
         }
@@ -162,7 +164,7 @@ public abstract class Store extends Activity implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
-        StoreItem to = itemList.get(viewPager.getCurrentItem());
+        Storeitem to = itemList.get(viewPager.getCurrentItem());
         switch (v.getId()) {
             case R.id.buyAndEquipBtn:
 
@@ -237,5 +239,5 @@ public abstract class Store extends Activity implements View.OnClickListener{
             default:
                 break;
         }
-    }*/
+    }
 }

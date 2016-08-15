@@ -1,13 +1,8 @@
 package com.chicken.invasion.Weapons;
 
 import com.badlogic.gdx.physics.box2d.World;
-import com.chicken.invasion.Enemy_Throwable.*;
-import com.chicken.invasion.Enemy_Throwable.Throwable;
-import com.chicken.invasion.Store.StoreCollection;
-import com.chicken.invasion.Store.StoreItem;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Albin on 2016-08-06.

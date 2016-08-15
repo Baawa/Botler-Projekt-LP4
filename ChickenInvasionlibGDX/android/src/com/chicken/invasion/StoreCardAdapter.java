@@ -2,6 +2,7 @@ package com.chicken.invasion;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,10 +18,10 @@ import java.util.List;
 /**
  * Created by pedramshirmohammad on 16-04-26.
  */
-public class StoreCardAdapter  {
+public class StoreCardAdapter extends PagerAdapter{
 
 
-    /*private Context ctx;
+    private Context ctx;
     public List<CIWeapon> mWeapons;
     private GameViewController controller;
 
@@ -80,6 +81,6 @@ public class StoreCardAdapter  {
     @Override
     public boolean isViewFromObject(View view, Object object) {
         return (view == object);
-    }*/
+    }
 
 }

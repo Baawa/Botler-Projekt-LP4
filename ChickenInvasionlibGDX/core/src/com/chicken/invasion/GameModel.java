@@ -1,22 +1,17 @@
 package com.chicken.invasion;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.audio.Music;
 import com.chicken.invasion.Enemy_Throwable.*;
 import com.chicken.invasion.Enemy_Throwable.Throwable;
 import com.chicken.invasion.Enemy_Throwable.Enemy;
 import com.chicken.invasion.Helpers.Background_Object;
-import com.chicken.invasion.Helpers.CIMusicPlayer;
 import com.chicken.invasion.Helpers.CollisionRect;
 import com.chicken.invasion.Helpers.MusicPlayer;
 import com.chicken.invasion.Helpers.Player;
 import com.chicken.invasion.Helpers.Wave;
-import com.chicken.invasion.Store.*;
 import com.chicken.invasion.Weapons.CIWeaponCollection;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 /**
  * Created by Albin on 2016-08-06.
@@ -30,7 +25,7 @@ public class GameModel {
 
     private ArrayList<Enemy> activeEnemies = new ArrayList<Enemy>();
 
-    private StoreCollection backgrounds;
+    private com.chicken.invasion.CIStore.StoreCollection backgrounds;
 
     private EnemyCollection enemyCollection;
 
@@ -147,7 +142,7 @@ public class GameModel {
         return this.player;
     }
 
-    public void setBackgrounds(StoreCollection backgrounds){
+    public void setBackgrounds(com.chicken.invasion.CIStore.StoreCollection backgrounds){
         this.backgrounds = backgrounds;
     }
 
@@ -163,7 +158,7 @@ public class GameModel {
         return this.throwableCollection;
     }
 
-    public StoreCollection getBackgrounds(){
+    public com.chicken.invasion.CIStore.StoreCollection getBackgrounds(){
         return this.backgrounds;
     }
 
