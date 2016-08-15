@@ -13,11 +13,11 @@ public class CIBackgroundCollection implements StoreCollection {
     private ArrayList<CIBackground> backgrounds = new ArrayList<CIBackground>();
 
     public CIBackgroundCollection(){
-        CIBackground desert = new CIBackground("desertbackground500x900", "Desert", 150);
+        CIBackground desert = new CIBackground("desertbackground500x900.png", "Desert", 150);
         desert.setPurchased(true);
         backgrounds.add(desert);
 
-        CIBackground farm = new CIBackground("farmvillebackground", "Old Donald's Farm", 500);
+        CIBackground farm = new CIBackground("farmvillebackground.png", "Old Donald's Farm", 500);
         backgrounds.add(farm);
     }
 

@@ -42,6 +42,8 @@ public class GameModel {
 
     private MusicPlayer musicPlayer;
 
+    private CollisionRect topRect;
+
     private CollisionRect bottomRect;
 
     private boolean musicOn = true;
@@ -67,14 +69,13 @@ public class GameModel {
         musicPlayer.playBgMusic("gamemusic/ChickenInvasion-BackgroundMusic.mp3");
 
         restartWaves();
+        nextWave();
 
         player.setScore(0);
     }
 
     public void restartGame(){
-        restartWaves();
-
-        player.setScore(0);
+        startNewGame();
     }
 
     public void nextWave() {
@@ -88,7 +89,7 @@ public class GameModel {
     }
 
     public void restartWaves() {
-        currentWave = 1;
+        currentWave = 0;
     }
 
     public Throwable getCurrentThrowable(){
@@ -182,6 +183,12 @@ public class GameModel {
         return this.musicPlayer;
     }
 
+    public void setTopRect(CollisionRect rect) {this.topRect = rect;}
+
+    public CollisionRect getTopRect(){
+        return this.topRect;
+    }
+
     public void setBottomRect(CollisionRect rect){
         this.bottomRect = rect;
     }
@@ -191,10 +198,11 @@ public class GameModel {
     }
 
     public void checkCollisions(){
-        for (Iterator<Enemy> iterEnemies = this.enemies.iterator(); iterEnemies.hasNext(); ){
+        for (Iterator<Enemy> iterEnemies = this.activeEnemies.iterator(); iterEnemies.hasNext(); ){
             Enemy e = iterEnemies.next();
             if (this.throwables.size() != 0){
                 if (this.throwables.get(0).getCollisionRect().overlaps(e.getCollisionRect()) && this.getCurrentThrowable().isThrown()) {
+
                     //Adjust throwable
                     if (this.getCurrentThrowable().getDamage() <= 1){
                         this.getCurrentThrowable().setCollided(true);
@@ -211,9 +219,14 @@ public class GameModel {
                         e.decHP(this.getCurrentThrowable().getDamage());
                     }
 
+                    if (this.getCurrentThrowable().hasCollided()){
+                        this.getCurrentThrowable().dispose();
+                        this.throwables.remove(0);
+                    }
+
                     this.musicPlayer.playMusic("gamemusic/ChickenSound.mp3");
 
-                    if (this.enemies.size() == 0 && this.getDifficulty() == 0){
+                    if (this.activeEnemies.size() == 0){
                         this.nextWave();
                     }
 
@@ -225,6 +238,11 @@ public class GameModel {
                 this.gameOver();
                 //Do some other stuff
             }
+        }
+
+        if (this.getCurrentThrowable().hasCollided()){
+            this.getCurrentThrowable().dispose();
+            this.throwables.remove(0);
         }
     }
 

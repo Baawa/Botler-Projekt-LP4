@@ -39,4 +39,6 @@ public interface Throwable {
     void removeFromWorld();
 
     void removeSprite();
+
+    void dispose();
 }

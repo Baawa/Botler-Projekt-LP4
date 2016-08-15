@@ -39,6 +39,8 @@ public class CIEnemy implements Enemy, Cloneable {
     }
 
     public CIEnemy(String image, float health, boolean pushable){
+        this.imageURL = image;
+
         walkSheet = new Texture(image);
         TextureRegion[][] tmp = TextureRegion.split(this.walkSheet, this.walkSheet.getWidth()/FRAME_COLS, this.walkSheet.getHeight()/FRAME_ROWS);
         TextureRegion[] walkFrames = new TextureRegion[FRAME_COLS * FRAME_ROWS];
@@ -63,7 +65,7 @@ public class CIEnemy implements Enemy, Cloneable {
         width = 2.0f;
         height = 2.0f;
 
-        collisionRect = new CICollisionRect(new Rectangle(x,y,width,height));
+        this.collisionRect = new CICollisionRect(new Rectangle(x,y,width,height));
     }
 
 
@@ -152,5 +154,10 @@ public class CIEnemy implements Enemy, Cloneable {
         e.setSpeed(this.getSpeed());
 
         return e;
+    }
+
+    @Override
+    public void dispose(){
+        this.walkSheet.dispose();
     }
 }

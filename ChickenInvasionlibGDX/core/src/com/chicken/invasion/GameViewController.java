@@ -22,6 +22,7 @@ import com.badlogic.gdx.utils.Align;
 import com.chicken.invasion.CallBack.GameCallback;
 import com.chicken.invasion.CallBack.HighscoreCallback;
 import com.chicken.invasion.Enemy_Throwable.CIEnemy;
+import com.chicken.invasion.Enemy_Throwable.Throwable_Object;
 import com.chicken.invasion.Helpers.CIBackground;
 import com.chicken.invasion.Helpers.CIBackgroundCollection;
 import com.chicken.invasion.Helpers.CICollisionRect;
@@ -61,11 +62,13 @@ public class GameViewController extends ApplicationAdapter implements GestureDet
         this.world = new World(new Vector2(0, 0), true);
 
         this.model = GameModel.getInstance();
-        this.model.setPlayer(new CIPlayer());
+        this.model.setMusicPlayer(new CIMusicPlayer());
         this.model.setBackgrounds(new CIBackgroundCollection());
+        this.model.setTopRect(new CICollisionRect(new Rectangle(0, Gdx.graphics.getHeight()/100, 3*Gdx.graphics.getWidth()/100, 0.1f)));
         this.model.setBottomRect(new CICollisionRect(new Rectangle(0f, 0f, 25f, 0.1f)));
         this.model.setEnemyCollection(new CIEnemyCollection());
         this.model.setThrowableCollection(new WeaponCollection(this.world));
+        this.model.setPlayer(new CIPlayer((Throwable_Object)this.model.getThrowableCollection().getThrowables().get(0)));
 
         batch = new SpriteBatch();
 
@@ -93,8 +96,13 @@ public class GameViewController extends ApplicationAdapter implements GestureDet
         gameCallback.getTOUpgrade();
 
         if (this.model.getPlayer().getEquippedThrowable() == null){
-            CIWeapon temp_weapon = gameCallback.getTO();
-            this.model.getPlayer().setEquippedThrowable(temp_weapon);
+            if (gameCallback.getTO() != null){
+                CIWeapon temp_weapon = gameCallback.getTO();
+                this.model.getPlayer().setEquippedThrowable(temp_weapon);
+            } else{
+                this.model.getPlayer().setEquippedThrowable(this.model.getThrowableCollection().getThrowables().get(0));
+            }
+
         }
     }
 
@@ -118,6 +126,7 @@ public class GameViewController extends ApplicationAdapter implements GestureDet
                 batch.end();
 
                 world.step(1 / 60f, 6, 2);
+
                 break;
 
             case PAUSED:
@@ -223,7 +232,8 @@ public class GameViewController extends ApplicationAdapter implements GestureDet
         if (model.getCurrentThrowable().getSprite().getClass() == Sprite.class){
             Sprite tmp = (Sprite) model.getCurrentThrowable().getSprite();
 
-            batch.draw(tmp.getTexture(), model.getCurrentThrowable().getX(), model.getCurrentThrowable().getY());
+            tmp.draw(batch);
+            //batch.draw(tmp.getTexture(), model.getCurrentThrowable().getX(), model.getCurrentThrowable().getY());
         }
 
         drawFonts();
@@ -524,7 +534,7 @@ public class GameViewController extends ApplicationAdapter implements GestureDet
     }
 
     public void startGame(){
-        if (model.getState() == GameModel.State.PAUSED || model.getState() == GameModel.State.STOPPED || model.getState() == GameModel.State.GAMEOVER){
+        if (model.getState() != GameModel.State.RUNNING){
             if (model.getState() == GameModel.State.GAMEOVER || model.getState() == GameModel.State.STOPPED){
                 model.startNewGame();
             }

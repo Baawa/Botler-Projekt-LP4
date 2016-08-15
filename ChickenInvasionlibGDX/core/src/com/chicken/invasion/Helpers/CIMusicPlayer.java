@@ -19,7 +19,9 @@ public class CIMusicPlayer implements MusicPlayer {
 
     @Override
     public void playBgMusic(String filename) {
-        stopBgMusic();
+        if (bgMusic != null) {
+            stopBgMusic();
+        }
 
         bgMusic = Gdx.audio.newMusic(Gdx.files.internal(filename));
         bgMusic.setLooping(true);

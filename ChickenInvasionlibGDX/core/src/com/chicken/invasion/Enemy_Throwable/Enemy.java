@@ -25,4 +25,6 @@ public interface Enemy {
     CollisionRect getCollisionRect();
 
     void pushBack();
+
+    void dispose();
 }

@@ -3,6 +3,7 @@ package com.chicken.invasion.Enemy_Throwable;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.CircleShape;
@@ -59,8 +60,9 @@ public class Throwable_Object implements Throwable, Cloneable{
         this.world = world;
 
         BodyDef bodyDef = new BodyDef();
-        bodyDef.type = BodyDef.BodyType.DynamicBody;
-        bodyDef.position.set(x,y);
+        //bodyDef.type = BodyDef.BodyType.DynamicBody;
+        bodyDef.type = BodyDef.BodyType.KinematicBody;
+        bodyDef.position.set(Gdx.graphics.getWidth()/(2*this.scale),0);
 
         body = world.createBody(bodyDef);
 
@@ -79,7 +81,7 @@ public class Throwable_Object implements Throwable, Cloneable{
 
         body.setUserData(this.sprite);
 
-        this.collRect.setCollisionRect(sprite.getBoundingRectangle());
+        this.collRect = new CICollisionRect(sprite.getBoundingRectangle());
     }
 
     public void decHP(float amount) {
@@ -89,7 +91,6 @@ public class Throwable_Object implements Throwable, Cloneable{
     public float getHP() {
         return hp;
     }
-
 
     public void setX(float x) {
         this.x = x;
@@ -141,21 +142,25 @@ public class Throwable_Object implements Throwable, Cloneable{
 
     public void throwToPoint(float x, float y) {
         if (!thrown){
-            int velocityX = (int)(speed * x * 1000);
-            int velocityY = (int)(speed * y * 1000);
+            int velocityX = (int)(speed * x * 10);
+            int velocityY = (int)(speed * y * 10);
 
-            body.applyForceToCenter(velocityX, velocityY, true);
+            body.setLinearVelocity(velocityX,velocityY);
+
+            //body.applyForceToCenter(velocityX, velocityY, true);
 
             thrown = true;
         }
     }
 
     public boolean isThrown(){
-        return this.isThrown();
+        return this.thrown;
     }
 
     public void updatePosition() {
         this.sprite.setPosition(this.body.getPosition().x, this.body.getPosition().y);
+        this.x = this.sprite.getX();
+        this.y = this.sprite.getY();
 
         if (thrown){
             this.sprite.rotate(this.rotation);
@@ -167,6 +172,11 @@ public class Throwable_Object implements Throwable, Cloneable{
             this.sprite.setSize(this.orgWidth * scale, this.orgHeight * scale);
 
             this.collRect.setCollisionRect(this.sprite.getBoundingRectangle());
+
+        }
+
+        if(this.body.getPosition().y > Gdx.graphics.getHeight()/100 || this.body.getPosition().x < 0 || this.body.getPosition().x > Gdx.graphics.getWidth()/100){
+            collided = true;
         }
     }
 
@@ -202,6 +212,13 @@ public class Throwable_Object implements Throwable, Cloneable{
         to.sprite.setPosition(this.getX(),this.getY());
 
         return to;
+    }
+
+    public void dispose(){
+        this.sprite.getTexture().dispose();
+        removeFromWorld();
+        thrown = false;
+        sprite = null;
     }
 
 }

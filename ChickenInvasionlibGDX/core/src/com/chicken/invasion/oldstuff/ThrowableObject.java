@@ -183,7 +183,7 @@ public class ThrowableObject implements iItem {
 
         this.sprite.draw(batch);
 
-        if(this.body.getPosition().y > Gdx.graphics.getHeight()/100 || this.body.getPosition().x < 0 || this.body.getPosition().x > Gdx.graphics.getWidth()/100 || collided){
+        if(this.body.getPosition().y < 0.3|| this.body.getPosition().y > Gdx.graphics.getHeight()/100 || this.body.getPosition().x < 0 || this.body.getPosition().x > Gdx.graphics.getWidth()/100 || collided){
             thrown = false;
             this.world.destroyBody(this.body);
             playerObject.removeTO();
