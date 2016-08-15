@@ -2,7 +2,7 @@ package com.chicken.invasion;
 
 import android.content.Context;
 import android.content.res.Resources;
-import android.support.v4.view.PagerAdapter;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,9 +16,9 @@ import java.util.List;
 /**
  * Created by pedramshirmohammad on 16-05-23.
  */
-public class BuyBackgroundAdapter extends PagerAdapter {
+public class BuyBackgroundAdapter {
 
-    private Context ctx;
+    /*private Context ctx;
     private List<com.chicken.invasion.oldstuff.Background> mBackgrounds;
     private com.chicken.invasion.oldstuff.ChickenInvasion controller;
 
@@ -74,5 +74,5 @@ public class BuyBackgroundAdapter extends PagerAdapter {
     @Override
     public boolean isViewFromObject(View view, Object object) {
         return view == object;
-    }
+    }*/
 }

@@ -9,10 +9,10 @@ import android.widget.ImageButton;
 /**
  * Created by pedramshirmohammad on 16-05-25.
  */
-public class BackgroundStore extends Store implements iStore{
+public class BackgroundStore {
 
 
-    private BuyBackgroundAdapter adapter;
+    /*private BuyBackgroundAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +42,6 @@ public class BackgroundStore extends Store implements iStore{
     @Override
     public void initUpgradeButton() {
         storeLayout.removeView(upgrade);
-    }
+    }*/
 
 }

@@ -2,7 +2,6 @@ package com.chicken.invasion;
 
 import android.app.Application;
 import android.content.Context;
-import android.support.v4.view.ViewPager;
 import android.view.View;
 
 /**
@@ -10,7 +9,7 @@ import android.view.View;
  */
 public class AbstractStore extends Application {
 
-    @Override
+   /* @Override
     public void onCreate() {
         super.onCreate();
 
@@ -27,5 +26,5 @@ public class AbstractStore extends Application {
         GameViewController controller = new GameViewController();
         StoreCardAdapter ilo = new StoreCardAdapter(ctx,controller);
         viewPager.setAdapter(ilo);
-    }
+    }*/
 }

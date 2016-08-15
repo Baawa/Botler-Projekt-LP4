@@ -37,8 +37,8 @@ public class AndroidLauncher extends AndroidApplication implements GameCallback 
 	@Override
 	protected void onCreate (Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		FacebookSdk.sdkInitialize(getApplicationContext());
-		AppEventsLogger.activateApp(this);
+		/*FacebookSdk.sdkInitialize(getApplicationContext());
+		AppEventsLogger.activateApp(this);*/
 		AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
 		pref = this.getSharedPreferences("myPrefsKey", Context.MODE_PRIVATE);
 		edit = pref.edit();
@@ -53,8 +53,8 @@ public class AndroidLauncher extends AndroidApplication implements GameCallback 
 
 
 		controller = new GameViewController();
-        Store.setController(controller);
-		InputName.setController(controller);
+        //Store.setController(controller);
+		//InputName.setController(controller);
 		controller.setMyGameCallback(this);
 
 

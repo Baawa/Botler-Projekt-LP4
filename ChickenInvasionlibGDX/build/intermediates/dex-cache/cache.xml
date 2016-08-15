@@ -1,12 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" >
-
-    <item
-        jar="/Users/pedramshirmohammad/Downloads/Captain.America.Civil.WAR.2016.1080p.HD.TC.AC3.x264-ETRG/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/core/build/libs/core-1.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="bbe81ec5a5fd001c4d99a6693aeee93154ae4a20">
-        <dex dex="/Users/pedramshirmohammad/Downloads/Captain.America.Civil.WAR.2016.1080p.HD.TC.AC3.x264-ETRG/Chicken-Invasion-Projekt-LP4/ChickenInvasionlibGDX/android/build/intermediates/pre-dexed/debug/core-1.0_75374919cbbe416c3b154d7ae7b794f5d1169cea.jar" />
-    </item>
-
-</items>
+<items version="2" />

@@ -12,8 +12,8 @@ import java.util.List;
 /**
  * Created by pedramshirmohammad on 16-05-26.
  */
-public class WeaponStore extends Store implements iStore {
-    private StoreCardAdapter adapter;
+public class WeaponStore  {
+    /*private StoreCardAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,5 +45,5 @@ public class WeaponStore extends Store implements iStore {
     public void initUpgradeButton() {
         upgrade.setOnClickListener(this);
     }
-
+*/
 }

@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
+
 
 import android.widget.ImageButton;
 
@@ -18,16 +18,16 @@ import android.widget.Toast;
 
 import com.chicken.invasion.Helpers.CIBackground;
 import com.chicken.invasion.Weapons.CIWeapon;
-import com.chicken.invasion.Store.StoreItem;
+
 
 import java.util.List;
 
 /**
  * Created by pedramshirmohammad on 16-04-26.
  */
-public abstract class Store extends Activity implements ViewPager.OnPageChangeListener, View.OnClickListener{
+public abstract class Store extends Activity implements View.OnClickListener{
 
-    protected ViewPager viewPager;
+    /*protected ViewPager viewPager;
     private StoreCardAdapter cardAdapter;
     protected List<? extends StoreItem> itemList;
     protected static GameViewController controller;
@@ -237,5 +237,5 @@ public abstract class Store extends Activity implements ViewPager.OnPageChangeLi
             default:
                 break;
         }
-    }
+    }*/
 }
