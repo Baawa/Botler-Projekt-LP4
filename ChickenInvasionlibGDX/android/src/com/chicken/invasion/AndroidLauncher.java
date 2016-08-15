@@ -51,7 +51,7 @@ public class AndroidLauncher extends AndroidApplication implements GameCallback 
 		topList= gson.fromJson(json, type);
 		//--END GET SAVED SCORES
 
-		
+
 		controller = new GameViewController();
         Store.setController(controller);
 		InputName.setController(controller);

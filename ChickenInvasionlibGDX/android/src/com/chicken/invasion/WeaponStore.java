@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.chicken.invasion.Weapons.WeaponCollection;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,9 +13,6 @@ import java.util.List;
  * Created by pedramshirmohammad on 16-05-26.
  */
 public class WeaponStore extends Store implements iStore {
-
-
-
     private StoreCardAdapter adapter;
 
     @Override
@@ -21,7 +20,7 @@ public class WeaponStore extends Store implements iStore {
         super.onCreate(savedInstanceState);
         adapter = new StoreCardAdapter(this,controller);
         intent.setClass(this, BackgroundStore.class);
-        itemList = controller.getThrowableHolder().getThrowables();
+        itemList = GameModel.getInstance().getThrowableCollection().getStoreItems();
         getSavedAvailability(itemList);
         viewPager.setAdapter(adapter);
         initBuyAndEquip(itemList);

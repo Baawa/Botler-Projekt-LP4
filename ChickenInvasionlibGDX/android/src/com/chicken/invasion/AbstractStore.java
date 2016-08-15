@@ -24,7 +24,7 @@ public class AbstractStore extends Application {
 
     public void customAppMethod(View view, Context ctx){
         ViewPager viewPager = (ViewPager)view.findViewById(R.id.view_pager);
-        com.chicken.invasion.oldstuff.ChickenInvasion controller = new com.chicken.invasion.oldstuff.ChickenInvasion();
+        GameViewController controller = new GameViewController();
         StoreCardAdapter ilo = new StoreCardAdapter(ctx,controller);
         viewPager.setAdapter(ilo);
     }

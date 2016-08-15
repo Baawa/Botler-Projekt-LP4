@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Created by Albin on 2016-08-06.
  */
-public class WeaponCollection implements ThrowableCollection,StoreCollection {
+public class WeaponCollection extends CIWeaponCollection {
     private ArrayList<CIWeapon> weapons = new ArrayList<CIWeapon>();
 
     public WeaponCollection(World world){

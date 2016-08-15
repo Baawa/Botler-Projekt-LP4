@@ -127,6 +127,10 @@ public class Throwable_Object implements Throwable, Cloneable{
         return this.sprite;
     }
 
+    public String getImageURL(){
+        return this.imageURL;
+    }
+
     public void setCollided(Boolean collided) {
         this.collided = collided;
     }

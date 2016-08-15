@@ -11,6 +11,8 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.chicken.invasion.Weapons.CIWeapon;
+
 import java.util.List;
 
 /**
@@ -20,21 +22,20 @@ public class StoreCardAdapter extends PagerAdapter {
 
 
     private Context ctx;
-    public List<com.chicken.invasion.oldstuff.ThrowableObject> mWeapons;
-    private com.chicken.invasion.oldstuff.ChickenInvasion controller;
+    public List<CIWeapon> mWeapons;
+    private GameViewController controller;
 
-    public StoreCardAdapter(Context ctx, com.chicken.invasion.oldstuff.ChickenInvasion controller){
+    public StoreCardAdapter(Context ctx, GameViewController controller){
         this.ctx = ctx;
         this.controller = controller;
-        this.mWeapons = controller.getThrowableHolder().getThrowables();
+        this.mWeapons = GameModel.getInstance().getThrowableCollection().getThrowables();
     }
 
     @Override
     public Object instantiateItem(ViewGroup container, final int position) {
+        this.mWeapons = GameModel.getInstance().getThrowableCollection().getThrowables();
 
-
-        mWeapons = controller.getThrowableHolder().getThrowables();
-        com.chicken.invasion.oldstuff.ThrowableObject currWeapon = mWeapons.get(position);
+        CIWeapon currWeapon = mWeapons.get(position);
         LayoutInflater layoutInflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         // card_view.xml LAYOUT

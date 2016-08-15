@@ -21,6 +21,8 @@ public interface Throwable {
 
     Object getSprite();
 
+    String getImageURL();
+
     void setCollided(Boolean collided);
     Boolean hasCollided();
 

@@ -12,6 +12,7 @@ import com.chicken.invasion.Helpers.MusicPlayer;
 import com.chicken.invasion.Helpers.Player;
 import com.chicken.invasion.Helpers.Wave;
 import com.chicken.invasion.Store.*;
+import com.chicken.invasion.Weapons.CIWeaponCollection;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -33,7 +34,7 @@ public class GameModel {
 
     private EnemyCollection enemyCollection;
 
-    private ThrowableCollection throwableCollection;
+    private CIWeaponCollection throwableCollection;
 
     private Background_Object currentBackground;
 
@@ -153,11 +154,11 @@ public class GameModel {
         this.enemyCollection = enemyCollection;
     }
 
-    public void setThrowableCollection(ThrowableCollection throwableCollection){
+    public void setThrowableCollection(CIWeaponCollection throwableCollection){
         this.throwableCollection = throwableCollection;
     }
 
-    public ThrowableCollection getThrowableCollection(){
+    public CIWeaponCollection getThrowableCollection(){
         return this.throwableCollection;
     }
 

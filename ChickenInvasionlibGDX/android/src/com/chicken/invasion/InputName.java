@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.badlogic.gdx.Game;
 import com.facebook.FacebookSdk;
 import com.facebook.share.model.ShareLinkContent;
 import com.facebook.share.widget.ShareButton;
@@ -42,10 +43,10 @@ public class InputName extends Activity {
         setContentView(R.layout.inputname);
 
         scoreLabel = (TextView)findViewById(R.id.scoreLabel);
-        scoreLabel.setText(Integer.toString(controller.getPlayerObject().getScore()));
+        scoreLabel.setText(Integer.toString(GameModel.getInstance().getPlayer().getScore()));
         //SHARE ON FACEBOOK
         ShareLinkContent content = new ShareLinkContent.Builder()
-                .setContentDescription("Look at my Chicken Invasion score " + Integer.toString(controller.getPlayerObject().getScore()))
+                .setContentDescription("Look at my Chicken Invasion score " + Integer.toString(GameModel.getInstance().getPlayer().getScore()))
                 .build();
 
         ShareButton shareButton = (ShareButton)findViewById(R.id.fb_share_button);

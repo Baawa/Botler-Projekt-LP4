@@ -31,6 +31,7 @@ import com.chicken.invasion.Helpers.CIPlayer;
 import com.chicken.invasion.Weapons.CIWeapon;
 import com.chicken.invasion.Enemy_Throwable.Enemy;
 import com.chicken.invasion.Helpers.GameButton;
+import com.chicken.invasion.Weapons.WeaponCollection;
 
 import java.util.ArrayList;
 import java.util.ListIterator;
@@ -57,11 +58,14 @@ public class GameViewController extends ApplicationAdapter implements GestureDet
 
     @Override
     public void create() {
+        this.world = new World(new Vector2(0, 0), true);
+
         this.model = GameModel.getInstance();
         this.model.setPlayer(new CIPlayer());
         this.model.setBackgrounds(new CIBackgroundCollection());
         this.model.setBottomRect(new CICollisionRect(new Rectangle(0f, 0f, 25f, 0.1f)));
         this.model.setEnemyCollection(new CIEnemyCollection());
+        this.model.setThrowableCollection(new WeaponCollection(this.world));
 
         batch = new SpriteBatch();
 
