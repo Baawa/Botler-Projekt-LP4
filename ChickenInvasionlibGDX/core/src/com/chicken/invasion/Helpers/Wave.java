@@ -17,7 +17,7 @@ public class Wave implements Runnable {
     public void run() {
         while(GameModel.getInstance().enemiesLeft()){
             try {
-                thread.sleep(2000);
+                Thread.sleep(2000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
