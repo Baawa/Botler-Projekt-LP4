@@ -592,4 +592,21 @@ public class GameViewController extends ApplicationAdapter implements GestureDet
             }
         }
     }
+
+    public void dispose(){
+        batch.dispose();
+        fontScore.dispose();
+        fontWings.dispose();
+        chickenLeg.dispose();
+        startBtn.dispose();
+        pauseBtn.dispose();
+        storeBtn.dispose();
+        highscoreBtn.dispose();
+        backBtn.dispose();
+        restartBtn.dispose();
+        muteBtn.dispose();
+        unmuteBtn.dispose();
+        settingsBtn.dispose();
+        world.dispose();
+    }
 }
