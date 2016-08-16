@@ -208,7 +208,8 @@ public class GameModel {
                     //Adjust enemy
                     if (this.getCurrentThrowable().getDamage() >= e.getHP()){
                         iterEnemies.remove();
-                        this.player.setScore((int)(this.player.getScore()+e.getHP()));
+                        this.player.setScore((int) (this.player.getScore() + e.getHP()));
+                        this.player.setChickenLegs((int)(this.player.getScore()+e.getHP()));
                     } else{
                         e.pushBack();
                         e.decHP(this.getCurrentThrowable().getDamage());
