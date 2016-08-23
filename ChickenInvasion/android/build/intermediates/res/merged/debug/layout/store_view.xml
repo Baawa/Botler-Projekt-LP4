@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/desertbackground500x900"
+                android:id="@+id/storeLayout">
+
+
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/view_pager"
+        >
+
+
+
+    </android.support.v4.view.ViewPager>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="110dp"
+        android:id="@+id/storebanner"
+        android:src="@drawable/storebanner"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:text="130"
+        android:textColor="#FFF"
+        android:id="@+id/score_view"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="false"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="5dp"/>
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/imageView"
+        android:layout_alignParentStart="false"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/chickenleg"/>
+
+    <ImageButton
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/buyAndEquipBtn"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="15dp"
+        android:background="#00101010"
+        android:src="@drawable/buyicon200x200"
+        android:cropToPadding="false"
+        android:scaleType="fitCenter"/>
+
+    <ImageButton
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/upgradeBtn"
+        android:background="#00101010"
+        android:src="@drawable/upgradeicon200x200"
+        android:cropToPadding="false"
+        android:scaleType="fitCenter"
+        android:layout_marginLeft="15dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="15dp"/>
+
+    <ImageButton
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="#00101010"
+        android:id="@+id/goto_btn"
+        android:cropToPadding="false"
+        android:scaleType="fitCenter"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>

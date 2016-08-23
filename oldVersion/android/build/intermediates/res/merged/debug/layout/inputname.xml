@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/desertbackground500x900">
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:id="@+id/nameInput"
+        android:text=""
+        android:hint="Enter your name.."
+        android:textSize="25sp"
+        android:layout_below="@+id/imageView5"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="5"
+        android:id="@+id/scoreLabel"
+        android:textSize="70sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"/>
+
+    <ImageButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/saveBtn"
+        android:src="@drawable/forward220x220"
+        android:background="#00ffffff"
+        android:cropToPadding="false"
+        android:scaleType="fitCenter"
+        android:layout_below="@+id/nameInput"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="110dp"
+        android:id="@+id/imageView5"
+        android:src="@drawable/recordbanner"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/scoreLabel" />
+
+    <com.facebook.share.widget.ShareButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fb_share_button"
+        android:layout_below="@+id/nameInput"
+        android:layout_alignEnd="@+id/nameInput" />
+
+
+</RelativeLayout>
