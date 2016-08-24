@@ -48,7 +48,7 @@ public class Button {
         }
     }
 
-    public void touchFunc(){
+    private void touchFunc(){
         try {
             this.func.call();
         } catch (Exception e) {

@@ -59,7 +59,6 @@ public class GameController extends ApplicationAdapter{
 
     private BackgroundCollection bgCollection;
     private WeaponCollection weaponCollection;
-    private EnemyCollection enemyCollection;
     private WeaponController currentWeapon;
     private List<EnemyController> activeEnemies;
     private List<ButtonController> buttons;
@@ -67,7 +66,7 @@ public class GameController extends ApplicationAdapter{
     private BitmapFont fontScore, fontWings;
     private Texture background;
 
-    World world;
+    private World world;
 
     @Override
     public void create() {
@@ -77,11 +76,10 @@ public class GameController extends ApplicationAdapter{
 
         bgCollection = new BackgroundCollection();
         weaponCollection = new WeaponCollection(world);
-        enemyCollection = new EnemyCollection();
+        EnemyCollection enemyCollection = new EnemyCollection();
 
         model = GameModel.getInstance();
         model.setScreenSize(Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
-        model.setTopRect(new CollisionRect(new Rectangle(0, Gdx.graphics.getHeight()/SCALE, 3*SCREEN_WIDTH/SCALE, 0.1f)));
         model.setBottomRect(new CollisionRect(new Rectangle(0f, 0f, 25f, 0.1f)));
         model.setAllEnemies(enemyCollection.getEnemies());
         model.setPlayer(new Player(weaponCollection.getWeapons().get(0)));
@@ -104,7 +102,7 @@ public class GameController extends ApplicationAdapter{
 
         activeEnemies = new ArrayList<EnemyController>();
 
-        //Activate touch
+        //Activate touchListener
         Gdx.input.setInputProcessor(new GestureDetector(new TouchListener(camera,buttons)));
 
         //Update player
@@ -119,7 +117,6 @@ public class GameController extends ApplicationAdapter{
             }
         }
         currentScreen = new StartScreen(batch,this);
-        //model.nextWave();
         Gdx.gl.glClearColor(1, 1, 1, 1);
     }
 
@@ -136,13 +133,14 @@ public class GameController extends ApplicationAdapter{
         if (model.getState() == GameState.GAMEOVER && currentScreen.getClass() != GameOverScreen.class) {
             currentScreen = new GameOverScreen(batch, this);
             gameCallback.saveScore(getPlayersWings());
-            if (getHighscoreCallback().isHighscore(getPlayerScore())){
+            if (highscoreCallback.isHighscore(getPlayerScore())){
                 getGameCallback().onStartActivityInputName(getPlayerScore());
             }
         }
         if (currentWeapon == null && model.getCurrentWeapon() != null) {
             currentWeapon = new WeaponController(model.getCurrentWeapon());
         }
+
         float dt = Gdx.graphics.getDeltaTime();
         model.updateGameObjects(dt);
         // Draw screen
@@ -306,7 +304,7 @@ public class GameController extends ApplicationAdapter{
         return banners.get(index);
     }
 
-    public void startGame(){
+    private void startGame(){
         if (model.getState() != GameState.RUNNING){
             if (model.getState() == GameState.GAMEOVER || model.getState() == GameState.STOPPED){
                 model.startNewGame();
@@ -317,27 +315,27 @@ public class GameController extends ApplicationAdapter{
         }
     }
 
-    public void restartGame(){
+    private void restartGame(){
         model.startNewGame();
         currentWeapon = new WeaponController(model.getCurrentWeapon());
         startGame();
     }
 
-    public void stopGame(){
+    private void stopGame(){
         model.stopGame();
         currentScreen = new StartScreen(batch,this);
     }
 
-    public void pauseGame(){
+    private void pauseGame(){
         model.pauseGame();
         currentScreen = new PausedScreen(batch,this);
     }
 
-    public void mute(){
+    private void mute(){
         model.toggleMusic();
     }
 
-    public void showSettingsView(){
+    private void showSettingsView(){
         model.toggleSettingsView();
     }
 
@@ -352,7 +350,6 @@ public class GameController extends ApplicationAdapter{
     public WeaponController getCurrentWeapon(){ return currentWeapon; }
     public ArrayList<Background> getBackgrounds(){ return bgCollection.getBackgrounds(); }
     public ArrayList<Weapon> getWeapons(){ return weaponCollection.getWeapons(); }
-    public ArrayList<Enemy> getEnemies(){ return enemyCollection.getEnemies(); }
 
     public List<EnemyController> getActiveEnemies(){
         if (activeEnemies.size() != model.getActiveEnemies().size()){
@@ -382,7 +379,7 @@ public class GameController extends ApplicationAdapter{
     //Callbacks
     private GameCallback gameCallback;
 
-    public void setMyGameCallback(GameCallback callback) {
+    void setMyGameCallback(GameCallback callback) {
         gameCallback = callback;
     }
 
@@ -392,13 +389,10 @@ public class GameController extends ApplicationAdapter{
 
     private HighscoreCallback highscoreCallback;
 
-    public void setHighscoreCallback(HighscoreCallback hsCallback){ highscoreCallback = hsCallback;}
+    void setHighscoreCallback(HighscoreCallback hsCallback){ highscoreCallback = hsCallback;}
 
-    public HighscoreCallback getHighscoreCallback(){ return highscoreCallback;}
-
-    public void createIntent(String className) {
+    private void createIntent(String className) {
         if (gameCallback != null) {
-
             // initiate which ever callback method you need.
             if (className.equals("Store")) {
                 gameCallback.onStartActivityStore();

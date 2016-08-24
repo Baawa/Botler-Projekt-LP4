@@ -3,10 +3,10 @@ package com.chicken.invasion.model;
 /**
  * Created by Albin on 2016-08-14.
  */
-public class Wave implements Runnable {
+class Wave implements Runnable {
     private Thread thread;
 
-    public Wave(){
+    Wave(){
         thread = new Thread(this);
         thread.start();
     }

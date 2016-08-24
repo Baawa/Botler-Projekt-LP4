@@ -21,7 +21,6 @@ public class GameModel {
     private ArrayList<Enemy> enemiesToRemove;
 
     private IPlayer player;
-    private ICollisionRect topRect;
     private ICollisionRect bottomRect;
     private Background currentBackground;
 
@@ -78,7 +77,7 @@ public class GameModel {
         player.setScore(0);
     }
 
-    public void nextWave() {
+    private void nextWave() {
         currentWave += 1;
         fillUpThrowables();
         activeEnemies.clear();
@@ -118,14 +117,14 @@ public class GameModel {
         }
     }
 
-    public void spawnEnemy(){
+    void spawnEnemy(){
         if (enemiesLeft()) {
             activeEnemies.add(enemies.get(0));
             enemies.remove(0);
         }
     }
 
-    public boolean enemiesLeft(){
+    boolean enemiesLeft(){
         return enemies.size() > 0;
     }
 
@@ -147,13 +146,11 @@ public class GameModel {
         return this.currentBackground;
     }
 
-    public void setTopRect(ICollisionRect rect) {this.topRect = rect;}
-
     public void setBottomRect(ICollisionRect rect){
         this.bottomRect = rect;
     }
 
-    public void checkCollisions(){
+    private void checkCollisions(){
         try {
             for (Enemy e : activeEnemies) {
                 if (weapons.size() != 0) {
@@ -191,7 +188,7 @@ public class GameModel {
         }
     }
 
-    public void enemyIsHit(Enemy e){
+    private void enemyIsHit(Enemy e){
         if (getCurrentWeapon().getDamage() >= e.getHP()){
             enemiesToRemove.add(e);
             player.setScore(player.getScore() + e.getPointsForKilling());
@@ -202,7 +199,7 @@ public class GameModel {
         }
     }
 
-    public void checkWeapon(){
+    private void checkWeapon(){
         if (getCurrentWeapon() != null) {
             if (getCurrentWeapon().hasCollided()) {
                 weapons.remove(0);
@@ -213,7 +210,7 @@ public class GameModel {
         }
     }
 
-    public ArrayList<Enemy> getRandomSetOfEnemies(int amount) {
+    private ArrayList<Enemy> getRandomSetOfEnemies(int amount) {
         int tmp = amount;
         ArrayList<Enemy> tmp_array = new ArrayList<Enemy>();
 

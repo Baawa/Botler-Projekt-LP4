@@ -8,4 +8,6 @@ public interface ICollisionRect {
     void update(float x, float y, float width, float height);
 
     boolean overlaps(ICollisionRect r);
+
+    ICollisionRect clone();
 }

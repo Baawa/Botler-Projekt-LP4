@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#fff">
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/img_chicken_leg"
+        android:src="@drawable/chickenleg"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_store_money"
+        android:layout_toEndOf="@id/img_chicken_leg"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"/>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="110dp"
+        android:id="@+id/img_storebanner"
+        android:src="@drawable/storebanner"
+        android:layout_below="@id/txt_store_money"
+        android:layout_marginTop="20dp"/>
+
+
+
+</RelativeLayout>

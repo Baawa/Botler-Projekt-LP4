@@ -1,7 +1,5 @@
 package com.chicken.invasion.model;
 
-import com.badlogic.gdx.math.Rectangle;
-import com.chicken.invasion.physics.CollisionRect;
 import com.chicken.invasion.physics.ICollisionRect;
 
 import java.util.Random;
@@ -42,7 +40,7 @@ public class Enemy extends GameObject {
         height += dt/3f;
     }
 
-    public void pushBack() {
+    void pushBack() {
         if (this.pushable){
             this.y ++;
         }
@@ -51,7 +49,7 @@ public class Enemy extends GameObject {
     public int getPointsForKilling(){ return pointsForKilling; }
 
     public Enemy clone(){
-        Enemy e = new Enemy(new CollisionRect(new Rectangle(x,y,width,height)), this.getImageURL(), this.getHP(), pushable);
+        Enemy e = new Enemy(this.getCollisionRect().clone(), this.getImageURL(), this.getHP(), pushable);
         e.setSpeed(this.getSpeed());
 
         return e;

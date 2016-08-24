@@ -20,7 +20,7 @@
         android:label="@string/app_name"
         android:theme="@style/GdxTheme" >
         <activity
-            android:name="com.chicken.invasion.SplashScreen"
+            android:name="com.chicken.invasion.activities.SplashScreen"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -35,22 +35,18 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.chicken.invasion.HighScore"
+            android:name="com.chicken.invasion.activities.HighScore"
             android:label="HighscoreV" >
         </activity>
         <activity
-            android:name="com.chicken.invasion.CreateWeapon"
-            android:label="CreateWeaponV" >
-        </activity>
-        <activity
-            android:name="com.chicken.invasion.BackgroundStore"
+            android:name="com.chicken.invasion.activities.BackgroundStore"
             android:label="BackgroundStoreV" >
         </activity>
         <activity
-            android:name="com.chicken.invasion.WeaponStore"
+            android:name="com.chicken.invasion.activities.WeaponStore"
             android:label="WeaponStoreV" >
         </activity>
-        <activity android:name="com.chicken.invasion.InputName" >
+        <activity android:name="com.chicken.invasion.activities.InputName" >
         </activity>
         <activity
             android:name="com.facebook.FacebookActivity"

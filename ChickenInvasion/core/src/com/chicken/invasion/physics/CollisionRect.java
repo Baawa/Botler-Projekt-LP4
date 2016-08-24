@@ -27,4 +27,9 @@ public class CollisionRect implements ICollisionRect {
         }
         return false;
     }
+
+    @Override
+    public ICollisionRect clone() {
+        return new CollisionRect(new Rectangle(this.rect.getX(),this.rect.getY(),this.rect.getWidth(),this.rect.getHeight()));
+    }
 }

@@ -59,11 +59,11 @@ public class Weapon extends GameObject implements IStoreItem{
         return (int)(this.getDamage() * this.getSpeed() * 100);
     }
 
-    public void setCollided(boolean collided) {
+    void setCollided(boolean collided) {
         this.collided = collided;
     }
 
-    public boolean hasCollided() {
+    boolean hasCollided() {
         return collided;
     }
 
@@ -94,7 +94,7 @@ public class Weapon extends GameObject implements IStoreItem{
         }
     }
 
-    public void resetBody(){
+    void resetBody(){
         body.resetBody();
     }
     public void setSpeed(float speed){
@@ -104,7 +104,7 @@ public class Weapon extends GameObject implements IStoreItem{
         return speed;
     }
     public float getScale(){ return scale;}
-    public void setScale(float scale){
+    private void setScale(float scale){
         this.scale = scale;
     }
     public float getOrgWidth(){

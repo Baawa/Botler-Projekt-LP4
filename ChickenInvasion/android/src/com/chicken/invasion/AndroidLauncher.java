@@ -7,9 +7,14 @@ import android.os.Bundle;
 
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
+import com.chicken.invasion.activities.HighScore;
+import com.chicken.invasion.activities.InputName;
+import com.chicken.invasion.activities.Store;
+import com.chicken.invasion.activities.WeaponStore;
 import com.chicken.invasion.callback.GameCallback;
 import com.chicken.invasion.controller.collections.BackgroundCollection;
 import com.chicken.invasion.model.Background;
+import com.chicken.invasion.model.Score;
 import com.chicken.invasion.model.Weapon;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;

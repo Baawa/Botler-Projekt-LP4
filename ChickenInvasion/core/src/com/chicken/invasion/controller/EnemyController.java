@@ -1,6 +1,5 @@
 package com.chicken.invasion.controller;
 
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.chicken.invasion.model.Enemy;
 import com.chicken.invasion.service.WalkAnimation;
