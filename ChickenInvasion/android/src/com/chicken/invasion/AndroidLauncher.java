@@ -133,7 +133,7 @@ public class AndroidLauncher extends AndroidApplication implements GameCallback 
 			String tempSpeed = pref.getString(e.getName() + "_SPEED","");
 			if(!tempDamage.equals("") && !tempSpeed.equals("")) {
 				e.setDamage(Integer.parseInt(tempDamage));
-				e.setSpeed(Integer.parseInt(tempSpeed));
+				e.setSpeed(Float.parseFloat(tempSpeed));
 			}
 		}
 	}
